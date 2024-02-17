@@ -1,4 +1,3 @@
-import React from 'react'
 import TopBar from './top-bar/TopBar'
 import LogoMenuSearch from './logo-menu-search/LogoMenuSearch';
 
