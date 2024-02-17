@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-red-300">
+        <div className="bg-white">
           <Header />
         </div>
         <section className="hero flex space-x-6">
