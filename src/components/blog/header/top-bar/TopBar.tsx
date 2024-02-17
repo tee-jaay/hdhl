@@ -9,7 +9,7 @@ const TopBar = () => {
                 <div className="latest_news flex-1">
                     <span className="text-sm text-white uppercase">latest article</span>
                     <span className="text-sm text-white mx-3">|</span>
-                    <span className="text-sm text-white font-extralight">
+                    <span className="text-sm text-white font-normal">
                         <Link href={"/"} className="text-gray-300 hover:text-white transition ease-in-out duration-300">
                             Magni accusamus voluptate odit adipisci debitis cupiditate
                         </Link>

@@ -16,10 +16,10 @@ const Carousel = () => {
                 </div>
             </div>
             <div className="items flex flex-4/5">
-                <CarouselItem imgAlt="" imgSrc="https://picsum.photos/80/100?q=1" category="travel" title="Debitis voluptate illo veniam" date="April 20, 202" />
-                <CarouselItem imgAlt="" imgSrc="https://picsum.photos/80/100?q=2" category="travel" title="Debitis voluptate illo veniam" date="April 20, 202" />
-                <CarouselItem imgAlt="" imgSrc="https://picsum.photos/80/100?q=3" category="travel" title="Debitis voluptate illo veniam" date="April 20, 202" />
-                <CarouselItem imgAlt="" imgSrc="https://picsum.photos/80/100?q=4" category="travel" title="Debitis voluptate illo veniam" date="April 20, 202" />
+                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=1"} category="travel" title={"Debitis voluptate illo veniam"} date={"April 20, 2022"} />
+                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=2"} category="travel" title={"Debitis voluptate illo veniam"} date={"June 13, 2022"} />
+                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=3"} category="travel" title={"Debitis voluptate illo veniam"} date={"January 5, 2023"} />
+                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=4"} category="travel" title={"Debitis voluptate illo veniam"} date={"March 22, 2024"} />
             </div>
         </div>
     );
