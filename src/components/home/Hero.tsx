@@ -12,9 +12,9 @@ const Hero = () => {
                         <span className="category bg-[#AE0332] text-white px-3 py-1 max-w-max">lifestyle</span>
                     </Link>
                     <Link href={"/blog/post-slug"} title="Lorem ipsum dolor sit amet consectetur adipisicing elit">
-                        <h1 className="title text-3xl text-white font-semibold my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                        <h1 className="title text-3xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
                     </Link>
-                    <div className="meta flex space-x-2">
+                    <div className="meta flex space-x-6">
                         <AuthorAvatarNameLink imgAlt={""} imgSrc={"https://i.pravatar.cc/20?q=0"} link={"/blog/author/author-slug"} name={"Jon Deo"} textColor={"text-[#FFFFFF]"} />
                         <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY="June 22, 2022" />
                         <CommentsCount color="text-[#FFFFFF]" count={"45"} />
@@ -27,9 +27,9 @@ const Hero = () => {
                         <span className="category bg-[#378e1c] text-white px-3 py-1 max-w-max">lifestyle</span>
                     </Link>
                     <Link href={"/blog/post-slug"} title="Ipsum dolor sit amet consectetur adipisicing elit">
-                        <h2 className="title text-2xl text-white font-semibold my-3">Ipsum dolor sit amet consectetur adipisicing elit</h2>
+                        <h2 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">Ipsum dolor sit amet consectetur adipisicing elit</h2>
                     </Link>
-                    <div className="meta flex space-x-2">
+                    <div className="meta flex space-x-6">
                         <AuthorAvatarNameLink imgAlt="" imgSrc={"https://i.pravatar.cc/20?q=1"} link={"/blog/author/author-slug"} name={"Jon Deo"} textColor="text-[#FFFFFF]" />
                         <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY="March 22, 2022" />
                         <CommentsCount color="text-[#FFFFFF]" count={"15"} />
@@ -42,7 +42,7 @@ const Hero = () => {
                                 <span className="category bg-[#ffa100] text-white px-3 py-1 max-w-max">lifestyle</span>
                             </Link>
                             <Link href={"/blog/post-slug"} title="Repellat reprehenderit error">
-                                <h4 className="title text-2xl text-white font-semibold my-3">Repellat reprehenderit error</h4>
+                                <h4 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">Repellat reprehenderit error</h4>
                             </Link>
                             <AuthorAvatarNameLink imgAlt="" imgSrc={"https://i.pravatar.cc/20?q=3"} link={"/blog/author/author-slug"} name={"Tania Doe"} textColor="text-[#FFFFFF]" />
                         </div>
@@ -51,7 +51,7 @@ const Hero = () => {
                                 <span className="category bg-[#2962ff] text-white px-3 py-1 max-w-max">lifestyle</span>
                             </Link>
                             <Link href={"/blog/post-slug"} title="Consectetur voluptates modi">
-                                <h4 className="title text-2xl text-white font-semibold my-3">Consectetur voluptates modi</h4>
+                                <h4 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">Consectetur voluptates modi</h4>
                             </Link>
                             <AuthorAvatarNameLink imgAlt="" imgSrc={"https://i.pravatar.cc/20?q=4"} link={"/blog/author/author-slug"} name={"Maria Doe"} textColor="text-[#FFFFFF]" />
                         </div>
