@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Hero = ({ fontClassName }: { fontClassName: string }) => {
+const Hero = () => {
     return (
         <section className="hero flex space-x-6">
             <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url("https://picsum.photos/1200/800")`, height: '580px' }}>
-                <div className={`${fontClassName} hero_one_item px-12 py-8 flex flex-col justify-end h-full`}>
+                <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full`}>
                     <Link href={"/blog/categories/category-slug"} title="lifestyle">
                         <span className="category bg-[#AE0332] text-white px-3 py-1 max-w-max">lifestyle</span>
                     </Link>
@@ -47,7 +47,7 @@ const Hero = ({ fontClassName }: { fontClassName: string }) => {
                 </div>
             </div>
             <div className="hero_right flex-1 flex-col ">
-                <div className={`${fontClassName} flex flex-col flex-1 h-1/2 py-10 px-6 bg-no-repeat bg-center justify-end`} style={{ backgroundImage: `url("https://picsum.photos/1200/800?q=0")` }}>
+                <div className={`flex flex-col flex-1 h-1/2 py-10 px-6 bg-no-repeat bg-center justify-end`} style={{ backgroundImage: `url("https://picsum.photos/1200/800?q=0")` }}>
                     <Link href={"/blog/categories/category-slug"} title="lifestyle">
                         <span className="category bg-[#378e1c] text-white px-3 py-1 max-w-max">lifestyle</span>
                     </Link>
@@ -89,7 +89,7 @@ const Hero = ({ fontClassName }: { fontClassName: string }) => {
                 </div>
                 <div className="flex-1 h-1/2 pt-6">
                     <div className="flex space-x-6">
-                        <div className={`${fontClassName} flex flex-col justify-end text-white flex-1 py-5 px-6 bg-no-repeat bg-center`} style={{ backgroundImage: `url("https://picsum.photos/800/600?q=1")`, height: '266px' }}>
+                        <div className={`flex flex-col justify-end text-white flex-1 py-5 px-6 bg-no-repeat bg-center`} style={{ backgroundImage: `url("https://picsum.photos/800/600?q=1")`, height: '266px' }}>
                             <Link href={"/blog/categories/category-slug"} title="lifestyle">
                                 <span className="category bg-[#ffa100] text-white px-3 py-1 max-w-max">lifestyle</span>
                             </Link>
@@ -107,7 +107,7 @@ const Hero = ({ fontClassName }: { fontClassName: string }) => {
                                 </div>
                             </Link>
                         </div>
-                        <div className={`${fontClassName} flex flex-col justify-end text-white flex-1 py-5 px-6 bg-no-repeat bg-center`} style={{ backgroundImage: `url("https://picsum.photos/800/600?q=2")` }}>
+                        <div className={`flex flex-col justify-end text-white flex-1 py-5 px-6 bg-no-repeat bg-center`} style={{ backgroundImage: `url("https://picsum.photos/800/600?q=2")` }}>
                             <Link href={"/blog/categories/category-slug"} title="lifestyle">
                                 <span className="category bg-[#2962ff] text-white px-3 py-1 max-w-max">lifestyle</span>
                             </Link>

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/blog/header/Header";
 import Footer from "@/components/blog/footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const leagueSpartan = League_Spartan({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Healthy Diet Happy Life",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={leagueSpartan.className}>
         <div className="bg-white">
           <Header />
         </div>
