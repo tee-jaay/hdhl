@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, League_Spartan } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/blog/header/Header";
 import Footer from "@/components/blog/footer/Footer";
 import Sidebar from "@/components/blog/sidebar/Sidebar";
+import Link from "next/link";
+import Image from "next/image";
+import Hero from "@/components/home/Hero";
 
 const inter = Inter({ subsets: ["latin"] });
+const leagueSpartan = League_Spartan({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Healthy Diet Happy Life",
@@ -23,44 +27,9 @@ export default function RootLayout({
         <div className="bg-white">
           <Header />
         </div>
-        <section className="hero flex space-x-6">
-          <div className="hero_left flex-1 py-10" style={{ backgroundImage: `url("https://picsum.photos/500/600")` }}>
-            <div className="hero_one_item">
-              <div className="category">lifestyle</div>
-              <h1 className="title">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-              <div className="meta flex">
-                <div className="author">by Jon Deo</div>
-                <div className="date"><span className="icon">icon</span> March 29, 2022</div>
-                <div className="comments">99 Comments</div>
-              </div>
-            </div>
-          </div>
-          <div className="hero_right flex-1 flex-col space-y-6">
-            <div className="flex-1 py-10" style={{ backgroundImage: `url("https://picsum.photos/400/500")` }}>
-              <div className="category">politics</div>
-              <h2 className="title">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
-              <div className="meta flex">
-                <div className="author">by Jon Deo</div>
-                <div className="date"><span className="icon">icon</span> March 29, 2022</div>
-                <div className="comments">99 Comments</div>
-              </div>
-            </div>
-            <div className="flex-1">
-              <div className="flex space-x-6">
-                <div className="flex-1 py-" style={{ backgroundImage: `url("https://picsum.photos/400/300")` }}>
-                  <div className="category">technology</div>
-                  <h4>Repellat reprehenderit eum error</h4>
-                  <div className="author">by Jon Deo</div>
-                </div>
-                <div className="flex-1 py-5" style={{ backgroundImage: `url("https://picsum.photos/400/300?q=2")` }}>
-                  <div className="category">travel</div>
-                  <h4>consectetur voluptates modi eos hic</h4>
-                  <div className="author">by Jon Deo</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Hero */}
+        <Hero fontClassName={leagueSpartan.className} />
+
         <div className="carousel">
           <div className="navigation">
             <span>icon</span>
