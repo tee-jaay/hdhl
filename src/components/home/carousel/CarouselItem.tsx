@@ -24,8 +24,8 @@ const CarouselItem = ({ imgSrc, imgAlt, category, title, date }: carouselItem) =
                 </div>
                 <div className="item-meta flex flex-col items-start justify-center">
                     <h5 className="item-category uppercase text-[#919191] text-sm">{category}</h5>
-                    <h4 className="item-title font-semibold my-2">{title}</h4>
-                    <h6 className="item-date"><PublishMonthDateYear color="text-[#919191]" dateMDY="April 20, 2022" /></h6>
+                    <h4 className="item-title font-semibold mt-2 mb-1 hover:text-[#4ce5a2] transition ease-in-out duration-300">{title}</h4>
+                    <h6 className="item-date"><PublishMonthDateYear color="text-[#919191]" dateMDY={date} /></h6>
                 </div>
             </div>
         </Link>
