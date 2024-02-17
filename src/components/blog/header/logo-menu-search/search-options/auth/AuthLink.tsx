@@ -1,9 +1,11 @@
-import React from 'react'
+import Link from "next/link";
 
 const AuthLink = () => {
     return (
-        <div>AuthLink</div>
-    )
+        <div>
+            <Link href={"/auth/login"} className="text-xs font-extralight bg-slate-600 text-white py-2 px-4">Login</Link>
+        </div>
+    );
 }
 
-export default AuthLink
+export default AuthLink;
