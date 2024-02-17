@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 const Hero = ({ fontClassName }: { fontClassName: string }) => {
     return (
-        <section className="hero flex space-x-6">
-            <div className="hero_left flex-1 h-96" style={{ backgroundImage: `url("https://picsum.photos/500/600")` }}>
-                <Link href={"/"}>
+        <section className="hero flex space-x-6" style={{ height: '580px' }}>
+            <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url("https://picsum.photos/1200/800")`, }}>
+                <Link href={"/blog/post-slug"} title="Lorem ipsum dolor sit amet consectetur adipisicing elit">
                     <div className={fontClassName + " hero_one_item px-12 py-8 flex flex-col justify-end h-full"}>
                         <span className="category bg-[#AE0332] text-white px-3 py-1 max-w-max">lifestyle</span>
                         <h1 className="title text-3xl text-white font-semibold mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
@@ -42,8 +42,8 @@ const Hero = ({ fontClassName }: { fontClassName: string }) => {
                     </div>
                 </Link>
             </div>
-            <div className="hero_right flex-1 flex-col space-y-6 h-96">
-                <div className="flex-1 py-10" style={{ backgroundImage: `url("https://picsum.photos/400/500")` }}>
+            <div className="hero_right flex-1 flex-col space-y-6 h-96 bg-red-400">
+                <div className="flex-1 h-1/2 py-10 bg-no-repeat bg-center" style={{ backgroundImage: `url("https://picsum.photos/1200/800?q=0")` }}>
                     <div className="category">politics</div>
                     <h2 className="title">Lorem ipsum dolor sit amet consectetur adipisicing elit</h2>
                     <div className="meta flex">
@@ -52,14 +52,14 @@ const Hero = ({ fontClassName }: { fontClassName: string }) => {
                         <div className="comments">99 Comments</div>
                     </div>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 h-1/2">
                     <div className="flex space-x-6">
-                        <div className="flex-1 py-" style={{ backgroundImage: `url("https://picsum.photos/400/300")` }}>
+                        <div className="flex-1 py-5 bg-no-repeat bg-center" style={{ backgroundImage: `url("https://picsum.photos/800/600?q=1")` }}>
                             <div className="category">technology</div>
                             <h4>Repellat reprehenderit eum error</h4>
                             <div className="author">by Jon Deo</div>
                         </div>
-                        <div className="flex-1 py-5" style={{ backgroundImage: `url("https://picsum.photos/400/300?q=2")` }}>
+                        <div className="flex-1 py-5 bg-no-repeat bg-center" style={{ backgroundImage: `url("https://picsum.photos/800/600?q=2")` }}>
                             <div className="category">travel</div>
                             <h4>consectetur voluptates modi eos hic</h4>
                             <div className="author">by Jon Deo</div>
