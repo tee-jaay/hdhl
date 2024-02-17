@@ -15,11 +15,10 @@ const Carousel = () => {
                     </svg>
                 </div>
             </div>
-            <div className="items flex flex-4/5 pl-12">
-                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=1"} category="travel" title={"Debitis voluptate illo"} date={"April 20, 2022"} />
-                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=2"} category="design" title={"Voluptate illo veniam"} date={"June 13, 2022"} />
-                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=3"} category="fashion" title={"Debitis illo veniam"} date={"January 5, 2023"} />
-                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=4"} category="technology" title={"Voluptate illo veniam"} date={"March 22, 2024"} />
+            <div className="items flex flex-4/5 ml-auto space-x-8">
+                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=1"} categorySlug={"travel"} category={"Travel"} title={"Debitis voluptate illo"} date={"April 20, 2022"} />
+                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=2"} categorySlug={"design"} category={"Design"} title={"Voluptate illo veniam"} date={"June 13, 2022"} />
+                <CarouselItem imgAlt={""} imgSrc={"https://picsum.photos/80/100?q=3"} categorySlug={"fashion"} category={"Fashion"} title={"Debitis illo veniam"} date={"January 5, 2023"} />
             </div>
         </div>
     );

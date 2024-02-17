@@ -14,7 +14,7 @@ const Hero = () => {
                     <Link href={"/blog/post-slug"} title="Lorem ipsum dolor sit amet consectetur adipisicing elit">
                         <h1 className="title text-3xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
                     </Link>
-                    <div className="meta flex space-x-2">
+                    <div className="meta flex space-x-6">
                         <AuthorAvatarNameLink imgAlt={""} imgSrc={"https://i.pravatar.cc/20?q=0"} link={"/blog/author/author-slug"} name={"Jon Deo"} textColor={"text-[#FFFFFF]"} />
                         <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY="June 22, 2022" />
                         <CommentsCount color="text-[#FFFFFF]" count={"45"} />
@@ -29,7 +29,7 @@ const Hero = () => {
                     <Link href={"/blog/post-slug"} title="Ipsum dolor sit amet consectetur adipisicing elit">
                         <h2 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">Ipsum dolor sit amet consectetur adipisicing elit</h2>
                     </Link>
-                    <div className="meta flex space-x-2">
+                    <div className="meta flex space-x-6">
                         <AuthorAvatarNameLink imgAlt="" imgSrc={"https://i.pravatar.cc/20?q=1"} link={"/blog/author/author-slug"} name={"Jon Deo"} textColor="text-[#FFFFFF]" />
                         <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY="March 22, 2022" />
                         <CommentsCount color="text-[#FFFFFF]" count={"15"} />
