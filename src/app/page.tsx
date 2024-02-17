@@ -1,4 +1,3 @@
-import { League_Spartan } from "next/font/google";
 import Sidebar from "@/components/blog/sidebar/Sidebar";
 import Hero from "@/components/home/Hero";
 import Carousel from "@/components/home/Carousel";
@@ -10,13 +9,11 @@ import FeaturePosts from "@/components/home/FeaturePosts";
 import WeekendTop from "@/components/home/WeekendTop";
 import Advertisement from "@/components/home/Advertisement";
 
-const leagueSpartan = League_Spartan({ subsets: ["latin"] });
-
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <Hero fontClassName={leagueSpartan.className} />
+      <Hero />
 
       {/* Carousel */}
       <Carousel />
