@@ -1,8 +1,14 @@
-import React from 'react'
+import FooterTop from "./FooterTop"
+import FooterBottom from "./FooterBottom"
 
 const Footer = () => {
     return (
-        <div>Footer</div>
+        <section className="bg-[#161B2B]">
+            <footer className="mx-auto" style={{ width: "1120px" }}>
+                <FooterTop />
+                <FooterBottom />
+            </footer>
+        </section>
     )
 }
 

@@ -8,7 +8,7 @@ interface category {
 
 const CategoryNameSlug = ({ name, slug, color }: category) => {
     return (
-        <h5 className={`item-category uppercase ${color} text-sm`}>
+        <h5 className={`item-category uppercase ${color} text-sm tracking-wider`}>
             <Link href={`/blog/categories/${slug}`}>
                 {name}
             </Link>

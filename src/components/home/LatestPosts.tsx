@@ -22,14 +22,14 @@ const latestPosts = [
         image: "https://picsum.photos/100?random=2",
     },
     {
-        title: "Sed do eiusmod tempor incididunt",
+        title: "Sed do eiusmod tempor",
         slug: "sed-do-eiusmod-tempor-incididunt",
         category: "Politics",
         categorySlug: "politics",
         image: "https://picsum.photos/100?random=3",
     },
     {
-        title: "Ut labore et dolore magna aliqua",
+        title: "Ut labore et dolore",
         slug: "ut-labore-et-dolore-magna-aliqua",
         category: "Sports",
         categorySlug: "sports",
@@ -40,7 +40,7 @@ const latestPosts = [
 const LatestPosts = () => {
     return (
         <section className="flex mx-auto" style={{ width: "1120px" }}>
-            <div className="flex-3/5 flex-grow ">
+            <div className="flex-5">
                 <SectionHeading color={"text-[#000000]"} text={"Latest Posts"} />
                 <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url("https://picsum.photos/1980/1100")`, height: '500px' }}>
                     <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full`}>
@@ -58,7 +58,7 @@ const LatestPosts = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex-2/5">
+            <div className="flex-1">
                 <button className="flex ml-auto text-sm capitalize py-2 px-4 text-white bg-black hover:bg-[#4ce5a2] transition ease-in-out duration-300">view all</button>
                 <div className="space-y-6 p-8">
                     {latestPosts && latestPosts.map((post, _i) => (

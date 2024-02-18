@@ -18,11 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={leagueSpartan.className} id="root-body">
+      <body className={leagueSpartan.className}>
         <div className="bg-white">
           <Header />
         </div>
-        <main className="flex-grow">
+        <main>
           {children}
         </main>
         <div className="bg-blue-300">
