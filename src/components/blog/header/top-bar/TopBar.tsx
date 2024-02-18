@@ -4,14 +4,14 @@ import SocialIcon from '@/components/common/SocialIcon';
 
 const TopBar = () => {
     return (
-        <div className="topbar bg-[#222] py-2">
-            <div className="flex justify-between px-4">
+        <section className="topbar bg-[#222] py-2">
+            <div className="flex justify-between mx-auto" style={{ width: "1120px" }}>
                 <div className="latest_news flex-1">
                     <span className="text-sm text-white uppercase">latest article</span>
                     <span className="text-sm text-white mx-3">|</span>
                     <span className="text-sm text-white font-normal">
                         <Link href={"/"} className="text-gray-300 hover:text-white transition ease-in-out duration-300">
-                            Magni accusamus voluptate odit adipisci debitis cupiditate
+                            Magni accusamus voluptate odit adipisci
                         </Link>
                     </span>
                 </div>
@@ -29,7 +29,7 @@ const TopBar = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 
