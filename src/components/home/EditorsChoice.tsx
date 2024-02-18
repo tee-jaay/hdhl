@@ -159,17 +159,25 @@ const EditorsChoice = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="categories flex-2">
-                        <h4 className="text-2xl mb-7">Categories</h4>
-                        <div className="categories_block grid grid-cols-2 gap-x-4 gap-y-1/2">
-                            {categories && categories.map((category, _i) => (
-                                <Link key={category.id} href={`/blog/categories/${category.slug}`} title={category.name}>
-                                    <div className="p-10 h-[88%]  flex flex-col items-center justify-center bg-no-repeat" style={{ backgroundImage: `url(${category.imgSrc})` }}>
-                                        <div className="count text-white text-3xl font-extrabold">{category.count}</div>
-                                        <div className="name text-white uppercase text-xl font-bold">${category.name}</div>
-                                    </div>
-                                </Link>
-                            ))}
+                    <div className="flex-2">
+                        <div className="categories">
+                            <h4 className="text-2xl mb-7">Categories</h4>
+                            <div className="categories_block grid grid-cols-2 gap-x-4 gap-y-1/2">
+                                {categories && categories.map((category, _i) => (
+                                    <Link key={category.id} href={`/blog/categories/${category.slug}`} title={category.name}>
+                                        <div className="p-10 h-[88%]  flex flex-col items-center justify-center bg-no-repeat" style={{ backgroundImage: `url(${category.imgSrc})` }}>
+                                            <div className="count text-white text-3xl font-extrabold">{category.count}</div>
+                                            <div className="name text-white uppercase text-xl font-semibold tracking-wider">{category.name}</div>
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="most_reads">
+                            <h4 className="text-2xl my-7">Most Reads</h4>
+                        </div>
+                        <div className="follow_us">
+                            <h4 className="text-2xl my-7">Follow Us</h4>
                         </div>
                     </div>
                 </div>
