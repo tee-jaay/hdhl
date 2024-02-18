@@ -82,20 +82,65 @@ const posts = [
     },
 ];
 
+const categories = [
+    {
+        id: 1,
+        name: "travel",
+        slug: "travel",
+        count: 12,
+        imgSrc: "https://picsum.photos/400"
+    },
+    {
+        id: 2,
+        name: "travel",
+        slug: "travel",
+        count: 12,
+        imgSrc: "https://picsum.photos/400"
+    },
+    {
+        id: 3,
+        name: "travel",
+        slug: "travel",
+        count: 12,
+        imgSrc: "https://picsum.photos/400"
+    },
+    {
+        id: 4,
+        name: "travel",
+        slug: "travel",
+        count: 12,
+        imgSrc: "https://picsum.photos/400"
+    },
+    {
+        id: 5,
+        name: "travel",
+        slug: "travel",
+        count: 12,
+        imgSrc: "https://picsum.photos/400"
+    },
+    {
+        id: 6,
+        name: "travel",
+        slug: "travel",
+        count: 12,
+        imgSrc: "https://picsum.photos/400"
+    },
+];
+
 const EditorsChoice = () => {
     return (
         <section className="mx-auto py-16 bg-[#FBF8F5]">
             <div className="mx-auto" style={{ width: "1120px" }}>
                 <div className="flex space-x-8  align-baseline">
-                    <div className="flex-2">
+                    <div className="flex-1">
                         <SectionHeading text="Editor's Choice" color="text-[#000000]" />
                         <div className="posts space-y-8">
                             {posts && posts.map((post, _i) => (
                                 <div key={post.id} className="post flex space-x-8 bg-[#FFFFFF] pr-8">
                                     <div className="post_image">
                                         <Image alt={post.imgAlt} src={`${post.imgSrc}?q=${post.id}`}
-                                            width={230}
-                                            height={230}
+                                            width={220}
+                                            height={220}
                                         />
                                     </div>
                                     <div className="post_info space-y-4 py-4">
@@ -114,8 +159,18 @@ const EditorsChoice = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="categories flex-3">
-                        <h4 className="text-2xl">Categories</h4>
+                    <div className="categories flex-2">
+                        <h4 className="text-2xl mb-7">Categories</h4>
+                        <div className="categories_block grid grid-cols-2 gap-x-4 gap-y-1/2">
+                            {categories && categories.map((category, _i) => (
+                                <Link key={category.id} href={`/blog/categories/${category.slug}`} title={category.name}>
+                                    <div className="p-10 h-[88%]  flex flex-col items-center justify-center bg-no-repeat" style={{ backgroundImage: `url(${category.imgSrc})` }}>
+                                        <div className="count text-white text-3xl font-extrabold">{category.count}</div>
+                                        <div className="name text-white uppercase text-xl font-bold">${category.name}</div>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
