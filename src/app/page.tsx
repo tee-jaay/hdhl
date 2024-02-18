@@ -2,7 +2,7 @@ import Hero from "@/components/home/Hero";
 import Carousel from "@/components/home/Carousel";
 import LatestPosts from "@/components/home/LatestPosts";
 import TrendingVideos from "@/components/home/TrendingVideos";
-import FeaturePosts from "@/components/home/FeaturePosts";
+import EditorsChoice from "@/components/home/EditorsChoice";
 import Advertisement from "@/components/home/Advertisement";
 
 export default function Home() {
@@ -23,8 +23,8 @@ export default function Home() {
       {/* Trending Videos */}
       <TrendingVideos />
 
-      {/* Feature Posts */}
-      <FeaturePosts />
+      {/* Editors Choice */}
+      <EditorsChoice />
     </>
   );
 }

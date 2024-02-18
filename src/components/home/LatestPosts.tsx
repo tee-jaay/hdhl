@@ -40,7 +40,7 @@ const latestPosts = [
 const LatestPosts = () => {
     return (
         <section className="flex mx-auto" style={{ width: "1120px" }}>
-            <div className="flex-5">
+            <div className="flex-1">
                 <SectionHeading color={"text-[#000000]"} text={"Latest Posts"} />
                 <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url("https://picsum.photos/1980/1100")`, height: '500px' }}>
                     <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full`}>
@@ -58,13 +58,15 @@ const LatestPosts = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-2">
                 <button className="flex ml-auto text-sm capitalize py-2 px-4 text-white bg-black hover:bg-[#4ce5a2] transition ease-in-out duration-300">view all</button>
                 <div className="space-y-6 p-8">
                     {latestPosts && latestPosts.map((post, _i) => (
                         <div className="flex space-x-3" key={post.slug}>
                             <div className="flex-1/5">
-                                <Image className="rounded-full" src={post.image} alt="" height={100} width={100} />
+                                <div className="w-24 h-24">
+                                    <Image className="rounded-full" src={post.image} alt="" height={100} width={100} />
+                                </div>
                             </div>
                             <div className="4/5">
                                 <CategoryNameSlug color={"text-[#919191]"} name={post.category} slug={post.categorySlug} />

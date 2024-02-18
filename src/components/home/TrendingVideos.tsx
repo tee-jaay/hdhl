@@ -68,10 +68,10 @@ const TrendingVideos = () => {
             <div className="mx-auto" style={{ width: "1120px" }}>
                 <SectionHeading color={"text-[#FFFFFF]"} text={"Trending Videos"} />
                 <div className="flex space-x-8">
-                    <div className="youtube-video flex-5">
+                    <div className="youtube_video flex-1">
                         <YouTube videoId={videoId} opts={opts} onReady={onPlayerReady} />
                     </div>
-                    <div className="flex-1 space-px-8 space-y-8">
+                    <div className="youtube_playlist flex-2 space-px-8 space-y-8">
                         {youtubePlayist && youtubePlayist.map((item, i) => (
                             <div key={i} className="flex space-x-8 cursor-pointer">
                                 <div className="flex-1">
