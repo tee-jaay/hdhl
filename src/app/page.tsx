@@ -1,4 +1,3 @@
-import Sidebar from "@/components/blog/sidebar/Sidebar";
 import Hero from "@/components/home/Hero";
 import Carousel from "@/components/home/Carousel";
 import LatestPosts from "@/components/home/LatestPosts";
