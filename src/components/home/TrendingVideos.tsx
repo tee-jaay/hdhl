@@ -19,7 +19,7 @@ const opts: YouTubeProps['opts'] = {
 const TrendingVideos = () => {
     return (
         <section className="py-16 bg-gradient-to-b from-[#161b2a] to-black">
-            <div className="mx-auto" style={{ width: '1200px' }}>
+            <div className="mx-auto" style={{ width: "1120px" }}>
                 <SectionHeading color={"text-[#FFFFFF]"} text={"Trending Videos"} />
                 <div className="flex">
                     <div className="youtube-video flex-3/5">
