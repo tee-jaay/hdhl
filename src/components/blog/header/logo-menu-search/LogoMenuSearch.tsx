@@ -1,10 +1,10 @@
-import Logo from './logo/Logo';
-import MainMenu from './main-menu/MainMenu';
-import SearchOptions from './search-options/SearchOptions';
+import Logo from "./logo/Logo";
+import MainMenu from "./main-menu/MainMenu";
+import SearchOptions from "./search-options/SearchOptions";
 
 const LogoMenuSearch = () => {
     return (
-        <div className="logo_menu_search flex mx-auto" style={{ width: '1200px' }}>
+        <div className="logo_menu_search flex mx-auto" style={{ width: "1120px" }}>
             <Logo />
             <MainMenu />
             <SearchOptions />
