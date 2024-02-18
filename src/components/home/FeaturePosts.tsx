@@ -2,7 +2,7 @@ import React from 'react'
 
 const FeaturePosts = () => {
     return (
-        <div>Feature Posts</div>
+        <section>Feature Posts</section>
     )
 }
 

@@ -4,6 +4,7 @@ import PublishMonthDateYear from "../common/PublishMonthDateYear";
 import CommentsCount from "../common/CommentsCount";
 import Image from "next/image";
 import CategoryNameSlug from "../common/CategoryNameSlug";
+import SectionHeading from "../common/SectionHeading";
 
 const latestPosts = [
     {
@@ -40,8 +41,8 @@ const LatestPosts = () => {
     return (
         <section className="flex mx-auto" style={{ width: '1200px' }}>
             <div className="flex-3/5 flex-grow ">
-                <h2 className="text-3xl font-semibold">Latest Posts</h2>
-                <div className="hero_left flex-1 bg-no-repeat bg-center mt-6" style={{ backgroundImage: `url("https://picsum.photos/1980/1100")`, height: '500px' }}>
+                <SectionHeading color={"text-[#000000]"} text={"Latest Posts"} />
+                <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url("https://picsum.photos/1980/1100")`, height: '500px' }}>
                     <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full`}>
                         <Link href={"/blog/categories/category-slug"} title="lifestyle">
                             <span className="category bg-[#AE0332] text-white px-3 py-1 max-w-max">lifestyle</span>
@@ -68,7 +69,7 @@ const LatestPosts = () => {
                             <div className="4/5">
                                 <CategoryNameSlug color={"text-[#919191]"} name={post.category} slug={post.categorySlug} />
                                 <h4 className="mt-2">
-                                    <Link title={post.title} href={`/blog/${post.slug}`}>{post.title}</Link>
+                                    <Link className="text-black hover:text-[#4ce5a2] transition ease-in-out duration-300" title={post.title} href={`/blog/${post.slug}`}>{post.title}</Link>
                                 </h4>
                             </div>
                         </div>

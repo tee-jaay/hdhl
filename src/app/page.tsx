@@ -26,12 +26,6 @@ export default function Home() {
 
       {/* Feature Posts */}
       <FeaturePosts />
-
-      <div className="flex flex-row">
-        <aside className="flex-none w-1/4 bg-yellow-300">
-          <Sidebar />
-        </aside>
-      </div>
     </>
   );
 }
