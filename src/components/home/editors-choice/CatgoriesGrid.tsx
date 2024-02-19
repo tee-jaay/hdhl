@@ -59,7 +59,7 @@ const CatgoriesGrid = () => {
       <h4 className="text-2xl mb-7">Categories</h4>
       <div className="categories_block grid grid-cols-2 gap-x-10 gap-y-4">
         {categories && categories.map((category, _i) => (
-          <Link key={category.id} href={`/blog/categories/${category.slug}`} title={category.name}>
+          <Link key={category.id} href={`/categories/${category.slug}`} title={category.name}>
             <div className="p-10 w-40 h-32 flex flex-col items-center justify-center bg-no-repeat" style={{ backgroundImage: `url(${category.imgSrc})` }}>
               <div className="text-white text-3xl font-extrabold">{category.count}</div>
               <div className="text-white uppercase text-xl font-normal tracking-wider">{category.name}</div>

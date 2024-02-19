@@ -30,7 +30,7 @@ const posts: Post[] = [
     title: "10 Tips for a Healthy Diet",
     slug: "10-tips-for-a-healthy-diet",
     excerpt: "Learn how to make simple changes to your diet to improve your overall health and well-being.",
-    authorSlug: "/blog/author/Dr. Jane Smith",
+    authorSlug: "/author/author-name",
     authorName: "Dr. Jane Smith",
     authorImg: "https://i.pravatar.cc/80?q=1",
     date: "March 26, 2022"
@@ -45,7 +45,7 @@ const posts: Post[] = [
     title: "Coping with Stress and Anxiety",
     slug: "coping-with-stress-and-anxiety",
     excerpt: "Discover effective strategies for managing stress and anxiety in your daily life.",
-    authorSlug: "/blog/author/Dr. John Doe",
+    authorSlug: "/author/author-name",
     authorName: "Dr. John Doe",
     authorImg: "https://i.pravatar.cc/80?q=2",
     date: "March 26, 2022"
@@ -60,7 +60,7 @@ const posts: Post[] = [
     title: "Beginner's Guide to Home Workouts",
     slug: "beginners-guide-to-home-workouts",
     excerpt: "Get started with a simple home workout routine that requires minimal equipment.",
-    authorSlug: "/blog/author/Sarah Johnson",
+    authorSlug: "/author/author-name",
     authorName: "Sarah Johnson",
     authorImg: "https://i.pravatar.cc/80?q=3",
     date: "March 26, 2022"
@@ -75,7 +75,7 @@ const posts: Post[] = [
     title: "Creating a Balanced Lifestyle",
     slug: "creating-a-balanced-lifestyle",
     excerpt: "Learn how to achieve a healthy balance between work, personal life, and self-care.",
-    authorSlug: "/blog/author/Michael Jones",
+    authorSlug: "/author/author-name",
     authorName: "Michael Jones",
     authorImg: "https://i.pravatar.cc/80?q=4",
     date: "March 26, 2022"
@@ -90,7 +90,7 @@ const posts: Post[] = [
     title: "Exploring Natural Remedies",
     slug: "exploring-natural-remedies",
     excerpt: "Discover the benefits and uses of natural remedies for common ailments.",
-    authorSlug: "/blog/author/Dr. Susan Green",
+    authorSlug: "/author/author-name",
     authorName: "Dr. Susan Green",
     authorImg: "https://i.pravatar.cc/80?q=5",
     date: "March 26, 2022"
@@ -105,7 +105,7 @@ const posts: Post[] = [
     title: "Exploring Natural Remedies",
     slug: "exploring-natural-remedies",
     excerpt: "Probiotics and Immunity: Strengthening Your Body’s Defense System",
-    authorSlug: "/blog/author/Dr-Susan-Green",
+    authorSlug: "/author/author-name",
     authorName: "Dr. Susan Green",
     authorImg: "https://i.pravatar.cc/80?q=6",
     date: "March 26, 2022"
@@ -126,7 +126,7 @@ const PostsList = () => {
           <div className="post_info flex-1 space-y-2 py-4">
             <CategoryBoxBg bgColor={post.categoryBgColor} name={post.categoryName} slug={post.categorySlug} />
             <div>
-              <Link href={`/blog/${post.slug}`}>
+              <Link href={post.slug}>
                 <h4 className="text-2xl text-black hover:text-[#4ce5a2] transition ease-in-out duration-300">{post.title}</h4>
               </Link>
             </div>

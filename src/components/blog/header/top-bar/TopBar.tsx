@@ -9,7 +9,7 @@ const TopBar = () => {
                     <span className="text-sm text-white uppercase">latest article</span>
                     <span className="text-sm text-white mx-3">|</span>
                     <span className="text-sm text-white font-normal">
-                        <Link href={"/blog/magni-accusamus-voluptate-odit-adipisci"} className="text-gray-300 hover:text-white transition ease-in-out duration-300">
+                        <Link href={"/magni-accusamus-voluptate-odit-adipisci"} className="text-gray-300 hover:text-white transition ease-in-out duration-300">
                             Magni accusamus voluptate odit adipisci
                         </Link>
                     </span>
