@@ -2,40 +2,8 @@ import Link from "next/link";
 import AuthorAvatarNameLink from "../common/AuthorAvatarNameLink";
 import PublishMonthDateYear from "../common/PublishMonthDateYear";
 import CommentsCount from "../common/CommentsCount";
-import Image from "next/image";
-import CategoryNameSlug from "../common/CategoryNameSlug";
 import SectionHeading from "../common/SectionHeading";
-
-const latestPosts = [
-    {
-        title: "Lorem ipsum dolor sit amet",
-        slug: "lorem-ipsum-dolor-sit-amet",
-        category: "Technology",
-        categorySlug: "technology",
-        image: "https://picsum.photos/100?random=1",
-    },
-    {
-        title: "Consectetur adipiscing elit",
-        slug: "consectetur-adipiscing-elit",
-        category: "Travel",
-        categorySlug: "travel",
-        image: "https://picsum.photos/100?random=2",
-    },
-    {
-        title: "Sed do eiusmod tempor",
-        slug: "sed-do-eiusmod-tempor-incididunt",
-        category: "Politics",
-        categorySlug: "politics",
-        image: "https://picsum.photos/100?random=3",
-    },
-    {
-        title: "Ut labore et dolore",
-        slug: "ut-labore-et-dolore-magna-aliqua",
-        category: "Sports",
-        categorySlug: "sports",
-        image: "https://picsum.photos/100?random=4",
-    },
-];
+import RoundImageCategoryTitle from "../common/RoundImageCategoryTitle";
 
 const LatestPosts = () => {
     return (
@@ -58,24 +26,10 @@ const LatestPosts = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex-2">
+            <div className="flex-1/3">
                 <button className="flex ml-auto text-sm capitalize py-2 px-4 text-white bg-black hover:bg-[#4ce5a2] transition ease-in-out duration-300">view all</button>
-                <div className="space-y-6 p-8">
-                    {latestPosts && latestPosts.map((post, _i) => (
-                        <div className="flex space-x-3" key={post.slug}>
-                            <div className="flex-1/5">
-                                <div className="w-24 h-24">
-                                    <Image className="rounded-full" src={post.image} alt="" height={100} width={100} />
-                                </div>
-                            </div>
-                            <div className="4/5">
-                                <CategoryNameSlug color={"text-[#919191]"} name={post.category} slug={post.categorySlug} />
-                                <h4 className="mt-2">
-                                    <Link className="text-black hover:text-[#4ce5a2] transition ease-in-out duration-300" title={post.title} href={`/blog/${post.slug}`}>{post.title}</Link>
-                                </h4>
-                            </div>
-                        </div>
-                    ))}
+                <div className=" ml-8 mt-6">
+                    <RoundImageCategoryTitle />
                 </div>
             </div>
         </section>
