@@ -1,6 +1,7 @@
 import SectionHeading from "../common/SectionHeading";
 import PostsList from "./editors-choice/PostsList";
 import CatgoriesGrid from "./editors-choice/CatgoriesGrid";
+import RoundImageCategoryTitle from "../common/RoundImageCategoryTitle";
 
 const EditorsChoice = () => {
     return (
@@ -15,7 +16,7 @@ const EditorsChoice = () => {
                         <CatgoriesGrid />
                         <div className="most_reads">
                             <h4 className="text-2xl my-7">Most Reads</h4>
-
+                            <RoundImageCategoryTitle />
                         </div>
                         <div className="follow_us">
                             <h4 className="text-2xl my-7">Follow Us</h4>
