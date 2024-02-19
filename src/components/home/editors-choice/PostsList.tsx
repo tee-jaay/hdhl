@@ -95,6 +95,21 @@ const posts: Post[] = [
     authorImg: "https://i.pravatar.cc/80?q=5",
     date: "March 26, 2022"
   },
+  {
+    id: 6,
+    imgAlt: "Probiotics Medicine",
+    imgSrc: "https://picsum.photos/220/220?q=5",
+    categoryName: "Probiotics Medicine",
+    categorySlug: "Probiotics-medicine",
+    categoryBgColor: "bg-[#218c74]",
+    title: "Exploring Natural Remedies",
+    slug: "exploring-natural-remedies",
+    excerpt: "Probiotics and Immunity: Strengthening Your Body’s Defense System",
+    authorSlug: "/blog/author/Dr-Susan-Green",
+    authorName: "Dr. Susan Green",
+    authorImg: "https://i.pravatar.cc/80?q=6",
+    date: "March 26, 2022"
+  },
 ];
 
 const PostsList = () => {

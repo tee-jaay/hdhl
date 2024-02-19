@@ -2,6 +2,7 @@ import SectionHeading from "../common/SectionHeading";
 import PostsList from "./editors-choice/PostsList";
 import CatgoriesGrid from "./editors-choice/CatgoriesGrid";
 import RoundImageCategoryTitle from "../common/RoundImageCategoryTitle";
+import FollowUs from "./editors-choice/FollowUs";
 
 const EditorsChoice = () => {
     return (
@@ -20,6 +21,7 @@ const EditorsChoice = () => {
                         </div>
                         <div className="follow_us">
                             <h4 className="text-2xl my-7">Follow Us</h4>
+                            <FollowUs />
                         </div>
                     </div>
                 </div>
