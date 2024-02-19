@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import YouTube, { YouTubeProps } from "react-youtube";
 import SectionHeading from "../common/SectionHeading";
