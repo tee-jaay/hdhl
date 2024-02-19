@@ -49,16 +49,23 @@ const FooterTop = () => {
                     <div className="flex-1 quick_links">
                         <h4 className="capitalize text-start font-semibold">quick links</h4>
                         <div className="mt-4 flex flex-col space-y-1">
-                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>ipsum</Link></span>
-                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>dolor</Link></span>
-                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>sit</Link></span>
-                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>amet</Link></span>
-                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>consectetur</Link></span>
-                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>adipisicing</Link></span>
+                            <span><Link className="capitalize font-light text-sm text-gray-100" href={"/"}>ipsum</Link></span>
+                            <span><Link className="capitalize font-light text-sm text-gray-100" href={"/"}>dolor</Link></span>
+                            <span><Link className="capitalize font-light text-sm text-gray-100" href={"/"}>sit</Link></span>
+                            <span><Link className="capitalize font-light text-sm text-gray-100" href={"/"}>amet</Link></span>
+                            <span><Link className="capitalize font-light text-sm text-gray-100" href={"/"}>consectetur</Link></span>
+                            <span><Link className="capitalize font-light text-sm text-gray-100" href={"/"}>adipisicing</Link></span>
                         </div>
                     </div>
                     <div className="flex-1 newsletter_subscribe">
-                        <h4 className="capitalize text-start">newsletter</h4>
+                        <h4 className="capitalize text-start font-semibold">newsletter</h4>
+                        <div className="flex flex-col mt-4">
+                            <h5 className="font-thin">Subscribe to our mailing list to get the new posts</h5>
+                            <div className="mt-3">
+                                <input className="bg-[#333] text-white py-1 px-2" type="email" placeholder="Enter Your Email" />
+                                <button className="mt-4 bg-[#4DCA93] text-white py-1 px-4 font-light hover:bg-[#333] ease-in-out transition duration-300">Subscribe</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
