@@ -3,8 +3,8 @@ import MainMenuLink from '@/components/common/MainMenuLink';
 const mainMenuLinks = [
     { path: "/", text: "Home" },
     { path: "/blog", text: "Blog" },
-    { path: "/blog/categories", text: "Categories" },
-    { path: "/blog/tags", text: "Tags" },
+    { path: "/categories", text: "Categories" },
+    { path: "/tags", text: "Tags" },
     { path: "/contact-us", text: "Contact Us" },
     { path: "/about", text: "About" },
 ];
