@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import YouTube, { YouTubeProps } from "react-youtube";
 import SectionHeading from "../common/SectionHeading";
@@ -13,7 +13,7 @@ const opts: YouTubeProps['opts'] = {
     height: '420',
     width: '800',
     playerVars: {
-        autoplay: 0,
+        autoplay: 1,
     },
 };
 
