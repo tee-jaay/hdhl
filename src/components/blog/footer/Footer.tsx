@@ -6,7 +6,9 @@ const Footer = () => {
         <section className="bg-[#161B2B]">
             <footer className="mx-auto" style={{ width: "1120px" }}>
                 <FooterTop />
-                <FooterBottom />
+                <div className="border-t-2 border-gray-700">
+                    <FooterBottom />
+                </div>
             </footer>
         </section>
     )
