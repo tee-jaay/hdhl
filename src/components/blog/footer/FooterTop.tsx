@@ -47,7 +47,15 @@ const FooterTop = () => {
                         </div>
                     </div>
                     <div className="flex-1 quick_links">
-                        <h4 className="capitalize text-start">quick links</h4>
+                        <h4 className="capitalize text-start font-semibold">quick links</h4>
+                        <div className="mt-4 flex flex-col space-y-1">
+                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>ipsum</Link></span>
+                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>dolor</Link></span>
+                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>sit</Link></span>
+                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>amet</Link></span>
+                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>consectetur</Link></span>
+                            <span><Link className="capitalize text-sm text-gray-100" href={"/"}>adipisicing</Link></span>
+                        </div>
                     </div>
                     <div className="flex-1 newsletter_subscribe">
                         <h4 className="capitalize text-start">newsletter</h4>
