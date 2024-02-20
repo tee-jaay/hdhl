@@ -1,12 +1,12 @@
 export async function GET(request: Request) {
-    // Send the query to the GraphQL API
-    const response = await fetch(`${process.env.GRAPHQL_URL}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            query: `
+  // Send the query to the GraphQL API
+  const response = await fetch(`${process.env.GRAPHQL_URL}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `
             query FeaturedPosts {
                 posts(where: {categoryName: "Featured"}) {
                   nodes {
@@ -38,13 +38,13 @@ export async function GET(request: Request) {
                 }
             }
         `,
-        }),
-    });
+    }),
+  });
 
-    // Parse the response body as JSON
-    const data = await response.json();
-    const { nodes } = data.data.posts;
+  // Parse the response body as JSON
+  const data = await response.json();
+  const { nodes } = data?.data?.posts;
 
-    // Return the posts from the GraphQL API
-    return new Response(JSON.stringify(nodes));
+  // Return the posts from the GraphQL API
+  return new Response(JSON.stringify(nodes));
 }
