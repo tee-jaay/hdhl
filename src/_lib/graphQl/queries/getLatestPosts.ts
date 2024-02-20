@@ -1,6 +1,8 @@
-const getFeaturedPostsQuery = (): string => `
-query FeaturedPosts {
-    posts(where: {categoryName: "Featured"}) {
+const getLatestPosts = (): string => `query GetLatestPosts {
+    posts(
+      where: {status: PUBLISH, orderby: {field: DATE, order: DESC}}
+      first: 5
+    ) {
       nodes {
         title
         slug
@@ -28,6 +30,5 @@ query FeaturedPosts {
         date
       }
     }
-}
-`
-export default getFeaturedPostsQuery;
+  }`
+export default getLatestPosts;
