@@ -6,7 +6,9 @@ import CategoryBoxBg from "../common/CategoryBoxBg";
 import formatDate from "@/_helpers/formatPostDate";
 
 async function getData() {
-    const res = await fetch(`${process.env.APP_URL}/api/pages/home`)
+    const res = await fetch(`${process.env.APP_URL}/api/pages/home`, {
+        timeout: 10000
+    })
 
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
