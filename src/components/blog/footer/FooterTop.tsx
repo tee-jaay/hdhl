@@ -62,7 +62,7 @@ const FooterTop = () => {
                         <div className="flex flex-col mt-4">
                             <h5 className="font-thin">Subscribe to our mailing list to get the new posts</h5>
                             <div className="mt-3">
-                                <input className="bg-[#333] text-white py-1 px-2" type="email" placeholder="Enter Your Email" />
+                                <input className="bg-[#333] text-white py-1 px-2" type="email" placeholder="Enter Your Email" required />
                                 <button className="mt-4 bg-[#4DCA93] text-white py-1 px-4 font-light hover:bg-[#333] ease-in-out transition duration-300">Subscribe</button>
                             </div>
                         </div>
