@@ -10,7 +10,7 @@ export async function GET(request: Request) {
             query FeaturedPosts {
                 posts(where: {categoryName: "Featured"}) {
                   nodes {
-                    title(format: RENDERED)
+                    title
                     slug
                     featuredImage {
                       node {
