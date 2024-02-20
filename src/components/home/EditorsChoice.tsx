@@ -3,15 +3,52 @@ import PostsList from "./editors-choice/PostsList";
 import CatgoriesGrid from "./editors-choice/CatgoriesGrid";
 import RoundImageCategoryTitle from "../common/RoundImageCategoryTitle";
 import FollowUs from "./editors-choice/FollowUs";
+import getPostsByCategoryQuery from "@/_lib/graphQl/queries/getFeaturedPostsQuery";
 
-const EditorsChoice = () => {
+const editorsChoice = async () => {
+    // Send the query to the GraphQL API
+    const response = await fetch(`${process.env.GRAPHQL_URL}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            query: getPostsByCategoryQuery(),
+            variables: {
+                category: "Editor's Choice",
+            },
+        }),
+    });
+
+    // Parse the response body as JSON
+    const data = await response.json();
+    const { nodes } = data?.data?.posts;
+
+    // Return the posts from the GraphQL API
+    return new Response(JSON.stringify(nodes));
+}
+
+async function getData() {
+    const res = await editorsChoice();
+
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data')
+    }
+    const data = res.json();
+    return data;
+}
+
+const EditorsChoice = async () => {
+    const data = await getData();
+
     return (
         <section className="mx-auto py-16 bg-[#FBF8F5]">
             <div className="mx-auto" style={{ width: "1120px" }}>
                 <div className="flex space-x-8 align-baseline">
                     <div className="flex-2/3">
                         <SectionHeading text="Editor's Choice" color="text-[#000000]" />
-                        <PostsList />
+                        <PostsList posts={data} />
                     </div>
                     <div className="flex-1/3">
                         <CatgoriesGrid />
