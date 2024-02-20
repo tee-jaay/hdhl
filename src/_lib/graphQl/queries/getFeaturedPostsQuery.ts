@@ -1,9 +1,10 @@
-const getFeaturedPostsQuery = (): string => `
-query FeaturedPosts {
-    posts(where: {categoryName: "Featured"}) {
+const getPostsByCategoryQuery = (): string => `
+query PostsByCategory($category: String!) {
+    posts(where: {categoryName: $category}) {
       nodes {
         title
         slug
+        excerpt
         featuredImage {
           node {
             sourceUrl(size: LARGE)
@@ -29,5 +30,6 @@ query FeaturedPosts {
       }
     }
 }
-`
-export default getFeaturedPostsQuery;
+`;
+
+export default getPostsByCategoryQuery;

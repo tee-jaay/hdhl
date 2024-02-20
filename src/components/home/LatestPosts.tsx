@@ -3,7 +3,6 @@ import AuthorAvatarNameLink from "../common/AuthorAvatarNameLink";
 import PublishMonthDateYear from "../common/PublishMonthDateYear";
 import CommentsCount from "../common/CommentsCount";
 import SectionHeading from "../common/SectionHeading";
-import RoundImageCategoryTitle from "../common/RoundImageCategoryTitle";
 import getLatestPosts from "@/_lib/graphQl/queries/getLatestPosts";
 import CategoryBoxBg from "../common/CategoryBoxBg";
 import formatDate from "@/_helpers/formatPostDate";

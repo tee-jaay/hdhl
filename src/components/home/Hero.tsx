@@ -4,7 +4,7 @@ import PublishMonthDateYear from "../common/PublishMonthDateYear";
 import CommentsCount from "../common/CommentsCount";
 import CategoryBoxBg from "../common/CategoryBoxBg";
 import formatDate from "@/_helpers/formatPostDate";
-import getFeaturedPostsQuery from "@/_lib/graphQl/queries/getFeaturedPostsQuery";
+import getPostsByCategoryQuery from "@/_lib/graphQl/queries/getFeaturedPostsQuery";
 
 const featuredPosts = async () => {
     // Send the query to the GraphQL API
@@ -14,7 +14,10 @@ const featuredPosts = async () => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            query: getFeaturedPostsQuery(),
+            query: getPostsByCategoryQuery(),
+            variables: {
+                category: "Featured",
+            },
         }),
     });
 
