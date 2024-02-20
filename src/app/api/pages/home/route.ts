@@ -1,6 +1,6 @@
 export async function GET(request: Request) {
     // Send the query to the GraphQL API
-    const response = await fetch("https://healthydiethappylife.com/12ecf45b-4e5c-4149-9f76-bdb3d7a682b4", {
+    const response = await fetch(`${process.env.GRAPHQL_URL}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
