@@ -4,8 +4,9 @@ import PublishMonthDateYear from "../common/PublishMonthDateYear";
 import CommentsCount from "../common/CommentsCount";
 import CategoryBoxBg from "../common/CategoryBoxBg";
 import formatDate from "@/_helpers/formatPostDate";
+import getFeaturedPostsQuery from "@/_lib/graphQl/queries/getFeaturedPostsQuery";
 
-const getFeaturedPostsQuery = async () => {
+const featuredPosts = async () => {
     // Send the query to the GraphQL API
     const response = await fetch(`${process.env.GRAPHQL_URL}`, {
         method: "POST",
@@ -13,38 +14,7 @@ const getFeaturedPostsQuery = async () => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            query: `
-                  query FeaturedPosts {
-                      posts(where: {categoryName: "Featured"}) {
-                        nodes {
-                          title
-                          slug
-                          featuredImage {
-                            node {
-                              sourceUrl(size: LARGE)
-                            }
-                          }
-                          author {
-                            node {
-                              name
-                              slug
-                              avatar {
-                                url
-                              }
-                            }
-                          }
-                          categories {
-                            nodes {
-                              name
-                              slug
-                            }
-                          }
-                          commentCount
-                          date
-                        }
-                      }
-                  }
-              `,
+            query: getFeaturedPostsQuery(),
         }),
     });
 
@@ -57,7 +27,7 @@ const getFeaturedPostsQuery = async () => {
 }
 
 async function getData() {
-    const res = await getFeaturedPostsQuery();
+    const res = await featuredPosts();
 
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
