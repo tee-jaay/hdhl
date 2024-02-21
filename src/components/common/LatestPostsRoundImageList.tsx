@@ -26,7 +26,7 @@ const LatestPostsRoundImageList = ({ posts }: { posts: Post[] }) => {
     return (
         <div className="space-y-6">
             {posts && posts.map((post, _i) => (
-                <div className="flex space-x-3" key={post.slug}>
+                <div key={post.id} className="flex space-x-3">
                     <div className="flex-1/5">
                         <div className="w-24 h-24">
                             <Image
@@ -44,7 +44,11 @@ const LatestPostsRoundImageList = ({ posts }: { posts: Post[] }) => {
                             slug={post?.categories?.nodes[0]?.slug ?? ""}
                         />
                         <h4 className="mt-2">
-                            <Link className="text-black hover:text-[#4ce5a2] transition ease-in-out duration-300" title={post?.title} href={post?.slug}>{post?.title}</Link>
+                            <Link title={post?.title} href={post?.slug}>
+                                <div className="text-black hover:text-[#4ce5a2] transition ease-in-out duration-300">
+                                    {post?.title}
+                                </div>
+                            </Link>
                         </h4>
                     </div>
                 </div>

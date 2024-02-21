@@ -6,6 +6,7 @@ const getLatestPosts = (): string => `query GetLatestPosts {
       nodes {
         title
         slug
+        id
         featuredImage {
           node {
             sourceUrl(size: LARGE)
