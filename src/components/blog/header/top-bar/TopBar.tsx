@@ -4,7 +4,7 @@ import SocialsLinksIcons from '@/components/common/SocialsLinksIcons';
 const TopBar = () => {
     return (
         <section className="topbar bg-[#222] py-2">
-            <div className="flex justify-between mx-auto" style={{ width: "1120px" }}>
+            <div className="flex justify-between mx-auto" style={{ width: "1024px" }}>
                 <div className="latest_news flex-1">
                     <span className="text-sm text-white uppercase">latest article</span>
                     <span className="text-sm text-white mx-3">|</span>

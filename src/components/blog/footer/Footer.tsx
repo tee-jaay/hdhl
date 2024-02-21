@@ -4,7 +4,7 @@ import FooterBottom from "./FooterBottom"
 const Footer = () => {
     return (
         <section className="bg-[#161B2B]">
-            <footer className="mx-auto" style={{ width: "1120px" }}>
+            <footer className="mx-auto" style={{ width: "1024px" }}>
                 <div className="pt-14 pb-8">
                     <FooterTop />
                 </div>

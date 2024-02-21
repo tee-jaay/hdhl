@@ -47,14 +47,14 @@ const CatgoriesGrid = async () => {
   const categories: Category[] = await getData();
 
   return (
-    <div className="categories">
+    <div className="categories w-full">
       <h4 className="text-2xl mb-7">Categories</h4>
-      <div className="categories_block grid grid-cols-2 gap-x-10 gap-y-4">
+      <div className="categories_block grid grid-cols-2 gap-x-8 gap-y-8">
         {categories && categories.map((category, i) => (
           <Link key={category.id} href={`/categories/${category.slug}`} title={category.name}>
-            <div className="p-10 w-40 h-32 flex flex-col items-center justify-center bg-no-repeat" style={{ backgroundImage: `url(https://picsum.photos/160/128?q=${i})` }}>
+            <div className="w-36 h-32 px-1 flex flex-col justify-center text-center bg-no-repeat" style={{ backgroundImage: `url(https://picsum.photos/160/128?q=${i})` }}>
               <div className="text-white text-3xl font-extrabold">{category.count}</div>
-              <div className="text-white uppercase text-sm text-center font-normal tracking-wider">{category.name}</div>
+              <div className="text-white uppercase text-sm font-normal tracking-wider">{category.name}</div>
             </div>
           </Link>
         ))}

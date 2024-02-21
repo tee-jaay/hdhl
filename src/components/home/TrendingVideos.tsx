@@ -11,7 +11,6 @@ const onPlayerReady: YouTubeProps['onReady'] = (event) => {
 
 const opts: YouTubeProps['opts'] = {
     height: '420',
-    width: '800',
     playerVars: {
         autoplay: 1,
     },
@@ -65,20 +64,20 @@ const TrendingVideos = () => {
 
     return (
         <section className="py-16 bg-gradient-to-b from-[#161b2a] to-black">
-            <div className="mx-auto" style={{ width: "1120px" }}>
+            <div className="mx-auto " style={{ width: "1024px" }}>
                 <SectionHeading color={"text-[#FFFFFF]"} text={"Trending Videos"} />
                 <div className="flex space-x-8">
-                    <div className="youtube_video flex-1">
+                    <div className="youtube_video">
                         <YouTube videoId={videoId} opts={opts} onReady={onPlayerReady} />
                     </div>
-                    <div className="youtube_playlist flex-2 space-px-8 space-y-8">
+                    <div className="youtube_playlist space-y-8 ml-auto ">
                         {youtubePlayist && youtubePlayist.map((item, i) => (
                             <div key={i} className="flex space-x-8 cursor-pointer">
                                 <div className="flex-1">
                                     <CategoryNameSlug color={"text-[#FFFFFF]"} name={item.categoryName} slug={item.categorySlug} />
                                     <h4 className="text-[#FFFFFF] font-semibold">{limitString(item.title, 40)}</h4>
                                 </div>
-                                <div className="flex-4">
+                                <div className="w-20">
                                     <div onClick={() => setVideoId(item.videoId)}>
                                         <Image alt={item.imgAlt} src={item.imgSrc} width={80} height={80} />
                                     </div>

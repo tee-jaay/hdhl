@@ -2,7 +2,7 @@ import CarouselItem from './carousel/CarouselItem';
 
 const Carousel = () => {
     return (
-        <section className="carousel flex py-16 mx-auto" style={{ width: '1120px' }}>
+        <section className="carousel flex py-16 mx-auto" style={{ width: '1024px' }}>
             <div className="navigation flex flex-1/5 items-center space-x-4 mr-8">
                 <div className="navigation_left rounded-full cursor-pointer bg-gray-200 p-3 hover:bg-[#4ce5a2] hover:text-white transition ease-in-out duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">

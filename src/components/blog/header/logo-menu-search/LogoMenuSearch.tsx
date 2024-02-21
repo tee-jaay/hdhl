@@ -4,7 +4,7 @@ import SearchOptions from "./search-options/SearchOptions";
 
 const LogoMenuSearch = () => {
     return (
-        <div className="logo_menu_search flex mx-auto" style={{ width: "1120px" }}>
+        <div className="logo_menu_search flex mx-auto" style={{ width: "1024px" }}>
             <Logo />
             <MainMenu />
             <SearchOptions />

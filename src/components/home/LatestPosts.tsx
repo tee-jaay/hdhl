@@ -44,7 +44,7 @@ const LatestPosts = async () => {
     const postsWithoutFirst = data.slice(1);
 
     return (
-        <section className="mx-auto" style={{ width: "1120px" }}>
+        <section className="mx-auto" style={{ width: "1024px" }}>
             <div className="flex space-x-8 ">
                 <div className="flex-1">
                     <SectionHeading color={"text-[#000000]"} text={"Latest Posts"} />
