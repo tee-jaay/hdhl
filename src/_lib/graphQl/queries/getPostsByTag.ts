@@ -4,6 +4,7 @@ const getPostsByTag = (): string => `
       nodes {
         title
         slug
+        id
         excerpt
         featuredImage {
           node {

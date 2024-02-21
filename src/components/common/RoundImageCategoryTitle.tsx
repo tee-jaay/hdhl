@@ -50,7 +50,7 @@ const RoundImageCategoryTitle = () => {
     return (
         <div className="space-y-6">
             {posts && posts.map((post, _i) => (
-                <div className="flex space-x-3" key={post.slug}>
+                <div key={post.id} className="flex space-x-3">
                     <div className="flex-1/5">
                         <div className="w-24 h-24">
                             <Image className="rounded-full" src={post.image} alt="" height={100} width={100} />
