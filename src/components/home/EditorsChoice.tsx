@@ -46,11 +46,11 @@ const EditorsChoice = async () => {
         <section className="mx-auto py-16 bg-[#FBF8F5]">
             <div className="mx-auto" style={{ width: "1120px" }}>
                 <div className="flex space-x-8 align-baseline">
-                    <div className="flex-2/3">
+                    <div className="flex-1">
                         <SectionHeading text="Editor's Choice" color="text-[#000000]" />
                         <PostsList posts={data} />
                     </div>
-                    <div className="flex-1/3">
+                    <div className="w-80">
                         <CatgoriesGrid />
                         <div className="most_reads">
                             <h4 className="text-2xl my-7">Most Reads</h4>

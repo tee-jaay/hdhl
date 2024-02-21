@@ -16,7 +16,7 @@ export default function BlogLayout({
       <div className="flex-1 bg-teal-300">
         {children}
       </div>
-      <div className="flex-2 bg-fuchsia-400">
+      <div className="w-80 bg-fuchsia-400">
         <Sidebar />
       </div>
     </div>
