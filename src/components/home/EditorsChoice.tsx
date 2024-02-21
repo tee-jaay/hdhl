@@ -53,11 +53,11 @@ const EditorsChoice = async () => {
                     <div className="w-80">
                         <CatgoriesGrid />
                         <div className="most_reads">
-                            <h4 className="text-2xl my-7">Most Reads</h4>
+                            <h4 className="text-2xl mt-10 mb-6">Most Reads</h4>
                             <RoundImageCategoryTitle />
                         </div>
                         <div className="follow_us">
-                            <h4 className="text-2xl my-7">Follow Us</h4>
+                            <h4 className="text-2xl mt-10 my-6">Follow Us</h4>
                             <FollowUs />
                         </div>
                     </div>
