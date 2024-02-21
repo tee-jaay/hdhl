@@ -1,7 +1,40 @@
 import Link from 'next/link';
 import SocialsLinksIcons from '@/components/common/SocialsLinksIcons';
+import getLatestPosts from '@/_lib/graphQl/queries/getLatestPosts';
 
-const TopBar = () => {
+const latestPosts = async () => {
+    // Send the query to the GraphQL API
+    const response = await fetch(`${process.env.GRAPHQL_URL}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            query: getLatestPosts(),
+        }),
+    });
+
+    // Parse the response body as JSON
+    const data = await response.json();
+    const { nodes } = data?.data?.posts;
+
+    // Return the posts from the GraphQL API
+    return new Response(JSON.stringify(nodes));
+}
+
+async function getData() {
+    const res = await latestPosts();
+
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data')
+    }
+    const data = res.json();
+    return data;
+}
+
+const TopBar = async () => {
+    const data = await getData();
     return (
         <section className="topbar bg-[#222] py-2">
             <div className="flex justify-between mx-auto" style={{ width: "1024px" }}>
@@ -9,8 +42,8 @@ const TopBar = () => {
                     <span className="text-sm text-white uppercase">latest article</span>
                     <span className="text-sm text-white mx-3">|</span>
                     <span className="text-sm text-white font-normal">
-                        <Link href={"/magni-accusamus-voluptate-odit-adipisci"} className="text-gray-300 hover:text-white transition ease-in-out duration-300">
-                            Magni accusamus voluptate odit adipisci
+                        <Link href={`/${data[0]?.slug}`} className="text-gray-300 hover:text-white transition ease-in-out duration-300">
+                            {data[0]?.title}
                         </Link>
                     </span>
                 </div>
