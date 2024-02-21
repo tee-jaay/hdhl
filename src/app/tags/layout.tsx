@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Sidebar from "@/components/blog/sidebar/Sidebar";
 
 export const metadata: Metadata = {
-  title: "Healthy Diet Happy Life | Blog",
+  title: "Healthy Diet Happy Life | Tags",
   description: "Nourish Your Body, Flourish Your Life",
 };
 
