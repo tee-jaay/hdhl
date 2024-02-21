@@ -9,7 +9,7 @@ interface carouselItem {
     category: string,
     categorySlug: string,
     title: string,
-    date: string
+    date: string,
 }
 
 const CarouselItem = ({ imgSrc, imgAlt, category, categorySlug, title, date }: carouselItem) => {

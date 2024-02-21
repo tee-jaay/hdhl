@@ -44,7 +44,7 @@ const Footer = async () => {
                     <FooterTop generalSettings={generalSettings} pages={pages} tags={tags} />
                 </div>
                 <div className="border-t-2 border-gray-700">
-                    <FooterBottom />
+                    <FooterBottom generalSettings={generalSettings} />
                 </div>
             </footer>
         </section>
