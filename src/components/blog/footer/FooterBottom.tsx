@@ -4,7 +4,7 @@ const FooterBottom = () => {
     return (
         <div className="flex justify-between py-4 text-gray-200">
             <div className="copyrights text-sm">
-                2024 &copy; All Copyrights Reserved.
+                2024 &copy; Tee Jaay. All Rights Reserved.
             </div>
             <div className="privact_terms_links">
                 <ul className="space-x-4 text-sm">
