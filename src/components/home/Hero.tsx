@@ -4,7 +4,7 @@ import PublishMonthDateYear from "../common/PublishMonthDateYear";
 import CommentsCount from "../common/CommentsCount";
 import CategoryBoxBg from "../common/CategoryBoxBg";
 import formatDate from "@/_helpers/formatPostDate";
-import getPostsByCategoryQuery from "@/_lib/graphQl/queries/getFeaturedPostsQuery";
+import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 
 const featuredPosts = async () => {
     // Send the query to the GraphQL API
@@ -14,9 +14,9 @@ const featuredPosts = async () => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            query: getPostsByCategoryQuery(),
+            query: getPostsByTag(),
             variables: {
-                category: "Featured",
+                tag: "featured",
             },
         }),
     });
@@ -47,7 +47,7 @@ const Hero = async () => {
         <section className="hero flex space-x-6">
             <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})`, height: '580px' }}>
                 <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full`}>
-                    <CategoryBoxBg bgColor={"bg-[#AE0332]"} name={data[0]?.categories?.nodes[1]?.name} slug={data[0]?.categories?.nodes[1]?.slug} />
+                    <CategoryBoxBg bgColor={"bg-[#AE0332]"} name={data[0]?.categories?.nodes[0]?.name} slug={data[0]?.categories?.nodes[0]?.slug} />
                     <Link href={data && data[0]?.slug} title={data && data[0]?.title}>
                         <h1 className="title text-3xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[0]?.title}</h1>
                     </Link>
@@ -60,7 +60,7 @@ const Hero = async () => {
             </div>
             <div className="hero_right flex-1 flex-col ">
                 <div className={`flex flex-col flex-1 h-1/2 py-10 px-6 bg-no-repeat bg-center justify-end`} style={{ backgroundImage: `url(${data[1]?.featuredImage?.node?.sourceUrl})` }}>
-                    <CategoryBoxBg bgColor={"bg-[#378e1c]"} name={data[1]?.categories?.nodes[1]?.name} slug={data[1]?.categories?.nodes[1]?.slug} />
+                    <CategoryBoxBg bgColor={"bg-[#378e1c]"} name={data[1]?.categories?.nodes[0]?.name} slug={data[1]?.categories?.nodes[0]?.slug} />
                     <Link href={`/${data && data[1]?.slug}`} title={data && data[1]?.title}>
                         <h2 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[1]?.title}</h2>
                     </Link>
@@ -73,7 +73,7 @@ const Hero = async () => {
                 <div className="flex-1 h-1/2 pt-6">
                     <div className="flex space-x-6">
                         <div className={`flex flex-col justify-end text-white flex-1 py-5 px-6 bg-no-repeat bg-center`} style={{ backgroundImage: `url(${data[2]?.featuredImage?.node?.sourceUrl})`, height: '266px' }}>
-                            <CategoryBoxBg bgColor={"bg-[#ffa100]"} name={data[2]?.categories?.nodes[1]?.name} slug={data[2]?.categories?.nodes[1]?.slug} />
+                            <CategoryBoxBg bgColor={"bg-[#ffa100]"} name={data[2]?.categories?.nodes[0]?.name} slug={data[2]?.categories?.nodes[0]?.slug} />
                             <Link href={`/${data && data[2]?.slug}`} title={`${data && data[2]?.title}`}>
                                 <h4 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[2]?.title}</h4>
                             </Link>
