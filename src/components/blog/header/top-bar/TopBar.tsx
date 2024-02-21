@@ -42,7 +42,7 @@ const TopBar = async () => {
                     <span className="text-sm text-white uppercase">latest article</span>
                     <span className="text-sm text-white mx-3">|</span>
                     <span className="text-sm text-white font-normal">
-                        <Link href={data[0]?.slug} className="text-gray-300 hover:text-white transition ease-in-out duration-300">
+                        <Link href={`/${data[0]?.slug}`} className="text-gray-300 hover:text-white transition ease-in-out duration-300">
                             {data[0]?.title}
                         </Link>
                     </span>
