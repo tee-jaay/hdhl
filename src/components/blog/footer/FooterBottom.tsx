@@ -1,16 +1,18 @@
-import Link from "next/link";
+interface Page {
+    id: string,
+    slug: string,
+    title: string,
+}
+interface Pages {
+    pages: Page[]
+}
+const FooterBottom = ({ pages }: Pages) => {
+    console.log(pages);
 
-const FooterBottom = () => {
     return (
-        <div className="flex justify-between py-4 text-gray-200">
+        <div className="flex justify-start py-4 text-gray-200">
             <div className="copyrights text-sm">
                 2024 &copy; Tee Jaay. All Rights Reserved.
-            </div>
-            <div className="privact_terms_links">
-                <ul className="space-x-4 text-sm">
-                    <Link href="/">Privacy Policy</Link>
-                    <Link href="/">Terms & Conditions</Link>
-                </ul>
             </div>
         </div>
     );
