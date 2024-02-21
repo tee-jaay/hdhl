@@ -47,9 +47,9 @@ const CatgoriesGrid = async () => {
   const categories: Category[] = await getData();
 
   return (
-    <div className="categories">
+    <div className="categories w-full">
       <h4 className="text-2xl mb-7">Categories</h4>
-      <div className="categories_block grid grid-cols-2 gap-x-4 gap-y-6">
+      <div className="categories_block grid grid-cols-2 gap-x-8 gap-y-8">
         {categories && categories.map((category, i) => (
           <Link key={category.id} href={`/categories/${category.slug}`} title={category.name}>
             <div className="w-36 h-32 px-1 flex flex-col justify-center text-center bg-no-repeat" style={{ backgroundImage: `url(https://picsum.photos/160/128?q=${i})` }}>
