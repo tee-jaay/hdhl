@@ -44,7 +44,7 @@ const EditorsChoice = async () => {
 
     return (
         <section className="mx-auto py-16 bg-[#FBF8F5]">
-            <div className="mx-auto" style={{ width: "1120px" }}>
+            <div className="mx-auto" style={{ width: "1024px" }}>
                 <div className="flex space-x-8 align-baseline">
                     <div className="flex-1">
                         <SectionHeading text="Editor's Choice" color="text-[#000000]" />

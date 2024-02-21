@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
 import CategoryBoxBg from "@/components/common/CategoryBoxBg";
+import truncateString from "@/_helpers/truncrateString";
 
 interface FeaturedImage {
   node: {
@@ -62,11 +63,11 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               bgColor={categoryBgColors[i % Object.keys(categoryBgColors).length]}
               name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
             <div>
-              <Link href={post?.slug}>
-                <h4 className="text-2xl text-black hover:text-[#4ce5a2] transition ease-in-out duration-300">{post?.title}</h4>
+              <Link href={post?.slug} title={post?.title}>
+                <h4 className="text-2xl text-black hover:text-[#4ce5a2] transition ease-in-out duration-300">{truncateString(post?.title, 37)}</h4>
               </Link>
             </div>
-            <h6 className="text-gray-500" dangerouslySetInnerHTML={{ __html: post?.excerpt }} />
+            <h6 className="text-gray-500" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 180) }} />
             <div>
               <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor="text-[#000000]" />
             </div>
