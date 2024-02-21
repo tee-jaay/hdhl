@@ -53,7 +53,7 @@ const Hero = async () => {
                     </Link>
                     <div className="meta flex space-x-6">
                         <AuthorAvatarNameLink imgAlt={""} imgSrc={"https://i.pravatar.cc/20?q=0"} link={`/author/${data[0]?.author?.node?.slug}`} name={data[0]?.author?.node?.name} textColor={"text-[#FFFFFF]"} />
-                        <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY={data && formatDate(data[0]?.date)} />
+                        <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY={data && formatDate(data[0]?.date, "numeric")} />
                         <CommentsCount color="text-[#FFFFFF]" count={data && data[0]?.commentCount} />
                     </div>
                 </div>
@@ -66,7 +66,7 @@ const Hero = async () => {
                     </Link>
                     <div className="meta flex space-x-6">
                         <AuthorAvatarNameLink imgAlt="" imgSrc={"https://i.pravatar.cc/20?q=1"} link={`/author/${data[1]?.author?.node?.slug}`} name={data[1]?.author?.node?.name} textColor="text-[#FFFFFF]" />
-                        <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY={data && formatDate(data[1]?.date)} />
+                        <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY={data && formatDate(data[1]?.date, "numeric")} />
                         <CommentsCount color="text-[#FFFFFF]" count={data && data[1]?.commentCount} />
                     </div>
                 </div>

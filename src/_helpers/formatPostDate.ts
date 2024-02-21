@@ -1,11 +1,11 @@
-function formatDate(dateString: string): string {
+function formatDate(dateString: string, year: "numeric" | "2-digit" | undefined): string {
     const date = new Date(dateString);
     const options: Intl.DateTimeFormatOptions = {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
+        month: "long",
+        day: "numeric",
+        year: year,
     };
-    const formattedDate = date.toLocaleDateString('en-US', options);
+    const formattedDate = date.toLocaleDateString("en-US", options);
 
     return formattedDate;
 }

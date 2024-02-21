@@ -23,6 +23,7 @@ interface CarouselSingle {
         nodes: Category[]
     },
     title: "string",
+    slug: "string",
     date: "string",
     featuredImage: FeaturedImage,
 }
@@ -79,7 +80,8 @@ const CarouselSlider = ({ carouselItems }: CarouselItems) => {
                         categorySlug={item?.categories?.nodes[0]?.slug}
                         category={truncateString(item?.categories?.nodes[0]?.name, 8)}
                         title={truncateString(item?.title, 20)}
-                        date={formatDate(item?.date)}
+                        slug={item?.slug}
+                        date={formatDate(item?.date, undefined)}
                     />
                 ))}
             </div>

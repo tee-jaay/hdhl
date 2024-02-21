@@ -9,10 +9,11 @@ interface carouselItem {
     category: string,
     categorySlug: string,
     title: string,
+    slug: string,
     date: string,
 }
 
-const CarouselItem = ({ imgSrc, imgAlt, category, categorySlug, title, date }: carouselItem) => {
+const CarouselItem = ({ imgSrc, imgAlt, category, categorySlug, title, slug, date }: carouselItem) => {
     return (
         <div className="item flex space-x-4">
             <div className="item-image">
@@ -25,7 +26,7 @@ const CarouselItem = ({ imgSrc, imgAlt, category, categorySlug, title, date }: c
             </div>
             <div className="item-meta flex flex-col items-start justify-center">
                 <CategoryNameSlug color={"text-[#919191]"} name={category} slug={categorySlug} />
-                <Link href={"/post-slug"}>
+                <Link href={slug}>
                     <h4 className="item-title font-semibold mt-2 mb-1 hover:text-[#4ce5a2] transition ease-in-out duration-300">{title}</h4>
                 </Link>
                 <h6 className="item-date"><PublishMonthDateYear color={"text-[#919191]"} dateMDY={date} /></h6>
