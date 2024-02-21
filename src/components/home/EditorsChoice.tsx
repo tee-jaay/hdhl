@@ -3,7 +3,7 @@ import PostsList from "./editors-choice/PostsList";
 import CatgoriesGrid from "./editors-choice/CatgoriesGrid";
 import RoundImageCategoryTitle from "../common/RoundImageCategoryTitle";
 import FollowUs from "./editors-choice/FollowUs";
-import getPostsByCategoryQuery from "@/_lib/graphQl/queries/getFeaturedPostsQuery";
+import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 
 const editorsChoice = async () => {
     // Send the query to the GraphQL API
@@ -13,9 +13,9 @@ const editorsChoice = async () => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            query: getPostsByCategoryQuery(),
+            query: getPostsByTag(),
             variables: {
-                category: "Editor's Choice",
+                tag: "recommended",
             },
         }),
     });
