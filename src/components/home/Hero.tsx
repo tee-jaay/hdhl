@@ -52,7 +52,7 @@ const Hero = async () => {
                         <h1 className="title text-3xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[0]?.title}</h1>
                     </Link>
                     <div className="meta flex space-x-6">
-                        <AuthorAvatarNameLink imgAlt={""} imgSrc={"https://i.pravatar.cc/20?q=0"} link={`/author/${data[0]?.author?.node?.slug}`} name={data[0]?.author?.node?.name} textColor={"text-[#FFFFFF]"} />
+                        <AuthorAvatarNameLink imgAlt={data[0]?.author?.node?.name} imgSrc={"https://i.pravatar.cc/20?q=0"} link={data[0]?.author?.node?.slug} name={data[0]?.author?.node?.name} textColor={"text-[#FFFFFF]"} />
                         <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY={data && formatDate(data[0]?.date, "numeric")} />
                         <CommentsCount color="text-[#FFFFFF]" count={data && data[0]?.commentCount} />
                     </div>
@@ -65,7 +65,7 @@ const Hero = async () => {
                         <h2 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[1]?.title}</h2>
                     </Link>
                     <div className="meta flex space-x-6">
-                        <AuthorAvatarNameLink imgAlt="" imgSrc={"https://i.pravatar.cc/20?q=1"} link={`/author/${data[1]?.author?.node?.slug}`} name={data[1]?.author?.node?.name} textColor="text-[#FFFFFF]" />
+                        <AuthorAvatarNameLink imgAlt={data[1]?.author?.node?.name} imgSrc={"https://i.pravatar.cc/20?q=1"} link={data[1]?.author?.node?.slug} name={data[1]?.author?.node?.name} textColor="text-[#FFFFFF]" />
                         <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY={data && formatDate(data[1]?.date, "numeric")} />
                         <CommentsCount color="text-[#FFFFFF]" count={data && data[1]?.commentCount} />
                     </div>
@@ -77,14 +77,14 @@ const Hero = async () => {
                             <Link href={`/${data && data[2]?.slug}`} title={`${data && data[2]?.title}`}>
                                 <h4 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[2]?.title}</h4>
                             </Link>
-                            <AuthorAvatarNameLink imgAlt="" imgSrc={"https://i.pravatar.cc/20?q=3"} link={`/author/${data[2]?.author?.node?.slug}`} name={data[2]?.author?.node?.name} textColor="text-[#FFFFFF]" />
+                            <AuthorAvatarNameLink imgAlt={data[2]?.author?.node?.name} imgSrc={"https://i.pravatar.cc/20?q=3"} link={data[2]?.author?.node?.slug} name={data[2]?.author?.node?.name} textColor="text-[#FFFFFF]" />
                         </div>
                         <div className={`flex flex-col justify-end text-white flex-1 py-5 px-6 bg-no-repeat bg-center`} style={{ backgroundImage: `url("https://picsum.photos/800/600?q=2")` }}>
                             <CategoryBoxBg bgColor={"bg-[#2962ff]"} name={data[3]?.categories?.nodes[0]?.name} slug={data[3]?.categories?.nodes[0]?.slug} />
                             <Link href={`/${data && data[3]?.slug}`} title={`${data && data[3]?.title}`}>
                                 <h4 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[3]?.title}</h4>
                             </Link>
-                            <AuthorAvatarNameLink imgAlt="" imgSrc={"https://i.pravatar.cc/20?q=4"} link={`/author/${data[3]?.author?.node?.slug}`} name={data[3]?.author?.node?.name} textColor="text-[#FFFFFF]" />
+                            <AuthorAvatarNameLink imgAlt={data[3]?.author?.node?.name} imgSrc={"https://i.pravatar.cc/20?q=4"} link={data[3]?.author?.node?.slug} name={data[3]?.author?.node?.name} textColor="text-[#FFFFFF]" />
                         </div>
                     </div>
                 </div>

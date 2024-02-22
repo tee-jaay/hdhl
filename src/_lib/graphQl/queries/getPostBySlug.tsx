@@ -25,6 +25,7 @@ const getPostBySlug = (): string => `
             }
             name
             slug
+            description
             }
         }
         comments {
