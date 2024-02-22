@@ -23,6 +23,11 @@ const getData = async (params: string) => {
     }
 }
 
+interface Tag {
+    name: string,
+    slug: string,
+}
+
 const Post = async ({ params }: { params: { slug: string } }) => {
     const { post } = await getData(params.slug);
     return (
@@ -35,7 +40,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                     height={500}
                 />
             </div>
-            <div className="content mt-8 text-[#8a8a8a]">
+            <div className="content mt-8 text-[#444]">
                 <div dangerouslySetInnerHTML={{ __html: post?.content }} />
             </div>
             <hr className="mt-10 mb-6" />
@@ -43,8 +48,8 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                 <div className="tags flex">
                     <h6 className="font-medium mr-4 text-lg text-[#444444]">Tags:</h6>
                     <div className="tags_links flex flex-wrap items-start">
-                        {post?.tags?.nodes?.map((tag: any, _i: number) => (
-                            <div key={tag.slug} className="mr-1 mb-1">
+                        {post?.tags?.nodes?.map((tag: Tag, _i: number) => (
+                            <div key={tag.slug} className="mr-1 mb-2 text-xs">
                                 <Link title={tag.name} href={`/tags/${tag.slug}`}>
                                     <span className="capitalize text-[#444444] border border-[#cccccc] py-1 px-4">
                                         {tag.name}
@@ -54,24 +59,26 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                         ))}
                     </div>
                 </div>
-                <div className="share_links flex items-center">
-                    <h6 className="font-medium mr-4 text-lg text-[#444444]">Share:</h6>
-                    <div className="social_links flex space-x-3 align-middle">
-                        <Link href={"/"}>
-                            <div className="w-8 h-8 p-2 border">
-                                <FontAwesomeIcon color="#444" icon={faFacebook} />
-                            </div>
-                        </Link>
-                        <Link href={"/"}>
-                            <div className="w-8 h-8 p-2 border">
-                                <FontAwesomeIcon color="#444" icon={faXTwitter} />
-                            </div>
-                        </Link>
-                        <Link href={"/"}>
-                            <div className="w-8 h-8 p-2 border">
-                                <FontAwesomeIcon color="#444" icon={faInstagram} />
-                            </div>
-                        </Link>
+                <div className="flex flex-col">
+                    <div className="share_links flex items-start">
+                        <h6 className="font-medium mr-4 text-lg text-[#444444]">Share:</h6>
+                        <div className="social_links flex space-x-3 align-middle">
+                            <Link href={"/"}>
+                                <div className="w-8 h-8 p-2 border">
+                                    <FontAwesomeIcon color="#444" icon={faFacebook} />
+                                </div>
+                            </Link>
+                            <Link href={"/"}>
+                                <div className="w-8 h-8 p-2 border">
+                                    <FontAwesomeIcon color="#444" icon={faXTwitter} />
+                                </div>
+                            </Link>
+                            <Link href={"/"}>
+                                <div className="w-8 h-8 p-2 border">
+                                    <FontAwesomeIcon color="#444" icon={faInstagram} />
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
