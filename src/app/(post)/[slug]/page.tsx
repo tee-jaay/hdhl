@@ -6,6 +6,9 @@ import { faFacebook, faInstagram, faXTwitter, } from "@fortawesome/free-brands-s
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostBySlug from "@/_lib/graphQl/queries/getPostBySlug";
 import truncateString from "@/_helpers/truncrateString";
+import PostDetails from "@/components/blog/post/PostDetails";
+import PostTags from "@/components/blog/post/Tags";
+
 
 const getData = async (params: string) => {
     // Construct the query and variables
@@ -24,41 +27,16 @@ const getData = async (params: string) => {
     }
 }
 
-interface Tag {
-    name: string,
-    slug: string,
-}
-
 const Post = async ({ params }: { params: { slug: string } }) => {
     const { post } = await getData(params.slug);
     return (
         <div className="flex flex-col">
-            <div className="post_image w-full">
-                <Image
-                    alt={post?.featuredImage?.node?.altText}
-                    src={post?.featuredImage?.node?.sourceUrl}
-                    width={900}
-                    height={500}
-                />
-            </div>
-            <div className="content mt-8 text-[#444]">
-                <div dangerouslySetInnerHTML={{ __html: post?.content }} />
-            </div>
+            <PostDetails data={post?.content} image={post?.featuredImage} />
             <hr className="mt-10 mb-6" />
             <div className="tags_share_links flex justify-between">
                 <div className="tags flex">
                     <h6 className="font-medium mr-4 text-lg text-[#444444]">Tags:</h6>
-                    <div className="tags_links flex flex-wrap items-start">
-                        {post?.tags?.nodes?.map((tag: Tag, _i: number) => (
-                            <div key={tag.slug} className="mr-1 mb-2 text-xs">
-                                <Link title={tag.name} href={`/tags/${tag.slug}`}>
-                                    <span className="capitalize text-[#444444] border border-[#cccccc] py-1 px-4">
-                                        {tag.name}
-                                    </span>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
+                    <PostTags tags={post?.tags?.nodes} />
                 </div>
                 <div className="flex flex-col">
                     <div className="share_links flex items-start">
@@ -113,7 +91,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                             <div className="capitalize text-gray-400 text-xl font-light">previous post</div>
                         </div>
                         <div>
-                            <h4 className="font-medium capitalize pl-6">post title 123</h4>
+                            <h4 className="font-medium capitalize pl-6 text-[#444] hover:text-[#4ce5a2] transition ease-in-out duration-300">post title 123</h4>
                         </div>
                     </div>
                 </Link>
@@ -128,7 +106,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                             </div>
                         </div>
                         <div>
-                            <h4 className="font-medium capitalize pr-6">post title 123</h4>
+                            <h4 className="font-medium capitalize pr-6 text-[#444] hover:text-[#4ce5a2] transition ease-in-out duration-300">post title 123</h4>
                         </div>
                     </div>
                 </Link>
