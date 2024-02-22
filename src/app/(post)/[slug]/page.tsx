@@ -1,44 +1,57 @@
-import { faFacebook, faFacebookF, faInstagram, faLinkedinIn, faTwitter, faTwitterSquare, faXTwitter, } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faXTwitter, } from "@fortawesome/free-brands-svg-icons";
 
-const Post = () => {
+import gqlQuery from "@/_lib/graphQl/gqlQuery";
+import getPostBySlug from "@/_lib/graphQl/queries/getPostBySlug";
+
+const getData = async (params: string) => {
+    // Construct the query and variables
+    const query = getPostBySlug();
+    const variables = {
+        slug: params,
+    };
+    try {
+        // Make the request and return the data
+        const data = await gqlQuery(query, variables);
+        return data;
+    } catch (error) {
+        // Handle the error here
+        console.error(error);
+        throw error;
+    }
+}
+
+const Post = async ({ params }: { params: { slug: string } }) => {
+    const { post } = await getData(params.slug);
     return (
         <div className="flex flex-col">
             <div className="post_image w-full">
                 <Image
-                    alt=""
-                    src={"https://picsum.photos/900/500"}
+                    alt={post?.featuredImage?.node?.altText}
+                    src={post?.featuredImage?.node?.sourceUrl}
                     width={900}
                     height={500}
                 />
             </div>
             <div className="content mt-8 text-[#8a8a8a]">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi vero ipsum, excepturi quia, quo possimus nemo enim in doloribus nulla minus sapiente animi ipsa, perferendis tempora aliquid rerum incidunt saepe!</p>
-                <br />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum error expedita inventore similique minima cum nisi autem praesentium, ad, distinctio et natus deleniti, provident unde quae porro consectetur asperiores vero.</p>
+                <div dangerouslySetInnerHTML={{ __html: post?.content }} />
             </div>
             <hr className="mt-10 mb-6" />
             <div className="tags_share_links flex justify-between">
                 <div className="tags flex">
                     <h6 className="font-medium mr-4 text-lg text-[#444444]">Tags:</h6>
-                    <div className="tags_links space-x-2">
-                        <Link title={"Travel"} href={"/tags/travel"}>
-                            <span className="capitalize text-[#444444] border border-[#cccccc] py-1 px-4">
-                                travel
-                            </span>
-                        </Link>
-                        <Link title={"Politics"} href={"/tags/politics"}>
-                            <span className="capitalize text-[#444444] border border-[#cccccc] py-1 px-4">
-                                politics
-                            </span>
-                        </Link>
-                        <Link title={"Fashion"} href={"/tags/fashion"}>
-                            <span className="capitalize text-[#444444] border border-[#cccccc] py-1 px-4">
-                                fashion
-                            </span>
-                        </Link>
+                    <div className="tags_links flex flex-wrap items-start">
+                        {post?.tags?.nodes?.map((tag: any, _i: number) => (
+                            <div key={tag.slug} className="mr-1 mb-1">
+                                <Link title={tag.name} href={`/tags/${tag.slug}`}>
+                                    <span className="capitalize text-[#444444] border border-[#cccccc] py-1 px-4">
+                                        {tag.name}
+                                    </span>
+                                </Link>
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className="share_links flex items-center">
