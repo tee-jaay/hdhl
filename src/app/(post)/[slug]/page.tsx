@@ -23,6 +23,11 @@ const getData = async (params: string) => {
     }
 }
 
+interface Tag {
+    name: string,
+    slug: string,
+}
+
 const Post = async ({ params }: { params: { slug: string } }) => {
     const { post } = await getData(params.slug);
     return (
@@ -35,7 +40,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                     height={500}
                 />
             </div>
-            <div className="content mt-8 text-[#8a8a8a]">
+            <div className="content mt-8 text-[#444]">
                 <div dangerouslySetInnerHTML={{ __html: post?.content }} />
             </div>
             <hr className="mt-10 mb-6" />
@@ -43,7 +48,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                 <div className="tags flex">
                     <h6 className="font-medium mr-4 text-lg text-[#444444]">Tags:</h6>
                     <div className="tags_links flex flex-wrap items-start">
-                        {post?.tags?.nodes?.map((tag: any, _i: number) => (
+                        {post?.tags?.nodes?.map((tag: Tag, _i: number) => (
                             <div key={tag.slug} className="mr-1 mb-2 text-xs">
                                 <Link title={tag.name} href={`/tags/${tag.slug}`}>
                                     <span className="capitalize text-[#444444] border border-[#cccccc] py-1 px-4">

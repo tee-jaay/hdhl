@@ -6,3 +6,67 @@
     margin: 0;
     padding: 0;
 }
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    line-height: 1.7em;
+    margin-top: 1em;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* Post Details */
+.card_title a {
+    text-transform: capitalize;
+}
+
+#table-of-contents {
+    background-color: #fff4eb;
+    padding: 16px 20px;
+    margin: 20px 0;
+}
+
+#table-of-contents a {
+    text-decoration: none !important;
+    color: black !important;
+}
+
+#table-of-contents a:hover {
+    color: #ef751b !important;
+    transition: 400ms linear !important;
+}
+
+/* Affiliate link */
+.my-affiliate-link-class {
+    padding: 18px 48px;
+    border: 1px solid black;
+    text-decoration: none !important;
+    color: inherit;
+    transition: 0.2s ease-out all;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.my-affiliate-link-class:hover {
+    border: 1px solid #ef751b;
+    background-color: #ef751b;
+    color: white;
+}
+
+/* Reference links */
+#references {
+    font-size: 0.65rem;
+    margin: 20px 0;
+}
