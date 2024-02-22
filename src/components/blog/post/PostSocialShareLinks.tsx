@@ -8,17 +8,17 @@ const PostSocialShareLinks = () => {
             <h6 className="font-medium mr-4 text-lg text-[#444444]">Share:</h6>
             <div className="social_links flex space-x-3 align-middle">
                 <Link href={"/"}>
-                    <div className="w-8 h-8 p-2 border">
+                    <div className="w-7 h-7 p-2 border">
                         <FontAwesomeIcon color="#444" icon={faFacebookF} />
                     </div>
                 </Link>
                 <Link href={"/"}>
-                    <div className="w-8 h-8 p-2 border">
+                    <div className="w-7 h-7 p-2 border">
                         <FontAwesomeIcon color="#444" icon={faXTwitter} />
                     </div>
                 </Link>
                 <Link href={"/"}>
-                    <div className="w-8 h-8 p-2 border">
+                    <div className="w-7 h-7 p-2 border">
                         <FontAwesomeIcon color="#444" icon={faInstagram} />
                     </div>
                 </Link>
