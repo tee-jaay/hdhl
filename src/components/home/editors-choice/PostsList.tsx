@@ -10,12 +10,14 @@ interface FeaturedImage {
     altText: string,
   }
 }
+
 interface Category {
   nodes: {
     name: string,
     slug: string,
   }[];
 }
+
 interface Author {
   node: {
     name: string,
@@ -25,6 +27,7 @@ interface Author {
     },
   }
 }
+
 interface Post {
   id: number,
   title: string,
@@ -45,7 +48,6 @@ const categoryBgColors: { [key: number]: string } =
   5: "bg-[#3dc1d3]",
 }
 
-
 const PostsList = ({ posts }: { posts: Post[] }) => {
   return (
     <div className="posts space-y-8">
@@ -64,10 +66,10 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
             <div>
               <Link href={post?.slug} title={post?.title}>
-                <h4 className="text-2xl text-black hover:text-[#4ce5a2] transition ease-in-out duration-300">{truncateString(post?.title, 37)}</h4>
+                <h4 className="text-xl text-black hover:text-[#4ce5a2] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
               </Link>
             </div>
-            <h6 className="text-gray-500" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 180) }} />
+            <h6 className="text-gray-500" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />
             <div>
               <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor="text-[#000000]" />
             </div>
