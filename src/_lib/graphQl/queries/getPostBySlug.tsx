@@ -12,6 +12,12 @@ const getPostBySlug = (): string => `
                     altText
                 }
             }
+            categories {
+                nodes {
+                    name
+                    slug
+                }
+            }
             tags {
                 nodes {
                     slug

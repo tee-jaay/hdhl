@@ -41,7 +41,7 @@ const LatestPosts = async () => {
                                 <h1 className="title text-3xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[0]?.title}</h1>
                             </Link>
                             <div className="meta flex space-x-6">
-                                <AuthorAvatarNameLink imgAlt={data[0]?.author?.node?.name} imgSrc={"https://i.pravatar.cc/20?q=0"} link={data[0]?.author?.node?.slug} name={data[0]?.author?.node?.name} textColor={"text-[#FFFFFF]"} />
+                                <AuthorAvatarNameLink imgAlt={data[0]?.author?.node?.name} imgSrc={data[0]?.author?.node?.avatar?.url} link={data[0]?.author?.node?.slug} name={data[0]?.author?.node?.name} textColor={"text-[#FFFFFF]"} imgSize={20} />
                                 <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY={data && formatDate(data[0]?.date, "numeric")} />
                                 <CommentsCount color="text-[#FFFFFF]" count={data && data[0]?.commentCount} />
                             </div>
