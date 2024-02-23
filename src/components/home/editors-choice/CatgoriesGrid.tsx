@@ -1,4 +1,6 @@
 import Link from "next/link";
+
+import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getCategoriesByLimit from "@/_lib/graphQl/queries/getCategoriesByLimit";
 
 interface Category {
@@ -9,38 +11,21 @@ interface Category {
   imgSrc: string
 }
 
-const categoriesByLimit = async () => {
-  // Send the query to the GraphQL API
-  const response = await fetch(`${process.env.GRAPHQL_URL}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      query: getCategoriesByLimit(),
-      variables: {
-        "first": 6
-      },
-    }),
-  });
-
-  // Parse the response body as JSON
-  const data = await response.json();
-  const { nodes } = data?.data?.categories;
-
-  // Return the categories from the GraphQL API
-  return new Response(JSON.stringify(nodes));
-}
-
-async function getData() {
-  const res = await categoriesByLimit();
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+const getData = async () => {
+  // Construct the query and variables
+  const query = getCategoriesByLimit();
+  const variables = {
+    "first": 6,
+  };
+  try {
+    // Make the request and return the data
+    const data = await gqlQuery(query, variables);
+    return data?.categories?.nodes;
+  } catch (error) {
+    // Handle the error here
+    console.error(error);
+    throw error;
   }
-  const data = res.json();
-  return data;
 }
 
 const CatgoriesGrid = async () => {
