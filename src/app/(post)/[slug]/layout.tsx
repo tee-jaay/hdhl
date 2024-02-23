@@ -29,7 +29,7 @@ export default function BlogLayout({
         <div className="flex-1 bg-[#FFFFFF] py-12">
           {children}
         </div>
-        <div className="w-80 bg-gray-100">
+        <div className="w-72 bg-gray-100">
           <Sidebar />
         </div>
       </div>

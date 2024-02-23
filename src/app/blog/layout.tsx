@@ -12,11 +12,11 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex mx-auto" style={{ width: "1120px" }}>
-      <div className="flex-1 bg-teal-300">
+    <div className="flex mx-auto" style={{ width: "1024px" }}>
+      <div className="flex-1 ">
         {children}
       </div>
-      <div className="w-80 bg-fuchsia-400">
+      <div className="w-72">
         <Sidebar />
       </div>
     </div>
