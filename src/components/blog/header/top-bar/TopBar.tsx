@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import SocialsLinksIcons from '@/components/common/SocialsLinksIcons';
-import getLatestPosts from '@/_lib/graphQl/queries/getLatestPosts';
+
 import gqlQuery from '@/_lib/graphQl/gqlQuery';
+import getLatestPosts from '@/_lib/graphQl/queries/getLatestPosts';
+import SocialsLinksIcons from '@/components/common/SocialsLinksIcons';
 
 const getData = async () => {
     // Construct the query and variables
