@@ -53,25 +53,25 @@ p {
 }
 
 #table-of-contents {
-    background-color: #fff4eb;
+    background-color: #f0f0f0;
     padding: 16px 20px;
     margin: 20px 0;
 }
 
 #table-of-contents a {
     text-decoration: none !important;
-    color: black !important;
+    color: #444 !important;
 }
 
 #table-of-contents a:hover {
-    color: #ef751b !important;
-    transition: 400ms linear !important;
+    color: #4ce5a2 !important;
+    transition: 300ms linear !important;
 }
 
 /* Affiliate link */
 .my-affiliate-link-class {
-    padding: 18px 48px;
-    border: 1px solid black;
+    padding: 14px 32px;
+    border: 1px solid #444;
     text-decoration: none !important;
     color: inherit;
     transition: 0.2s ease-out all;
@@ -80,8 +80,8 @@ p {
 }
 
 .my-affiliate-link-class:hover {
-    border: 1px solid #ef751b;
-    background-color: #ef751b;
+    border: 1px solid #4ce5a2;
+    background-color: #4ce5a2;
     color: white;
 }
 
