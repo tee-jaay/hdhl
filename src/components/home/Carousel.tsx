@@ -6,7 +6,7 @@ const getData = async () => {
     // Construct the query and variables
     const query = getPostsByTag();
     const variables = {
-        tag: "recommended",
+        tag: "carousel",
     };
     try {
         // Make the request and return the data
