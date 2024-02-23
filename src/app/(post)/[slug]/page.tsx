@@ -8,7 +8,6 @@ import PostPagination from "@/components/blog/post/PostPagination";
 import PostRelatedPosts from "@/components/blog/post/PostRelatedPosts";
 import PostComments from "@/components/blog/post/PostComments";
 
-
 const getData = async (params: string) => {
     // Construct the query and variables
     const query = getPostBySlug();
@@ -43,7 +42,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
             </div>
             <PostAuthor author={post?.author?.node} />
             <PostPagination />
-            <PostRelatedPosts />
+            <PostRelatedPosts category={post?.categories?.nodes[0]?.name} />
             <PostComments />
         </div>
     );

@@ -1,4 +1,4 @@
-const getPostsByCategoryQuery = (): string => `
+const getPostsByCategory = (): string => `
 query PostsByCategory($category: String!) {
     posts(where: {categoryName: $category}) {
       nodes {
@@ -32,4 +32,4 @@ query PostsByCategory($category: String!) {
 }
 `;
 
-export default getPostsByCategoryQuery;
+export default getPostsByCategory;
