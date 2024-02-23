@@ -10,7 +10,7 @@ interface author {
     imgSize: number,
 }
 
-const AuthorAvatarNameLink = ({ link, imgSrc, imgAlt, name, textColor, imgSize = 20 }: author) => {
+const AuthorAvatarNameLink = ({ link, imgSrc, imgAlt, name, textColor, imgSize }: author) => {
     return (
         <Link href={`/author/${link}`}>
             <div className="author flex items-center space-x-2">

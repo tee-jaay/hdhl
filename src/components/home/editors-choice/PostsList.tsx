@@ -71,7 +71,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
             </div>
             <h6 className="text-gray-500" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />
             <div>
-              <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor="text-[#000000]" />
+              <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor="text-[#000000]" imgSize={20} />
             </div>
           </div>
         </div>
