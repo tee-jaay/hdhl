@@ -43,13 +43,13 @@ const LatestPostsRoundImageList = ({ posts }: { posts: Post[] }) => {
                             name={post?.categories?.nodes[0]?.name ?? ""}
                             slug={post?.categories?.nodes[0]?.slug ?? ""}
                         />
-                        <h4 className="mt-2">
+                        <h5 className="mt-2">
                             <Link title={post?.title} href={post?.slug}>
-                                <div className="text-black hover:text-[#4ce5a2] transition ease-in-out duration-300">
+                                <div className="text-[#444] leading-snug line-clamp-2 hover:text-[#4ce5a2] transition ease-in-out duration-300">
                                     {post?.title}
                                 </div>
                             </Link>
-                        </h4>
+                        </h5>
                     </div>
                 </div>
             ))}
