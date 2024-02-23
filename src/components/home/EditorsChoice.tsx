@@ -1,42 +1,26 @@
+import gqlQuery from "@/_lib/graphQl/gqlQuery";
+import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 import SectionHeading from "../common/SectionHeading";
 import PostsList from "./editors-choice/PostsList";
 import CatgoriesGrid from "./editors-choice/CatgoriesGrid";
 import RoundImageCategoryTitle from "../common/RoundImageCategoryTitle";
 import FollowUs from "./editors-choice/FollowUs";
-import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 
-const editorsChoice = async () => {
-    // Send the query to the GraphQL API
-    const response = await fetch(`${process.env.GRAPHQL_URL}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            query: getPostsByTag(),
-            variables: {
-                tag: "recommended",
-            },
-        }),
-    });
-
-    // Parse the response body as JSON
-    const data = await response.json();
-    const { nodes } = data?.data?.posts;
-
-    // Return the posts from the GraphQL API
-    return new Response(JSON.stringify(nodes));
-}
-
-async function getData() {
-    const res = await editorsChoice();
-
-    if (!res.ok) {
-        // This will activate the closest `error.js` Error Boundary
-        throw new Error('Failed to fetch data')
+const getData = async () => {
+    // Construct the query and variables
+    const query = getPostsByTag();
+    const variables = {
+        tag: "recommended",
+    };
+    try {
+        // Make the request and return the data
+        const data = await gqlQuery(query, variables);
+        return data?.posts?.nodes;
+    } catch (error) {
+        // Handle the error here
+        console.error(error);
+        throw error;
     }
-    const data = res.json();
-    return data;
 }
 
 const EditorsChoice = async () => {

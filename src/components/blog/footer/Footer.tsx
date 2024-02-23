@@ -1,36 +1,22 @@
+import gqlQuery from "@/_lib/graphQl/gqlQuery";
+import getFooterData from "@/_lib/graphQl/queries/getFooterData";
 import FooterTop from "./FooterTop";
 import FooterBottom from "./FooterBottom";
-import getFooterData from "@/_lib/graphQl/queries/getFooterData";
 
-const footerData = async () => {
-    // Send the query to the GraphQL API
-    const response = await fetch(`${process.env.GRAPHQL_URL}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            query: getFooterData(),
-        }),
-    });
-
-    // Parse the response body as JSON
-    const data = await response.json();
-    const { pages: { nodes: pages }, tags: { nodes: tags }, generalSettings } = data?.data;
-
-    // Return the pages,tags, generalSettings from the GraphQL API
-    return new Response(JSON.stringify({ pages, tags, generalSettings }));
-}
-
-async function getData() {
-    const res = await footerData();
-
-    if (!res.ok) {
-        // This will activate the closest `error.js` Error Boundary
-        throw new Error('Failed to fetch data')
+const getData = async () => {
+    // Construct the query and variables
+    const query = getFooterData();
+    const variables = {};
+    try {
+        // Make the request and return the data
+        const data = await gqlQuery(query, variables);
+        const { pages: { nodes: pages }, tags: { nodes: tags }, generalSettings } = data;
+        return { pages, tags, generalSettings };
+    } catch (error) {
+        // Handle the error here
+        console.error(error);
+        throw error;
     }
-    const data = res.json();
-    return data;
 }
 
 const Footer = async () => {

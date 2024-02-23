@@ -1,48 +1,32 @@
 import Link from "next/link";
+
+import gqlQuery from "@/_lib/graphQl/gqlQuery";
+import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
+import formatDate from "@/_helpers/formatPostDate";
 import AuthorAvatarNameLink from "../common/AuthorAvatarNameLink";
 import PublishMonthDateYear from "../common/PublishMonthDateYear";
 import CommentsCount from "../common/CommentsCount";
 import CategoryBoxBg from "../common/CategoryBoxBg";
-import formatDate from "@/_helpers/formatPostDate";
-import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 
-const featuredPosts = async () => {
-    // Send the query to the GraphQL API
-    const response = await fetch(`${process.env.GRAPHQL_URL}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            query: getPostsByTag(),
-            variables: {
-                tag: "featured",
-            },
-        }),
-    });
-
-    // Parse the response body as JSON
-    const data = await response.json();
-    const { nodes } = data?.data?.posts;
-
-    // Return the posts from the GraphQL API
-    return new Response(JSON.stringify(nodes));
-}
-
-async function getData() {
-    const res = await featuredPosts();
-
-    if (!res.ok) {
-        // This will activate the closest `error.js` Error Boundary
-        throw new Error('Failed to fetch data')
+const getData = async () => {
+    // Construct the query and variables
+    const query = getPostsByTag();
+    const variables = {
+        tag: "featured",
+    };
+    try {
+        // Make the request and return the data
+        const data = await gqlQuery(query, variables);
+        return data?.posts?.nodes;
+    } catch (error) {
+        // Handle the error here
+        console.error(error);
+        throw error;
     }
-    const data = res.json();
-    return data;
 }
 
 const Hero = async () => {
     const data = await getData();
-
     return (
         <section className="hero flex space-x-6">
             <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})`, height: '580px' }}>
