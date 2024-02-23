@@ -1,8 +1,9 @@
 ## Getting Started
 
 First, 
-### Provide the .env.local variables values
+### Provide the .env variables values
 ```bash
+APP_NAME=
 APP_URL=
 GRAPHQL_URL=
 ```
