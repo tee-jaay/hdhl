@@ -6,6 +6,7 @@ import CommentsCount from "@/components/common/CommentsCount";
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 import getLatestPosts from "@/_lib/graphQl/queries/getLatestPosts";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
+import formatDate from "@/_helpers/formatPostDate";
 
 const getData = async () => {
     // Construct the query and variables
@@ -43,6 +44,7 @@ interface Post {
     author: {
         node: {
             name: string,
+            slug: string,
             avatar: {
                 url: string
             }
@@ -58,13 +60,13 @@ interface Post {
 
 const PostSingleCard = ({ post }: { post: Post }) => <div className="post_single">
     <div className="post_image">
-        <Image src={"https://picsum.photos/1200/600"} alt="" height={600} width={1200} />
+        <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} height={600} width={1200} />
     </div>
     <div className="post_meta">
         <div className="meta flex space-x-6 my-8">
-            <AuthorAvatarNameLink imgAlt={"alt"} imgSrc={"https://i.pravatar.cc/30"} link={"john-doe"} name={"John Doe"} textColor={"text-[#000]"} imgSize={30} />
-            <PublishMonthDateYear color="text-[#777]" dateMDY={"October 10, 2024"} />
-            <CommentsCount color="text-[#777]" count={"5"} />
+            <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor={"text-[#000]"} imgSize={30} />
+            <PublishMonthDateYear color="text-[#777]" dateMDY={formatDate(post?.date, "numeric")} />
+            <CommentsCount color="text-[#777]" count={post?.commentCount ? post.commentCount.toString() : "0"} />
         </div>
         <h1 className="post_title font-medium text-4xl">
             {post?.title}
