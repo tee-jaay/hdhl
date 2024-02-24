@@ -4,6 +4,7 @@ import GetInTouch from "./get-in-touch/GetInTouch";
 import LatestPosts from "./latest-posts/LatestPosts";
 import Search from "./search/Search";
 import SidebarComments from "./sidebar-comments/SidebarComments";
+import SidebarTags from "./sidebar-tags/SidebarTags";
 
 const Sidebar = () => {
     return (
@@ -14,7 +15,7 @@ const Sidebar = () => {
             <Advertisement />
             <FollowUs />
             <SidebarComments />
-            <h4>tags</h4>
+            <SidebarTags />
         </aside>
     );
 }
