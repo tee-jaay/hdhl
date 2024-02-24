@@ -1,44 +1,48 @@
+import formatDate from "@/_helpers/formatPostDate";
 import Image from "next/image";
 
-const PostComments = () => {
+interface Comment {
+    id: string,
+    date: string,
+    content: string,
+    approved: boolean,
+    author: {
+        node: {
+            name: string,
+            avatar: {
+                url: string
+            }
+        }
+    }
+}
+
+interface Comments {
+    comments: Comment[]
+}
+
+const PostComment = ({ comment }: { comment: Comment }) => <div className="comment_single flex space-x-4 border-b-2 pb-6">
+    <div className="commenter_avatar w-1/12">
+        <Image
+            src={comment?.author?.node?.avatar?.url ?? "https://i.pravatar.cc/80"}
+            alt={comment?.author?.node?.name}
+            width={80}
+            height={80}
+            className="rounded-full"
+        />
+    </div>
+    <div className="comment space-y-2 w-11/12">
+        <div className="commenter_name capitalize font-medium text-lg">{comment?.author?.node?.name}</div>
+        <div className="comment_date">{formatDate(comment?.date, "numeric")}</div>
+        <div className="comment_text text-[#444] font-light" dangerouslySetInnerHTML={{ __html: comment?.content ?? "" }} />
+    </div>
+</div>
+
+const PostComments = ({ comments }: Comments) => {
     return (
         <div className="comments py-6">
             <h3 className="capitalize font-medium text-[#000]">comments</h3>
             <div className="comments_list space-y-8">
-                <div className="comment_single flex space-x-4 border-b-2 pb-6">
-                    <div className="commenter_avatar w-48">
-                        <Image
-                            src={"https://picsum.photos/70/70"}
-                            alt=""
-                            width={70}
-                            height={70}
-                            className="rounded-full"
-                        /></div>
-                    <div className="comment space-y-2">
-                        <div className="commenter_name capitalize font-medium text-lg">jhon doe</div>
-                        <div className="comment_date">22 April, 2023</div>
-                        <div className="comment_text text-[#444] font-light">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis quis porro voluptas, ullam ducimus at mollitia neque doloremque illum id dicta laboriosam ea repudiandae iure hic assumenda voluptatum incidunt quibusdam?
-                        </div>
-                    </div>
-                </div>
-                <div className="comment_single flex space-x-4 border-b-2 pb-6">
-                    <div className="commenter_avatar w-48">
-                        <Image
-                            src={"https://picsum.photos/70/70"}
-                            alt=""
-                            width={70}
-                            height={70}
-                            className="rounded-full"
-                        /></div>
-                    <div className="comment space-y-2">
-                        <div className="commenter_name capitalize font-medium text-lg">jhon doe</div>
-                        <div className="comment_date">22 April, 2023</div>
-                        <div className="comment_text text-[#444] font-light">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis quis porro voluptas, ullam ducimus at mollitia neque doloremque illum id dicta laboriosam ea repudiandae iure hic assumenda voluptatum incidunt quibusdam?
-                        </div>
-                    </div>
-                </div>
+                {comments && comments.map((comment, _i) => <PostComment key={comment.id} comment={comment} />)}
             </div>
             <div className="comment_leave mt-8">
                 <h3 className="capitalize font-medium text-[#000]">
