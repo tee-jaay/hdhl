@@ -63,7 +63,7 @@ const Hero = async () => {
                             </Link>
                             <AuthorAvatarNameLink imgAlt={data[2]?.author?.node?.name} imgSrc={data[2]?.author?.node?.avatar?.url} link={data[2]?.author?.node?.slug} name={data[2]?.author?.node?.name} textColor="text-[#FFFFFF]" imgSize={20} />
                         </div>
-                        <div className={`flex flex-col justify-end text-white flex-1 py-5 px-6 bg-no-repeat bg-center`} style={{ backgroundImage: `url("https://picsum.photos/800/600?q=2")` }}>
+                        <div className={`flex flex-col justify-end text-white flex-1 py-5 px-6 bg-no-repeat bg-center`} style={{ backgroundImage: `url(${data[3]?.featuredImage?.node?.sourceUrl})` }}>
                             <CategoryBoxBg bgColor={"bg-[#2962ff]"} name={data[3]?.categories?.nodes[0]?.name} slug={data[3]?.categories?.nodes[0]?.slug} />
                             <Link href={`/${data && data[3]?.slug}`} title={`${data && data[3]?.title}`}>
                                 <h4 className="title text-2xl text-white font-semibold my-3 hover:text-[#4ce5a2] transition ease-in-out duration-300">{data && data[3]?.title}</h4>

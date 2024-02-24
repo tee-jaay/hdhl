@@ -1,5 +1,6 @@
-import formatDate from "@/_helpers/formatPostDate";
 import Image from "next/image";
+
+import formatDate from "@/_helpers/formatPostDate";
 
 interface Comment {
     id: string,
@@ -43,6 +44,7 @@ const PostComments = ({ comments }: Comments) => {
             <h3 className="capitalize font-medium text-[#000]">comments</h3>
             <div className="comments_list space-y-8">
                 {comments && comments.map((comment, _i) => <PostComment key={comment.id} comment={comment} />)}
+                {comments.length < 1 && <p>No comment yet.</p>}
             </div>
             <div className="comment_leave mt-8">
                 <h3 className="capitalize font-medium text-[#000]">
