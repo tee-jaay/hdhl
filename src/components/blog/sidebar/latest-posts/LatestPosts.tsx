@@ -72,7 +72,7 @@ const PostCard = ({ post }: { post: Post }) => <div className="flex space-x-4">
 const LatestPosts = async () => {
     const posts = await getData();
     return (
-        <div className="mt-10">
+        <div>
             <SectionHeading headingProps={{ text: "latest posts" }} />
             <div className="latest_posts mt-3 space-y-6">
                 {posts && posts.map((post: Post, _i: number) => <PostCard key={post?.id} post={post} />)}

@@ -3,9 +3,9 @@ import SectionHeading from '../SectionHeading';
 
 const FollowUs = () => {
     return (
-        <div className="mt-10">
+        <div>
             <SectionHeading headingProps={{ text: "follow us" }} />
-            <div className="follow_us_section grid grid-cols-2 gap-2">
+            <div className="follow_us_section mt-4 grid grid-cols-2 gap-2">
                 <div>
                     <Image src={"https://picsum.photos/300/200"} alt='' width={300} height={200} />
                 </div>

@@ -70,7 +70,7 @@ const ConnectionItem = ({ item }: { item: Item }) => <Link href={"/"} className=
 
 const GetInTouch = () => {
     return (
-        <div className="mt-10">
+        <div>
             <SectionHeading headingProps={{ text: "get in touch" }} />
             <div className="socials_connections mt-3 grid grid-cols-2 gap-x-5 gap-y-4">
                 {connectionItems && connectionItems.map((item, i) => <ConnectionItem key={i} item={item} />)}
