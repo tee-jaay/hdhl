@@ -4,6 +4,7 @@ import Image from "next/image";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getLatestPosts from "@/_lib/graphQl/queries/getLatestPosts";
 import CategoryNameSlug from "@/components/common/CategoryNameSlug";
+import SectionHeading from "../SectionHeading";
 
 const getData = async () => {
     // Construct the query and variables
@@ -72,7 +73,7 @@ const LatestPosts = async () => {
     const posts = await getData();
     return (
         <div className="mt-10">
-            <h4 className="capitalize font-medium">latest posts</h4>
+            <SectionHeading headingProps={{ text: "latest posts" }} />
             <div className="latest_posts mt-3 space-y-6">
                 {posts && posts.map((post: Post, _i: number) => <PostCard key={post?.id} post={post} />)}
                 {posts.length < 1 && <p>No published post yet.</p>}

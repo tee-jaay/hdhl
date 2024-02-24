@@ -3,6 +3,7 @@ import { FontAwesomeIcon, } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faInstagramSquare, faLinkedin, faVimeoSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons/faTwitterSquare";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import SectionHeading from "../SectionHeading";
 
 const connectionItems = [
     {
@@ -70,7 +71,7 @@ const ConnectionItem = ({ item }: { item: Item }) => <Link href={"/"} className=
 const GetInTouch = () => {
     return (
         <div className="mt-10">
-            <h4 className="capitalize font-medium">get in touch</h4>
+            <SectionHeading headingProps={{ text: "get in touch" }} />
             <div className="socials_connections mt-3 grid grid-cols-2 gap-x-5 gap-y-4">
                 {connectionItems && connectionItems.map((item, i) => <ConnectionItem key={i} item={item} />)}
             </div>
