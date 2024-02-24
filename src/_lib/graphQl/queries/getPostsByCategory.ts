@@ -1,6 +1,6 @@
 const getPostsByCategory = (): string => `
-query PostsByCategory($category: String!) {
-    posts(where: {categoryName: $category}) {
+query PostsByCategory($category: String!, $limit: Int!) {
+    posts(where: {categoryName: $category}, first: $limit) {
       nodes {
         title
         slug
