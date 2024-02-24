@@ -57,7 +57,6 @@ interface Item {
     count: string,
 }
 
-
 const ConnectionItem = ({ item }: { item: Item }) => <Link href={"/"} className="connection_item flex space-x-2 shadow-lg p-1">
     <div className="conenction_icon">
         <FontAwesomeIcon className={item?.color} icon={item?.icon} height={32} width={32} />
