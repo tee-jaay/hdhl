@@ -47,7 +47,7 @@ interface Post {
 }
 
 const PostItem = ({ post }: { post: Post }) => (
-    <div className="post_item shadow-md">
+    <div className="post_item flex flex-col shadow-md justify-between">
         <div className="post_image">
             <Image
                 alt={post?.featuredImage?.node?.altText}
