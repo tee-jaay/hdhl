@@ -1,4 +1,5 @@
 import GetInTouch from "./get-in-touch/GetInTouch";
+import LatestPosts from "./latest-posts/LatestPosts";
 import Search from "./search/Search";
 
 const Sidebar = () => {
@@ -6,7 +7,7 @@ const Sidebar = () => {
         <aside className="py-12">
             <Search />
             <GetInTouch />
-            <h4>latest posts</h4>
+            <LatestPosts />
             <div>advertismenet</div>
             <h4>follow us</h4>
             <h4>comments</h4>
