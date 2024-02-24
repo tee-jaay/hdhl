@@ -13,8 +13,8 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <section className="flex flex-col mx-auto" style={{ width: "1024px" }}>
-      <div className="blog_header py-16 bg-[#FBFAFA]">
+    <section className="flex flex-col">
+      <div className="blog_header py-16 bg-[#FBFAFA] w-full">
         <h2 className="text-[#000000] text-center text-4xl font-medium tracking-wide">Post Title</h2>
         <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
           Home <span>
@@ -25,7 +25,7 @@ export default function BlogLayout({
           <Link href={"/category/category-slug"}>Category</Link>
         </h6>
       </div>
-      <div className="flex flex-row space-x-8">
+      <div className="flex space-x-8 mx-auto" style={{ width: "1024px" }}>
         <div className="flex-1 bg-[#FFFFFF] py-12">
           {children}
         </div>

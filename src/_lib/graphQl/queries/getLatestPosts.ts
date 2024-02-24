@@ -1,12 +1,13 @@
-const getLatestPosts = (): string => `query GetLatestPosts {
+const getLatestPosts = (): string => `query GetLatestPosts($limit: Int!) {
     posts(
       where: {status: PUBLISH, orderby: {field: DATE, order: DESC}}
-      first: 5
+      first: $limit
     ) {
       nodes {
         title
         slug
         id
+        excerpt
         featuredImage {
           node {
             sourceUrl(size: LARGE)

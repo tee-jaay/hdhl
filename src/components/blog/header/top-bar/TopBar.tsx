@@ -7,7 +7,9 @@ import SocialsLinksIcons from '@/components/common/SocialsLinksIcons';
 const getData = async () => {
     // Construct the query and variables
     const query = getLatestPosts();
-    const variables = {};
+    const variables = {
+        limit: 1,
+    };
     try {
         // Make the request and return the data
         const data = await gqlQuery(query, variables);
