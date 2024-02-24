@@ -58,7 +58,7 @@ const PostCard = ({ post }: { post: Post }) => <div className="flex space-x-4">
             <CategoryNameSlug color={"text-[#999]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
         </div>
         <div className="post_title">
-            <Link href={"/"}>
+            <Link href={post?.slug}>
                 <h5 className="text-[#222] line-clamp-1">{post?.title}</h5>
             </Link>
         </div>
