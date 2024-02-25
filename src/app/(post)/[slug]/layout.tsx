@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
-import Sidebar from "@/components/blog/sidebar/Sidebar";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+import Sidebar from "@/components/blog/sidebar/Sidebar";
 
 export const metadata: Metadata = {
   title: "Healthy Diet Happy Life",
@@ -22,7 +23,7 @@ export default function BlogLayout({
               <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
           </span>
-          <Link href={"/category/category-slug"}>Category</Link>
+          <Link href={`/categories/tracking-progress?limit=12`}>Category</Link>
         </h6>
       </div>
       <div className="flex space-x-8 mx-auto" style={{ width: "1024px" }}>

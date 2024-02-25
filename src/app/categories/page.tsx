@@ -1,9 +1,12 @@
-import React from 'react'
+import gqlQuery from "@/_lib/graphQl/gqlQuery";
 
-const Categories = () => {
+
+const Categories = async () => {
+
+
     return (
         <div>Categories</div>
-    )
+    );
 }
 
 export default Categories;

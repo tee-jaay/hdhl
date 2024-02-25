@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Sidebar from "@/components/blog/sidebar/Sidebar";
 
 export const metadata: Metadata = {
   title: "Healthy Diet Happy Life | Categories",
@@ -12,13 +11,19 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex mx-auto" style={{ width: "1024px" }}>
-      <div className="flex-1">
-        {children}
+    <section className="flex flex-col">
+      <div className="blog_header py-16 bg-[#FBFAFA] w-full">
+        <h2 className="text-[#000000] text-center text-4xl font-medium tracking-wide">Category Details</h2>
+        <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
+          Posts in the category "CategoryName"
+        </h6>
+        <p className="text-center mx-auto mt-4" style={{ width: "1024px" }}>Category description Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tempora quos nulla minima voluptatibus incidunt velit quia sequi sint quas deserunt debitis, maxime quibusdam beatae unde, ut aperiam omnis! Facilis.</p>
       </div>
-      <div className="w-72">
-        <Sidebar />
+      <div className="flex space-x-8 mx-auto" style={{ width: "1024px" }}>
+        <div className="flex-1 bg-[#FFFFFF] py-12">
+          {children}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
