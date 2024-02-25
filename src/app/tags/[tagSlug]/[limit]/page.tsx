@@ -45,7 +45,7 @@ interface PostItemProps {
 }
 
 const PostItem = ({ post }: { post: PostItemProps }) => <Link href={`/${post?.slug}`} className="post_item" title={post?.title}>
-    <div className="text-white relative ">
+    <div className="text-white relative h-96">
         <div className="post_image z-10">
             <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={400} height={600} />
         </div>
@@ -73,7 +73,7 @@ const TagDetailsPage = async ({ params }: { params: { tagSlug: string, limit: st
     const posts = await getData(params.tagSlug, params.limit);
     return (
         <div className="tag_details_page">
-            <div className="posts_list grid grid-cols-4 gap-4">
+            <div className="posts_list grid grid-cols-4 gap-8">
                 {posts && posts.map((post: PostItemProps, _i: number) => <PostItem key={post?.id} post={post} />)}
                 {posts.length < 1 && <p>No post yet.</p>}
             </div>
