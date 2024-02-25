@@ -44,12 +44,9 @@ interface PostItemProps {
     date: string
 }
 
-const PostItem = ({ post }: { post: PostItemProps }) => <Link href={`/${post?.slug}`} className="post_item" title={post?.title}>
-    <div className="text-white relative h-96">
-        <div className="post_image z-10">
-            <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={400} height={600} />
-        </div>
-        <div className="post_data absolute z-20 px-8 py-4 bottom-0 bg-black opacity-50 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+const PostItem = ({ post }: { post: PostItemProps }) => <Link href={`/${post?.slug}`} className="post_item bg-no-repeat bg-center" title={post?.title} style={{ backgroundImage: `url(${post?.featuredImage?.node?.sourceUrl})` }}>
+    <div className="text-white h-96  bg-gradient-to-b from-transparent to-black">
+        <div className="post_data flex flex-col items-start justify-end px-8 py-4 h-full">
             <div className="post_meta flex space-x-4">
                 <div className="date text-white">{formatDate(post?.date, "numeric")}</div>
                 <div className="author text-white flex line-clamp-1 items-center">
@@ -61,7 +58,7 @@ const PostItem = ({ post }: { post: PostItemProps }) => <Link href={`/${post?.sl
                     <span>{post?.author?.node?.name}</span>
                 </div>
             </div>
-            <div className="post_title">
+            <div className="post_title mt-1 mb-3">
                 <h4 className="text-2xl leading-6 text-white line-clamp-3">{post?.title}</h4>
             </div>
             <div className="post_exercpt line-clamp-2 text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
