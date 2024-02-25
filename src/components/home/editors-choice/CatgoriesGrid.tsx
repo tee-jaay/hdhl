@@ -37,9 +37,11 @@ const CatgoriesGrid = async () => {
       <div className="categories_block grid grid-cols-2 gap-x-8 gap-y-8">
         {categories && categories.map((category, i) => (
           <Link key={category.id} href={`/categories/${category.slug}/12`} title={category.name}>
-            <div className="w-36 h-32 px-1 flex flex-col justify-center text-center bg-no-repeat" style={{ backgroundImage: `url(https://picsum.photos/160/128?q=${i})` }}>
-              <div className="text-white text-3xl font-extrabold">{category.count}</div>
-              <div className="text-white uppercase text-sm font-normal tracking-wider">{category.name}</div>
+            <div className="bg-no-repeat " style={{ backgroundImage: `url(https://picsum.photos/160/128?q=${i})` }}>
+              <div className="flex flex-col w-36 h-32 px-1 justify-center text-center bg-gradient-to-b from-transparent to-black">
+                <div className="text-white text-3xl font-extrabold">{category.count}</div>
+                <div className="text-white uppercase text-sm font-normal tracking-wider">{category.name}</div>
+              </div>
             </div>
           </Link>
         ))}
