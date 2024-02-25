@@ -1,12 +1,5 @@
-import Link from "next/link";
-
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
-import formatDate from "@/_helpers/formatPostDate";
-import AuthorAvatarNameLink from "../common/AuthorAvatarNameLink";
-import PublishMonthDateYear from "../common/PublishMonthDateYear";
-import CommentsCount from "../common/CommentsCount";
-import CategoryBoxBg from "../common/CategoryBoxBg";
 import HeroBig from "./hero/HeroBig";
 import HeroMedium from "./hero/HeroMedium";
 import HeroSmall from "./hero/HeroSmall";
