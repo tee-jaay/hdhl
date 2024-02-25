@@ -7,6 +7,7 @@ const getData = async () => {
     const query = getPostsByTag();
     const variables = {
         tag: "carousel",
+        first: 10,
     };
     try {
         // Make the request and return the data

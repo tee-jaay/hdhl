@@ -75,6 +75,7 @@ const CategoryPage = async ({ params }: { params: { categorySlug: string, limit:
         <div className="category_page">
             <div className="posts_list grid grid-cols-3 gap-4">
                 {posts && posts.map((post: PostItemProps, _i: number) => <PostItem key={post?.id} post={post} />)}
+                {posts.length < 1 && <p>No post yet.</p>}
             </div>
         </div>
     );

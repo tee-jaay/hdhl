@@ -1,6 +1,6 @@
 const getPostsByTag = (): string => `
-  query PostsByTag($tag: String!) {
-    posts(where: {tag: $tag}) {
+  query PostsByTag($tag: String!,  $first: Int!) {
+    posts(where: {tag: $tag}, first: $first) {
       nodes {
         title
         slug
