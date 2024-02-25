@@ -33,7 +33,7 @@ const LatestPosts = async () => {
 
     return (
         <section className="mx-auto" style={{ width: "1024px" }}>
-            <div className="flex space-x-8 ">
+            <div className="flex space-x-8">
                 <div className="flex-1">
                     <SectionHeading color={"text-[#000000]"} text={"Latest Posts"} />
                     <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})`, height: '500px' }}>
@@ -50,7 +50,7 @@ const LatestPosts = async () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-80">
+                <div className="w-80 mt-9">
                     <span>
                         <Link href={"blog"} className="flex ml-auto w-16 text-sm capitalize py-2 px-2 cursor-pointer text-white bg-black hover:bg-[#4ce5a2] transition ease-in-out duration-300" >
                             view all
