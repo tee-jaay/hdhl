@@ -15,19 +15,20 @@ interface carouselItem {
 
 const CarouselItem = ({ imgSrc, imgAlt, category, categorySlug, title, slug, date }: carouselItem) => {
     return (
-        <div className="item flex space-x-4">
-            <div className="item-image">
+        <div className="item flex space-x-4 py-12">
+            <div className="item-image w-1/3">
                 <Image
                     alt={imgAlt}
                     src={imgSrc}
                     width={140}
                     height={220}
+                    className="h-full"
                 />
             </div>
-            <div className="item-meta flex flex-col items-start justify-center">
+            <div className="item-meta flex flex-col items-start justify-center w-2/3">
                 <CategoryNameSlug color={"text-[#919191]"} name={category} slug={categorySlug} />
                 <Link href={slug}>
-                    <h4 className="item-title font-semibold mt-2 mb-1 hover:text-[#4ce5a2] transition ease-in-out duration-300">{title}</h4>
+                    <h5 className="item-title line-clamp-1 font-medium mt-2 mb-1 hover:text-[#4ce5a2] transition ease-in-out duration-300">{title}</h5>
                 </Link>
                 <h6 className="item-date"><PublishMonthDateYear color={"text-[#919191]"} dateMDY={date} /></h6>
             </div>

@@ -79,7 +79,7 @@ const CarouselSlider = ({ carouselItems }: CarouselItems) => {
                         imgSrc={item?.featuredImage?.node?.sourceUrl}
                         categorySlug={item?.categories?.nodes[0]?.slug}
                         category={truncateString(item?.categories?.nodes[0]?.name, 8)}
-                        title={truncateString(item?.title, 20)}
+                        title={item?.title}
                         slug={item?.slug}
                         date={formatDate(item?.date, undefined)}
                     />
