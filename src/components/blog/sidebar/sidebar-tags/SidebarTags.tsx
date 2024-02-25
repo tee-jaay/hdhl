@@ -29,9 +29,12 @@ interface TagProps {
     id: string
 }
 
-const TagSingle = ({ tag }: { tag: TagProps }) => <span key={tag.id} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#FFF] text-[#555] shadow-sm hover:text-[#4ce5a2] transition ease-in-out duration-300">
-    <Link href={`/tags/${tag.slug}`} title={tag.name}>{tag.name}</Link>
-</span>
+const TagSingle = ({ tag }: { tag: TagProps }) =>
+    <Link key={tag.id} href={`/tags/${tag.slug}`} title={tag.name} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#FFF] text-[#555] shadow-sm hover:text-[#4ce5a2] transition ease-in-out duration-300"    >
+        <span>
+            {tag.name}
+        </span>
+    </Link>
 
 const SidebarTags = async () => {
     const tags = await getData();
