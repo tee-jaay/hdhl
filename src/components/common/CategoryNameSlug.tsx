@@ -9,7 +9,7 @@ interface category {
 const CategoryNameSlug = ({ name, slug, color }: category) => {
     return (
         <h5 className={`item-category line-clamp-1 uppercase ${color} text-sm tracking-wider`}>
-            <Link href={`/categories/${slug}`} title={name}>
+            <Link href={`/categories/${slug}/12`} title={name}>
                 {name}
             </Link>
         </h5>
