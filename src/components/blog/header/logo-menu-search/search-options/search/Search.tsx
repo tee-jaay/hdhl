@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from 'next/navigation';
-import { useState, useRef, useEffect, FormEvent } from 'react';
+import { useState, useRef, useEffect, ChangeEvent } from 'react';
 
 const Search = () => {
     const router = useRouter();
@@ -15,7 +15,7 @@ const Search = () => {
         });
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: any) => {
         const searchIconContainer = document.getElementById('search_icon_container');
         const searchFormContainer = document.getElementById('search_form_container');
 
@@ -29,7 +29,7 @@ const Search = () => {
         }
     };
 
-    const handleSearch = (e: FormEvent<HTMLFormElement>) => {
+    const handleSearch = (e: any) => {
         e.preventDefault();
         toggleFormVisibility();
         if (searchText.length >= 3) {
@@ -78,7 +78,7 @@ const Search = () => {
                             id="search_field"
                             className="border-1 border-[#eaeaea] bg-slate-100"
                             value={searchText}
-                            onChange={e => setSearchText(e.target.value)}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
                         />
                         <button
                             className="bg-[#222222] text-white px-4 py-1 hover:bg-[#4ce5a2] text-sm transition ease-in-out duration-300"
