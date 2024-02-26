@@ -6,6 +6,7 @@ import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByCategory from "@/_lib/graphQl/queries/getPostsByCategory";
 import formatDate from "@/_helpers/formatPostDate";
 import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
+import PostCardProps from "@/_models/PostCardProps";
 
 const getData = async (category: string) => {
     // Construct the query and variables
@@ -25,28 +26,7 @@ const getData = async (category: string) => {
     }
 }
 
-interface Post {
-    title: string,
-    slug: string,
-    date: string,
-    author: {
-        node: {
-            name: string
-            slug: string
-            avatar: {
-                url: string
-            }
-        }
-    },
-    featuredImage: {
-        node: {
-            sourceUrl: string,
-            altText: string,
-        }
-    }
-}
-
-const PostItem = ({ post }: { post: Post }) => (
+const PostItem = ({ post }: { post: PostCardProps }) => (
     <div className="post_item flex flex-col shadow-md justify-between">
         <div className="post_image">
             <Image

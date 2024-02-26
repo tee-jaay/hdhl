@@ -7,6 +7,7 @@ const mainMenuLinks = [
     { path: "/tags", text: "Tags" },
     { path: "/contact-us", text: "Contact Us" },
     { path: "/about", text: "About" },
+    { path: "/authors", text: "Authors" },
 ];
 
 const MainMenu = () => {
