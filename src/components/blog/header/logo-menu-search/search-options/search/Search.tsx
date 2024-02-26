@@ -70,22 +70,24 @@ const Search = () => {
                     id="search_form_container"
                     className="top-0 right-0 p-4 z-50 bg-[#fff] absolute border-2 border-[#4ce5a2]"
                 >
-                    <div className="flex">
-                        <input
-                            type="text"
-                            name="search"
-                            id="search_field"
-                            className="border-1 border-[#eaeaea] bg-slate-100"
-                            value={searchText}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
-                        />
-                        <button
-                            className="bg-[#222222] text-white px-4 py-1 hover:bg-[#4ce5a2] text-sm transition ease-in-out duration-300"
-                            onClick={handleSearch}
-                        >
-                            Search
-                        </button>
-                    </div>
+                    <form onSubmit={handleSearch}>
+                        <div className="flex">
+                            <input
+                                type="text"
+                                name="search"
+                                id="search_field"
+                                className="border-1 border-[#eaeaea] bg-slate-100"
+                                value={searchText}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
+                            />
+                            <button
+                                className="bg-[#222222] text-white px-4 py-1 hover:bg-[#4ce5a2] text-sm transition ease-in-out duration-300"
+                                onClick={handleSearch}
+                            >
+                                Search
+                            </button>
+                        </div>
+                    </form>
                 </div>
             )}
         </div>
