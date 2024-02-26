@@ -34,8 +34,7 @@ const Search = () => {
         toggleFormVisibility();
         if (searchText.length >= 3) {
             // Go to search page with query text
-            // router.push(`/search?q=${searchText}`);
-            router.push(`/blog`);
+            router.push(`/search?s=${searchText}`);
         }
         return null;
     }
