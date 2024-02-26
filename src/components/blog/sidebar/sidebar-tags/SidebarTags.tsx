@@ -30,7 +30,7 @@ interface TagProps {
 }
 
 const TagSingle = ({ tag }: { tag: TagProps }) =>
-    <Link key={tag.id} href={`/tags/${tag.slug}`} title={tag.name} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#FFF] text-[#555] shadow-sm hover:text-[#4ce5a2] transition ease-in-out duration-300"    >
+    <Link key={tag.id} href={`/tags/${tag.slug}/12`} title={tag.name} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#FFF] text-[#555] shadow-sm hover:text-[#4ce5a2] transition ease-in-out duration-300"    >
         <span>
             {tag.name}
         </span>

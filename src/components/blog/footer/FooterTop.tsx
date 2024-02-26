@@ -50,7 +50,7 @@ const FooterTop = ({ pages, tags, generalSettings }: FooterTopProps) => {
                         <div className="mt-4 grid grid-cols-3 gap-2">
                             {tags && tags.map((tag, _i) => (
                                 <span key={tag.id} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#333333]">
-                                    <Link href={`/tags/${tag.slug}`} title={tag.name}>{tag.name}</Link>
+                                    <Link href={`/tags/${tag.slug}/12`} title={tag.name}>{tag.name}</Link>
                                 </span>
                             ))}
                         </div>
