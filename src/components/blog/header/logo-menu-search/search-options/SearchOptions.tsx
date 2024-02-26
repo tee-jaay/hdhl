@@ -1,7 +1,6 @@
-import React from 'react'
-import Theme from './theme/Theme'
-import Search from './search/Search'
-import AuthLink from './auth/AuthLink'
+import Theme from "./theme/Theme"
+import AuthLink from "./auth/AuthLink"
+import Search from "./search/Search"
 
 const SearchOptions = () => {
     return (
@@ -13,4 +12,4 @@ const SearchOptions = () => {
     )
 }
 
-export default SearchOptions
+export default SearchOptions;
