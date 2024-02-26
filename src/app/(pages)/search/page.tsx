@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import PostCardProps from "@/_models/PostCardProps";
 
-const SearchResult = () => {
+const Search = () => {
     const params = useSearchParams();
     const [posts, setPosts] = useState([]);
 
@@ -35,7 +35,7 @@ const SearchResult = () => {
     };
 
     useEffect(() => {
-        const d = fetchData(decodedString);
+        fetchData(decodedString);
     }, [decodedString]);
 
     return (
@@ -60,5 +60,13 @@ const PostItem = ({ post }: { post: PostCardProps }) => <div className="post_ite
     </Link>
 </div>
 
-export default SearchResult;
+const SearchPosts = () => {
+    return (
+        <Suspense>
+            <Search />
+        </Suspense>
+    );
+}
+
+export default SearchPosts;
 
