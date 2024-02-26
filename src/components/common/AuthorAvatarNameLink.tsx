@@ -12,7 +12,7 @@ interface author {
 
 const AuthorAvatarNameLink = ({ link, imgSrc, imgAlt, name, textColor, imgSize }: author) => {
     return (
-        <Link href={`/author/${link}`}>
+        <Link href={`/authors/${link}`}>
             <div className="author flex items-center space-x-2">
                 <span>
                     <Image className="rounded-full" alt={imgAlt} src={imgSrc} width={imgSize} height={imgSize} />

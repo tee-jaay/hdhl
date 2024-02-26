@@ -44,7 +44,7 @@ const connectionItems = [
     {
         link: "/",
         icon: faYoutubeSquare,
-        color: "#EF242B",
+        color: "text-[#EF242B]",
         text: "followers",
         count: "467",
     },
