@@ -5,8 +5,8 @@ const mainMenuLinks = [
     { path: "/blog", text: "Blog" },
     { path: "/categories", text: "Categories" },
     { path: "/tags", text: "Tags" },
-    { path: "/contact-us", text: "Contact Us" },
-    { path: "/about", text: "About" },
+    { path: "/pages/contact-us", text: "Contact Us" },
+    { path: "/pages/about", text: "About" },
     { path: "/authors", text: "Authors" },
 ];
 

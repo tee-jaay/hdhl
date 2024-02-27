@@ -59,7 +59,7 @@ const FooterTop = ({ pages, tags, generalSettings }: FooterTopProps) => {
                         <h4 className="capitalize text-start font-semibold">quick links</h4>
                         <div className="mt-4 flex flex-col space-y-1">
                             {pages && pages?.map((page, _i) => (
-                                <span key={page.id}><Link className="capitalize font-light text-sm text-gray-100" href={page.slug}>{page.title}</Link></span>
+                                <span key={page.id}><Link className="capitalize font-light text-sm text-gray-100" href={`/pages/${page.slug}`}>{page.title}</Link></span>
                             ))}
                         </div>
                     </div>
