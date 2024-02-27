@@ -11,7 +11,9 @@ const getData = async () => {
         // Make the request and return the data
         const data = await gqlQuery(query, variables);
         const { pages: { nodes: pages }, tags: { nodes: tags }, generalSettings } = data;
-        return { pages, tags, generalSettings };
+        // Filter out the page with the slug "contact-us"
+        const filteredPages = pages.filter((page: any) => page.slug !== "contact-us");
+        return { pages: filteredPages, tags, generalSettings };
     } catch (error) {
         // Handle the error here
         console.error(error);

@@ -1,5 +1,4 @@
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
-import formatDate from "@/_helpers/formatPostDate";
 import GetPageDetailsByUri from "@/_lib/graphQl/queries/getPageDetailsByUri";
 import PageProps from "@/_models/PageProps";
 
@@ -24,7 +23,6 @@ const PageDetails = async ({ params }: { params: { pageUri: string } }) => {
         <div>
             <h1>{page?.title}</h1>
             <div className="text-[#444]" dangerouslySetInnerHTML={{ __html: page?.content ?? "" }} />
-            <div className="mt-4 font-light text-[#444]">Publish Date: {formatDate(page?.date, "numeric")}</div>
         </div>
     );
 }

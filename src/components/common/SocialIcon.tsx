@@ -1,12 +1,8 @@
 import Link from 'next/link';
 import { FontAwesomeIcon, } from '@fortawesome/react-fontawesome';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-interface SocialIconProps {
-    link: string;
-    title: string;
-    icon: IconDefinition;
-}
+import SocialIconProps from '@/_models/SocialIconProps';
+
 
 const SocialIcon = ({ link, title, icon }: SocialIconProps) => {
     return (

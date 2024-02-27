@@ -1,30 +1,16 @@
 import Link from "next/link";
+
+import TagProps from "@/_models/TagProps";
+import FooterTopProps from "@/_models/FooterTopProps";
+import PageProps from "@/_models/PageProps";
 import LogoWithLink from "@/components/common/LogoWithLink";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
-interface GeneralSettings {
-    title: string,
-    description: string,
-}
+const TagItem = ({ tag }: { tag: TagProps }) => <span key={tag.id} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#333333]">
+    <Link href={`/tags/${tag.slug}/12`} title={tag.name}>{tag.name}</Link>
+</span>
 
-interface Tag {
-    id: string,
-    name: string,
-    slug: string,
-    count: number
-}
-
-interface Page {
-    id: string,
-    slug: string,
-    title: string,
-}
-
-interface FooterTopProps {
-    pages: Page[];
-    tags: Tag[];
-    generalSettings: GeneralSettings;
-}
+const PageItem = ({ page }: { page: PageProps }) => <span><Link className="capitalize font-light text-sm text-gray-100" href={`/pages/${page.slug}`}>{page.title}</Link></span>
 
 const FooterTop = ({ pages, tags, generalSettings }: FooterTopProps) => {
     return (
@@ -48,19 +34,13 @@ const FooterTop = ({ pages, tags, generalSettings }: FooterTopProps) => {
                     <div className="flex-1 tags_cloud">
                         <h4 className="capitalize text-start font-semibold">tags cloud</h4>
                         <div className="mt-4 grid grid-cols-3 gap-2">
-                            {tags && tags.map((tag, _i) => (
-                                <span key={tag.id} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#333333]">
-                                    <Link href={`/tags/${tag.slug}/12`} title={tag.name}>{tag.name}</Link>
-                                </span>
-                            ))}
+                            {tags && tags.map((tag, _i) => <TagItem key={tag?.id} tag={tag} />)}
                         </div>
                     </div>
                     <div className="flex-1 quick_links">
                         <h4 className="capitalize text-start font-semibold">quick links</h4>
                         <div className="mt-4 flex flex-col space-y-1">
-                            {pages && pages?.map((page, _i) => (
-                                <span key={page.id}><Link className="capitalize font-light text-sm text-gray-100" href={`/pages/${page.slug}`}>{page.title}</Link></span>
-                            ))}
+                            {pages && pages?.map((page, _i) => <PageItem key={page.slug} page={page} />)}
                         </div>
                     </div>
                     <div className="flex-1 newsletter_subscribe">
