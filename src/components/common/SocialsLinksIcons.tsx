@@ -1,13 +1,8 @@
 import { faFacebookF, faLinkedinIn, faPinterest, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import SocialIcon from '@/components/common/SocialIcon';
+import SocialIconLinkTitleProps from '@/_models/SocialIconLinkTitleProps';
 
-interface SocialIconLinkTitle {
-    icon: typeof faFacebookF,
-    link: string,
-    title: string
-}
-
-const socials: SocialIconLinkTitle[] = [
+const socials: SocialIconLinkTitleProps[] = [
     {
         icon: faFacebookF,
         link: "/",
