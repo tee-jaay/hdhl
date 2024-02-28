@@ -8,20 +8,18 @@ const ContactPage = () => {
         name: string;
         email: string;
         subject: string;
-        website?: string;
         message: string;
     }>({
         name: "",
         email: "",
         subject: "",
-        website: "",
         message: "",
     });
 
     const submitForm = async () => {
         try {
             // Make the request and return the data
-            const res = await fetch("/api/pages/contact-us", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_MAILER}/send-email`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -92,13 +90,6 @@ const ContactPage = () => {
                             name="subject"
                             placeholder="Subject"
                             required
-                        />
-                        <input
-                            onChange={handleInputChange}
-                            className="flex-1 font-light text-lg bg-[#F9F9F9] py-2 px-8"
-                            type="url"
-                            name="website"
-                            placeholder="Website (optional)"
                         />
                     </div>
                     <textarea
