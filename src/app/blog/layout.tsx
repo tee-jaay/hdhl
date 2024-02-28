@@ -22,7 +22,7 @@ export default function BlogLayout({
               <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
             </svg>
           </span>
-          <Link href={"/blog"}>Blog</Link>
+          <span>Blog</span>
         </h6>
       </div>
       <div className="flex space-x-8 mx-auto" style={{ width: "1023px" }}>

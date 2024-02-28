@@ -1,3 +1,3 @@
-export async function GET(request: Request) {
-    return new Response('contact us');
+export async function POST(request: Request) {
+    return new Response(JSON.stringify('POST'));
 }
