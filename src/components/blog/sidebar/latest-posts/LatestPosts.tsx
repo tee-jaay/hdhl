@@ -50,7 +50,7 @@ interface Post {
 
 const PostCard = ({ post }: { post: Post }) => <div className="flex space-x-4">
     <div className="post_image w-1/4">
-        <Link href={post?.slug}>
+        <Link href={`/${post?.slug}`}>
             <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={100} height={100} />
         </Link>
     </div>
@@ -59,7 +59,7 @@ const PostCard = ({ post }: { post: Post }) => <div className="flex space-x-4">
             <CategoryNameSlug color={"text-[#999]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
         </div>
         <div className="post_title">
-            <Link href={post?.slug}>
+            <Link href={`/${post?.slug}`}>
                 <h5 className="text-[#222] line-clamp-1">{post?.title}</h5>
             </Link>
         </div>
