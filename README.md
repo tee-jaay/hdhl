@@ -6,6 +6,7 @@ First,
 APP_NAME=
 APP_URL=
 GRAPHQL_URL=
+NEXT_PUBLIC_CONTACT_EMAIL=
 ```
 
 Then run the development server:
