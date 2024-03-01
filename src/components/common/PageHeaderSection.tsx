@@ -69,7 +69,7 @@ const PageHeaderSection = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                 </span>
-                <Link href={`/categories/${post?.categorySlug}/12`}>{post?.categoryName}</Link>
+                <Link className="capitalize" href={`/categories/${post?.categorySlug}/12`}>{post?.categoryName}</Link>
             </h6>
         </div>
     );
