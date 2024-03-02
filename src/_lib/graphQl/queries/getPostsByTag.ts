@@ -26,6 +26,12 @@ const getPostsByTag = (): string => `
             slug
           }
         }
+        tags {
+          nodes {
+            slug
+            name
+          }
+        }
         commentCount
         date
       }
