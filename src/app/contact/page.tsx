@@ -106,7 +106,7 @@ const ContactPage = () => {
                             onClick={() => submitForm()}
                             type="button"
                             value="Send"
-                            className="cursor-pointer text-[#FFF] bg-[#4CE5A2] w-full py-2 hover:bg-[#222] transition ease-in-out duration-300"
+                            className="cursor-pointer text-[#FFF] bg-[#222] w-full py-2 hover:bg-[#4CE5A2] transition ease-in-out duration-300"
                         />
                     </div>
                 </div>
