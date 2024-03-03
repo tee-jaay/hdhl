@@ -21,6 +21,9 @@ const getUserBySlug = (): string => `
                     }
                 }
             }
+            avatar {
+                url
+            }
         }
     }
 `;

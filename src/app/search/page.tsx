@@ -3,18 +3,21 @@
 import Link from "next/link";
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+
 import PostCardProps from "@/_models/PostCardProps";
+import SearchResultLoader from "@/components/loaders/SearchResultLoader";
 
 const Search = () => {
     const params = useSearchParams();
     const [posts, setPosts] = useState([]);
+    const [isSerching, setIsSerching] = useState(false);
 
     const searchText = params.get('s');
-    console.log(searchText);
     const encodedString = searchText ? searchText?.toString() : "";
     const decodedString = decodeURIComponent(encodedString);
 
     const fetchData = async (searchText: string) => {
+        setIsSerching(true);
         try {
             // Make the request and return the data
             const res = await fetch("/api/blog/search", {
@@ -31,6 +34,8 @@ const Search = () => {
             // Handle the error here
             console.error(error);
             throw error;
+        } finally {
+            () => setIsSerching(false);
         }
     };
 
@@ -39,10 +44,13 @@ const Search = () => {
     }, [decodedString]);
 
     return (
-        <div className="posts_list space-y-8">
-            {posts && posts.map((post: PostCardProps, _i: number) => <PostItem key={post.id} post={post} />)}
-
-            {posts.length < 1 && <p>No content found.</p>}
+        <div>
+            <h2 className="text-[#222] text-start text-4xl font-medium tracking-wide">Search result for: "{searchText}"</h2>
+            <hr className="mb-6" />
+            <div className="posts_list space-y-8">
+                {posts && posts.map((post: PostCardProps, _i: number) => <PostItem key={post.id} post={post} />)}
+                {isSerching && <SearchResultLoader />}
+            </div>
         </div>
     );
 }

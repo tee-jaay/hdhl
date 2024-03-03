@@ -10,9 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-  if (!React.isValidElement(children)) {
-    return null;
-  }
+  if (!React.isValidElement(children)) { return null; }
   const { segmentPath } = children.props ?? null;
   return (
     <section className="flex flex-col">
