@@ -5,11 +5,7 @@ export const metadata: Metadata = {
   description: "Nourish Your Body, Flourish Your Life",
 };
 
-export default function BlogLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function BlogLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <section className="flex flex-col mx-auto">
       <div className="blog_header py-16 bg-[#FBFAFA] w-full">

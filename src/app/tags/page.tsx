@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import TagProps from "@/_models/TagProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getTagsList from "@/_lib/graphQl/queries/getTagsList";
 
@@ -22,13 +23,6 @@ const getData = async (limit: string) => {
     }
 }
 
-interface TagProps {
-    id: string,
-    slug: string,
-    name: string,
-    count: number,
-}
-
 const TagItem = ({ tag }: { tag: TagProps }) => (
     <Link className="tag_item" href={`/tags/${tag?.slug}/12`}>
         <div className="flex items-center space-x-2 border border-gray-200 py-2 px-4 mr-4 capitalize">
@@ -39,7 +33,7 @@ const TagItem = ({ tag }: { tag: TagProps }) => (
 );
 
 const TagsPage = async () => {
-    const tags = await getData("");
+    const tags = await getData("100");
     return (
         <div >
             <div className="blog_header py-16 bg-[#FBFAFA] w-full">
