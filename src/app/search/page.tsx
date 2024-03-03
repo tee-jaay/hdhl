@@ -29,13 +29,13 @@ const Search = () => {
             });
             const data = await res.json();
             setPosts(data);
+            setIsSerching(false);
             return data;
         } catch (error) {
             // Handle the error here
             console.error(error);
+            setIsSerching(false);
             throw error;
-        } finally {
-            () => setIsSerching(false);
         }
     };
 
