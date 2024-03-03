@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import PostCardProps from "@/_models/PostCardProps";
 import formatDate from "@/_helpers/formatPostDate";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByCategory from "@/_lib/graphQl/queries/getPostsByCategory";
@@ -24,26 +25,7 @@ const getData = async (categorySlug: string, limit: string) => {
     }
 }
 
-interface PostItemProps {
-    id: string,
-    title: string,
-    slug: string,
-    excerpt: string,
-    featuredImage: {
-        node: {
-            sourceUrl: string,
-            altText: string,
-        }
-    },
-    author: {
-        node: { name: string, slug: string, avatar: [{ url: string }] }
-    },
-    categories: { nodes: [{ name: string, slug: string }] },
-    commentCount: number,
-    date: string
-}
-
-const PostItem = ({ post }: { post: PostItemProps }) => <Link href={`/${post?.slug}`} className="post_item bg-no-repeat bg-center" title={post?.title} style={{ backgroundImage: `url(${post?.featuredImage?.node?.sourceUrl})` }}>
+const PostItem = ({ post }: { post: PostCardProps }) => <Link href={`/${post?.slug}`} className="post_item bg-no-repeat bg-center" title={post?.title} style={{ backgroundImage: `url(${post?.featuredImage?.node?.sourceUrl})` }}>
     <div className="text-white h-96  bg-gradient-to-b from-transparent to-black">
         <div className="post_data flex flex-col items-start justify-end px-8 py-4 h-full">
             <div className="post_meta flex space-x-4">
@@ -70,7 +52,7 @@ const CategoryPage = async ({ params }: { params: { categorySlug: string, limit:
     return (
         <div className="category_page">
             <div className="posts_list grid grid-cols-3 gap-8">
-                {posts && posts.map((post: PostItemProps, _i: number) => <PostItem key={post?.id} post={post} />)}
+                {posts && posts.map((post: PostCardProps, _i: number) => <PostItem key={post?.id} post={post} />)}
                 {posts.length < 1 && <p>No post yet.</p>}
             </div>
         </div>
