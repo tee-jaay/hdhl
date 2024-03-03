@@ -1,6 +1,7 @@
 const getPostBySlug = (): string => `
     query getPostBySlug($slug: ID!) {
         post(id: $slug, idType: SLUG) {
+            postId
             slug
             id
             title(format: RENDERED)

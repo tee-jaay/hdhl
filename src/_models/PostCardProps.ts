@@ -1,6 +1,7 @@
 import CategoryProps from "./CategoryProps"
 
 interface PostCardProps {
+    postId: number,
     title: string,
     slug: string,
     id: string,

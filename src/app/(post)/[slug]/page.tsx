@@ -41,7 +41,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
                 </div>
             </div>
             <PostAuthor author={post?.author?.node} />
-            <PostPagination />
+            <PostPagination postId={post?.postId} />
             <PostRelatedPosts category={post?.categories?.nodes[0]?.name} />
             <PostComments comments={post?.comments?.nodes} />
         </div>
