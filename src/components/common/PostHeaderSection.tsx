@@ -26,13 +26,15 @@ const PostHeaderSection = async ({ slug }: { slug: string }) => {
         <div className="blog_header py-16 bg-[#FBFAFA] w-full">
             <h2 className="w-[1024px] mx-auto text-[#000000] text-center text-3xl font-medium tracking-wide">{post?.title}</h2>
             <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center capitalize">
-                home
+                <Link href={"/"}>home</Link>
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>
                 </span>
-                blog <span>
+                <Link href={"/blog"}>
+                    blog
+                </Link> <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                     </svg>

@@ -1,20 +1,18 @@
+import Link from "next/link";
 import Image from "next/image";
 
+import PostCardProps from "@/_models/PostCardProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getUserBySlug from "@/_lib/graphQl/queries/getUserBySlug";
-import PostCardProps from "@/_models/PostCardProps";
+import formatDate from "@/_helpers/formatPostDate";
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 import CommentsCount from "@/components/common/CommentsCount";
-import formatDate from "@/_helpers/formatPostDate";
-import Link from "next/link";
 
 const getData = async (authorSlug: string) => {
     // Construct the query and variables
     const query = getUserBySlug();
     // Convert the limit to an integer
-    const variables = {
-        id: authorSlug,
-    };
+    const variables = { id: authorSlug, };
     try {
         // Make the request and return the data
         const data = await gqlQuery(query, variables);
