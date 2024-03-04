@@ -21,7 +21,6 @@ const getData = async () => {
 
 const TopBar = async () => {
     const data = await getData();
-    // console.log('TopBar', data);
     return (
         <section className="topbar bg-[#222] py-2">
             <div className="w-[1024px] flex justify-between mx-auto">

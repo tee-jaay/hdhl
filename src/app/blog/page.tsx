@@ -41,8 +41,9 @@ const Blog = () => {
     const handlePreviousPage = () => {
         setIsFetching(true);
         try {
-            getData({ startCursor: pageInfo?.startCursor, endCursor: "" })
+            getData({ startCursor: pageInfo?.startCursor, endCursor: pageInfo?.endCursor })
                 .then((res) => {
+                    setPosts([]);
                     setPosts([...res?.posts?.nodes]);
                     setPageInfo(res?.posts?.pageInfo);
                 })
@@ -58,7 +59,7 @@ const Blog = () => {
         try {
             getData({ startCursor: "", endCursor: pageInfo?.endCursor })
                 .then((res) => {
-                    console.log(res);
+                    setPosts([]);
                     setPosts([...res?.posts?.nodes]);
                     setPageInfo(res?.posts?.pageInfo);
                 })
@@ -91,13 +92,8 @@ const Blog = () => {
                 <PostsList posts={posts} />
                 {pageInfo?.hasNextPage || pageInfo?.hasPreviousPage ? (
                     <div className="paginations mt-8 flex space-x-2">
-                        {pageInfo?.hasPreviousPage && (<div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-14 h-7 capitalize hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300" onClick={handleNextPage}>next</div>)}
-                        <div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-8 h-7 hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300">1</div>
-                        <div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-8 h-7 hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300">2</div>
-                        <div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-8 h-7 hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300">3</div>
-                        <div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-8 h-7 hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300">4</div>
-                        <div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-8 h-7 hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300">5</div>
-                        {pageInfo?.hasNextPage && (<div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-14 h-7 capitalize hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300" onClick={handlePreviousPage}>prev</div>)}
+                        {pageInfo?.hasNextPage && (<div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-14 h-7 capitalize hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300" onClick={handleNextPage}>next</div>)}
+                        {pageInfo?.hasPreviousPage && (<div className="pagination_item text-[#444] cursor-pointer border font-medium text-sm flex items-center justify-center w-14 h-7 capitalize hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300" onClick={handlePreviousPage}>prev</div>)}
                     </div>
                 ) : null}
             </div>
