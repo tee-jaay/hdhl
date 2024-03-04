@@ -10,7 +10,7 @@ const getData = async (limit: string) => {
     // Convert the limit to an integer
     const parsedLimit = parseInt(limit, 10);
     const variables = {
-        first: parsedLimit || 20,
+        first: parsedLimit || 100,
     };
     try {
         // Make the request and return the data

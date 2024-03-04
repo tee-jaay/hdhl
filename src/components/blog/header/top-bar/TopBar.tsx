@@ -7,9 +7,7 @@ import SocialsLinksIcons from '@/components/common/SocialsLinksIcons';
 const getData = async () => {
     // Construct the query and variables
     const query = getLatestPosts();
-    const variables = {
-        limit: 1,
-    };
+    const variables = { limit: 1, startCursor: "", endCursor: "" };
     try {
         // Make the request and return the data
         const data = await gqlQuery(query, variables);
@@ -23,9 +21,10 @@ const getData = async () => {
 
 const TopBar = async () => {
     const data = await getData();
+    // console.log('TopBar', data);
     return (
         <section className="topbar bg-[#222] py-2">
-            <div className="flex justify-between mx-auto" style={{ width: "1024px" }}>
+            <div className="w-[1024px] flex justify-between mx-auto">
                 <div className="latest_news flex justify-start w-2/3">
                     <div className="items-center">
                         <span className="w-1/6 text-sm text-white uppercase">latest article</span>

@@ -1,8 +1,16 @@
-const getLatestPosts = (): string => `query GetLatestPosts($limit: Int!) {
+const getLatestPosts = (): string => `query GetLatestPosts($limit: Int!, $startCursor: String!, $endCursor: String!) {
     posts(
       where: {status: PUBLISH, orderby: {field: DATE, order: DESC}}
       first: $limit
+      after: $endCursor
+      before: $startCursor
     ) {
+      pageInfo {
+        endCursor
+        startCursor
+        hasNextPage
+        hasPreviousPage
+      }
       nodes {
         title
         slug

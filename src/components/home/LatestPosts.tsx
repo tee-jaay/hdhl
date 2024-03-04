@@ -10,12 +10,10 @@ import SectionHeading from "../common/SectionHeading";
 import CategoryBoxBg from "../common/CategoryBoxBg";
 import LatestPostsRoundImageList from "../common/LatestPostsRoundImageList";
 
-const getData = async () => {
+const getData = async (cursors: { startCursor: string, endCursor: string }) => {
     // Construct the query and variables
     const query = getLatestPosts();
-    const variables = {
-        limit: 5,
-    };
+    const variables = { limit: 5, startCursor: cursors.startCursor || "", endCursor: cursors.endCursor || "" };
     try {
         // Make the request and return the data
         const data = await gqlQuery(query, variables);
@@ -28,11 +26,11 @@ const getData = async () => {
 }
 
 const LatestPosts = async () => {
-    const data = await getData();
+    const data = await getData({ startCursor: "", endCursor: "" });
     const postsWithoutFirst = data.slice(1);
 
     return (
-        <section className="mx-auto" style={{ width: "1024px" }}>
+        <section className="w-[1024px] mx-auto">
             <div className="flex space-x-8">
                 <div className="flex-1">
                     <SectionHeading color={"text-[#000000]"} text={"Latest Posts"} />
