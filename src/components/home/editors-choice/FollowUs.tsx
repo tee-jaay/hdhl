@@ -13,25 +13,25 @@ const socials: Social[] = [
         id: 1,
         name: "Health",
         link: "https://www.example.com",
-        imgSrc: "https://picsum.photos/300/200"
+        imgSrc: "https://picsum.photos/300/200?q=1"
     },
     {
         id: 2,
         name: "Nutrition",
         link: "https://www.example.com",
-        imgSrc: "https://picsum.photos/300/200"
+        imgSrc: "https://picsum.photos/300/200?q=2"
     },
     {
         id: 3,
         name: "Mental",
         link: "https://www.example.com",
-        imgSrc: "https://picsum.photos/300/200"
+        imgSrc: "https://picsum.photos/300/200?q=3"
     },
     {
         id: 4,
         name: "Medicine",
         link: "https://www.example.com",
-        imgSrc: "https://picsum.photos/300/200"
+        imgSrc: "https://picsum.photos/300/200?q=4"
     },
 ];
 
@@ -44,7 +44,7 @@ const FollowUs = () => {
                         <div className="social_item">
                             <Image
                                 src={social.imgSrc}
-                                alt=""
+                                alt={social.name}
                                 width={300}
                                 height={200}
                             />

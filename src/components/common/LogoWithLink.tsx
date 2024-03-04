@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const LogoWithLink = () => {
     return (
-        <Link href={"/"} title="website name">
+        <Link href={"/"} title={process.env.APP_NAME}>
             <div className="flex h-full items-center space-x-2">
-                <Image className="justify-center align-middle" src="https://picsum.photos/200/60" alt="" width={100} height={60} />
+                <Image className="justify-center align-middle" src="/logo.png" alt="hdhl" width={100} height={60} style={{ width: "26px", height: "24px" }} />
                 <span className="font-extrabold text-2xl">H<span className="underline">D</span>HL</span>
             </div>
         </Link>

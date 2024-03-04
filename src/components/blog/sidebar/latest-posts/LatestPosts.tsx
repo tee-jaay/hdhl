@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import PostCardProps from "@/_models/PostCardProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getLatestPosts from "@/_lib/graphQl/queries/getLatestPosts";
 import CategoryNameSlug from "@/components/common/CategoryNameSlug";
@@ -9,9 +10,7 @@ import SectionHeading from "../SectionHeading";
 const getData = async () => {
     // Construct the query and variables
     const query = getLatestPosts();
-    const variables = {
-        limit: 4,
-    };
+    const variables = { limit: 4, startCursor: "", endCursor: "" };
     try {
         // Make the request and return the data
         const data = await gqlQuery(query, variables);
@@ -23,32 +22,7 @@ const getData = async () => {
     }
 }
 
-interface Category {
-    name: string,
-    slug: string,
-}
-
-interface Post {
-    id: string,
-    title: string,
-    slug: string,
-    featuredImage: {
-        node: {
-            sourceUrl: string,
-            altText: string
-        }
-    },
-    author: {
-        node: {
-            name: string,
-        }
-    },
-    categories: {
-        nodes: Category[],
-    },
-}
-
-const PostCard = ({ post }: { post: Post }) => <div className="flex space-x-4">
+const PostCard = ({ post }: { post: PostCardProps }) => <div className="flex space-x-4">
     <div className="post_image w-1/4">
         <Link href={`/${post?.slug}`}>
             <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={100} height={100} />
@@ -71,11 +45,12 @@ const PostCard = ({ post }: { post: Post }) => <div className="flex space-x-4">
 
 const LatestPosts = async () => {
     const posts = await getData();
+    // console.log('LatestPosts', posts);
     return (
         <div>
             <SectionHeading headingProps={{ text: "latest posts" }} />
             <div className="latest_posts mt-3 space-y-6">
-                {posts && posts.map((post: Post, _i: number) => <PostCard key={post?.id} post={post} />)}
+                {posts && posts.map((post: PostCardProps, _i: number) => <PostCard key={post?.id} post={post} />)}
                 {posts.length < 1 && <p>No published post yet.</p>}
             </div>
         </div>
