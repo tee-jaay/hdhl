@@ -68,7 +68,7 @@ const Search = () => {
                 <div
                     ref={searchFormRef}
                     id="search_form_container"
-                    className="top-0 right-0 p-4 z-50 bg-[#fff] absolute border-2 border-[#4ce5a2]"
+                    className="top-0 right-0 p-4 z-50 bg-[#fff] dark:bg-[#222] absolute border-2 border-[#4ce5a2]"
                 >
                     <form onSubmit={handleSearch}>
                         <div className="flex">
@@ -76,7 +76,7 @@ const Search = () => {
                                 type="text"
                                 name="search"
                                 id="search_field"
-                                className="border-1 border-[#eaeaea] bg-slate-100"
+                                className="border-1 border-[#eaeaea] bg-slate-100 dark:text-white dark:bg-[#666]"
                                 value={searchText}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
                             />
