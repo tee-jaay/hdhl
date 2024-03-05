@@ -23,9 +23,9 @@ const getData = async (params: string) => {
 const PostHeaderSection = async ({ slug }: { slug: string }) => {
     const { post } = await getData(slug);
     return (
-        <div className="blog_header py-16 bg-[#FBFAFA] w-full">
-            <h2 className="w-[1024px] mx-auto text-[#000000] text-center text-3xl font-medium tracking-wide">{post?.title}</h2>
-            <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center capitalize">
+        <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
+            <h2 className="w-[1024px] mx-auto text-[#000000] dark:text-white text-center text-3xl font-medium tracking-wide">{post?.title}</h2>
+            <h6 className="text-[#8F8E8E] dark:text-[#FEFEFE] text-lg flex justify-center items-center capitalize">
                 <Link href={"/"}>home</Link>
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">

@@ -1,17 +1,10 @@
+import React from "react";
 import Image from "next/image";
 
-interface FeaturedImage {
-    node: {
-        altText: string,
-        sourceUrl: string,
-    }
-}
+import PostData from "@/_models/PostData";
+import PostFeaturedImage from "@/_models/PostFeaturedImage";
 
-interface Data {
-    content: string,
-}
-
-const PostDetails = ({ data, image }: { data: Data, image: FeaturedImage }) => {
+const PostDetails: React.FC<{ data: PostData, image: PostFeaturedImage }> = ({ data, image }) => {
     return (
         <>
             <div className="post_image w-full">
@@ -22,7 +15,7 @@ const PostDetails = ({ data, image }: { data: Data, image: FeaturedImage }) => {
                     height={500}
                 />
             </div>
-            <div className="content mt-8 text-[#444]">
+            <div className="content mt-8 text-[#444] dark:text-white">
                 <div dangerouslySetInnerHTML={{ __html: data ?? "" }} />
             </div>
         </>

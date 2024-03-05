@@ -1,3 +1,5 @@
+import React from "react";
+
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostBySlug from "@/_lib/graphQl/queries/getPostBySlug";
 import PostDetails from "@/components/blog/post/PostDetails";
@@ -25,7 +27,7 @@ const getData = async (params: string) => {
     }
 }
 
-const Post = async ({ params }: { params: { slug: string } }) => {
+const Post: React.FC<{ params: { slug: string } }> = async ({ params }) => {
     const { post } = await getData(params.slug);
     return (
         <div className="flex flex-col">
@@ -33,7 +35,7 @@ const Post = async ({ params }: { params: { slug: string } }) => {
             <hr className="mt-10 mb-6" />
             <div className="tags_share_links flex justify-between">
                 <div className="tags flex">
-                    <h6 className="font-medium mr-4 text-lg text-[#444444]">Tags:</h6>
+                    <h6 className="font-medium mr-4 text-lg text-[#444444] dark:text-white">Tags:</h6>
                     <PostTags tags={post?.tags?.nodes} />
                 </div>
                 <div className="flex flex-col">
