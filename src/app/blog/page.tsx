@@ -42,8 +42,13 @@ const Blog = () => {
             getData({ startCursor: pageInfo?.startCursor, endCursor: pageInfo?.endCursor })
                 .then((res) => {
                     setPosts([]);
-                    setPosts([...res?.posts?.nodes]);
-                    setPageInfo(res?.posts?.pageInfo);
+                    setPosts([...res?.posts?.nodes] || []);
+                    setPageInfo(res?.posts?.pageInfo || {});
+                    // Scroll to top of the page
+                    window.scrollTo({
+                        top: 320,
+                        behavior: "smooth",
+                    });
                 })
                 .catch((e) => console.error(e))
                 .finally(() => setIsFetching(false));
@@ -56,8 +61,8 @@ const Blog = () => {
         setIsFetching(true);
         getData({ startCursor: "", endCursor: "" })
             .then((res) => {
-                setPosts(res?.posts?.nodes);
-                setPageInfo(res?.posts?.pageInfo);
+                setPosts(res?.posts?.nodes || []);
+                setPageInfo(res?.posts?.pageInfo || {});
             })
             .catch((e) => console.log(e))
             .finally(() => setIsFetching(false)
