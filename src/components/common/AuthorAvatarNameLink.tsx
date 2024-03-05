@@ -17,7 +17,7 @@ const AuthorAvatarNameLink = ({ link, imgSrc, imgAlt, name, textColor, imgSize }
                 <span>
                     <Image className="rounded-full" alt={imgAlt} src={imgSrc} width={imgSize} height={imgSize} />
                 </span>
-                <span className={textColor}>
+                <span className={`${textColor} dark:text-white`}>
                     by {name}
                 </span>
             </div>

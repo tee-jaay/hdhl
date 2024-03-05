@@ -5,7 +5,7 @@ interface sectionHeading {
 
 const SectionHeading = ({ text, color }: sectionHeading) => {
     return (
-        <h2 className={`mb-6 text-3xl font-semibold ${color}`}>{text}</h2>
+        <h2 className={`mb-6 text-3xl font-semibold ${color} dark:text-white`}>{text}</h2>
     );
 }
 

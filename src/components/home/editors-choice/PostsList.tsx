@@ -52,7 +52,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
   return (
     <div className="posts space-y-8">
       {posts && posts.map((post, i) => (
-        <div key={post.id} className="post flex space-x-8 bg-[#FFFFFF] pr-8">
+        <div key={post.id} className="post flex space-x-8 bg-[#FFFFFF] dark:bg-[#222] pr-8">
           <div className="post_image flex-1/2">
             <Image alt={post?.featuredImage?.node?.altText}
               src={post?.featuredImage?.node?.sourceUrl}
@@ -66,10 +66,10 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
             <div>
               <Link href={post?.slug} title={post?.title}>
-                <h4 className="text-xl text-black hover:text-[#4ce5a2] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
+                <h4 className="text-xl text-black dark:text-white hover:text-[#4ce5a2] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
               </Link>
             </div>
-            <h6 className="text-gray-500" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />
+            <h6 className="text-gray-500 dark:text-white" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />
             <div>
               <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor="text-[#000000]" imgSize={20} />
             </div>

@@ -32,7 +32,7 @@ const CatgoriesGrid = async () => {
   const categories: Category[] = await getData();
 
   return (
-    <div className="categories w-full">
+    <div className="categories w-full dark:text-white">
       <h4 className="text-2xl mb-7">Categories</h4>
       <div className="categories_block grid grid-cols-2 gap-x-8 gap-y-8">
         {categories && categories.map((category, i) => (

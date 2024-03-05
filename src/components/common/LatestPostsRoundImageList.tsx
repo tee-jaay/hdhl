@@ -45,7 +45,7 @@ const LatestPostsRoundImageList = ({ posts }: { posts: Post[] }) => {
                         />
                         <h5 className="mt-2">
                             <Link title={post?.title} href={post?.slug}>
-                                <div className="text-[#444] leading-snug line-clamp-2 hover:text-[#4ce5a2] transition ease-in-out duration-300">
+                                <div className="text-[#444] dark:text-white leading-snug line-clamp-2 hover:text-[#4ce5a2] transition ease-in-out duration-300">
                                     {post?.title}
                                 </div>
                             </Link>
