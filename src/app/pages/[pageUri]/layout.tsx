@@ -1,7 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 
-import Sidebar from "@/components/blog/sidebar/Sidebar";
 import PageHeaderSection from "@/components/common/PageHeaderSection";
 
 export const metadata: Metadata = {
@@ -18,9 +17,6 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
       <div className="flex space-x-8 mx-auto" style={{ width: "1023px" }}>
         <div className="flex-1 bg-[#FFFFFF] py-12">
           {children}
-        </div>
-        <div className="w-72 bg-[#FFFFFF]">
-          <Sidebar />
         </div>
       </div>
     </section>
