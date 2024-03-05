@@ -1,9 +1,9 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const Search = () => {
+const Search: React.FC = () => {
     const router = useRouter();
     const [searchText, setSearchText] = useState("");
 
@@ -18,16 +18,16 @@ const Search = () => {
 
     return (
         <form onSubmit={handleSearch}>
-            <div className="flex justify-between bg-white items-center mt-12 py-2 px-4 border border-gray-300 space-x-1">
+            <div className="flex justify-between bg-white dark:bg-[#222] items-center mt-12 py-2 px-4 border border-gray-300 space-x-1">
                 <input
                     value={searchText}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
                     type="text"
                     placeholder={"Search..."}
-                    className="bg-white w-full text-lg"
+                    className="bg-white dark:bg-[#222] w-full text-lg dark:text-[#FEFEFE]"
                 />
-                <div onClick={handleSearch} className="cursor-pointer bg-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 ml-4">
+                <div onClick={handleSearch} className="cursor-pointer bg-white dark:bg-[#222]">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 ml-4 dark:text-white">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                     </svg>
                 </div>

@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -22,7 +23,7 @@ const getData = async () => {
     }
 }
 
-const PostCard = ({ post }: { post: PostCardProps }) => <div className="flex space-x-4">
+const PostCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div className="flex space-x-4">
     <div className="post_image w-1/4">
         <Link href={`/${post?.slug}`}>
             <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={100} height={100} />
@@ -34,24 +35,23 @@ const PostCard = ({ post }: { post: PostCardProps }) => <div className="flex spa
         </div>
         <div className="post_title">
             <Link href={`/${post?.slug}`}>
-                <h5 className="text-[#222] line-clamp-1">{post?.title}</h5>
+                <h5 className="text-[#222] dark:text-white line-clamp-1">{post?.title}</h5>
             </Link>
         </div>
-        <div className="post_author text-[#666]">
-            by <span className="text-[#222]">{post?.author?.node?.name}</span>
+        <div className="post_author text-[#666] dark:text-[#FEFEFE]">
+            by <span className="text-[#222] dark:text-[#FEFEFE]">{post?.author?.node?.name}</span>
         </div>
     </div>
 </div>
 
-const LatestPosts = async () => {
+const LatestPosts: React.FC = async () => {
     const posts = await getData();
-    // console.log('LatestPosts', posts);
     return (
         <div>
             <SectionHeading headingProps={{ text: "latest posts" }} />
             <div className="latest_posts mt-3 space-y-6">
                 {posts && posts.map((post: PostCardProps, _i: number) => <PostCard key={post?.id} post={post} />)}
-                {posts.length < 1 && <p>No published post yet.</p>}
+                {posts.length < 1 && <p className="dark:text-white">No published post yet.</p>}
             </div>
         </div>
     );

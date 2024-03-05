@@ -1,9 +1,9 @@
-interface HeadingProps {
-    text: string,
-}
-const SectionHeading = ({ headingProps }: { headingProps: HeadingProps }) => {
+import React from "react";
+import HeadingProps from "@/_models/HeadingProps";
+
+const SectionHeading: React.FC<{ headingProps: HeadingProps }> = ({ headingProps }) => {
     return (
-        <h4 className="capitalize font-medium">{headingProps?.text}</h4>
+        <h4 className="capitalize font-medium dark:text-white">{headingProps?.text}</h4>
     );
 }
 

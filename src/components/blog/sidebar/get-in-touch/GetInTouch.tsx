@@ -1,8 +1,9 @@
+import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon, } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faInstagramSquare, faLinkedin, faVimeoSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons/faTwitterSquare";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import GetInTouchItem from "@/_models/GetInTouch";
 import SectionHeading from "../SectionHeading";
 
 const connectionItems = [
@@ -50,25 +51,17 @@ const connectionItems = [
     },
 ];
 
-interface Item {
-    link: string,
-    icon: IconProp,
-    color: string,
-    text: string,
-    count: string,
-}
-
-const ConnectionItem = ({ item }: { item: Item }) => <Link href={"/"} className="connection_item flex space-x-2 shadow-lg p-1">
+const ConnectionItem: React.FC<{ item: GetInTouchItem }> = ({ item }) => <Link href={"/"} className="connection_item flex space-x-2 shadow-lg p-1">
     <div className="conenction_icon">
         <FontAwesomeIcon className={item?.color} icon={item?.icon} height={32} width={32} />
     </div>
     <div className="text_count text-[#222] text-xs">
-        <div className="capitalize">{item?.text}</div>
+        <div className="capitalize dark:text-white">{item?.text}</div>
         <div className="text-[#999]">{item?.count}</div>
     </div>
 </Link>
 
-const GetInTouch = () => {
+const GetInTouch: React.FC = () => {
     return (
         <div>
             <SectionHeading headingProps={{ text: "get in touch" }} />

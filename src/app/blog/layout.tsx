@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 export default function BlogLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <section className="flex flex-col mx-auto">
-      <div className="blog_header py-16 bg-[#FBFAFA] w-full">
-        <h2 className="text-[#000000] text-center text-4xl font-medium tracking-wide">Blog</h2>
-        <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
+    <section className="flex flex-col mx-auto dark:bg-[#222]">
+      <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
+        <h2 className="text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">Blog</h2>
+        <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
           <Link href="/">Home</Link> <span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -22,10 +22,10 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
         </h6>
       </div>
       <div className="w-[1024px] flex space-x-8 mx-auto">
-        <div className="flex-1 bg-[#FFFFFF] py-12">
+        <div className="flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12">
           {children}
         </div>
-        <div className="w-72 bg-[#FFFFFF]">
+        <div className="w-72 bg-[#FFFFFF] dark:bg-[#222]">
           <Sidebar />
         </div>
       </div>
