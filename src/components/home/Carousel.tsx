@@ -23,7 +23,7 @@ const getData = async () => {
 const Carousel = async () => {
     const data = await getData();
     return (
-        <section className="carousel flex pt-24 pb-8 mx-auto" style={{ width: '1024px' }}>
+        <section className="carousel w-[1024px] flex pt-24 pb-8 mx-auto dark:text-white">
             <CarouselSlider carouselItems={data} />
         </section>
     );

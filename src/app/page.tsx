@@ -7,7 +7,7 @@ import Advertisement from "@/components/home/Advertisement";
 
 export default function Home() {
   return (
-    <>
+    <div className="dark:bg-[#222]">
       {/* Hero */}
       <Hero />
 
@@ -25,6 +25,6 @@ export default function Home() {
 
       {/* Editors Choice */}
       <EditorsChoice />
-    </>
+    </div>
   );
 }
