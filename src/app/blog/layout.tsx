@@ -21,7 +21,7 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
           <span>Blog</span>
         </h6>
       </div>
-      <div className="flex space-x-8 mx-auto" style={{ width: "1023px" }}>
+      <div className="w-[1024px] flex space-x-8 mx-auto">
         <div className="flex-1 bg-[#FFFFFF] py-12">
           {children}
         </div>
