@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const SwitchTheme = () => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
