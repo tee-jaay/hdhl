@@ -1,20 +1,17 @@
-import { Key, } from "react";
+import React, { Key } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByCategory from "@/_lib/graphQl/queries/getPostsByCategory";
 import formatDate from "@/_helpers/formatPostDate";
-import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
 import PostCardProps from "@/_models/PostCardProps";
+import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
 
 const getData = async (category: string) => {
     // Construct the query and variables
     const query = getPostsByCategory();
-    const variables = {
-        category: category,
-        limit: 3
-    };
+    const variables = { category: category, limit: 3 };
     try {
         // Make the request and return the data
         const data = await gqlQuery(query, variables);
@@ -26,7 +23,7 @@ const getData = async (category: string) => {
     }
 }
 
-const PostItem = ({ post }: { post: PostCardProps }) => (
+const PostItem: React.FC<{ post: PostCardProps }> = ({ post }) => (
     <div className="post_item flex flex-col shadow-md justify-between">
         <div className="post_image">
             <Image
@@ -42,7 +39,7 @@ const PostItem = ({ post }: { post: PostCardProps }) => (
             </div>
             <div className="post_title mt-1 line-clamp-2">
                 <Link href={post?.slug} title={post?.title}>
-                    <div className="capitalize text-[#444] text-lg font-normal leading-tight hover:text-[#4ce5a2] transition ease-in-out duration-300">
+                    <div className="capitalize text-[#444] dark:text-white text-lg font-normal leading-tight hover:text-[#4ce5a2] transition ease-in-out duration-300">
                         {post?.title}
                     </div>
                 </Link>
@@ -61,11 +58,11 @@ const PostItem = ({ post }: { post: PostCardProps }) => (
     </div>
 );
 
-const PostRelatedPosts = async ({ category }: { category: string }) => {
+const PostRelatedPosts: React.FC<{ category: string }> = async ({ category }) => {
     const posts = await getData(category);
     return (
         <div className="related_posts">
-            <h3 className="capitalize font-medium text-[#000]">related posts</h3>
+            <h3 className="capitalize font-medium text-[#000] dark:text-white">related posts</h3>
             <div className="posts grid grid-cols-3 space-x-4">
                 {posts.map((post: any, i: Key) => (
                     <PostItem key={i} post={post} />

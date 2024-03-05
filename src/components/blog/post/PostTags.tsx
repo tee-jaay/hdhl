@@ -1,21 +1,17 @@
 import Link from "next/link";
 
-interface Tag {
-    name: string,
-    slug: string,
-}
+import TagProps from "@/_models/TagProps";
+import React from "react";
 
-interface Tags {
-    tags: Tag[]
-}
+interface Tags { tags: TagProps[] }
 
-const PostTags = ({ tags }: Tags) => {
+const PostTags: React.FC<Tags> = ({ tags }) => {
     return (
         <div className="tags_links flex flex-wrap items-start">
             {tags?.map((tag, _i) => (
                 <div key={tag.slug} className="mr-1 mb-2 text-xs">
                     <Link title={tag.name} href={`/tags/${tag.slug}/12`}>
-                        <span className="capitalize text-[#444444] border border-[#cccccc] py-1 px-4">
+                        <span className="capitalize text-[#444444] dark:text-[#FEFEFE] border border-[#cccccc] py-1 px-4">
                             {tag.name}
                         </span>
                     </Link>

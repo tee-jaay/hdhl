@@ -1,7 +1,8 @@
-import Image from 'next/image';
-import SectionHeading from '../SectionHeading';
+import React from "react";
+import Image from "next/image";
+import SectionHeading from "../SectionHeading";
 
-const FollowUs = () => {
+const FollowUs: React.FC = () => {
     return (
         <div>
             <SectionHeading headingProps={{ text: "follow us" }} />
