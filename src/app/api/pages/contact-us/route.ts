@@ -1,9 +1,10 @@
 export async function POST(request: Request) {
     console.log(request.body);
+    const mailerUrl = process.env.MAILER_URL;
     const formData = {};
     try {
         // Make the request and return the data
-        const res = await fetch(`${process.env.MAILER_URL}/send-email`, {
+        const res = await fetch(`${mailerUrl}/send-email`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
