@@ -1,39 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
     const [formData, setFormData] = useState<{
-        name: string;
-        email: string;
-        subject: string;
-        message: string;
+        name: string; email: string; subject: string; message: string;
     }>({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+        name: "", email: "", subject: "", message: "",
     });
 
     const submitForm = async () => {
-        try {
-            // Make the request and return the data
-            const res = await fetch(`${process.env.NEXT_PUBLIC_MAILER}/send-email`, {
+        const res = await fetch("/api/pages/contact-us",
+            {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ formData }),
-            });
-            const data = await res.json();
-            console.log('submitForm', data);
-            return data;
-        } catch (error) {
-            // Handle the error here
-            console.error(error);
-            throw error;
-        };
+                body: JSON.stringify(formData),
+            }
+        )
+        const data = await res.json();
+        console.log('submitForm', data);
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
