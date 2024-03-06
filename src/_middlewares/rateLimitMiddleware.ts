@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 const rateLimit = 1; // Maximum number of requests allowed within the time window
 const timeWindow = parseInt(process.env.TIME_WINDOW!); // Time window in milliseconds
 
@@ -21,7 +23,7 @@ export default async function rateLimitMiddleware(request: Request & { socket: a
 
         if (requestCounts.get(ipAddress).count > rateLimit) {
             // If the count exceeds the rate limit
-            return new Response("Too Many Requests", { status: 429 }); // Return a 429 Too Many Requests response
+            return NextResponse.json("Too Many Requests", { status: 429 }); // Return a 429 Too Many Requests response
         }
     } else {
         // If no request count exists for the IP address
