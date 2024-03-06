@@ -45,7 +45,7 @@ const Post: React.FC<{ params: { slug: string } }> = async ({ params }) => {
             <PostAuthor author={post?.author?.node} />
             <PostPagination postId={post?.postId} />
             <PostRelatedPosts category={post?.categories?.nodes[0]?.name} />
-            <PostComments comments={post?.comments?.nodes} />
+            <PostComments postId={post?.databaseId} comments={post?.comments?.nodes} />
         </div>
     );
 }
