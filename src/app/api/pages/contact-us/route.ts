@@ -1,28 +1,54 @@
+import { Resend } from 'resend';
+
 export async function POST(request: Request) {
-    console.log(request.body);
-    const mailerUrl = process.env.MAILER_URL;
-    const formData = {
-        name: "Ali Bates",
-        email: "saradog@example.com",
-        subject: "Sint quis debitis fu",
-        message: "Quo omnis ut reprehe",
-    };
+    const resend = new Resend(process.env.RESEND_API_KEY!);
+    const requestBody = await request.json();
     try {
-        // Make the request and return the data
-        const res = await fetch(`${mailerUrl}/send-email`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
+        const { data } = await resend.emails.send({
+            from: requestBody?.email,
+            to: process.env.CONTACT_EMAIL!,
+            subject: requestBody?.subject,
+            html: requestBody?.message,
         });
-        const data = await res.json();
-        console.log('submitForm', data);
-        return data;
+        return new Response(JSON.stringify(data));
     } catch (error) {
-        // Handle the error here
-        console.error(error);
-        throw error;
-    };
-    return new Response(JSON.stringify('POST'));
+        console.log(error);
+        return new Response(JSON.stringify(error));
+    }
 }
+// import { NextResponse } from 'next/server';
+// import nodemailer from 'nodemailer'
+
+// export async function POST(request: Request) {
+//     try {
+//         const { subject, message, email, name } = await request.json();
+
+//         const transporter = nodemailer.createTransport({
+//             host: process.env.SMTP_HOST!,
+//             port: process.env.SMTP_PORT!,
+//             secure: false,
+//             auth: {
+//                 user: process.env.SMTP_USERNAME!,
+//                 pass: process.env.SMTP_PASSWORD!
+//             }
+//         })
+
+//         const mailOption = {
+//             from: email,
+//             to: process.env.CONTACT_EMAIL!,
+//             subject: subject,
+//             html: `
+//         <h3>${name}</h3>
+//         <li> title: ${subject}</li>
+//         <li> message: ${message}</li> 
+//         `
+//         }
+
+//         await transporter.sendMail(mailOption)
+
+//         return NextResponse.json({ message: "Email Sent Successfully" }, { status: 200 })
+//     } catch (error) {
+//         console.log(error);
+//         return NextResponse.json({ message: "Failed to Send Email" }, { status: 500 })
+//     }
+// }

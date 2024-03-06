@@ -14,9 +14,7 @@ const ContactPage: React.FC = () => {
         const res = await fetch("/api/pages/contact-us",
             {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json", },
                 body: JSON.stringify(formData),
             }
         )
