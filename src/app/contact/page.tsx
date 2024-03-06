@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
 const ContactPage: React.FC = () => {
@@ -10,6 +10,10 @@ const ContactPage: React.FC = () => {
     }>({
         name: "", email: "", subject: "", message: "",
     });
+    const [notification, setNotification] = useState<{
+        type: "success" | "error";
+        message: string;
+    } | null>(null);
 
     const submitForm = async () => {
         setIsBusy(true);
@@ -21,7 +25,13 @@ const ContactPage: React.FC = () => {
             }
         )
         const data = await res.json();
-        console.log('submitForm', data);
+        if (data.messageId) {
+            // Success
+            setNotification({ type: "success", message: "Message sent successfully!" });
+        } else {
+            // Error
+            setNotification({ type: "error", message: "An error occurred. Please try again later." });
+        }
         setIsBusy(false);
     };
 
@@ -32,6 +42,17 @@ const ContactPage: React.FC = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+    useEffect(() => {
+        // If the notification is present, start a timer to clear it after 3.5 seconds
+        if (notification) {
+            const timer = setTimeout(() => {
+                setNotification(null);
+            }, 3500);
+
+            // Clear the timer when the component unmounts
+            return () => clearTimeout(timer);
+        }
+    }, [notification]);
 
     return (
         <div className="contact_us">
@@ -98,6 +119,12 @@ const ContactPage: React.FC = () => {
                             className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#222] hover:bg-[#4CE5A2]"}  text-[#FFF]  w-full py-2 transition ease-in-out duration-300`}
                         />
                     </div>
+                    {/* Show notification if present */}
+                    {notification && (
+                        <div className={`notification ${notification.type === "success" ? "bg-green-500" : "bg-red-500"} text-white px-4 py-1 my-2`}>
+                            {notification.message}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
