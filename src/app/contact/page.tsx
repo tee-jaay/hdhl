@@ -1,46 +1,52 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import * as Yup from "yup";
+import { useFormik } from "formik";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
 const ContactPage: React.FC = () => {
     const [isBusy, setIsBusy] = useState(false);
-    const [formData, setFormData] = useState<{
-        name: string; email: string; subject: string; message: string;
-    }>({
-        name: "", email: "", subject: "", message: "",
-    });
     const [notification, setNotification] = useState<{
         type: "success" | "error";
         message: string;
     } | null>(null);
 
-    const submitForm = async () => {
-        setIsBusy(true);
-        const res = await fetch("/api/pages/contact-us",
-            {
+    const validationSchema = Yup.object({
+        name: Yup.string().required("Please enter your name"),
+        email: Yup.string().email("Invalid email address").required("Please enter your email"),
+        subject: Yup.string().required("Please enter a subject"),
+        message: Yup.string().required("Please enter a message"),
+    });
+
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+        },
+        validationSchema,
+        onSubmit: async (values, { resetForm }) => {
+            setIsBusy(true);
+            const res = await fetch("/api/pages/contact-us", {
                 method: "POST",
-                headers: { "Content-Type": "application/json", },
-                body: JSON.stringify(formData),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values),
+            });
+            const data = await res.json();
+            if (data.messageId) {
+                // Success
+                setNotification({ type: "success", message: "Message sent successfully!" });
+                // Clear form inputs
+                resetForm();
+            } else {
+                // Error
+                setNotification({ type: "error", message: "An error occurred. Please try again later." });
             }
-        )
-        const data = await res.json();
-        if (data.messageId) {
-            // Success
-            setNotification({ type: "success", message: "Message sent successfully!" });
-        } else {
-            // Error
-            setNotification({ type: "error", message: "An error occurred. Please try again later." });
-        }
-        setIsBusy(false);
-    };
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-
-        // Update the form data
-        setFormData({ ...formData, [name]: value });
-    };
+            setIsBusy(false);
+        },
+    });
 
     useEffect(() => {
         // If the notification is present, start a timer to clear it after 3.5 seconds
@@ -73,52 +79,81 @@ const ContactPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="contact_form w-3/5 flex flex-col space-y-4">
-                    <div className="flex space-x-4">
-                        <input
-                            onChange={handleInputChange}
-                            className="flex-1 font-light text-lg bg-[#F9F9F9] py-2 px-8"
-                            type="text"
-                            placeholder="Your Name"
-                            name="name"
-                            required
-                        />
-                        <input
-                            onChange={handleInputChange}
-                            className="flex-1 font-light text-lg bg-[#F9F9F9] py-2 px-8"
-                            type="email"
-                            placeholder="Your Email"
-                            name="email"
-                            required
-                        />
-                    </div>
-                    <div className="flex space-x-4">
-                        <input
-                            onChange={handleInputChange}
-                            className="flex-1 font-light text-lg bg-[#F9F9F9] py-2 px-8"
-                            type="text"
-                            name="subject"
-                            placeholder="Subject"
-                            required
-                        />
-                    </div>
-                    <textarea
-                        onChange={handleInputChange}
-                        className="message font-light text-lg bg-[#F9F9F9] py-2 px-8"
-                        rows={6}
-                        cols={30}
-                        placeholder="Message"
-                        name="message"
-                        required
-                    />
-                    <div className="send_btn">
-                        <input
-                            onClick={() => submitForm()}
-                            type="button"
-                            value="Send"
-                            className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#222] hover:bg-[#4CE5A2]"}  text-[#FFF]  w-full py-2 transition ease-in-out duration-300`}
-                        />
-                    </div>
+                <div className="contact_form w-3/5">
+                    <form onSubmit={formik.handleSubmit} className="flex flex-col space-y-4">
+                        <div className="flex space-x-8">
+                            <div className="flex-1">
+                                <input
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.name}
+                                    className=" font-light text-lg bg-[#F9F9F9] py-2 px-8 w-full"
+                                    type="text"
+                                    placeholder="Your Name"
+                                    name="name"
+                                    required
+                                />
+                                {formik.touched.name && formik.errors.name && (
+                                    <div className="text-red-400">{formik.errors.name}</div>
+                                )}
+                            </div>
+                            <div className="flex-1">
+                                <input
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.email}
+                                    className=" font-light text-lg bg-[#F9F9F9] py-2 px-8 w-full"
+                                    type="email"
+                                    placeholder="Your Email"
+                                    name="email"
+                                    required
+                                />
+                                {formik.touched.email && formik.errors.email && (
+                                    <div className="text-red-400">{formik.errors.email}</div>
+                                )}
+                            </div>
+                        </div>
+                        <div className="flex space-x-4">
+                            <div className="w-full">
+                                <input
+                                    onChange={formik.handleChange}
+                                    onBlur={formik.handleBlur}
+                                    value={formik.values.subject}
+                                    className="flex-1 font-light text-lg bg-[#F9F9F9] py-2 px-8 w-full"
+                                    type="text"
+                                    name="subject"
+                                    placeholder="Subject"
+                                    required
+                                />
+                                {formik.touched.subject && formik.errors.subject && (
+                                    <div className="text-red-400">{formik.errors.subject}</div>
+                                )}
+                            </div>
+                        </div>
+                        <div>
+                            <textarea
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                                value={formik.values.message}
+                                className="message font-light text-lg bg-[#F9F9F9] py-2 px-8 w-full"
+                                rows={6}
+                                cols={30}
+                                placeholder="Message"
+                                name="message"
+                                required
+                            />
+                            {formik.touched.message && formik.errors.message && (
+                                <div className="text-red-400">{formik.errors.message}</div>
+                            )}
+                        </div>
+                        <div className="send_btn">
+                            <input
+                                type="submit"
+                                value="Send"
+                                className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#222] hover:bg-[#4CE5A2]"}  text-[#FFF]  w-full py-2 transition ease-in-out duration-300`}
+                            />
+                        </div>
+                    </form>
                     {/* Show notification if present */}
                     {notification && (
                         <div className={`notification ${notification.type === "success" ? "bg-green-500" : "bg-red-500"} text-white px-4 py-1 my-2`}>
