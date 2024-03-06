@@ -13,7 +13,7 @@ const timeWindow = parseInt(process.env.TIME_WINDOW!); // Time window in millise
 
 const requestCounts = new Map(); // Map to store request counts for each IP address
 
-export async function middleware(request: Request & { socket: any }) {
+async function middleware(request: Request & { socket: any }) {
     const ipAddress = request.headers.get("X-Forwarded-For") || request.socket.remoteAddress; // Get the IP address from the request headers or socket
     const now = Date.now(); // Get the current timestamp
 
