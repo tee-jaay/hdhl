@@ -18,6 +18,7 @@
 // }
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer'
+import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
 export async function POST(request: Request) {
     try {
@@ -25,13 +26,13 @@ export async function POST(request: Request) {
 
         const transporter = nodemailer.createTransport({
             host: process.env.SMTP_HOST!,
-            port: process.env.SMTP_PORT!,
-            secure: false,
+            port: parseInt(process.env.SMTP_PORT!),
+            secure: true,
             auth: {
                 user: process.env.SMTP_USERNAME!,
                 pass: process.env.SMTP_PASSWORD!
             }
-        })
+        } as SMTPTransport.Options);
 
         const mailOption = {
             from: email,
