@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
 const ContactPage: React.FC = () => {
+    const [isBusy, setIsBusy] = useState(false);
     const [formData, setFormData] = useState<{
         name: string; email: string; subject: string; message: string;
     }>({
@@ -11,6 +12,7 @@ const ContactPage: React.FC = () => {
     });
 
     const submitForm = async () => {
+        setIsBusy(true);
         const res = await fetch("/api/pages/contact-us",
             {
                 method: "POST",
@@ -20,6 +22,7 @@ const ContactPage: React.FC = () => {
         )
         const data = await res.json();
         console.log('submitForm', data);
+        setIsBusy(false);
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -92,7 +95,7 @@ const ContactPage: React.FC = () => {
                             onClick={() => submitForm()}
                             type="button"
                             value="Send"
-                            className="cursor-pointer text-[#FFF] bg-[#222] w-full py-2 hover:bg-[#4CE5A2] transition ease-in-out duration-300"
+                            className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#222] hover:bg-[#4CE5A2]"}  text-[#FFF]  w-full py-2 transition ease-in-out duration-300`}
                         />
                     </div>
                 </div>
