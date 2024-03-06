@@ -1,12 +1,22 @@
 ## Getting Started
 
-First, 
 ### Provide the .env variables values
+
+#### For the App
 ```bash
 APP_NAME=
 APP_URL=
 GRAPHQL_URL=
+```
+#### For Contact Page
+```bash
 NEXT_PUBLIC_CONTACT_EMAIL=
+CONTACT_EMAIL=
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USERNAME=
+SMTP_PASSWORD=
+TIME_WINDOW=180000
 ```
 
 Then run the development server:
