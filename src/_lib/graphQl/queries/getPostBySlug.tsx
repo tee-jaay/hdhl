@@ -4,6 +4,7 @@ const getPostBySlug = (): string => `
             postId
             slug
             id
+            databaseId
             title(format: RENDERED)
             content(format: RENDERED)
             date
