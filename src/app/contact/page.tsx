@@ -5,10 +5,12 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
+import FormActionNotificationBox from "@/components/common/notifications/FormActionNotificationBox";
+
 const ContactPage: React.FC = () => {
     const [isBusy, setIsBusy] = useState(false);
     const [notification, setNotification] = useState<{
-        type: "success" | "error";
+        type: "success" | "error" | "warning";
         message: string;
     } | null>(null);
 
@@ -35,11 +37,15 @@ const ContactPage: React.FC = () => {
                 body: JSON.stringify(values),
             });
             const data = await res.json();
+
             if (data.messageId) {
                 // Success
                 setNotification({ type: "success", message: "Message sent successfully!" });
                 // Clear form inputs
                 resetForm();
+            } else if (res.status == 429) {
+                // Too many requests
+                setNotification({ type: "warning", message: "Too Many Requests. Please try again later." });
             } else {
                 // Error
                 setNotification({ type: "error", message: "An error occurred. Please try again later." });
@@ -155,11 +161,7 @@ const ContactPage: React.FC = () => {
                         </div>
                     </form>
                     {/* Show notification if present */}
-                    {notification && (
-                        <div className={`notification ${notification.type === "success" ? "bg-green-500" : "bg-red-500"} text-white px-4 py-1 my-2`}>
-                            {notification.message}
-                        </div>
-                    )}
+                    <FormActionNotificationBox message={notification?.message || ""} type={notification?.type || ""} />
                 </div>
             </div>
         </div>

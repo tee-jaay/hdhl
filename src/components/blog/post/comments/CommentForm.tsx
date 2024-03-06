@@ -4,10 +4,14 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
+import FormActionNotificationBox from "@/components/common/notifications/FormActionNotificationBox";
+
+
+
 const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
     const [isBusy, setIsBusy] = useState(false);
     const [notification, setNotification] = useState<{
-        type: "success" | "error";
+        type: "success" | "error" | "warning";
         message: string;
     } | null>(null);
     const validationSchema = Yup.object().shape({
@@ -53,6 +57,9 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                     setNotification({ type: "success", message: "Message sent successfully!" });
                     // Clear the message field
                     formik.setFieldValue("message", "");
+                } else if (res.status == 429) {
+                    // Too many requests
+                    setNotification({ type: "warning", message: "Too Many Requests. Please try again later." });
                 } else {
                     // Error
                     setNotification({ type: "error", message: "An error occurred. Please try again later." });
@@ -169,18 +176,14 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                     <input
                         value="submit comment"
                         type="submit"
-                        // className="flex-1 capitalize text-[#FFF] bg-[#444] py-2 text-lg font-light hover:bg-[#4ce5a2] transition ease-in-out duration-300"
                         className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#222] hover:bg-[#4CE5A2]"}  text-[#FFF] capitalize w-full py-2 transition ease-in-out duration-300`}
                     />
                 </div>
-                <div className="notification_box flex">
-                    {/* Show notification if present */}
-                    {notification && (
-                        <div className={`notification ${notification.type === "success" ? "bg-green-500" : "bg-red-500"} text-white px-4 py-1 my-2`}>
-                            {notification.message}
-                        </div>
-                    )}
-                </div>
+                {/* Show notification if present */}
+                <FormActionNotificationBox
+                    message={notification?.message || ""}
+                    type={notification?.type || ""}
+                />
             </form>
         </div>
     );
