@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 
-import TagProps from "@/_models/TagProps";
-import FooterTopProps from "@/_models/FooterTopProps";
-import PageProps from "@/_models/PageProps";
+import TagProps from "@/_lib/models/TagProps";
+import FooterTopProps from "@/_lib/models/FooterTopProps";
+import PageProps from "@/_lib/models/PageProps";
 import LogoWithLink from "@/components/common/LogoWithLink";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 

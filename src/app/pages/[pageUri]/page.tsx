@@ -1,6 +1,6 @@
 import React from "react";
 
-import PageProps from "@/_models/PageProps";
+import PageProps from "@/_lib/models/PageProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import GetPageDetailsByUri from "@/_lib/graphQl/queries/getPageDetailsByUri";
 

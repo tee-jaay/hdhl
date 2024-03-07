@@ -1,4 +1,6 @@
-const PostHeaderLoader = () => {
+import React from "react";
+
+const PostHeaderLoader: React.FC = () => {
     return (
         <div className=" mx-auto animate-pulse flex flex-col space-y-8 py-16 px-32" style={{ width: "1024px" }}>
             <div className="bg-gray-200 w-full h-6"></div>

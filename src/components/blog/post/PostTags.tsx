@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import TagProps from "@/_models/TagProps";
+import TagProps from "@/_lib/models/TagProps";
 import React from "react";
 
 interface Tags { tags: TagProps[] }

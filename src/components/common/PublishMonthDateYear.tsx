@@ -1,8 +1,7 @@
-interface publishDate {
-    color: string,
-    dateMDY: string
-}
-const PublishMonthDateYear = ({ dateMDY, color }: publishDate) => {
+import React from "react";
+import PostPublishDateProps from "@/_lib/models/PostPublishDateProps";
+
+const PublishMonthDateYear: React.FC<PostPublishDateProps> = ({ dateMDY, color }) => {
     return (
         <div className="date flex items-center space-x-1">
             <span className="icon">

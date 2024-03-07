@@ -1,5 +1,6 @@
+import React from "react";
 
-const TagsPageLoader = () => {
+const TagsPageLoader: React.FC = () => {
     return (
         <div className="w-[1024px] mx-auto animate-pulse flex flex-col">
             <div className="flex items-baseline space-x-4 space-y-8">

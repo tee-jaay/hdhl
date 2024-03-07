@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import PostCardProps from "@/_models/PostCardProps";
+import PostCardProps from "@/_lib/models/PostCardProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getLatestPosts from "@/_lib/graphQl/queries/getLatestPosts";
 import CategoryNameSlug from "@/components/common/CategoryNameSlug";

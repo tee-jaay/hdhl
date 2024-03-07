@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import formatDate from "@/_helpers/formatPostDate";
-import HeroPostProps from "@/_models/HeroPostProps"
+import formatDate from "@/_lib/helpers/formatPostDate";
+import HeroPostProps from "@/_lib/models/HeroPostProps"
 import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
 import CategoryBoxBg from "@/components/common/CategoryBoxBg";
 import CommentsCount from "@/components/common/CommentsCount";

@@ -1,5 +1,5 @@
 import React from "react";
-import HeadingProps from "@/_models/HeadingProps";
+import HeadingProps from "@/_lib/models/HeadingProps";
 
 const SectionHeading: React.FC<{ headingProps: HeadingProps }> = ({ headingProps }) => {
     return (

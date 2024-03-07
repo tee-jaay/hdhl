@@ -1,6 +1,6 @@
 import React from "react";
 
-import PostComment from "@/_models/PostComment";
+import PostComment from "@/_lib/models/PostComment";
 import CommentsList from "./comments/CommentsList";
 import CommentForm from "./comments/CommentForm";
 

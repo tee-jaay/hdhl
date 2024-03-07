@@ -4,8 +4,8 @@ import Image from "next/image";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getLatestComments from "@/_lib/graphQl/queries/getLatestComments";
-import formatDate from "@/_helpers/formatPostDate";
-import SidebarComment from "@/_models/SidebarComment";
+import formatDate from "@/_lib/helpers/formatPostDate";
+import SidebarComment from "@/_lib/models/SidebarComment";
 import SectionHeading from "../SectionHeading";
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 

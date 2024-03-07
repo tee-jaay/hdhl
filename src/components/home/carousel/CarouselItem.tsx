@@ -1,19 +1,12 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+import CarouselItem from "@/_lib/models/CarouselItem";
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 import CategoryNameSlug from "@/components/common/CategoryNameSlug";
 
-interface carouselItem {
-    imgSrc: string,
-    imgAlt: string,
-    category: string,
-    categorySlug: string,
-    title: string,
-    slug: string,
-    date: string,
-}
-
-const CarouselItem = ({ imgSrc, imgAlt, category, categorySlug, title, slug, date }: carouselItem) => {
+const CarouselItem: React.FC<CarouselItem> = ({ imgSrc, imgAlt, category, categorySlug, title, slug, date }) => {
     return (
         <div className="item flex space-x-4">
             <div className="item-image w-1/3">

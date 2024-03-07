@@ -1,8 +1,8 @@
+import React from "react";
 import Link from "next/link";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getCategoryBySlug from "@/_lib/graphQl/queries/getCategoryBySlug";
-import React from "react";
 
 const getData = async (params: string) => {
     // Construct the query and variables

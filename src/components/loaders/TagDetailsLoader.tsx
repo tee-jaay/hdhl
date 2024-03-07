@@ -1,4 +1,6 @@
-const TagDetailsLoader = () => {
+import React from "react";
+
+const TagDetailsLoader: React.FC = () => {
     return (
         <div>
             <div className="animate-pulse space-y-4">

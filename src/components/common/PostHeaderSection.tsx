@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 
 import getPostBySlug from "@/_lib/graphQl/queries/getPostBySlug";
@@ -20,7 +21,7 @@ const getData = async (params: string) => {
     }
 }
 
-const PostHeaderSection = async ({ slug }: { slug: string }) => {
+const PostHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const { post } = await getData(slug);
     return (
         <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">

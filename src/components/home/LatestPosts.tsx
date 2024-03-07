@@ -1,8 +1,9 @@
+import React from "react";
 import Link from "next/link";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getLatestPosts from "@/_lib/graphQl/queries/getLatestPosts";
-import formatDate from "@/_helpers/formatPostDate";
+import formatDate from "@/_lib/helpers/formatPostDate";
 import AuthorAvatarNameLink from "../common/AuthorAvatarNameLink";
 import PublishMonthDateYear from "../common/PublishMonthDateYear";
 import CommentsCount from "../common/CommentsCount";
@@ -25,7 +26,7 @@ const getData = async (cursors: { startCursor: string, endCursor: string }) => {
     }
 }
 
-const LatestPosts = async () => {
+const LatestPosts: React.FC<{}> = async () => {
     const data = await getData({ startCursor: "", endCursor: "" });
     const postsWithoutFirst = data.slice(1);
 

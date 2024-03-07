@@ -1,4 +1,6 @@
-const BlogListLoader = () => {
+import React from "react";
+
+const BlogListLoader: React.FC = () => {
     return (
         <div className="space-y-8">
             <div className="mx-auto animate-pulse flex flex-col space-y-6">

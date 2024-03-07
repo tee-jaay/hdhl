@@ -1,6 +1,7 @@
+import React from "react";
 import TagsPageLoader from "@/components/loaders/TagsPageLoader";
 
-const Loading = () => {
+const Loading: React.FC = () => {
     return (
         <div className="py-20">
             <TagsPageLoader />

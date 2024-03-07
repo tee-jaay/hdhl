@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import HeroPostProps from "@/_models/HeroPostProps";
+import HeroPostProps from "@/_lib/models/HeroPostProps";
 import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
 import CategoryBoxBg from "@/components/common/CategoryBoxBg";
 

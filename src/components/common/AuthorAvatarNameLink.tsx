@@ -1,23 +1,17 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface author {
-    link: string,
-    imgSrc: string,
-    imgAlt: string,
-    name: string,
-    textColor: string,
-    imgSize: number,
-}
+import AuthorProps from "@/_lib/models/AuthorProps";
 
-const AuthorAvatarNameLink = ({ link, imgSrc, imgAlt, name, textColor, imgSize }: author) => {
+const AuthorAvatarNameLink: React.FC<AuthorProps> = ({ link, imgSrc, imgAlt, name, textColor, imgSize }) => {
     return (
         <Link href={`/authors/${link}`}>
             <div className="author flex items-center space-x-2">
                 <span>
                     <Image className="rounded-full" alt={imgAlt} src={imgSrc} width={imgSize} height={imgSize} />
                 </span>
-                <span className={`${textColor} dark:text-white`}>
+                <span className={`${textColor} dark:text-white dark:hover:text-[#43A047]`}>
                     by {name}
                 </span>
             </div>

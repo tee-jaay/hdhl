@@ -1,4 +1,6 @@
-const CategoryDetailsLoader = () => {
+import React from "react";
+
+const CategoryDetailsLoader: React.FC = () => {
     return (
         <div>
             <div className="animate-pulse space-y-4">

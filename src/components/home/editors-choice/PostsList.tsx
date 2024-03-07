@@ -1,42 +1,11 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+
+import truncateString from "@/_lib/helpers/truncrateString";
 import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
 import CategoryBoxBg from "@/components/common/CategoryBoxBg";
-import truncateString from "@/_helpers/truncrateString";
-
-interface FeaturedImage {
-  node: {
-    sourceUrl: string,
-    altText: string,
-  }
-}
-
-interface Category {
-  nodes: {
-    name: string,
-    slug: string,
-  }[];
-}
-
-interface Author {
-  node: {
-    name: string,
-    slug: string
-    avatar: {
-      url: string
-    },
-  }
-}
-
-interface Post {
-  id: number,
-  title: string,
-  slug: string,
-  excerpt: string,
-  categories: Category,
-  featuredImage: FeaturedImage,
-  author: Author
-}
+import PostCardProps from "@/_lib/models/PostCardProps";
 
 const categoryBgColors: { [key: number]: string } =
 {
@@ -48,7 +17,7 @@ const categoryBgColors: { [key: number]: string } =
   5: "bg-[#3dc1d3]",
 }
 
-const PostsList = ({ posts }: { posts: Post[] }) => {
+const PostsList: React.FC<{ posts: PostCardProps[] }> = ({ posts }) => {
   return (
     <div className="posts space-y-8">
       {posts && posts.map((post, i) => (
@@ -66,7 +35,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
             <div>
               <Link href={post?.slug} title={post?.title}>
-                <h4 className="text-xl text-black dark:text-white hover:text-[#43A047] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
+                <h4 className="text-xl text-black dark:text-white hover:text-[#43A047] dark:hover:text-[#43A047] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
               </Link>
             </div>
             <h6 className="text-gray-500 dark:text-white" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />

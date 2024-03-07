@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import YouTube, { YouTubeProps } from "react-youtube";
 import SectionHeading from "../common/SectionHeading";
@@ -58,7 +59,7 @@ const youtubePlayist = [
     },
 ];
 
-const TrendingVideos = () => {
+const TrendingVideos: React.FC<{}> = () => {
 
     const [videoId, setVideoId] = useState("RbptYSgAUrc");
 

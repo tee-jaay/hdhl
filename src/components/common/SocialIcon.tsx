@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FontAwesomeIcon, } from '@fortawesome/react-fontawesome';
 
-import SocialIconProps from '@/_models/SocialIconProps';
+import SocialIconProps from '@/_lib/models/SocialIconProps';
 
 
 const SocialIcon = ({ link, title, icon }: SocialIconProps) => {

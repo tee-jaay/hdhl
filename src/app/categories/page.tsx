@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import React from "react";
-import CategoryProps from "@/_models/CategoryProps";
+import CategoryProps from "@/_lib/models/CategoryProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getCategoriesByLimit from "@/_lib/graphQl/queries/getCategoriesByLimit";
 
@@ -25,7 +25,7 @@ const getData = async (limit: string) => {
 }
 
 const CategoryItem: React.FC<{ category: CategoryProps }> = ({ category }) => <Link href={`/categories/${category?.slug}/12`} className="category_item">
-    <div className="shadow-md dark:shadow-gray-900 border-gray-300  px-4 h-56 flex flex-col items-center justify-center">
+    <div className="shadow-md  dark:shadow-gray-900 border-gray-300  px-4 h-56 flex flex-col items-center justify-center hover:text-[#43A047] transition ease-in-out duration-300">
         <div>
             <h6 className="text-5xl font-extralight dark:text-white">{category?.count ?? "0"}</h6>
         </div>

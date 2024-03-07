@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import PostCardProps from "@/_models/PostCardProps";
+import PostCardProps from "@/_lib/models/PostCardProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getUserBySlug from "@/_lib/graphQl/queries/getUserBySlug";
-import formatDate from "@/_helpers/formatPostDate";
+import formatDate from "@/_lib/helpers/formatPostDate";
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 import CommentsCount from "@/components/common/CommentsCount";
 

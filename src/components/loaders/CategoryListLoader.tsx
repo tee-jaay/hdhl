@@ -1,4 +1,6 @@
-const CategoryListLoader = () => {
+import React from "react";
+
+const CategoryListLoader: React.FC = () => {
     return (
         <div className="grid grid-cols-4 gap-8">
             <div className="animate-pulse">

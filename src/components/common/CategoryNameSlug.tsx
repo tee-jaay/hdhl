@@ -1,12 +1,9 @@
+import React from "react";
 import Link from "next/link";
 
-interface category {
-    name: string,
-    slug: string,
-    color: string
-}
+import CategoryProps from "@/_lib/models/CategoryProps";
 
-const CategoryNameSlug = ({ name, slug, color }: category) => {
+const CategoryNameSlug: React.FC<CategoryProps> = ({ name, slug, color }) => {
     return (
         <h5 className={`item-category line-clamp-1 uppercase ${color} text-sm tracking-wider`}>
             <Link href={`/categories/${slug}/12`} title={name}>

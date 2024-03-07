@@ -1,9 +1,7 @@
-interface comments {
-    count: string,
-    color: string
-}
+import React from "react";
+import CommentsCountProps from "@/_lib/models/CommentCountProps";
 
-const CommentsCount = ({ count, color }: comments) => {
+const CommentsCount: React.FC<CommentsCountProps> = ({ count, color }) => {
     return (
         <div className="comments flex items-center space-x-1">
             <span>

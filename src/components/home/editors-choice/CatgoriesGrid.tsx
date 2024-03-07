@@ -1,22 +1,14 @@
+import React from "react";
 import Link from "next/link";
 
+import CategoryProps from "@/_lib/models/CategoryProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getCategoriesByLimit from "@/_lib/graphQl/queries/getCategoriesByLimit";
-
-interface Category {
-  id: number,
-  name: string,
-  slug: string,
-  count: number,
-  imgSrc: string
-}
 
 const getData = async () => {
   // Construct the query and variables
   const query = getCategoriesByLimit();
-  const variables = {
-    "first": 6,
-  };
+  const variables = { "first": 6, };
   try {
     // Make the request and return the data
     const data = await gqlQuery(query, variables);
@@ -28,8 +20,8 @@ const getData = async () => {
   }
 }
 
-const CatgoriesGrid = async () => {
-  const categories: Category[] = await getData();
+const CatgoriesGrid: React.FC = async () => {
+  const categories: CategoryProps[] = await getData();
 
   return (
     <div className="categories w-full dark:text-white">
