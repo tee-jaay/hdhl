@@ -73,7 +73,7 @@ const ContactPage: React.FC = () => {
                 <div className="address_info w-2/5 flex flex-col space-y-8">
                     <div className="email_address">
                         <h5 className="capitalize">email address</h5>
-                        <div className="text-[#777]">
+                        <div className="text-[#777] dark:text-[#FEFEFE]">
                             {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
                         </div>
                     </div>
@@ -93,7 +93,7 @@ const ContactPage: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     value={formik.values.name}
-                                    className=" font-light text-lg bg-[#F9F9F9] py-2 px-8 w-full"
+                                    className=" font-light text-lg bg-[#F9F9F9] dark:bg-[#333] py-2 px-8 w-full"
                                     type="text"
                                     placeholder="Your Name"
                                     name="name"
@@ -108,7 +108,7 @@ const ContactPage: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     value={formik.values.email}
-                                    className=" font-light text-lg bg-[#F9F9F9] py-2 px-8 w-full"
+                                    className=" font-light text-lg bg-[#F9F9F9] dark:bg-[#333] py-2 px-8 w-full"
                                     type="email"
                                     placeholder="Your Email"
                                     name="email"
@@ -125,7 +125,7 @@ const ContactPage: React.FC = () => {
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                     value={formik.values.subject}
-                                    className="flex-1 font-light text-lg bg-[#F9F9F9] py-2 px-8 w-full"
+                                    className="flex-1 font-light text-lg bg-[#F9F9F9] dark:bg-[#333] py-2 px-8 w-full"
                                     type="text"
                                     name="subject"
                                     placeholder="Subject"
@@ -141,7 +141,7 @@ const ContactPage: React.FC = () => {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 value={formik.values.message}
-                                className="message font-light text-lg bg-[#F9F9F9] py-2 px-8 w-full"
+                                className="message font-light text-lg bg-[#F9F9F9] dark:bg-[#333] py-2 px-8 w-full"
                                 rows={6}
                                 cols={30}
                                 placeholder="Message"
@@ -156,7 +156,7 @@ const ContactPage: React.FC = () => {
                             <input
                                 type="submit"
                                 value="Send"
-                                className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#222] hover:bg-[#43A047]"}  text-[#FFF]  w-full py-2 transition ease-in-out duration-300`}
+                                className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#333] hover:bg-[#43A047]"}  text-[#FFF]  w-full py-2 transition ease-in-out duration-300`}
                             />
                         </div>
                     </form>
