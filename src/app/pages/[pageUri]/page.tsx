@@ -1,3 +1,5 @@
+import React from "react";
+
 import PageProps from "@/_models/PageProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import GetPageDetailsByUri from "@/_lib/graphQl/queries/getPageDetailsByUri";
@@ -17,12 +19,12 @@ const getData = async (pageUri: string) => {
     }
 }
 
-const PageDetails = async ({ params }: { params: { pageUri: string } }) => {
+const PageDetails: React.FC<{ params: { pageUri: string } }> = async ({ params }) => {
     const page: PageProps = await getData(params.pageUri);
     return (
         <div>
             <h1>{page?.title}</h1>
-            <div className="text-[#444]" dangerouslySetInnerHTML={{ __html: page?.content ?? "" }} />
+            <div className="text-[#444] dark:text-white" dangerouslySetInnerHTML={{ __html: page?.content ?? "" }} />
         </div>
     );
 }

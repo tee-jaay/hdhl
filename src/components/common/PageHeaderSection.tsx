@@ -1,3 +1,5 @@
+import React from "react";
+
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import GetPageDetailsByUri from "@/_lib/graphQl/queries/getPageDetailsByUri";
 
@@ -16,12 +18,12 @@ const getData = async (uri: string) => {
     }
 }
 
-const PageHeaderSection = async ({ slug }: { slug: string }) => {
+const PageHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const page = await getData(slug);
     return (
-        <div className="page_header bg-[#FBFAFA] w-full py-16">
-            <h2 className="w-[1024px] mx-auto capitalize text-[#000000] text-center text-4xl font-medium tracking-wide">{page?.title}</h2>
-            <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
+        <div className="page_header bg-[#FBFAFA] dark:bg-[#333] w-full py-16">
+            <h2 className="w-[1024px] mx-auto capitalize text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">{page?.title}</h2>
+            <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
                 Home <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
