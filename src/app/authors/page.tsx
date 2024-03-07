@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import { faFacebookSquare, faInstagramSquare, faSquareXTwitter, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,7 +23,7 @@ const getData = async () => {
     }
 }
 
-const AuthorCard = ({ author }: { author: UserProps }) => <div className="author_card flex flex-col">
+const AuthorCard: React.FC<{ author: UserProps }> = ({ author }) => <div className="author_card flex flex-col">
     <div className="flex flex-col h-52 bg-cover bg-no-repeat justify-end" style={{ backgroundImage: `url(${author?.avatar?.url})` }}>
         <div className="socials flex mb-4 space-x-2 justify-center">
             <Link className="social" href={`/authors/${author?.slug}`}>
@@ -43,17 +44,19 @@ const AuthorCard = ({ author }: { author: UserProps }) => <div className="author
         <Link href={`/authors/${author?.slug}`}>
             <h5>{author?.name}</h5>
         </Link>
-        <h6 className="font-light capitalize">profession</h6>
+        <h6 className="font-light capitalize">...</h6>
     </div>
 </div>
 
-const Authors = async () => {
+const Authors: React.FC<{}> = async () => {
     const users = await getData();
     return (
-        <div className="w-[1024px] mx-auto py-16">
-            <h2 className="capitalize text-center font-medium">meet our authors</h2>
-            <div className="authors_list grid grid-cols-4 gap-x-6 gap-y-8">
-                {users && users.map((user: UserProps, _i: number) => <AuthorCard key={user?.id} author={user} />)}
+        <div className="dark:bg-[#333]">
+            <div className="w-[1024px] dark:bg-[#333] dark:text-white mx-auto py-16">
+                <h2 className="capitalize text-center dark:text-white font-medium">meet our authors</h2>
+                <div className="authors_list dark:bg-[#333] grid grid-cols-4 gap-x-6 gap-y-8">
+                    {users && users.map((user: UserProps, _i: number) => <AuthorCard key={user?.id} author={user} />)}
+                </div>
             </div>
         </div>
     );

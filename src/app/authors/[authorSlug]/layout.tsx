@@ -13,13 +13,13 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
   if (!React.isValidElement(children)) { return null; }
   const { segmentPath } = children.props ?? null;
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col dark:bg-[#222]">
       <AuthorDetailsPageHeaderSection slug={segmentPath[3][1]} />
       <div className="w-[1024px] flex space-x-8 mx-auto">
-        <div className="flex-1 bg-[#FFFFFF] py-12">
+        <div className="flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12">
           {children}
         </div>
-        <div className="w-72 bg-[#FFFFFF]">
+        <div className="w-72 bg-[#FFFFFF] dark:bg-[#222]">
           <Sidebar />
         </div>
       </div>

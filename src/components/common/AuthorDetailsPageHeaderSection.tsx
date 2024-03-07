@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,12 +20,12 @@ const getData = async (params: string) => {
     }
 }
 
-const AuthorDetailsPageHeaderSection = async ({ slug }: { slug: string }) => {
+const AuthorDetailsPageHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const user = await getData(slug);
     return (
-        <div className="blog_header py-16 bg-[#FBFAFA] w-full">
-            <h2 className="w-[1024px] mx-auto text-[#000000] text-center text-3xl font-medium tracking-wide">{user?.name}</h2>
-            <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center capitalize">
+        <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
+            <h2 className="w-[1024px] mx-auto text-[#000000] dark:text-white text-center text-3xl font-medium tracking-wide">{user?.name}</h2>
+            <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center capitalize">
                 <Link href={"/"}>home</Link>
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
@@ -48,7 +49,7 @@ const AuthorDetailsPageHeaderSection = async ({ slug }: { slug: string }) => {
             <div className="user_avatar mt-4 flex justify-center">
                 <Image alt="" src={user?.avatar?.url} width={100} height={100} />
             </div>
-            <div className="w-[1024px] mt-6 mx-auto text-center text-[#555] px-24" dangerouslySetInnerHTML={{ __html: user?.description }} />
+            <div className="w-[1024px] mt-6 mx-auto text-center dark:text-white text-[#555] px-24" dangerouslySetInnerHTML={{ __html: user?.description }} />
         </div>
     );
 }
