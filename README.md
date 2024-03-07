@@ -6,8 +6,11 @@
 ```bash
 APP_NAME=
 APP_URL=
+BASE_URL=
 GRAPHQL_URL=
 ```
+(BASE_URL should be real domain URL)
+
 #### For Contact Page
 ```bash
 NEXT_PUBLIC_CONTACT_EMAIL=
