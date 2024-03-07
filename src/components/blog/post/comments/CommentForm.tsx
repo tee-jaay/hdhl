@@ -99,7 +99,7 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             placeholder="Message"
-                            className={`flex-1 bg-[#f1f1f1] dark:bg-[#222] dark:text-[#FEFEFE] py-4 px-8 font-light text-lg w-full ${formik.touched.message && formik.errors.message
+                            className={`flex-1 bg-[#f1f1f1] dark:bg-[#333] dark:text-[#FEFEFE] py-4 px-8 font-light text-lg w-full ${formik.touched.message && formik.errors.message
                                 ? "border-red-500"
                                 : ""
                                 }`}
@@ -117,7 +117,7 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 placeholder="Name"
-                                className={`bg-[#f1f1f1] dark:bg-[#222] dark:text-[#FEFEFE] py-2 px-8 w-full font-light text-lg ${formik.touched.name && formik.errors.name ? "border-red-500" : ""
+                                className={`bg-[#f1f1f1] dark:bg-[#333] dark:text-[#FEFEFE] py-2 px-8 w-full font-light text-lg ${formik.touched.name && formik.errors.name ? "border-red-500" : ""
                                     }`}
                             />
                             {formik.touched.name && formik.errors.name && (
@@ -132,7 +132,7 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
                                 placeholder="Email"
-                                className={`bg-[#f1f1f1] dark:bg-[#222] dark:text-[#FEFEFE] py-2 px-8 w-full font-light text-lg ${formik.touched.email && formik.errors.email ? "border-red-500" : ""
+                                className={`bg-[#f1f1f1] dark:bg-[#333] dark:text-[#FEFEFE] py-2 px-8 w-full font-light text-lg ${formik.touched.email && formik.errors.email ? "border-red-500" : ""
                                     }`}
                             />
                             {formik.touched.email && formik.errors.email && (
@@ -148,7 +148,7 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                             placeholder="Website"
-                            className={`flex-1 bg-[#f1f1f1] dark:bg-[#222] dark:text-[#FEFEFE] py-2 px-8 font-light text-lg ${formik.touched.website && formik.errors.website
+                            className={`flex-1 bg-[#f1f1f1] dark:bg-[#333] dark:text-[#FEFEFE] py-2 px-8 font-light text-lg ${formik.touched.website && formik.errors.website
                                 ? "border-red-500"
                                 : ""
                                 }`}
@@ -176,7 +176,7 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                     <input
                         value="submit comment"
                         type="submit"
-                        className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#222] hover:bg-[#43A047]"}  text-[#FFF] capitalize w-full py-2 transition ease-in-out duration-300`}
+                        className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#333] hover:bg-[#43A047]"}  text-[#FFF] capitalize w-full py-2 transition ease-in-out duration-300`}
                     />
                 </div>
                 {/* Show notification if present */}
