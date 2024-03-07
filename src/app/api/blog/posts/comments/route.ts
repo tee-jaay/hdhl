@@ -1,6 +1,6 @@
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import sendPostComment from "@/_lib/graphQl/mutations/sendPostComment";
-import rateLimitMiddleware from "@/_lib/_middlewares/rateLimitMiddleware";
+import rateLimitMiddleware from "@/_lib/middlewares/rateLimitMiddleware";
 
 import { v4 as uuidv4 } from "uuid";
 

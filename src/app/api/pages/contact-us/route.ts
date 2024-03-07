@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
-import rateLimitMiddleware from "@/_lib/_middlewares/rateLimitMiddleware";
+import rateLimitMiddleware from "@/_lib/middlewares/rateLimitMiddleware";
 
 const contactEmail = process.env.CONTACT_EMAIL!;
 const smtpHost = process.env.SMTP_HOST!;
