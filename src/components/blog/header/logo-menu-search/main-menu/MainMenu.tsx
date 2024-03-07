@@ -12,8 +12,8 @@ const mainMenuLinks = [
 
 const MainMenu = () => {
     return (
-        <div className="main_menu flex-1">
-            <ul className="flex items-center justify-center space-x-6 text-slate-800 pt-7 pb-6">
+        <div className="main_menu">
+            <ul className="flex items-center justify-end space-x-6 text-slate-800 pt-7 pb-6">
                 {mainMenuLinks.map((item, i) => (
                     <MainMenuLink key={i} path={item.path} text={item.text} />
                 ))}

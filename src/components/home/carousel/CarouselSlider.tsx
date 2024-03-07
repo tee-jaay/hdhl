@@ -54,7 +54,7 @@ const CarouselSlider = ({ carouselItems }: CarouselItems) => {
             <div className="navigation flex flex-1/5 items-center space-x-4 mr-8">
                 {/* Left navigation */}
                 <div
-                    className="navigation_left rounded-full cursor-pointer bg-gray-200 p-3 hover:bg-[#4ce5a2] hover:text-white transition ease-in-out duration-300"
+                    className="navigation_left rounded-full cursor-pointer bg-gray-200 p-3 hover:bg-[#43A047] hover:text-white transition ease-in-out duration-300"
                     onClick={handlePrev}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -63,7 +63,7 @@ const CarouselSlider = ({ carouselItems }: CarouselItems) => {
                 </div>
                 {/* Right navigation */}
                 <div
-                    className="navigation_right rounded-full cursor-pointer bg-gray-200 p-3 hover:bg-[#4ce5a2] hover:text-white transition ease-in-out duration-300"
+                    className="navigation_right rounded-full cursor-pointer bg-gray-200 p-3 hover:bg-[#43A047] hover:text-white transition ease-in-out duration-300"
                     onClick={handleNext}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">

@@ -3,10 +3,12 @@ import LogoMenuSearch from "./logo-menu-search/LogoMenuSearch";
 
 const Header = () => {
     return (
-        <div className="dark:bg-[#222]">
+        <section id="header">
             <TopBar />
-            <LogoMenuSearch />
-        </div>
+            <div className="dark:bg-[#222]">
+                <LogoMenuSearch />
+            </div>
+        </section>
     );
 }
 

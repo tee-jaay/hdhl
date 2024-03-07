@@ -1,10 +1,11 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import PostCardProps from "@/_models/PostCardProps";
 import formatDate from "@/_helpers/formatPostDate";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
-import PostCardProps from "@/_models/PostCardProps";
 
 const getData = async (tagSlug: string, limit: string) => {
     // Construct the query and variables
@@ -27,7 +28,7 @@ const getData = async (tagSlug: string, limit: string) => {
 }
 
 
-const PostItem = ({ post }: { post: PostCardProps }) => <Link href={`/${post?.slug}`} className="post_item" title={post?.title}>
+const PostItem: React.FC<{ post: PostCardProps }> = ({ post }) => <Link href={`/${post?.slug}`} className="post_item" title={post?.title}>
     <div className="text-white relative h-96">
         <div className="post_image z-10">
             <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={400} height={600} />
@@ -45,14 +46,14 @@ const PostItem = ({ post }: { post: PostCardProps }) => <Link href={`/${post?.sl
                 </div>
             </div>
             <div className="post_title">
-                <h4 className="text-2xl leading-6 text-white line-clamp-3">{post?.title}</h4>
+                <h4 className="text-2xl leading-6 text-white dark:text-white line-clamp-3">{post?.title}</h4>
             </div>
-            <div className="post_exercpt line-clamp-2 text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
+            <div className="post_exercpt line-clamp-2 text-white dark:text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
         </div>
     </div>
 </Link>
 
-const TagDetailsPage = async ({ params }: { params: { tagSlug: string, limit: string } }) => {
+const TagDetailsPage: React.FC<{ params: { tagSlug: string, limit: string } }> = async ({ params }) => {
     const posts = await getData(params.tagSlug, params.limit);
     return (
         <div className="tag_details_page">

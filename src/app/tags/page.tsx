@@ -3,6 +3,7 @@ import Link from "next/link";
 import TagProps from "@/_models/TagProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getTagsList from "@/_lib/graphQl/queries/getTagsList";
+import React from "react";
 
 const getData = async (limit: string) => {
     // Construct the query and variables
@@ -23,20 +24,20 @@ const getData = async (limit: string) => {
     }
 }
 
-const TagItem = ({ tag }: { tag: TagProps }) => (
+const TagItem: React.FC<{ tag: TagProps }> = ({ tag }) => (
     <Link className="tag_item" href={`/tags/${tag?.slug}/12`}>
-        <div className="flex items-center space-x-2 border border-gray-200 py-2 px-4 mr-4 capitalize">
+        <div className="flex dark:text-white items-center space-x-2 border border-gray-200 py-2 px-4 mr-4 capitalize">
             <div className="tag_name">{tag?.name}</div>
             <div className="tag_count bg-[#555] text-white px-2 py-1 rounded-full text-xs">{tag?.count}</div>
         </div>
     </Link>
 );
 
-const TagsPage = async () => {
+const TagsPage: React.FC<{}> = async () => {
     const tags = await getData("100");
     return (
-        <div >
-            <div className="blog_header py-16 bg-[#FBFAFA] w-full">
+        <div className="dark:bg-[#222]">
+            <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
                 <h2 className="text-[#000000] text-center text-4xl font-medium tracking-wide">Tag Cloud</h2>
                 <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
                     Home <span>

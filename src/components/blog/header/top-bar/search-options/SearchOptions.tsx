@@ -4,7 +4,7 @@ import AuthLink from "./auth/AuthLink"
 
 const SearchOptions = () => {
     return (
-        <div className="flex justify-center py-4 space-x-6 items-center">
+        <div className="flex justify-center py-0 space-x-6 items-center">
             <SwitchTheme />
             <Search />
             <AuthLink />

@@ -4,6 +4,7 @@ import PostCardProps from "@/_models/PostCardProps";
 import formatDate from "@/_helpers/formatPostDate";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByCategory from "@/_lib/graphQl/queries/getPostsByCategory";
+import React from "react";
 
 const getData = async (categorySlug: string, limit: string) => {
     // Construct the query and variables
@@ -25,7 +26,7 @@ const getData = async (categorySlug: string, limit: string) => {
     }
 }
 
-const PostItem = ({ post }: { post: PostCardProps }) => <Link href={`/${post?.slug}`} className="post_item bg-no-repeat bg-center" title={post?.title} style={{ backgroundImage: `url(${post?.featuredImage?.node?.sourceUrl})` }}>
+const PostItem: React.FC<{ post: PostCardProps }> = ({ post }) => <Link href={`/${post?.slug}`} className="post_item bg-no-repeat bg-center" title={post?.title} style={{ backgroundImage: `url(${post?.featuredImage?.node?.sourceUrl})` }}>
     <div className="text-white h-96  bg-gradient-to-b from-transparent to-black">
         <div className="post_data flex flex-col items-start justify-end px-8 py-4 h-full">
             <div className="post_meta flex space-x-4">
@@ -47,7 +48,7 @@ const PostItem = ({ post }: { post: PostCardProps }) => <Link href={`/${post?.sl
     </div>
 </Link>
 
-const CategoryPage = async ({ params }: { params: { categorySlug: string, limit: string } }) => {
+const CategoryPage: React.FC<{ params: { categorySlug: string, limit: string } }> = async ({ params }) => {
     const posts = await getData(params.categorySlug, params.limit);
     return (
         <div className="category_page">

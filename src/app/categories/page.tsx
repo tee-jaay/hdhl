@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import React from "react";
 import CategoryProps from "@/_models/CategoryProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getCategoriesByLimit from "@/_lib/graphQl/queries/getCategoriesByLimit";
@@ -23,24 +24,24 @@ const getData = async (limit: string) => {
     }
 }
 
-const CategoryItem = ({ category }: { category: CategoryProps }) => <Link href={`/categories/${category?.slug}/12`} className="category_item">
-    <div className="shadow-md border-gray-300 px-4 h-56 flex flex-col items-center justify-center">
+const CategoryItem: React.FC<{ category: CategoryProps }> = ({ category }) => <Link href={`/categories/${category?.slug}/12`} className="category_item">
+    <div className="shadow-md dark:shadow-gray-900 border-gray-300  px-4 h-56 flex flex-col items-center justify-center">
         <div>
-            <h6 className="text-5xl font-extralight">{category?.count ?? "0"}</h6>
+            <h6 className="text-5xl font-extralight dark:text-white">{category?.count ?? "0"}</h6>
         </div>
         <div>
-            <h4 className="line-clamp-3 font-light text-center">{category?.name}</h4>
+            <h4 className="line-clamp-3 font-light text-center dark:text-white">{category?.name}</h4>
         </div>
     </div>
 </Link>
 
-const CategoriesPage = async () => {
+const CategoriesPage: React.FC<{}> = async () => {
     const categories = await getData("");
     return (
-        <div>
-            <div className="blog_header py-16 bg-[#FBFAFA] w-full">
-                <h2 className="w-[1024px] mx-auto capitalize text-[#000000] text-center text-4xl font-medium tracking-wide">All Categories</h2>
-                <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
+        <div className="dark:bg-[#222222]">
+            <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
+                <h2 className="w-[1024px] mx-auto capitalize text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">All Categories</h2>
+                <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
                     <Link href={"/"}>
                         Home
                     </Link> <span>

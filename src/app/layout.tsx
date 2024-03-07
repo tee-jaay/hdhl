@@ -11,11 +11,7 @@ export const metadata: Metadata = {
   description: "Nourish Your Body, Flourish Your Life",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
       <body className={leagueSpartan.className}>
@@ -25,7 +21,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
-        <div className="bg-blue-300">
+        <div>
           <Footer />
         </div>
       </body>

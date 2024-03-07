@@ -23,9 +23,9 @@ const TagHeaderSection = async ({ slug }: { slug: string }) => {
     const posts = await getData(slug);
     const filteredTags = posts[0]?.tags?.nodes.filter((item: TagProps) => item.slug === slug);
     return (
-        <div className="blog_header bg-[#FBFAFA] w-full">
-            <h2 className="w-[1024px] mx-auto capitalize text-[#000000] text-center text-4xl font-medium tracking-wide">{filteredTags[0]?.name}</h2>
-            <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
+        <div className="blog_header bg-[#FBFAFA] py-16 dark:bg-[#333] w-full">
+            <h2 className="w-[1024px] mx-auto capitalize text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">{filteredTags[0]?.name}</h2>
+            <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
                 <Link href={"/"}>
                     Home
                 </Link> <span>
