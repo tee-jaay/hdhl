@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -24,7 +25,7 @@ const getData = async (authorSlug: string) => {
     }
 }
 
-const PostSingleCard = ({ post }: { post: PostCardProps }) => <div className="post_single shadow-md pb-8">
+const PostSingleCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div className="post_single shadow-md pb-8 dark:text-white">
     <div className="post_image">
         <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} height={600} width={1200} />
     </div>
@@ -36,14 +37,14 @@ const PostSingleCard = ({ post }: { post: PostCardProps }) => <div className="po
         <h1 className="post_title font-medium text-4xl">
             {post?.title}
         </h1>
-        <div className="post_excerpt text-[#777]" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
+        <div className="post_excerpt text-[#777] dark:text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
         <div className="post_read_more mt-7">
-            <Link href={`/${post?.slug}`} className="capitalize text-[#000] border border-[#999] py-2 px-7 hover:text-[#43A047] hover:border-[#43A047] transition ease-in-out duration-300">read more</Link>
+            <Link href={`/${post?.slug}`} className="capitalize text-[#000] dark:text-white border border-[#999] py-2 px-7 hover:text-[#43A047] dark:hover:text-[#43A047] hover:border-[#43A047] transition ease-in-out duration-300">read more</Link>
         </div>
     </div>
 </div>
 
-const Author = async ({ params }: { params: { authorSlug: string } }) => {
+const Author: React.FC<{ params: { authorSlug: string } }> = async ({ params }) => {
     const user = await getData(params.authorSlug);
     return (
         <div className="posts_list space-y-9">
