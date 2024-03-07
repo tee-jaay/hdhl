@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
@@ -19,7 +20,7 @@ const getData = async () => {
     }
 }
 
-const TopBar = async () => {
+const TopBar: React.FC<{}> = async () => {
     const data = await getData();
     return (
         <section className="topbar bg-gradient-to-b from-[#2E8B57] to-[#43A047]">
