@@ -67,7 +67,7 @@ p {
 }
 
 #table-of-contents a:hover {
-    color: #4ce5a2 !important;
+    color: #43A047 !important;
     transition: 300ms linear !important;
 }
 
@@ -83,8 +83,8 @@ p {
 }
 
 .my-affiliate-link-class:hover {
-    border: 1px solid #4ce5a2;
-    background-color: #4ce5a2;
+    border: 1px solid #43A047;
+    background-color: #43A047;
     color: white;
 }
 

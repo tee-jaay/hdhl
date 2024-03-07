@@ -1,8 +1,9 @@
 "use client";
-import { useRouter } from 'next/navigation';
-import { useState, useRef, useEffect, ChangeEvent } from 'react';
 
-const Search = () => {
+import React, { useState, useRef, useEffect, ChangeEvent } from 'react';
+import { useRouter } from 'next/navigation';
+
+const Search: React.FC<{}> = () => {
     const router = useRouter();
     const [isFormVisible, setFormVisible] = useState(false);
     const searchFormRef = useRef(null);
@@ -47,7 +48,7 @@ const Search = () => {
     }, []);
 
     return (
-        <div className="flex my-4 relative">
+        <div className="flex my-3 relative">
             <div id="search_icon_container" onClick={toggleFormVisibility} className="cursor-pointer mr-2">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +56,7 @@ const Search = () => {
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-4 h-4 dark:text-white"
+                    className="w-4 h-4 text-gray-200 dark:text-white"
                 >
                     <path
                         strokeLinecap="round"
@@ -68,7 +69,7 @@ const Search = () => {
                 <div
                     ref={searchFormRef}
                     id="search_form_container"
-                    className="top-0 right-0 p-4 z-50 bg-[#fff] dark:bg-[#222] absolute border-2 border-[#4ce5a2]"
+                    className="top-0 right-0 p-4 z-50 bg-[#fff] dark:bg-[#222] absolute border-2 border-[#43A047]"
                 >
                     <form onSubmit={handleSearch}>
                         <div className="flex">
@@ -81,7 +82,7 @@ const Search = () => {
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
                             />
                             <button
-                                className="bg-[#222222] text-white px-4 py-1 hover:bg-[#4ce5a2] text-sm transition ease-in-out duration-300"
+                                className="bg-[#222222] text-white px-4 py-1 hover:bg-[#43A047] text-sm transition ease-in-out duration-300"
                                 onClick={handleSearch}
                             >
                                 Search

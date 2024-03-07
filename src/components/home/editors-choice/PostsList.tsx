@@ -66,7 +66,7 @@ const PostsList = ({ posts }: { posts: Post[] }) => {
               name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
             <div>
               <Link href={post?.slug} title={post?.title}>
-                <h4 className="text-xl text-black dark:text-white hover:text-[#4ce5a2] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
+                <h4 className="text-xl text-black dark:text-white hover:text-[#43A047] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
               </Link>
             </div>
             <h6 className="text-gray-500 dark:text-white" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />

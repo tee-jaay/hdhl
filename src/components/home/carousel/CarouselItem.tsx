@@ -28,7 +28,7 @@ const CarouselItem = ({ imgSrc, imgAlt, category, categorySlug, title, slug, dat
             <div className="item-meta flex flex-col items-start justify-center w-2/3">
                 <CategoryNameSlug color={"text-[#919191]"} name={category} slug={categorySlug} />
                 <Link href={slug}>
-                    <h5 className="item-title line-clamp-1 font-normal mt-2 mb-1 hover:text-[#4ce5a2] transition ease-in-out duration-300">{title}</h5>
+                    <h5 className="item-title line-clamp-1 font-normal mt-2 mb-1 hover:text-[#43A047] transition ease-in-out duration-300">{title}</h5>
                 </Link>
                 <h6 className="item-date"><PublishMonthDateYear color={"text-[#919191]"} dateMDY={date} /></h6>
             </div>

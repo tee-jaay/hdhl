@@ -38,7 +38,7 @@ const PostSingleCard = ({ post }: { post: PostCardProps }) => <div className="po
         </h1>
         <div className="post_excerpt text-[#777]" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
         <div className="post_read_more mt-7">
-            <Link href={`/${post?.slug}`} className="capitalize text-[#000] border border-[#999] py-2 px-7 hover:text-[#4ce5a2] hover:border-[#4ce5a2] transition ease-in-out duration-300">read more</Link>
+            <Link href={`/${post?.slug}`} className="capitalize text-[#000] border border-[#999] py-2 px-7 hover:text-[#43A047] hover:border-[#43A047] transition ease-in-out duration-300">read more</Link>
         </div>
     </div>
 </div>
