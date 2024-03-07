@@ -11,12 +11,12 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
   if (!React.isValidElement(children)) { return null; }
   const { segmentPath } = children.props ?? null;
   return (
-    <section className="flex flex-col">
-      <div className="blog_header py-16 bg-[#FBFAFA] w-full">
+    <section className="flex flex-col dark:bg-[#222]">
+      <div className="bg-[#FBFAFA] w-full">
         {segmentPath[3][1].length > 0 && <TagHeaderSection slug={segmentPath[3][1]} />}
       </div>
-      <div className="flex space-x-8 mx-auto" style={{ width: "1024px" }}>
-        <div className="flex-1 bg-[#FFFFFF] py-12">
+      <div className="w-[1024px] flex space-x-8 mx-auto">
+        <div className="flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12">
           {children}
         </div>
       </div>

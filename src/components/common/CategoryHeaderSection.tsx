@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getCategoryBySlug from "@/_lib/graphQl/queries/getCategoryBySlug";
+import React from "react";
 
 const getData = async (params: string) => {
     // Construct the query and variables
@@ -18,12 +19,12 @@ const getData = async (params: string) => {
     }
 }
 
-const CategoryHeaderSection = async ({ slug }: { slug: string }) => {
+const CategoryHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const category = await getData(slug);
     return (
-        <div className="blog_header py-16 bg-[#FBFAFA] w-full">
-            <h2 className="w-[1024px] mx-auto capitalize text-[#000000] text-center text-4xl font-medium tracking-wide">{category?.name}</h2>
-            <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
+        <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
+            <h2 className="w-[1024px] mx-auto capitalize text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">{category?.name}</h2>
+            <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
                 <Link href="/">
                     Home
                 </Link> <span>
@@ -33,7 +34,7 @@ const CategoryHeaderSection = async ({ slug }: { slug: string }) => {
                 </span>
                 <span className="capitalize">Category</span>
             </h6>
-            <p className="w-[1024px] mx-auto mt-8 text-center">{category?.description}</p>
+            <p className="w-[1024px] dark:text-white mx-auto mt-8 text-center">{category?.description}</p>
         </div>
     );
 }
