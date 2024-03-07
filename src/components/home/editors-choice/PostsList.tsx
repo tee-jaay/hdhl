@@ -31,8 +31,13 @@ const PostsList: React.FC<{ posts: PostCardProps[] }> = ({ posts }) => {
           </div>
           <div className="post_info flex-1 space-y-2 py-4">
             <CategoryBoxBg
+              color=""
+              count={0}
+              id=""
+              imgSrc=""
               bgColor={categoryBgColors[i % Object.keys(categoryBgColors).length]}
-              name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
+              name={post?.categories?.nodes[0]?.name}
+              slug={post?.categories?.nodes[0]?.slug} />
             <div>
               <Link href={post?.slug} title={post?.title}>
                 <h4 className="text-xl text-black dark:text-white hover:text-[#43A047] dark:hover:text-[#43A047] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
