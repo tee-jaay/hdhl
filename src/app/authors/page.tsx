@@ -3,7 +3,7 @@ import Link from "next/link";
 import { faFacebookSquare, faInstagramSquare, faSquareXTwitter, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import UserProps from "@/_models/UserProps";
+import UserProps from "@/_lib/models/UserProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getAllUsers from "@/_lib/graphQl/queries/getAllUsers";
 

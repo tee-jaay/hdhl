@@ -4,8 +4,8 @@ import Image from "next/image";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByCategory from "@/_lib/graphQl/queries/getPostsByCategory";
-import formatDate from "@/_helpers/formatPostDate";
-import PostCardProps from "@/_models/PostCardProps";
+import formatDate from "@/_lib/helpers/formatPostDate";
+import PostCardProps from "@/_lib/models/PostCardProps";
 import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
 
 const getData = async (category: string) => {
@@ -39,7 +39,7 @@ const PostItem: React.FC<{ post: PostCardProps }> = ({ post }) => (
             </div>
             <div className="post_title mt-1 line-clamp-2">
                 <Link href={post?.slug} title={post?.title}>
-                    <div className="capitalize text-[#444] dark:text-white text-lg font-normal leading-tight hover:text-[#43A047] transition ease-in-out duration-300">
+                    <div className="capitalize text-[#444] dark:text-white text-lg font-normal leading-tight hover:text-[#43A047] transition ease-in-out duration-300 dark:hover:text-[#43A047]">
                         {post?.title}
                     </div>
                 </Link>

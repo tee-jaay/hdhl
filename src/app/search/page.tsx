@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-import PostCardProps from "@/_models/PostCardProps";
+import PostCardProps from "@/_lib/models/PostCardProps";
 import SearchResultLoader from "@/components/loaders/SearchResultLoader";
 
 const Search = () => {

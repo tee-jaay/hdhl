@@ -1,41 +1,37 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-interface Social {
-    id: number,
-    name: string,
-    link: string,
-    imgSrc: string
-}
+import FollowUsSocial from "@/_lib/models/FollowUsSocial";
 
-const socials: Social[] = [
+const socials: FollowUsSocial[] = [
     {
         id: 1,
         name: "Health",
-        link: "https://www.example.com",
+        link: "/",
         imgSrc: "https://picsum.photos/300/200?q=1"
     },
     {
         id: 2,
         name: "Nutrition",
-        link: "https://www.example.com",
+        link: "/",
         imgSrc: "https://picsum.photos/300/200?q=2"
     },
     {
         id: 3,
         name: "Mental",
-        link: "https://www.example.com",
+        link: "/",
         imgSrc: "https://picsum.photos/300/200?q=3"
     },
     {
         id: 4,
         name: "Medicine",
-        link: "https://www.example.com",
+        link: "/",
         imgSrc: "https://picsum.photos/300/200?q=4"
     },
 ];
 
-const FollowUs = () => {
+const FollowUs: React.FC = () => {
     return (
         <div className="socials">
             <div className="socials_block grid grid-cols-2 gap-3">

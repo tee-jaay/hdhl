@@ -1,6 +1,7 @@
+import React from "react";
 import Link from "next/link";
 
-const Advertisement = () => {
+const Advertisement: React.FC<{}> = () => {
     return (
         <section className="w-[1024px] dark:text-white flex flex-col items-center justify-center mx-auto h-28 border border-black dark:border-white my-12">
             <p className="text-xl uppercase">Advertisement</p>

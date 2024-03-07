@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import TagProps from "@/_models/TagProps";
+import TagProps from "@/_lib/models/TagProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getTagsList from "@/_lib/graphQl/queries/getTagsList";
 import React from "react";
@@ -38,8 +38,8 @@ const TagsPage: React.FC<{}> = async () => {
     return (
         <div className="dark:bg-[#222]">
             <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
-                <h2 className="text-[#000000] text-center text-4xl font-medium tracking-wide">Tag Cloud</h2>
-                <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center">
+                <h2 className="text-[#000000] text-center text-4xl font-medium tracking-wide dark:text-white">Tag Cloud</h2>
+                <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center dark:text-white">
                     Home <span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />

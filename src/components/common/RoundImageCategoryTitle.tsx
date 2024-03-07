@@ -1,17 +1,11 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 import CategoryNameSlug from "./CategoryNameSlug";
+import PostRoundItemProps from "@/_lib/models/PostRoundItemProps";
 
-interface Post {
-    id: number,
-    title: string,
-    slug: string,
-    category: string,
-    categorySlug: string,
-    image: string,
-}
-
-const posts: Post[] = [
+const posts: PostRoundItemProps[] = [
     {
         id: 1,
         title: "Lorem ipsum dolor sit amet",
@@ -46,7 +40,7 @@ const posts: Post[] = [
     },
 ];
 
-const RoundImageCategoryTitle = () => {
+const RoundImageCategoryTitle: React.FC<{}> = () => {
     return (
         <div className="space-y-6">
             {posts && posts.map((post, _i) => (
@@ -57,7 +51,7 @@ const RoundImageCategoryTitle = () => {
                         </div>
                     </div>
                     <div className="4/5">
-                        <CategoryNameSlug color={"text-[#919191]"} name={post.category} slug={post.categorySlug} />
+                        <CategoryNameSlug color={"text-[#919191]"} name={post.category} slug={post.categorySlug} bgColor="" count={0} id="" imgSrc="" />
                         <h4 className="mt-2">
                             <Link className="text-black dark:text-white hover:text-[#43A047] transition ease-in-out duration-300" title={post.title} href={post.slug}>{post.title}</Link>
                         </h4>

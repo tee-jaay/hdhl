@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import truncateString from "@/_helpers/truncrateString";
-import UserProps from "@/_models/UserProps";
+import truncateString from "@/_lib/helpers/truncrateString";
+import UserProps from "@/_lib/models/UserProps";
 
 const PostAuthor = ({ author }: { author: UserProps }) => {
     return (

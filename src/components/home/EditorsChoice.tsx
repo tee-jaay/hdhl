@@ -1,3 +1,4 @@
+import React from "react";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 import SectionHeading from "../common/SectionHeading";
@@ -24,7 +25,7 @@ const getData = async () => {
     }
 }
 
-const EditorsChoice = async () => {
+const EditorsChoice: React.FC = async () => {
     const data = await getData();
 
     return (

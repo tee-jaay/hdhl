@@ -1,3 +1,4 @@
+import React from "react";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 import CarouselSlider from "./carousel/CarouselSlider";
@@ -20,7 +21,7 @@ const getData = async () => {
     }
 }
 
-const Carousel = async () => {
+const Carousel: React.FC<{}> = async () => {
     const data = await getData();
     return (
         <section className="carousel w-[1024px] flex pt-24 pb-8 mx-auto dark:text-white">

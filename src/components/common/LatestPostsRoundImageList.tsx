@@ -1,28 +1,11 @@
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+
+import PostCardProps from "@/_lib/models/PostCardProps";
 import CategoryNameSlug from "./CategoryNameSlug";
 
-interface FeaturedImage {
-    node: {
-        sourceUrl: string,
-        altText: string,
-    }
-}
-interface Category {
-    nodes: {
-        name: string,
-        slug: string,
-    }[];
-}
-interface Post {
-    id: number,
-    title: string,
-    slug: string,
-    categories: Category,
-    featuredImage: FeaturedImage,
-}
-
-const LatestPostsRoundImageList = ({ posts }: { posts: Post[] }) => {
+const LatestPostsRoundImageList: React.FC<{ posts: PostCardProps[] }> = ({ posts }) => {
     return (
         <div className="space-y-6">
             {posts && posts.map((post, _i) => (
@@ -39,13 +22,17 @@ const LatestPostsRoundImageList = ({ posts }: { posts: Post[] }) => {
                     </div>
                     <div className="4/5">
                         <CategoryNameSlug
+                            bgColor=""
+                            count={0}
+                            id=""
+                            imgSrc=""
                             color={"text-[#919191]"}
                             name={post?.categories?.nodes[0]?.name ?? ""}
                             slug={post?.categories?.nodes[0]?.slug ?? ""}
                         />
                         <h5 className="mt-2">
                             <Link title={post?.title} href={post?.slug}>
-                                <div className="text-[#444] dark:text-white leading-snug line-clamp-2 hover:text-[#43A047] transition ease-in-out duration-300">
+                                <div className="text-[#444] dark:text-white leading-snug line-clamp-2 hover:text-[#43A047] transition ease-in-out duration-300 dark:hover:text-[#43A047]">
                                     {post?.title}
                                 </div>
                             </Link>

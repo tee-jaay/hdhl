@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import PostData from "@/_models/PostData";
-import PostFeaturedImage from "@/_models/PostFeaturedImage";
+import PostData from "@/_lib/models/PostData";
+import PostFeaturedImage from "@/_lib/models/PostFeaturedImage";
 
 const PostDetails: React.FC<{ data: PostData, image: PostFeaturedImage }> = ({ data, image }) => {
     return (

@@ -1,12 +1,9 @@
+import React from 'react';
 import Link from 'next/link';
 
-interface category {
-    slug: string,
-    name: string,
-    bgColor: string
-}
+import CategoryProps from '@/_lib/models/CategoryProps';
 
-const CategoryBoxBg = ({ name, slug, bgColor }: category) => {
+const CategoryBoxBg: React.FC<CategoryProps> = ({ name, slug, bgColor }) => {
     return (
         <Link href={`/categories/${slug}/12`} title={name}>
             <span className={`category ${bgColor} text-white px-3 py-1 max-w-max capitalize`}>{name}</span>

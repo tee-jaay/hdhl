@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon, } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faInstagramSquare, faLinkedin, faVimeoSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons/faTwitterSquare";
-import GetInTouchItem from "@/_models/GetInTouch";
+import GetInTouchItem from "@/_lib/models/GetInTouch";
 import SectionHeading from "../SectionHeading";
 
 const connectionItems = [

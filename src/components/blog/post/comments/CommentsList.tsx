@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 
-import formatDate from "@/_helpers/formatPostDate";
-import PostComment from "@/_models/PostComment";
+import formatDate from "@/_lib/helpers/formatPostDate";
+import PostComment from "@/_lib/models/PostComment";
 
 const PostComment: React.FC<{ comment: PostComment }> = ({ comment }) => <div className="comment_single flex space-x-4 border-b-2 pb-6">
     <div className="commenter_avatar w-1/12">

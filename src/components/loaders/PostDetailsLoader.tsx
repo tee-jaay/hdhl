@@ -1,4 +1,6 @@
-const PostDetailsLoader = () => {
+import React from "react";
+
+const PostDetailsLoader: React.FC = () => {
     return (
         <div className=" mx-auto animate-pulse flex flex-col space-y-8">
             <div className="bg-gray-200 w-full h-[500px]"></div>

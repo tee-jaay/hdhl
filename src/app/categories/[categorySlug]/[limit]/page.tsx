@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import PostCardProps from "@/_models/PostCardProps";
-import formatDate from "@/_helpers/formatPostDate";
+import PostCardProps from "@/_lib/models/PostCardProps";
+import formatDate from "@/_lib/helpers/formatPostDate";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByCategory from "@/_lib/graphQl/queries/getPostsByCategory";
 import React from "react";
@@ -41,7 +41,7 @@ const PostItem: React.FC<{ post: PostCardProps }> = ({ post }) => <Link href={`/
                 </div>
             </div>
             <div className="post_title mt-1 mb-3">
-                <h4 className="text-2xl leading-6 text-white line-clamp-3">{post?.title}</h4>
+                <h4 className="text-2xl leading-6 text-white line-clamp-3 hover:text-[#43A047] transition ease-in-out duration-300">{post?.title}</h4>
             </div>
             <div className="post_exercpt line-clamp-2 text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
         </div>

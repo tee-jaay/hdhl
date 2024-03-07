@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import PostCardProps from "@/_models/PostCardProps"
-import formatDate from "@/_helpers/formatPostDate"
+import PostCardProps from "@/_lib/models/PostCardProps"
+import formatDate from "@/_lib/helpers/formatPostDate"
 import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink"
 import CommentsCount from "@/components/common/CommentsCount"
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear"

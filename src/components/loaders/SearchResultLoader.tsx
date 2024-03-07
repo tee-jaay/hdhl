@@ -1,4 +1,6 @@
-const SearchResultLoader = () => {
+import React from "react";
+
+const SearchResultLoader: React.FC = () => {
     return (
         <div className="space-y-12">
             <div className="mx-auto animate-pulse flex flex-col space-y-6">

@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import PostCardProps from "@/_models/PostCardProps";
-import formatDate from "@/_helpers/formatPostDate";
+import PostCardProps from "@/_lib/models/PostCardProps";
+import formatDate from "@/_lib/helpers/formatPostDate";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 

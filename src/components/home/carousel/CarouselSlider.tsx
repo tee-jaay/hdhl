@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import CarouselItem from './CarouselItem';
-import formatDate from '@/_helpers/formatPostDate';
-import truncateString from '@/_helpers/truncrateString';
+import formatDate from '@/_lib/helpers/formatPostDate';
+import truncateString from '@/_lib/helpers/truncrateString';
 
 interface FeaturedImage {
     node: {

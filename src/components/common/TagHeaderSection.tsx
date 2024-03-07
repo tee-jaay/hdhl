@@ -1,6 +1,7 @@
+import React from "react";
 import Link from "next/link";
 
-import TagProps from "@/_models/TagProps";
+import TagProps from "@/_lib/models/TagProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByTag from "@/_lib/graphQl/queries/getPostsByTag";
 
@@ -19,7 +20,7 @@ const getData = async (params: string) => {
     }
 }
 
-const TagHeaderSection = async ({ slug }: { slug: string }) => {
+const TagHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const posts = await getData(slug);
     const filteredTags = posts[0]?.tags?.nodes.filter((item: TagProps) => item.slug === slug);
     return (

@@ -1,6 +1,6 @@
 "use client";
 
-import PostCardProps from "@/_models/PostCardProps";
+import PostCardProps from "@/_lib/models/PostCardProps";
 import PostSingleCard from "./PostSingleCard";
 
 const PostsList = ({ posts }: { posts: PostCardProps[] }) => {
