@@ -22,6 +22,10 @@ const LatestPostsRoundImageList: React.FC<{ posts: PostCardProps[] }> = ({ posts
                     </div>
                     <div className="4/5">
                         <CategoryNameSlug
+                            bgColor=""
+                            count={0}
+                            id=""
+                            imgSrc=""
                             color={"text-[#919191]"}
                             name={post?.categories?.nodes[0]?.name ?? ""}
                             slug={post?.categories?.nodes[0]?.slug ?? ""}

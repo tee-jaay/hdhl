@@ -75,7 +75,7 @@ const TrendingVideos: React.FC<{}> = () => {
                         {youtubePlayist && youtubePlayist.map((item, i) => (
                             <div key={i} className="flex space-x-8 cursor-pointer">
                                 <div className="flex-1">
-                                    <CategoryNameSlug color={"text-[#FFFFFF]"} name={item.categoryName} slug={item.categorySlug} />
+                                    <CategoryNameSlug bgColor="" count={0} id="" imgSrc="" color={"text-[#FFFFFF]"} name={item.categoryName} slug={item.categorySlug} />
                                     <h4 className="text-[#FFFFFF] font-semibold">{limitString(item.title, 40)}</h4>
                                 </div>
                                 <div className="w-20">

@@ -31,7 +31,7 @@ const PostCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div className
     </div>
     <div className="flex flex-col post_meta w-3/4">
         <div className="post_category">
-            <CategoryNameSlug color={"text-[#999]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
+            <CategoryNameSlug bgColor="" count={0} id="" imgSrc="" color={"text-[#999]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
         </div>
         <div className="post_title">
             <Link href={`/${post?.slug}`}>
