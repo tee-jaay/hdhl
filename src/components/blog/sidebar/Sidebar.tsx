@@ -6,6 +6,7 @@ import LatestPosts from "./latest-posts/LatestPosts";
 import Search from "./search/Search";
 import SidebarComments from "./sidebar-comments/SidebarComments";
 import SidebarTags from "./sidebar-tags/SidebarTags";
+import ScrollToTop from "@/components/common/ScrollToTop";
 
 const Sidebar: React.FC = () => {
     return (
@@ -17,6 +18,7 @@ const Sidebar: React.FC = () => {
             <FollowUs />
             <SidebarComments />
             <SidebarTags />
+            <ScrollToTop />
         </aside>
     );
 }
