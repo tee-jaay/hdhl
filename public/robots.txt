@@ -1,0 +1,14 @@
+# START ROBOTS BLOCK
+# ---------------------------
+Disallow: /pages/
+Disallow: /contact/
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /auth/*
+Disallow: /dashboard/*
+# ---------------------------
+# Sitemap
+Sitemap: https://healthydiethappylife.com/sitemap/0.xml
+# Sitemap
+# ---------------------------
+# END ROBOTS BLOCK
