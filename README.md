@@ -21,6 +21,11 @@ SMTP_USERNAME=
 SMTP_PASSWORD=
 TIME_WINDOW=180000
 ```
+#### For Search Engines
+````bash
+MS_VALIDATE=
+````
+
 
 Then run the development server:
 

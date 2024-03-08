@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
+      <meta name="msvalidate.01" content={process.env.MS_VALIDATE} />
       <body className={leagueSpartan.className}>
         <div className="bg-white">
           <Header />
