@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     try {
         const { subject, message, email, name } = await request.json();
 
-        const sendMail = resend.emails.send({
+        const sendMail = await resend.emails.send({
             from: email,
             to: contactEmail,
             subject: subject,
