@@ -25,7 +25,7 @@ const TagHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const filteredTags = posts[0]?.tags?.nodes.filter((item: TagProps) => item.slug === slug);
     return (
         <div className="blog_header bg-[#FBFAFA] py-16 dark:bg-[#333] w-full">
-            <h2 className="w-[1024px] mx-auto capitalize text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">{filteredTags[0]?.name}</h2>
+            <h2 className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto capitalize text-[#222] dark:text-white text-center sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide">{filteredTags[0]?.name}</h2>
             <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
                 <Link href={"/"}>
                     Home

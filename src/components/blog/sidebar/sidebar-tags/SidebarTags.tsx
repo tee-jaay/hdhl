@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+import TagProps from "@/_lib/models/TagProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getTagsList from "@/_lib/graphQl/queries/getTagsList";
 import SectionHeading from "../SectionHeading";
@@ -21,13 +22,6 @@ const getData = async () => {
     }
 }
 
-interface TagProps {
-    slug: string,
-    name: string,
-    count: number,
-    id: string
-}
-
 const TagSingle: React.FC<{ tag: TagProps }> = ({ tag }) =>
     <Link key={tag.id} href={`/tags/${tag.slug}/12`} title={tag.name} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#FFF] dark:bg-[#444] text-[#555] dark:text-[#FEFEFE] shadow-sm hover:text-[#43A047] transition ease-in-out duration-300">
         <span>
@@ -40,7 +34,7 @@ const SidebarTags: React.FC = async () => {
     return (
         <div>
             <SectionHeading headingProps={{ text: "tags" }} />
-            <div className="tags_cloud mt-4 grid grid-cols-3 gap-2">
+            <div className="tags_cloud mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
                 {tags && tags.map((tag: TagProps, _i: number) => <TagSingle key={tag?.id} tag={tag} />)}
             </div>
         </div>

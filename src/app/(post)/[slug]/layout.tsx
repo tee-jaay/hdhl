@@ -19,7 +19,7 @@ export default async function BlogLayout({ children }: Readonly<{ children: Reac
         <div className="flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12">
           {children}
         </div>
-        <div className="w-72 bg-[#FFFFFF] dark:bg-[#222]">
+        <div className="md:w-60 lg:w-72 bg-[#FFFFFF] dark:bg-[#222]">
           <Sidebar />
         </div>
       </div>

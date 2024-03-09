@@ -33,7 +33,7 @@ const CommentCard: React.FC<{ comment: SidebarCommentProps }> = ({ comment }) =>
     </div>
     <div className="comment_meta flex flex-col w-3/4">
         <div className="comment_name">
-            <h5 className="capitalize line-clamp-1 dark:text-white">{comment?.author?.node?.name}</h5>
+            <h5 className="capitalize line-clamp-1 sm:text-sm md:text-base lg:text-lg dark:text-white">{comment?.author?.node?.name}</h5>
         </div>
         <div className="comment_date">
             <PublishMonthDateYear color="text-[#666]" dateMDY={formatDate(comment?.date, "numeric")} />

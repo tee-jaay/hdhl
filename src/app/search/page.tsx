@@ -57,11 +57,11 @@ const Search = () => {
 
 const PostItem = ({ post }: { post: PostCardProps }) => <div className="post_item shadow-md px-8 py-10">
     <h2>
-        <Link href={post?.slug} className="text-[#444]">{post?.title}</Link>
+        <Link href={post?.slug} className="text-[#444] sm:text-base md:text-2xl lg:text-3xl sm:line-clamp-2 md:line-clamp-3 lg:line-clamp-4 hover:text-[#43A047] transition ease-in-out duration-30">{post?.title}</Link>
     </h2>
     <p className="text-[#444]" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
     <Link href={post?.slug} className="text-[#444] font-medium flex mt-4 space-x-2 items-center">
-        <div className="capitalize">continue reading</div>
+        <div className="capitalize hover:text-[#43A047] transition ease-in-out duration-30">continue reading</div>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
         </svg>

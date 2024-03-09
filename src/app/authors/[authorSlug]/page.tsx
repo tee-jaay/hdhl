@@ -34,7 +34,7 @@ const PostSingleCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div cla
             <PublishMonthDateYear color="text-[#777]" dateMDY={formatDate(post?.date, "numeric")} />
             <CommentsCount color="text-[#777]" count={post?.commentCount ? post.commentCount.toString() : "0"} />
         </div>
-        <h1 className="post_title font-medium text-4xl">
+        <h1 className="post_title font-medium sm:text-xl md:text-2xl lg:text-4xl">
             {post?.title}
         </h1>
         <div className="post_excerpt text-[#777] dark:text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
