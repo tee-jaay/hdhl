@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
 import FormActionNotificationBox from "@/components/common/notifications/FormActionNotificationBox";
-import { publicContactEmail } from "@/_lib/variables/constants";
+import { publicAppUrl, publicContactEmail } from "@/_lib/variables/constants";
 
 const ContactPage: React.FC = () => {
     const [isBusy, setIsBusy] = useState(false);
@@ -32,7 +32,7 @@ const ContactPage: React.FC = () => {
         validationSchema,
         onSubmit: async (values, { resetForm }) => {
             setIsBusy(true);
-            const res = await fetch("/api/pages/contact-us", {
+            const res = await fetch(`${publicAppUrl}/api/pages/contact-us`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(values),

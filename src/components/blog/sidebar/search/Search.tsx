@@ -2,6 +2,7 @@
 
 import React, { ChangeEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import { publicAppUrl } from "@/_lib/variables/constants";
 
 const Search: React.FC = () => {
     const router = useRouter();
@@ -11,7 +12,7 @@ const Search: React.FC = () => {
         e.preventDefault();
         if (searchText.length >= 3) {
             // Go to search page with query text
-            router.push(`/search?s=${searchText}`);
+            router.push(`${publicAppUrl}/search?s=${searchText}`);
         }
         return null;
     }
