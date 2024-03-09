@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
+import { timeWindow } from "../variables/constants";
 
 const rateLimit = 1; // Maximum number of requests allowed within the time window
-const timeWindow = parseInt(process.env.TIME_WINDOW!); // Time window in milliseconds
+const timeWindowLimit = parseInt(timeWindow); // Time window in milliseconds
 
 const requestCounts = new Map(); // Map to store request counts for each IP address
 
@@ -13,7 +14,7 @@ export default async function rateLimitMiddleware(request: Request & { socket: a
         // If request count exists for the IP address
         const requestCount = requestCounts.get(ipAddress);
 
-        if (now - requestCount.timestamp > timeWindow) {
+        if (now - requestCount.timestamp > timeWindowLimit) {
             // If the time difference between the current request and last recorded request is greater than the time window
             requestCounts.set(ipAddress, { count: 1, timestamp: now }); // Start a new count for the IP address
         } else {

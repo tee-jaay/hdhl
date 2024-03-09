@@ -1,6 +1,8 @@
+import { graphQlUrl } from "../variables/constants";
+
 const gqlQuery = async (query: string, variables?: Record<string, unknown>) => {
     // Send the query to the GraphQL API
-    const response = await fetch(`${process.env.GRAPHQL_URL}`, {
+    const response = await fetch(`${graphQlUrl}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

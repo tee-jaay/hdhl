@@ -1,12 +1,7 @@
 import nodemailer from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
+import { contactEmail, smtpHost, smtpPassword, smtpPort, smtpUsername } from "@/_lib/variables/constants";
 import rateLimitMiddleware from "@/_lib/middlewares/rateLimitMiddleware";
-
-const contactEmail = process.env.CONTACT_EMAIL!;
-const smtpHost = process.env.SMTP_HOST!;
-const smtpPort = parseInt(process.env.SMTP_PORT!);
-const smtpUsername = process.env.SMTP_USERNAME!;
-const smtpPassword = process.env.SMTP_PASSWORD!;
 
 export async function POST(request: Request) {
     const requestWithSocket = request as Request & { socket: any };

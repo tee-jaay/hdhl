@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
-const appName = process.env.APP_NAME;
+import { appName } from "@/_lib/variables/constants";
 
 const LogoWithLink: React.FC = () => {
     return (

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+import { appUrl } from "@/_lib/variables/constants";
 import TagProps from "@/_lib/models/TagProps";
 import FooterTopProps from "@/_lib/models/FooterTopProps";
 import PageProps from "@/_lib/models/PageProps";
@@ -8,10 +9,15 @@ import LogoWithLink from "@/components/common/LogoWithLink";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
 const TagItem: React.FC<{ tag: TagProps }> = ({ tag }) => <span key={tag.id} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#333333]">
-    <Link href={`/tags/${tag.slug}/12`} title={tag.name}>{tag.name}</Link>
+    <Link href={`${appUrl}/tags/${tag.slug}/12`} title={tag.name}>{tag.name}</Link>
 </span>
 
-const PageItem: React.FC<{ page: PageProps }> = ({ page }) => <span><Link className="capitalize font-light text-sm text-gray-100" href={`/pages/${page.slug}`}>{page.title}</Link></span>
+const PageItem: React.FC<{ page: PageProps }> = ({ page }) => <span>
+    <Link
+        className="capitalize font-light text-sm text-gray-100"
+        href={`${appUrl}/pages/${page.slug}`}>{page.title}
+    </Link>
+</span>
 
 const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) => {
     return (
