@@ -1,8 +1,7 @@
 import { MetadataRoute } from "next";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
+import { baseUrl } from "@/_lib/variables/constants";
 import getAllPublishedPosts from "@/_lib/graphQl/queries/getAllPublishedPosts";
-
-const baseUrl = process.env.BASE_URL;
 
 export async function generateSitemaps() {
     // Fetch the total number of posts and calculate the number of sitemaps needed

@@ -3,6 +3,7 @@ import { League_Spartan } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/blog/header/Header";
 import Footer from "@/components/blog/footer/Footer";
+import { msValidate } from "@/_lib/variables/constants";
 
 const leagueSpartan = League_Spartan({ subsets: ["latin"] });
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en">
-      <meta name="msvalidate.01" content={process.env.MS_VALIDATE} />
+      <meta name="msvalidate.01" content={msValidate} />
       <body className={leagueSpartan.className}>
         <div className="bg-white">
           <Header />

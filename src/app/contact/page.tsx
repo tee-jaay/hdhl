@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
 
 import FormActionNotificationBox from "@/components/common/notifications/FormActionNotificationBox";
+import { publicContactEmail } from "@/_lib/variables/constants";
 
 const ContactPage: React.FC = () => {
     const [isBusy, setIsBusy] = useState(false);
@@ -74,7 +75,7 @@ const ContactPage: React.FC = () => {
                     <div className="email_address">
                         <h5 className="capitalize">email address</h5>
                         <div className="text-[#777] dark:text-[#FEFEFE]">
-                            {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
+                            {publicContactEmail}
                         </div>
                     </div>
 
