@@ -1,9 +1,9 @@
 # START ROBOTS BLOCK
 # ---------------------------
-Disallow: /pages/
-Disallow: /contact/
-Disallow: /categories/
-Disallow: /tags/
+Disallow: /pages/*
+Disallow: /contact
+Disallow: /categories/*
+Disallow: /tags/*
 Disallow: /auth/*
 Disallow: /dashboard/*
 # ---------------------------
