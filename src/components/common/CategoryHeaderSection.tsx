@@ -23,7 +23,7 @@ const CategoryHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const category = await getData(slug);
     return (
         <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
-            <h2 className="w-[1024px] mx-auto capitalize text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">{category?.name}</h2>
+            <h2 className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto capitalize text-[#222] dark:text-white text-center sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide">{category?.name}</h2>
             <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
                 <Link href="/">
                     Home
@@ -34,7 +34,7 @@ const CategoryHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
                 </span>
                 <span className="capitalize">Category</span>
             </h6>
-            <p className="w-[1024px] dark:text-white mx-auto mt-8 text-center">{category?.description}</p>
+            <p className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto dark:text-white mt-8 text-center">{category?.description}</p>
         </div>
     );
 }

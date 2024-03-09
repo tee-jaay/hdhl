@@ -8,6 +8,7 @@ interface Tags { tags: TagProps[] }
 const PostTags: React.FC<Tags> = ({ tags }) => {
     return (
         <div className="tags_links flex flex-wrap items-start">
+            <h6 className="font-medium mr-4 text-lg text-[#444444] dark:text-white">Tags:</h6>
             {tags?.map((tag, _i) => (
                 <div key={tag.slug} className="mr-1 mb-2 text-xs">
                     <Link title={tag.name} href={`/tags/${tag.slug}/12`}>

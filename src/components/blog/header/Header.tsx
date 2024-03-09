@@ -1,7 +1,8 @@
+import React from "react";
 import TopBar from "./top-bar/TopBar";
 import LogoMenuSearch from "./logo-menu-search/LogoMenuSearch";
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <section id="header">
             <TopBar />

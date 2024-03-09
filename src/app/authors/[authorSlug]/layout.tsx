@@ -15,11 +15,11 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <section className="flex flex-col dark:bg-[#222]">
       <AuthorDetailsPageHeaderSection slug={segmentPath[3][1]} />
-      <div className="w-[1024px] flex space-x-8 mx-auto">
+      <div className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto flex space-x-8">
         <div className="flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12">
           {children}
         </div>
-        <div className="w-72 bg-[#FFFFFF] dark:bg-[#222]">
+        <div className="md:w-60 lg:w-72 bg-[#FFFFFF] dark:bg-[#222]">
           <Sidebar />
         </div>
       </div>

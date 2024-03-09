@@ -166,7 +166,7 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                             checked={formik.values.saveInfo}
                             onChange={formik.handleChange}
                         />
-                        <div className="font-light text-lg text-[#666] dark:text-[#FEFEFE]">
+                        <div className="font-light md:text-sm lg:text-lg text-[#666] dark:text-[#FEFEFE]">
                             Save my name, email, website in this browser for my future
                             comments
                         </div>

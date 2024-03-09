@@ -40,7 +40,7 @@ const CategoriesPage: React.FC<{}> = async () => {
     return (
         <div className="dark:bg-[#222222]">
             <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
-                <h2 className="w-[1024px] mx-auto capitalize text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">All Categories</h2>
+                <h2 className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto  capitalize text-[#222] dark:text-white text-center sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide">All Categories</h2>
                 <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
                     <Link href={"/"}>
                         Home
@@ -56,8 +56,8 @@ const CategoriesPage: React.FC<{}> = async () => {
                     </span>
                 </h6>
             </div>
-            <div className="w-[1024px] mx-auto">
-                <div className="categories_list grid grid-cols-4 gap-8 py-20">
+            <div className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto">
+                <div className="categories_list grid md:grid-cols-3 lg:grid-cols-4 gap-8 py-20">
                     {categories && categories.map((category: CategoryProps, _i: number) => <CategoryItem key={category?.id} category={category} />)}
                 </div>
             </div>
