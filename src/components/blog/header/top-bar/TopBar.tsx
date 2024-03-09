@@ -24,7 +24,7 @@ const TopBar: React.FC<{}> = async () => {
     const data = await getData();
     return (
         <section className="topbar bg-gradient-to-b from-[#2E8B57] to-[#43A047]">
-            <div className="w-[1024px] flex justify-between mx-auto">
+            <div className="md:w-[768px] lg:w-[1024px] flex justify-between mx-auto">
                 <div className="latest_news w-2/3 flex justify-start">
                     <div className="flex items-center">
                         <span className="text-sm text-white uppercase">latest article</span>

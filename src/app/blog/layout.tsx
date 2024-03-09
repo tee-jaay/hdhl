@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function BlogLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <section className="flex flex-col mx-auto dark:bg-[#222]">
-      <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
+      <div className="blog_header md:w-[768px] lg:w-[1024px] xl:w-full py-16 bg-[#FBFAFA] dark:bg-[#333]">
         <h2 className="text-[#000000] dark:text-white text-center text-4xl font-medium tracking-wide">Blog</h2>
         <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
           <Link href="/">Home</Link> <span>

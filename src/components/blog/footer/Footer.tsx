@@ -1,3 +1,4 @@
+import React from "react";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getFooterData from "@/_lib/graphQl/queries/getFooterData";
 import FooterTop from "./FooterTop";
@@ -21,13 +22,13 @@ const getData = async () => {
     }
 }
 
-const Footer = async () => {
+const Footer: React.FC = async () => {
     const data = await getData();
     const { pages, tags, generalSettings } = data;
 
     return (
         <section className="bg-[#161B2B]">
-            <footer className="mx-auto" style={{ width: "1024px" }}>
+            <footer className="md:w-[768px] lg:w-[1024px] mx-auto">
                 <div className="pt-14 pb-8">
                     <FooterTop generalSettings={generalSettings} pages={pages} tags={tags} />
                 </div>

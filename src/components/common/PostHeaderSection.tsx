@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import getPostBySlug from "@/_lib/graphQl/queries/getPostBySlug";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
+import formatDate from "@/_lib/helpers/formatPostDate";
 
 const getData = async (params: string) => {
     // Construct the query and variables
@@ -25,8 +26,9 @@ const PostHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const { post } = await getData(slug);
     return (
         <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
-            <h2 className="w-[1024px] mx-auto text-[#000000] dark:text-white text-center text-3xl font-medium tracking-wide">{post?.title}</h2>
-            <h6 className="text-[#8F8E8E] dark:text-[#FEFEFE] text-lg flex justify-center items-center capitalize">
+            <h2 className="sm:w-[640px] md:w-[768px] lg:w-[1024px] mx-auto text-[#222] dark:text-white text-center md:text-2xl lg:text-3xl font-medium tracking-wide sm:line-clamp-2 md:line-clamp-1">{post?.title}</h2>
+            <h5 className="text-center font-thin text-base text-[#222]">{formatDate(post?.date, "numeric")}</h5>
+            <h6 className="text-[#8F8E8E] dark:text-[#FEFEFE] text-lg flex justify-center items-center capitalize mt-1">
                 <Link href={"/"}>home</Link>
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">

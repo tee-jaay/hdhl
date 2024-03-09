@@ -63,7 +63,7 @@ const PostRelatedPosts: React.FC<{ category: string }> = async ({ category }) =>
     return (
         <div className="related_posts">
             <h3 className="capitalize font-medium text-[#000] dark:text-white">related posts</h3>
-            <div className="posts grid grid-cols-3 space-x-4">
+            <div className="posts grid md:grid-cols-2 lg:grid-cols-3 space-x-4">
                 {posts.map((post: any, i: Key) => (
                     <PostItem key={i} post={post} />
                 ))}

@@ -34,11 +34,10 @@ const Post: React.FC<{ params: { slug: string } }> = async ({ params }) => {
             <PostDetails data={post?.content} image={post?.featuredImage} />
             <hr className="mt-10 mb-6" />
             <div className="tags_share_links flex justify-between">
-                <div className="tags flex">
-                    <h6 className="font-medium mr-4 text-lg text-[#444444] dark:text-white">Tags:</h6>
+                <div className="tags w-3/5">
                     <PostTags tags={post?.tags?.nodes} />
                 </div>
-                <div className="flex flex-col">
+                <div className="w-2/5">
                     <PostSocialShareLinks />
                 </div>
             </div>
