@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 import formatDate from "@/_lib/helpers/formatPostDate";
-import PostComment from "@/_lib/models/PostComment";
+import PostCommentProps from "@/_lib/models/PostCommentProps";
 
-const PostComment: React.FC<{ comment: PostComment }> = ({ comment }) => <div className="comment_single flex space-x-4 border-b-2 pb-6">
+const PostCommentSingle: React.FC<{ comment: PostCommentProps }> = ({ comment }) => <div className="comment_single flex space-x-4 border-b-2 pb-6">
     <div className="commenter_avatar w-1/12">
         <Image
             src={comment?.author?.node?.avatar?.url ?? "https://i.pravatar.cc/80"}
@@ -21,10 +21,10 @@ const PostComment: React.FC<{ comment: PostComment }> = ({ comment }) => <div cl
     </div>
 </div>
 
-const CommentsList: React.FC<{ comments: PostComment[] }> = ({ comments }) => {
+const CommentsList: React.FC<{ comments: PostCommentProps[] }> = ({ comments }) => {
     return (
         <div className="comments_list space-y-8">
-            {comments && comments.map((comment, _i) => <PostComment key={comment.id} comment={comment} />)}
+            {comments && comments.map((comment, _i) => <PostCommentSingle key={comment.id} comment={comment} />)}
             {comments.length < 1 && <p className="dark:text-white">No comment yet.</p>}
         </div>
     );

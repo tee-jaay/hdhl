@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon, } from "@fortawesome/react-fontawesome";
 import { faFacebookSquare, faInstagramSquare, faLinkedin, faVimeoSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { faTwitterSquare } from "@fortawesome/free-brands-svg-icons/faTwitterSquare";
-import GetInTouchItem from "@/_lib/models/GetInTouch";
+import GetInTouchItemProps from "@/_lib/models/GetInTouchProps";
 import SectionHeading from "../SectionHeading";
 
 const connectionItems = [
@@ -51,7 +51,7 @@ const connectionItems = [
     },
 ];
 
-const ConnectionItem: React.FC<{ item: GetInTouchItem }> = ({ item }) => <Link href={"/"} className="connection_item flex space-x-2 shadow-lg p-1">
+const ConnectionItem: React.FC<{ item: GetInTouchItemProps }> = ({ item }) => <Link href={"/"} className="connection_item flex space-x-2 shadow-lg p-1">
     <div className="conenction_icon">
         <FontAwesomeIcon className={item?.color} icon={item?.icon} height={32} width={32} />
     </div>

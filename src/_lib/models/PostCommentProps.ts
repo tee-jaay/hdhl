@@ -1,4 +1,4 @@
-export default interface PostComment {
+export default interface PostCommentProps {
     id: string,
     date: string,
     content: string,

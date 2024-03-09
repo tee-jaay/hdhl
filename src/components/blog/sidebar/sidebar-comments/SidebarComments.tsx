@@ -3,9 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
+import SidebarCommentProps from "@/_lib/models/SidebarCommentProps";
 import getLatestComments from "@/_lib/graphQl/queries/getLatestComments";
 import formatDate from "@/_lib/helpers/formatPostDate";
-import SidebarComment from "@/_lib/models/SidebarComment";
 import SectionHeading from "../SectionHeading";
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 
@@ -27,7 +27,7 @@ const getData = async () => {
     }
 }
 
-const CommentCard: React.FC<{ comment: SidebarComment }> = ({ comment }) => <Link href={`/${comment?.commentedOn?.node?.slug}`} className="comment-single flex space-x-4 py-6">
+const CommentCard: React.FC<{ comment: SidebarCommentProps }> = ({ comment }) => <Link href={`/${comment?.commentedOn?.node?.slug}`} className="comment-single flex space-x-4 py-6">
     <div className="comment_image w-1/4">
         <Image className="rounded-full" src={comment?.author?.node?.avatar?.url} alt={comment?.author?.node?.name} width={120} height={120} />
     </div>
@@ -50,7 +50,7 @@ const SidebarComments: React.FC = async () => {
         <div>
             <SectionHeading headingProps={{ text: "comments" }} />
             <div className="comments_list flex flex-col divide-y-2">
-                {comments && comments.map((comment: SidebarComment, _i: number) => <CommentCard key={comment?.id} comment={comment} />)}
+                {comments && comments.map((comment: SidebarCommentProps, _i: number) => <CommentCard key={comment?.id} comment={comment} />)}
                 {comments.length < 1 && <p>No comment yet.</p>}
             </div>
         </div>

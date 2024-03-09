@@ -1,4 +1,4 @@
-export default interface SidebarComment {
+export default interface SidebarCommentProps {
     id: string,
     content: string,
     date: string,

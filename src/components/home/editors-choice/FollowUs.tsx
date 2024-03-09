@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import FollowUsSocial from "@/_lib/models/FollowUsSocial";
+import FollowUsSocialProps from "@/_lib/models/FollowUsSocialProps";
 
-const socials: FollowUsSocial[] = [
+const socials: FollowUsSocialProps[] = [
     {
         id: 1,
         name: "Health",
