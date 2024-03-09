@@ -13,7 +13,7 @@ const onPlayerReady: YouTubeProps['onReady'] = (event) => {
 const opts: YouTubeProps['opts'] = {
     height: '420',
     playerVars: {
-        autoplay: 1,
+        autoplay: 0,
     },
 };
 
