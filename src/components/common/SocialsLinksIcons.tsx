@@ -1,33 +1,41 @@
-import React from 'react';
+"use client";
 
-import gqlQuery from '@/_lib/graphQl/gqlQuery';
-import getSocialLinks from '@/_lib/graphQl/queries/getSocialLinks';
+import React, { useEffect, useState } from 'react';
+
+import { publicAppUrl } from '@/_lib/variables/constants';
 import SocialIconLinkTitleProps from '@/_lib/models/SocialIconLinkTitleProps';
 import SocialIcon from '@/components/common/SocialIcon';
 import generateProfileLink from '@/_lib/helpers/generateProfileLink';
 import generateProfileIcon from '@/_lib/helpers/generateProfileIcon';
 
-const getData = async () => {
-    // Construct the query and variables
-    const query = getSocialLinks();
-    const variables = {};
-    try {
-        // Make the request and return the data
-        const data = await gqlQuery(query, variables);
-        return data?.gslinks?.nodes;
-    } catch (error) {
-        // Handle the error here
-        console.error(error);
-        throw error;
-    }
-}
+const SocialsLinksIcons: React.FC<{}> = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [socials, setSocials] = useState<SocialIconLinkTitleProps[]>([]);
 
-const SocialsLinksIcons: React.FC<{}> = async () => {
-    const socials: SocialIconLinkTitleProps[] = await getData();
+    const getData = async () => {
+        const response = await fetch(`${publicAppUrl}/api/common/social-links`);
+        const data = await response.json();
+        return data;
+    }
+
+    useEffect(() => {
+        setIsLoading(true);
+        getData()
+            .then((res) => { setSocials(res); })
+            .catch((e) => console.log(e))
+            .finally(() => setIsLoading(false));
+    }, []);
+
+
     return (
         <div className="socials flex justify-center">
             <div className="flex space-x-4">
-                {socials && socials.map((social, i) => (
+                {isLoading && <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-gray-400">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                    </svg>
+                </div>}
+                {!isLoading && socials && socials.map((social, i) => (
                     <SocialIcon key={i}
                         icon={generateProfileIcon(social?.title)}
                         link={generateProfileLink(social?.title, social?.content)}
