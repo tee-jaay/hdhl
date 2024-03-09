@@ -1,10 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import PostDataProps from "@/_lib/models/PostDataProps";
+import PostFeaturedImageProps from "@/_lib/models/PostFeaturedImageProps";
 
-import PostData from "@/_lib/models/PostData";
-import PostFeaturedImage from "@/_lib/models/PostFeaturedImage";
-
-const PostDetails: React.FC<{ data: PostData, image: PostFeaturedImage }> = ({ data, image }) => {
+const PostDetails: React.FC<{ data: PostDataProps, image: PostFeaturedImageProps }> = ({ data, image }) => {
     return (
         <>
             <div className="post_image w-full">

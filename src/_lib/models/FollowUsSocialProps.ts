@@ -1,4 +1,4 @@
-export default interface FollowUsSocial {
+export default interface FollowUsSocialProps {
     id: number,
     name: string,
     link: string,

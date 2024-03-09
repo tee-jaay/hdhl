@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import CarouselItem from "@/_lib/models/CarouselItem";
+import CarouselItemProps from "@/_lib/models/CarouselItemProps";
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 import CategoryNameSlug from "@/components/common/CategoryNameSlug";
 
-const CarouselItem: React.FC<CarouselItem> = ({ imgSrc, imgAlt, category, categorySlug, title, slug, date }) => {
+const CarouselItem: React.FC<CarouselItemProps> = ({ imgSrc, imgAlt, category, categorySlug, title, slug, date }) => {
     return (
         <div className="item flex space-x-4">
             <div className="item-image w-1/3">

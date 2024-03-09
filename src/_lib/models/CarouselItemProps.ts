@@ -1,4 +1,4 @@
-export default interface CarouselItem {
+export default interface CarouselItemProps {
     imgSrc: string,
     imgAlt: string,
     category: string,
