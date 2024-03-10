@@ -1,11 +1,11 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-import PostCardProps from "@/_lib/models/PostCardProps"
-import formatDate from "@/_lib/helpers/formatPostDate"
-import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink"
-import CommentsCount from "@/components/common/CommentsCount"
-import PublishMonthDateYear from "@/components/common/PublishMonthDateYear"
+import PostCardProps from "@/_lib/models/PostCardProps";
+import formatDate from "@/_lib/helpers/formatPostDate";
+import AuthorAvatarNameLink from "@/components/common/AuthorAvatarNameLink";
+import CommentsCount from "@/components/common/CommentsCount";
+import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 
 const PostSingleCard = ({ post }: { post: PostCardProps }) => <div className="post_single shadow-md pb-8">
     <div className="post_image">
@@ -15,9 +15,11 @@ const PostSingleCard = ({ post }: { post: PostCardProps }) => <div className="po
         <div className="meta flex space-x-6 my-8">
             <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor={"text-[#000]"} imgSize={30} />
             <PublishMonthDateYear color="text-[#777]" dateMDY={formatDate(post?.date, "numeric")} />
-            <CommentsCount color="text-[#777]" count={post?.commentCount ? post.commentCount.toString() : "0"} />
+            <div className="phone:hidden tab:block">
+                <CommentsCount color="text-[#777]" count={post?.commentCount ? post.commentCount.toString() : "0"} />
+            </div>
         </div>
-        <h1 className="post_title font-medium tab:text-xl laptop:text-2xl desktop:text-4xl dark:text-white">
+        <h1 className="post_title font-medium phone:text-lg tab:text-xl laptop:text-2xl desktop:text-4xl dark:text-white">
             {post?.title}
         </h1>
         <div className="post_excerpt text-[#777] dark:text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
