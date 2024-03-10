@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+import { publicAppUrl } from "@/_lib/variables/constants";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getCategoryBySlug from "@/_lib/graphQl/queries/getCategoryBySlug";
 
@@ -25,7 +26,7 @@ const CategoryHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
         <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
             <h2 className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto capitalize text-[#222] dark:text-white text-center  tab:text-2xl laptop:text-3xl desktop:text-4xl font-medium tracking-wide">{category?.name}</h2>
             <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
-                <Link href="/">
+                <Link href={publicAppUrl}>
                     Home
                 </Link> <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
