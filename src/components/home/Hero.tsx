@@ -27,12 +27,14 @@ const getData = async () => {
 const Hero: React.FC = async () => {
     const data = await getData();
     return (
-        <section className="hero flex space-x-6">
+        <section className="hero md:h-[400px] lg:h-[580px] flex space-x-6">
             <HeroBig post={data[0]} />
-            <div className="hero_right flex-1 flex-col ">
-                <HeroMedium post={data[1]} />
-                <div className="flex-1 h-1/2 pt-6">
-                    <div className="flex space-x-6">
+            <div className="hero_right h-full flex-1 flex-col space-y-6 overflow-clip">
+                <div className="h-1/2">
+                    <HeroMedium post={data[1]} />
+                </div>
+                <div className="flex-1 h-1/2">
+                    <div className="flex h-full space-x-6">
                         <HeroSmall post={data[2]} />
                         <HeroSmall post={data[3]} />
                     </div>
