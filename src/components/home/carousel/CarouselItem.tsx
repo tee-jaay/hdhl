@@ -15,7 +15,7 @@ const CarouselItem: React.FC<CarouselItemProps> = ({ imgSrc, imgAlt, category, c
                     src={imgSrc}
                     width={240}
                     height={320}
-                    className="md:h-[90px] lg:h-full"
+                    className="h-full"
                 />
             </div>
             <div className="item-meta flex flex-col items-start justify-center w-2/3">
