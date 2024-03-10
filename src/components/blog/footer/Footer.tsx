@@ -28,7 +28,7 @@ const Footer: React.FC = async () => {
 
     return (
         <section className="bg-[#161B2B]">
-            <footer className="md:w-[768px] lg:w-[1024px] mx-auto">
+            <footer className="laptop:w-[768px] desktop:w-[1024px] mx-auto">
                 <div className="pt-14 pb-8">
                     <FooterTop generalSettings={generalSettings} pages={pages} tags={tags} />
                 </div>

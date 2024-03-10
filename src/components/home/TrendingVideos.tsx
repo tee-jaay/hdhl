@@ -64,22 +64,22 @@ const TrendingVideos: React.FC<{}> = () => {
     };
 
     return (
-        <section className="xs:py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-b from-[#161b2a] to-black">
-            <div className="md:w-[768px] lg:w-[1024px] mx-auto">
+        <section className="phone:py-8 tab:py-10 laptop:py-12 desktop:py-16 bg-gradient-to-b from-[#161b2a] to-black">
+            <div className="phone:w-full phone:px-2 tab:px-0 laptop:w-[768px] desktop:w-[1024px] mx-auto">
                 <SectionHeading color={"text-[#FFFFFF]"} text={"Trending Videos"} />
-                <div className="flex space-x-8">
-                    <div className="youtube_video w-4/6">
+                <div className="flex phone:flex-col tab:flex-row space-x-8 phone:space-y-8">
+                    <div className="youtube_video phone:w-full tab:w-4/6">
                         <YouTube videoId={videoId} opts={opts} onReady={onPlayerReady} />
                     </div>
-                    <div className="youtube_playlist space-y-8 w-2/6">
+                    <div className="youtube_playlist phone:w-full tab:w-2/6 space-y-8">
                         {youtubePlayist && youtubePlayist.map((item, i) => (
                             <div key={i} className="flex space-x-8 cursor-pointer">
-                                <div className="flex-1">
+                                <div className="w-2/3">
                                     <CategoryNameSlug bgColor="" count={0} id="" imgSrc="" color={"text-[#FFFFFF]"} name={item.categoryName} slug={item.categorySlug} />
-                                    <h4 className="text-[#FFFFFF] md:font-normal lg:font-semibold md:line-clamp-2 lg:line-clamp-3">{limitString(item.title, 40)}</h4>
+                                    <h4 className="text-[#FFFFFF] laptop:font-normal desktop:font-semibold phone:line-clamp-1 tab:line-clamp-1 laptop:line-clamp-2 desktop:line-clamp-3">{limitString(item.title, 40)}</h4>
                                 </div>
-                                <div className="w-20">
-                                    <div onClick={() => setVideoId(item.videoId)}>
+                                <div className="w-1/3">
+                                    <div onClick={() => setVideoId(item.videoId)} className="phone:w-[60px] phone:h-[60px] tab:w-[80px] tab:h-[80px]">
                                         <Image alt={item.imgAlt} src={item.imgSrc} width={80} height={80} />
                                     </div>
                                 </div>

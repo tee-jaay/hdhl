@@ -57,7 +57,7 @@ const Search = () => {
 
 const PostItem = ({ post }: { post: PostCardProps }) => <div className="post_item shadow-md px-8 py-10">
     <h2>
-        <Link href={post?.slug} className="text-[#444] sm:text-base md:text-2xl lg:text-3xl sm:line-clamp-2 md:line-clamp-3 lg:line-clamp-4 hover:text-[#43A047] transition ease-in-out duration-30">{post?.title}</Link>
+        <Link href={post?.slug} className="text-[#444] tab:text-base laptop:text-2xl desktop:text-3xl tab:line-clamp-2 laptop:line-clamp-3 desktop:line-clamp-4 hover:text-[#43A047] transition ease-in-out duration-30">{post?.title}</Link>
     </h2>
     <p className="text-[#444]" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
     <Link href={post?.slug} className="text-[#444] font-medium flex mt-4 space-x-2 items-center">

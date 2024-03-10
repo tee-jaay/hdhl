@@ -34,7 +34,7 @@ const SidebarTags: React.FC = async () => {
     return (
         <div>
             <SectionHeading headingProps={{ text: "tags" }} />
-            <div className="tags_cloud mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            <div className="tags_cloud mt-4 grid tab:grid-cols-2 desktop:grid-cols-3 gap-2">
                 {tags && tags.map((tag: TagProps, _i: number) => <TagSingle key={tag?.id} tag={tag} />)}
             </div>
         </div>

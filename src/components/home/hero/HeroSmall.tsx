@@ -11,7 +11,7 @@ const HeroSmall = ({ post }: { post: HeroPostProps }) => {
             <div className="py-5 px-6 bg-gradient-to-b from-transparent to-black">
                 <CategoryBoxBg color="" count={0} id="" imgSrc="" bgColor={"bg-[#ffa100]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
                 <Link href={`/${post?.slug}`} title={`${post?.title}`}>
-                    <h4 className="title sm:text-base md:text-lg lg:text-2xl md:line-clamp-1 text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-300">{post?.title}</h4>
+                    <h4 className="title tab:text-base laptop:text-lg desktop:text-2xl laptop:line-clamp-1 text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-300">{post?.title}</h4>
                 </Link>
                 <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor="text-[#FFFFFF]" imgSize={20} />
             </div>

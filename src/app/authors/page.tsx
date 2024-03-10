@@ -52,9 +52,9 @@ const Authors: React.FC<{}> = async () => {
     const users = await getData();
     return (
         <div className="dark:bg-[#333]">
-            <div className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto dark:bg-[#333] dark:text-white py-16">
+            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto dark:bg-[#333] dark:text-white py-16">
                 <h2 className="capitalize text-center dark:text-white font-medium">meet our authors</h2>
-                <div className="authors_list dark:bg-[#333] grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
+                <div className="authors_list dark:bg-[#333] grid phone:grid-cols-1 tab:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-x-6 gap-y-8">
                     {users && users.map((user: UserProps, _i: number) => <AuthorCard key={user?.id} author={user} />)}
                 </div>
             </div>

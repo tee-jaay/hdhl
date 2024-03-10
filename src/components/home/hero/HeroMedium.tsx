@@ -14,16 +14,16 @@ const HeroMedium = ({ post }: { post: HeroPostProps }) => {
       <div className="w-full flex flex-col py-6 px-6 justify-end bg-gradient-to-b from-transparent to-black">
         <CategoryBoxBg color="" count={0} id="" imgSrc="" bgColor={"bg-[#378e1c]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
         <Link href={`/${post?.slug}`} title={post?.title}>
-          <h2 className="title md:text-xl lg:text-2xl md:line-clamp-1 text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-300">{post?.title}</h2>
+          <h2 className="title laptop:text-xl desktop:text-2xl laptop:line-clamp-1 text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-300">{post?.title}</h2>
         </Link>
         <div className="meta flex space-x-6">
-          <div className="lg:block">
+          <div className="desktop:block">
             <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor="text-[#FFFFFF]" imgSize={20} />
           </div>
-          <div className="lg:block">
+          <div className="desktop:block">
             <PublishMonthDateYear color="text-[#FFFFFF]" dateMDY={formatDate(post?.date, "numeric")} />
           </div>
-          <div className="md:hidden lg:block">
+          <div className="laptop:hidden desktop:block">
             <CommentsCount color="text-[#FFFFFF]" count={post?.commentCount} />
           </div>
         </div>

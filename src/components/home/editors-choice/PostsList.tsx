@@ -40,10 +40,10 @@ const PostsList: React.FC<{ posts: PostCardProps[] }> = ({ posts }) => {
               slug={post?.categories?.nodes[0]?.slug} />
             <div>
               <Link href={post?.slug} title={post?.title}>
-                <h4 className="xs:text-sm sm:text-base md:text-xl sm:line-clamp-1 lg:line-clamp-2 text-black dark:text-white hover:text-[#43A047] dark:hover:text-[#43A047] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
+                <h4 className="phone:text-sm tab:text-base laptop:text-xl tab:line-clamp-1 desktop:line-clamp-2 text-black dark:text-white hover:text-[#43A047] dark:hover:text-[#43A047] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
               </Link>
             </div>
-            <h6 className="text-gray-500 dark:text-white sm:line-clamp-1 lg:line-clamp-3" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />
+            <h6 className="text-gray-500 dark:text-white tab:line-clamp-1 desktop:line-clamp-3" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />
             <div>
               <AuthorAvatarNameLink imgAlt={post?.author?.node?.name} imgSrc={post?.author?.node?.avatar?.url} link={post?.author?.node?.slug} name={post?.author?.node?.name} textColor="text-[#222]" imgSize={20} />
             </div>

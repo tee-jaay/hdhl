@@ -15,7 +15,7 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
       <div className="bg-[#FBFAFA] w-full">
         {segmentPath[3][1].length > 0 && <TagHeaderSection slug={segmentPath[3][1]} />}
       </div>
-      <div className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto flex space-x-8">
+      <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto flex space-x-8">
         <div className="flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12">
           {children}
         </div>

@@ -46,14 +46,14 @@ const RoundImageCategoryTitle: React.FC<{}> = () => {
             {posts && posts.map((post, _i) => (
                 <div key={post.id} className="flex space-x-3">
                     <div className="w-2/5">
-                        <div className="w-fit md:h-fit lg:h-24">
-                            <Image className="" src={post.image} alt="" height={100} width={100} />
+                        <div className="w-full laptop:h-fit desktop:h-24">
+                            <Image className="w-full" src={post.image} alt="" height={100} width={100} />
                         </div>
                     </div>
-                    <div className="w-3/5">
+                    <div className="w-3/5 ">
                         <CategoryNameSlug color={"text-[#919191]"} name={post.category} slug={post.categorySlug} bgColor="" count={0} id="" imgSrc="" />
-                        <h4 className="mt-2 md:text-base lg:text-xl md:font-normal line-clamp-2">
-                            <Link className="text-black dark:text-white hover:text-[#43A047] transition ease-in-out duration-300" title={post.title} href={post.slug}>{post.title}</Link>
+                        <h4 className="mt-2 laptop:text-base desktop:text-xl laptop:font-normal line-clamp-2">
+                            <Link className="text-[#222] dark:text-white hover:text-[#43A047] transition ease-in-out duration-300" title={post.title} href={post.slug}>{post.title}</Link>
                         </h4>
                     </div>
                 </div>

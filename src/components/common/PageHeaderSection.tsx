@@ -22,7 +22,7 @@ const PageHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const page = await getData(slug);
     return (
         <div className="page_header bg-[#FBFAFA] dark:bg-[#333] w-full py-16">
-            <h2 className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto capitalize text-[#222] dark:text-white text-center md:text-2xl lg:text-3xl font-medium tracking-wide">{page?.title}</h2>
+            <h2 className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto capitalize text-[#222] dark:text-white text-center laptop:text-2xl desktop:text-3xl font-medium tracking-wide">{page?.title}</h2>
             <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center">
                 Home <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">

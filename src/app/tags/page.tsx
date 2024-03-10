@@ -37,8 +37,8 @@ const TagsPage: React.FC<{}> = async () => {
     const tags = await getData("100");
     return (
         <div className="dark:bg-[#222]">
-            <div className="blog_header sm:w-[640px] md:w-[768px] lg:w-full mx-auto py-16 bg-[#FBFAFA] dark:bg-[#333]">
-                <h2 className="text-[#000000] text-center sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide dark:text-white">Tag Cloud</h2>
+            <div className="blog_header tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto py-16 bg-[#FBFAFA] dark:bg-[#333]">
+                <h2 className="text-[#000000] text-center tab:text-2xl laptop:text-3xl desktop:text-4xl font-medium tracking-wide dark:text-white">Tag Cloud</h2>
                 <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center dark:text-white">
                     Home <span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
@@ -48,7 +48,7 @@ const TagsPage: React.FC<{}> = async () => {
                     <span className="capitalize">blog</span>
                 </h6>
             </div>
-            <div className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto tags_cloud flex flex-wrap space-y-4 items-baseline py-16 justify-center">
+            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto tags_cloud flex flex-wrap space-y-4 items-baseline py-16 justify-center">
                 {tags && tags.map((tag: TagProps, _i: number) => <TagItem key={tag?.id} tag={tag} />)}
             </div>
         </div>

@@ -6,7 +6,7 @@ import CategoryProps from '@/_lib/models/CategoryProps';
 const CategoryBoxBg: React.FC<CategoryProps> = ({ name, slug, bgColor }) => {
     return (
         <Link href={`/categories/${slug}/12`} title={name}>
-            <span className={`category ${bgColor} text-white md:px-2 lg:px-3 md:py-0 lg:py-1 sm:min-w-max md:w-fit capitalize line-clamp-1`}>{name}</span>
+            <span className={`category ${bgColor} text-white phone:px-1 tab:px-1 laptop:px-2 desktop:px-3 laptop:py-0 desktop:py-1 tab:min-w-max phone:w-fit laptop:w-fit capitalize line-clamp-1`}>{name}</span>
         </Link>
     );
 }
