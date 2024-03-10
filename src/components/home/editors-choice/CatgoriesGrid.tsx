@@ -26,13 +26,13 @@ const CatgoriesGrid: React.FC = async () => {
   return (
     <div className="categories w-full dark:text-white">
       <h4 className="text-2xl mb-7">Categories</h4>
-      <div className="categories_block grid grid-cols-2 gap-x-8 gap-y-8">
+      <div className="categories_block grid grid-cols-2 gap-x-4 gap-y-8">
         {categories && categories.map((category, i) => (
           <Link key={category.id} href={`/categories/${category.slug}/12`} title={category.name}>
-            <div className="bg-no-repeat " style={{ backgroundImage: `url(https://picsum.photos/160/128?q=${i})` }}>
-              <div className="flex flex-col w-36 h-32 px-1 justify-center text-center bg-gradient-to-b from-transparent to-black">
-                <div className="text-white text-3xl font-extrabold">{category.count}</div>
-                <div className="text-white uppercase text-sm font-normal tracking-wider">{category.name}</div>
+            <div className="bg-no-repeat" style={{ backgroundImage: `url(https://picsum.photos/160/128?q=${i})` }}>
+              <div className="flex flex-col w-fit md:h-24 lg:h-32 px-1 justify-center text-center bg-gradient-to-b from-transparent to-black">
+                <div className="text-white md:text-xl lg:text-3xl font-extrabold">{category.count}</div>
+                <div className="text-white uppercase md:text-xs lg:text-sm font-normal tracking-wider">{category.name}</div>
               </div>
             </div>
           </Link>

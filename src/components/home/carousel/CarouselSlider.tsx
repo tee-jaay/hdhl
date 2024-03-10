@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from 'react';
 import CarouselItem from './CarouselItem';
 import formatDate from '@/_lib/helpers/formatPostDate';
@@ -57,7 +58,7 @@ const CarouselSlider = ({ carouselItems }: CarouselItems) => {
                     className="navigation_left rounded-full cursor-pointer bg-gray-200 p-3 hover:bg-[#43A047] hover:text-white transition ease-in-out duration-300"
                     onClick={handlePrev}
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="md:w-4 md:h-4 lg:w-5 lg:h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
                     </svg>
                 </div>
@@ -66,7 +67,7 @@ const CarouselSlider = ({ carouselItems }: CarouselItems) => {
                     className="navigation_right rounded-full cursor-pointer bg-gray-200 p-3 hover:bg-[#43A047] hover:text-white transition ease-in-out duration-300"
                     onClick={handleNext}
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="md:w-4 md:h-4 lg:w-5 lg:h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
                     </svg>
                 </div>

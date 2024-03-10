@@ -31,9 +31,9 @@ const LatestPosts: React.FC<{}> = async () => {
     const postsWithoutFirst = data.slice(1);
 
     return (
-        <section className="w-[1024px] mx-auto">
+        <section className="md:w-[768px] lg:w-[1024px] mx-auto">
             <div className="flex space-x-8">
-                <div className="flex-1">
+                <div className="flex-1 w-4/6 ">
                     <SectionHeading color={"text-[#000000]"} text={"Latest Posts"} />
                     <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})`, height: '500px' }}>
                         <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full bg-gradient-to-b from-transparent to-black`}>
@@ -49,7 +49,7 @@ const LatestPosts: React.FC<{}> = async () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-80 mt-9">
+                <div className="mt-9 w-2/6">
                     <span>
                         <Link href={"blog"} className="flex ml-auto w-16 text-sm capitalize py-2 px-2 cursor-pointer text-white bg-black hover:bg-[#43A047] transition ease-in-out duration-300" >
                             view all
