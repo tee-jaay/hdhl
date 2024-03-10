@@ -31,7 +31,7 @@ const SmallMenu: React.FC<{ links: MenuLinkProps[] }> = ({ links }) => {
                 <div className={menuOpen ? "block" : "hidden"}>
                     <ul className="flex flex-col space-y-4 py-8 px-12">
                         {links && links.map((menuItem, i) =>
-                            <Link key={i} onClick={() => setMenuOpen(false)} className="uppercase text-white w-full flex" href={menuItem.path}><span className="pr-2">{menuItem.icon}</span> {menuItem.text}</Link>
+                            <Link key={i} onClick={() => setMenuOpen(false)} className="items-center uppercase text-white w-full flex" href={menuItem.path}><span className="pr-2">{menuItem.icon}</span> {menuItem.text}</Link>
                         )}
                     </ul>
                 </div>
