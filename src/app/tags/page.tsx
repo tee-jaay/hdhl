@@ -28,7 +28,7 @@ const TagItem: React.FC<{ tag: TagProps }> = ({ tag }) => (
     <Link className="tag_item" href={`/tags/${tag?.slug}/12`}>
         <div className="flex dark:text-white items-center space-x-2 border border-gray-200 py-2 px-4 mr-4 capitalize">
             <div className="tag_name">{tag?.name}</div>
-            <div className="tag_count bg-[#555] text-white px-2 py-1 rounded-full text-xs">{tag?.count}</div>
+            <div className="tag_count bg-[#555] text-white px-2 py-1 rounded-full text-xs">{tag?.count ? tag?.count : 0}</div>
         </div>
     </Link>
 );

@@ -22,10 +22,10 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
         </h6>
       </div>
       <div className="tab:w-[640px] laptop:w-[768px] desktop:w-[1024px] mx-auto flex phone:flex-col tab:flex-row phone:space-x-0 tab:space-x-4 laptop:space-x-8">
-        <div className="phone:w-full flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12 phone:px-2 tab:px-1">
+        <div className="phone:w-full tab:w-2/3 flex-1 bg-[#FFF] dark:bg-[#222] py-12 phone:px-2 tab:px-1">
           {children}
         </div>
-        <div className="phone:w-full laptop:w-60 desktop:w-72 bg-[#FFFFFF] dark:bg-[#222] phone:px-2 tab:px-1">
+        <div className="phone:w-full tab:w-1/3 bg-[#FFF] dark:bg-[#222] phone:px-2 tab:px-1">
           <Sidebar />
         </div>
       </div>

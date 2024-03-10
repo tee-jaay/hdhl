@@ -1,51 +1,55 @@
-"use client";
-
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React from 'react';
 
 import { publicAppUrl } from '@/_lib/variables/constants';
-import MainMenuLink from '@/components/common/MainMenuLink';
+import BigMenu from './BigMenu';
+import SmallMenu from './SmallMenu';
 
 const mainMenuLinks = [
-    { path: `${publicAppUrl}/`, text: "Home" },
-    { path: `${publicAppUrl}/blog`, text: "Blog" },
-    { path: `${publicAppUrl}/categories`, text: "Categories" },
-    { path: `${publicAppUrl}/tags`, text: "Tags" },
-    { path: `${publicAppUrl}/contact`, text: "Contact Us" },
-    { path: `${publicAppUrl}/pages/about-us`, text: "About" },
-    { path: `${publicAppUrl}/authors`, text: "Authors" },
+    {
+        path: `${publicAppUrl}/`, text: "Home", icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+        </svg>
+    },
+    {
+        path: `${publicAppUrl}/blog`, text: "Blog", icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+        </svg>
+    },
+    {
+        path: `${publicAppUrl}/categories`, text: "Categories", icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+        </svg>
+    },
+    {
+        path: `${publicAppUrl}/tags`, text: "Tags", icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6Z" />
+        </svg>
+    },
+    {
+        path: `${publicAppUrl}/contact`, text: "Contact Us", icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+        </svg>
+    },
+    {
+        path: `${publicAppUrl}/pages/about-us`, text: "About", icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+        </svg>
+    },
+    {
+        path: `${publicAppUrl}/authors`, text: "Authors", icon: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Zm6-10.125a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0Zm1.294 6.336a6.721 6.721 0 0 1-3.17.789 6.721 6.721 0 0 1-3.168-.789 3.376 3.376 0 0 1 6.338 0Z" />
+        </svg>
+
+    },
 ];
 
 const MainMenu: React.FC = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    }
+
     return (
         <div className="flex justify-between relative">
-            <div className="main_menu phone:hidden tab:block">
-                <ul className="flex items-center justify-end space-x-6 text-slate-800 tab:pt-2 tab:pb-1">
-                    {mainMenuLinks.map((item, i) => (
-                        <MainMenuLink key={i} path={item.path} text={item.text} />
-                    ))}
-                </ul>
-            </div>
-            <div id="small_menu">
-                <div className="phone:block tab:hidden cursor-pointer" onClick={toggleMenu}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </div>
-                <div className={`phone:block tab:hidden absolute z-10 top-10 right-0 w-[280px] bg-gradient-to-b from-gray-500 to-black transition-all ease-in-out duration-300 ${menuOpen ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-[-2]'}`}>
-                    <div className={menuOpen ? "block" : "hidden"}>
-                        <ul className="flex flex-col space-y-4 py-8 px-12">
-                            {mainMenuLinks && mainMenuLinks.map((menuItem, i) =>
-                                <Link key={i} className="uppercase text-white w-full" href={menuItem.path}>{menuItem.text}</Link>
-                            )}
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <BigMenu links={mainMenuLinks} />
+            <SmallMenu links={mainMenuLinks} />
         </div>
     );
 }
