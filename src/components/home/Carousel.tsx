@@ -21,7 +21,7 @@ const getData = async () => {
 const Carousel: React.FC<{}> = async () => {
     const data = await getData();
     return (
-        <section className="carousel md:w-[768px] lg:w-[1024px] flex pt-24 pb-8 mx-auto dark:text-white">
+        <section className="carousel phone:hidden laptop:block laptop:w-[768px] desktop:w-[1024px] flex pt-24 pb-8 mx-auto dark:text-white">
             <CarouselSlider carouselItems={data} />
         </section>
     );

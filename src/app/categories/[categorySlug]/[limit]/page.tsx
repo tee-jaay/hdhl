@@ -52,7 +52,7 @@ const CategoryPage: React.FC<{ params: { categorySlug: string, limit: string } }
     const posts = await getData(params.categorySlug, params.limit);
     return (
         <div className="category_page">
-            <div className="posts_list grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="posts_list grid tab:grid-cols-1 laptop:grid-cols-2 desktop:grid-cols-3 gap-8">
                 {posts && posts.map((post: PostCardProps, _i: number) => <PostItem key={post?.id} post={post} />)}
                 {posts.length < 1 && <p>No post yet.</p>}
             </div>

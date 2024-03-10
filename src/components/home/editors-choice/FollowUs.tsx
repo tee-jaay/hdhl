@@ -34,7 +34,7 @@ const socials: FollowUsSocialProps[] = [
 const FollowUs: React.FC = () => {
     return (
         <div className="socials">
-            <div className="socials_block grid sm:grid-cols-1 md:grid-cols-2 gap-3">
+            <div className="socials_block grid tab:grid-cols-1 laptop:grid-cols-2 gap-3">
                 {socials && socials.map((social, _i) => (
                     <Link key={social.id} href={social.link} title={social.name}>
                         <div className="social_item">

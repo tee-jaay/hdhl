@@ -64,8 +64,8 @@ const TrendingVideos: React.FC<{}> = () => {
     };
 
     return (
-        <section className="xs:py-8 sm:py-10 md:py-12 lg:py-16 bg-gradient-to-b from-[#161b2a] to-black">
-            <div className="md:w-[768px] lg:w-[1024px] mx-auto">
+        <section className="phone:py-8 tab:py-10 laptop:py-12 desktop:py-16 bg-gradient-to-b from-[#161b2a] to-black">
+            <div className="laptop:w-[768px] desktop:w-[1024px] mx-auto">
                 <SectionHeading color={"text-[#FFFFFF]"} text={"Trending Videos"} />
                 <div className="flex space-x-8">
                     <div className="youtube_video w-4/6">
@@ -76,7 +76,7 @@ const TrendingVideos: React.FC<{}> = () => {
                             <div key={i} className="flex space-x-8 cursor-pointer">
                                 <div className="flex-1">
                                     <CategoryNameSlug bgColor="" count={0} id="" imgSrc="" color={"text-[#FFFFFF]"} name={item.categoryName} slug={item.categorySlug} />
-                                    <h4 className="text-[#FFFFFF] md:font-normal lg:font-semibold md:line-clamp-2 lg:line-clamp-3">{limitString(item.title, 40)}</h4>
+                                    <h4 className="text-[#FFFFFF] laptop:font-normal desktop:font-semibold laptop:line-clamp-2 desktop:line-clamp-3">{limitString(item.title, 40)}</h4>
                                 </div>
                                 <div className="w-20">
                                     <div onClick={() => setVideoId(item.videoId)}>

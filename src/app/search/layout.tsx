@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 export default function BlogLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <section className="flex flex-col mx-auto">
-      <div className="flex sm:w-[640px] md:w-[768px] lg:w-full mx-auto space-x-8">
+      <div className="flex tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto space-x-8">
         <div className="flex-1 bg-[#FFFFFF] py-12">
           {children}
         </div>
-        <div className="md:w-60 lg:w-72  bg-[#FFFFFF]">
+        <div className="laptop:w-60 desktop:w-72  bg-[#FFFFFF]">
           <Sidebar />
         </div>
       </div>

@@ -30,20 +30,20 @@ const EditorsChoice: React.FC = async () => {
 
     return (
         <section className="mx-auto py-16 bg-[#FBF8F5] dark:bg-[#222]">
-            <div className="md:w-[768px] lg:w-[1024px] mx-auto">
-                <div className="flex sm:flex-col md:flex-row space-x-8 align-baseline">
-                    <div className="sm:w-full md:w-3/4">
+            <div className="laptop:w-[768px] desktop:w-[1024px] mx-auto">
+                <div className="flex tab:flex-col laptop:flex-row space-x-8 align-baseline">
+                    <div className="tab:w-full laptop:w-3/4">
                         <SectionHeading text="Editor's Choice" color="text-[#222]" />
                         <PostsList posts={data} />
                     </div>
-                    <div className="sm:w-full md:w-1/4">
+                    <div className="tab:w-full laptop:w-1/4">
                         <CatgoriesGrid />
                         <div className="most_reads">
                             <h4 className="text-2xl mt-10 mb-6 dark:text-white">Most Reads</h4>
                             <RoundImageCategoryTitle />
                         </div>
                         <div className="follow_us">
-                            <h4 className="md:text-xl lg:text-2xl mt-10 my-6 dark:text-white">Follow Us</h4>
+                            <h4 className="laptop:text-xl desktop:text-2xl mt-10 my-6 dark:text-white">Follow Us</h4>
                             <FollowUs />
                         </div>
                     </div>

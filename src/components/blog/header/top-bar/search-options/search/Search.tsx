@@ -69,7 +69,7 @@ const Search: React.FC<{}> = () => {
                 <div
                     ref={searchFormRef}
                     id="search_form_container"
-                    className="xs:left-4 xs:top-1 sm:top-0 sm:right-0 p-4 z-50 bg-[#fff] dark:bg-[#222] absolute border-2 border-[#43A047]"
+                    className="phone:left-4 phone:top-1 tab:top-0 tab:right-0 p-4 z-50 bg-[#fff] dark:bg-[#222] absolute border-2 border-[#43A047]"
                 >
                     <form onSubmit={handleSearch}>
                         <div className="flex">

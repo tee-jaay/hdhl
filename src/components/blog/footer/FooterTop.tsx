@@ -40,7 +40,7 @@ const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) =
                     </div>
                     <div className="flex-1 tags_cloud">
                         <h4 className="capitalize text-start font-semibold">tags cloud</h4>
-                        <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                        <div className="mt-4 grid tab:grid-cols-2 desktop:grid-cols-3 gap-2">
                             {tags && tags.map((tag, _i) => <TagItem key={tag?.id} tag={tag} />)}
                         </div>
                     </div>

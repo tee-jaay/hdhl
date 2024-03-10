@@ -19,7 +19,7 @@ const Search: React.FC = () => {
 
     return (
         <form onSubmit={handleSearch}>
-            <div className="flex justify-between bg-white dark:bg-[#222] items-center mt-12 md:py-1 lg:py-2 px-4 border border-gray-300 space-x-1">
+            <div className="flex justify-between bg-white dark:bg-[#222] items-center mt-12 laptop:py-1 desktop:py-2 px-4 border border-gray-300 space-x-1">
                 <input
                     value={searchText}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}

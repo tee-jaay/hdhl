@@ -15,11 +15,11 @@ export default async function BlogLayout({ children }: Readonly<{ children: Reac
   return (
     <section className="flex flex-col dark:bg-[#222]">
       <PostHeaderSection slug={segmentPath[3][1]} />
-      <div className="md:w-[768px] lg:w-[1024px] flex space-x-8 mx-auto">
+      <div className="laptop:w-[768px] desktop:w-[1024px] flex space-x-8 mx-auto">
         <div className="flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12">
           {children}
         </div>
-        <div className="md:w-60 lg:w-72 bg-[#FFFFFF] dark:bg-[#222]">
+        <div className="laptop:w-60 desktop:w-72 bg-[#FFFFFF] dark:bg-[#222]">
           <Sidebar />
         </div>
       </div>

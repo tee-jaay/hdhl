@@ -35,7 +35,7 @@ const PostCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div className
         </div>
         <div className="post_title">
             <Link href={`/${post?.slug}`}>
-                <h5 className="text-[#222] sm:text-sm md:text-base lg:text-lg dark:text-white line-clamp-1">{post?.title}</h5>
+                <h5 className="text-[#222] tab:text-sm laptop:text-base desktop:text-lg dark:text-white line-clamp-1">{post?.title}</h5>
             </Link>
         </div>
         <div className="post_author text-[#666] dark:text-[#FEFEFE]">

@@ -24,8 +24,8 @@ const TopBar: React.FC<{}> = async () => {
     const data = await getData();
     return (
         <section className="topbar bg-gradient-to-b from-[#2E8B57] to-[#43A047]">
-            <div className="md:w-[768px] lg:w-[1024px] flex xs:flex-col sm:flex justify-between mx-auto xs:p-2">
-                <div className="latest_news xs:w-full sm:w-2/3 flex justify-start">
+            <div className="laptop:w-[768px] desktop:w-[1024px] flex phone:flex-col tab:flex justify-between mx-auto phone:p-2">
+                <div className="latest_news phone:w-full tab:w-2/3 flex justify-start">
                     <div className="flex items-center">
                         <span className="text-sm text-white uppercase">latest article</span>
                         <span className="text-sm text-white uppercase mx-2">|</span>
@@ -36,7 +36,7 @@ const TopBar: React.FC<{}> = async () => {
                         </Link>
                     </span>
                 </div>
-                <div className="xs:w-full w-1/3 flex xs:justify-center sm:justify-end">
+                <div className="phone:w-full w-1/3 flex phone:justify-center tab:justify-end">
                     <SearchOptions />
                 </div>
             </div>

@@ -24,7 +24,7 @@ const AuthorDetailsPageHeaderSection: React.FC<{ slug: string }> = async ({ slug
     const user = await getData(slug);
     return (
         <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
-            <h2 className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto  text-[#222] dark:text-white text-center sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide">{user?.name}</h2>
+            <h2 className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto  text-[#222] dark:text-white text-center tab:text-2xl laptop:text-3xl desktop:text-4xl font-medium tracking-wide">{user?.name}</h2>
             <h6 className="text-[#8F8E8E] dark:text-white text-lg flex justify-center items-center capitalize">
                 <Link href={"/"}>home</Link>
                 <span>
@@ -49,7 +49,7 @@ const AuthorDetailsPageHeaderSection: React.FC<{ slug: string }> = async ({ slug
             <div className="user_avatar mt-4 flex justify-center">
                 <Image alt="" src={user?.avatar?.url} width={100} height={100} />
             </div>
-            <div className="sm:w-[640px] md:w-[768px] lg:w-full mx-auto  mt-6 text-center dark:text-white text-[#555] px-24" dangerouslySetInnerHTML={{ __html: user?.description }} />
+            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto  mt-6 text-center dark:text-white text-[#555] px-24" dangerouslySetInnerHTML={{ __html: user?.description }} />
         </div>
     );
 }
