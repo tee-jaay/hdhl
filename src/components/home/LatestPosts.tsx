@@ -34,12 +34,12 @@ const LatestPosts: React.FC<{}> = async () => {
         <section className="md:w-[768px] lg:w-[1024px] mx-auto">
             <div className="flex space-x-8">
                 <div className="flex-1 w-4/6 ">
-                    <SectionHeading color={"text-[#000000]"} text={"Latest Posts"} />
-                    <div className="hero_left flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})`, height: '500px' }}>
+                    <SectionHeading color={"text-[#222]"} text={"Latest Posts"} />
+                    <div className="hero_left md:h-[400px] lg:h-[500px] flex-1 bg-no-repeat bg-center" style={{ backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})` }}>
                         <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full bg-gradient-to-b from-transparent to-black`}>
                             <CategoryBoxBg color="" count={0} id="" imgSrc="" bgColor={"bg-[#AE0332]"} name={data[0]?.categories?.nodes[0]?.name} slug={data[0]?.categories?.nodes[0]?.slug} />
                             <Link href={data && data[0]?.slug} title={data && data[0]?.title}>
-                                <h1 className="title text-3xl text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-300">{data && data[0]?.title}</h1>
+                                <h1 className="title md:text-2xl lg:text-3xl text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-300">{data && data[0]?.title}</h1>
                             </Link>
                             <div className="meta flex space-x-6">
                                 <AuthorAvatarNameLink imgAlt={data[0]?.author?.node?.name} imgSrc={data[0]?.author?.node?.avatar?.url} link={data[0]?.author?.node?.slug} name={data[0]?.author?.node?.name} textColor={"text-[#FFFFFF]"} imgSize={20} />
@@ -51,7 +51,7 @@ const LatestPosts: React.FC<{}> = async () => {
                 </div>
                 <div className="mt-9 w-2/6">
                     <span>
-                        <Link href={"blog"} className="flex ml-auto w-16 text-sm capitalize py-2 px-2 cursor-pointer text-white bg-black hover:bg-[#43A047] transition ease-in-out duration-300" >
+                        <Link href={"blog"} className="flex ml-auto w-16 text-sm capitalize py-2 px-2 cursor-pointer text-white bg-[#222] hover:bg-[#43A047] transition ease-in-out duration-300" >
                             view all
                         </Link>
                     </span>

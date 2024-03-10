@@ -11,7 +11,7 @@ const LatestPostsRoundImageList: React.FC<{ posts: PostCardProps[] }> = ({ posts
             {posts && posts.map((post, _i) => (
                 <div key={post.id} className="flex space-x-3">
                     <div className="flex-1/5">
-                        <div className="w-24 h-24">
+                        <div className="md:w-16 md:h-16 lg:w-24 lg:h-24">
                             <Image
                                 className="rounded-full"
                                 src={post.featuredImage?.node?.sourceUrl}
@@ -32,7 +32,7 @@ const LatestPostsRoundImageList: React.FC<{ posts: PostCardProps[] }> = ({ posts
                         />
                         <h5 className="mt-2">
                             <Link title={post?.title} href={post?.slug}>
-                                <div className="text-[#444] dark:text-white leading-snug line-clamp-2 hover:text-[#43A047] transition ease-in-out duration-300 dark:hover:text-[#43A047]">
+                                <div className="text-[#444] dark:text-white leading-snug md:line-clamp-2 lg:line-clamp-2 hover:text-[#43A047] transition ease-in-out duration-300 dark:hover:text-[#43A047]">
                                     {post?.title}
                                 </div>
                             </Link>

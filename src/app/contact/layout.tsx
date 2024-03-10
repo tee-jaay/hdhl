@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function BlogLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <section className="flex flex-col mx-auto dark:text-white  dark:bg-[#333]">
-      <div className="blog_header sm:w-[640px] md:w-[768px] lg:w-full mx-auto py-16 bg-[#FBFAFA]">
+      <div className="blog_header w-full mx-auto py-16 bg-[#FBFAFA]">
         <h2 className="text-[#222] dark:text-white text-center md:text-2xl lg:text-3xl font-medium tracking-wide">Contact Us</h2>
         <h6 className="text-[#8F8E8E] dark:text-white md:text- lg:text-lg flex justify-center items-center">
           Home <span>
