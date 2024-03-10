@@ -54,7 +54,7 @@ const Authors: React.FC<{}> = async () => {
         <div className="dark:bg-[#333]">
             <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto dark:bg-[#333] dark:text-white py-16">
                 <h2 className="capitalize text-center dark:text-white font-medium">meet our authors</h2>
-                <div className="authors_list dark:bg-[#333] grid phone:grid-cols-1 tab:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-x-6 gap-y-8">
+                <div className="authors_list phone:w-full phone:px-2 tab:px-1 desktop:w-[1024px] mx-auto dark:bg-[#333] grid phone:grid-cols-1 tab:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-x-6 gap-y-8">
                     {users && users.map((user: UserProps, _i: number) => <AuthorCard key={user?.id} author={user} />)}
                 </div>
             </div>

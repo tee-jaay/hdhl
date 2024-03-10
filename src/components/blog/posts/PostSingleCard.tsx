@@ -1,10 +1,10 @@
 import React from "react";
 
 import PostCardProps from "@/_lib/models/PostCardProps";
-import ReadMore from "./ReadMore";
+import ReadMore from "../../common/blog/posts/ReadMore";
 import FeaturedImage from "./FeaturedImage";
 import PostMeta from "./PostMeta";
-import PostTitle from "./PostTitle";
+import PostTitle from "../../common/blog/posts/PostTitle";
 import PostExcerpt from "./PostExcerpt";
 
 const PostSingleCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div className="post_single shadow-md pb-8">
