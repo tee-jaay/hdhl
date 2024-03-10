@@ -48,7 +48,7 @@ const Search: React.FC<{}> = () => {
     }, []);
 
     return (
-        <div className="flex my-3 relative">
+        <div className="flex my-3">
             <div id="search_icon_container" onClick={toggleFormVisibility} className="cursor-pointer mr-2">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@ const Search: React.FC<{}> = () => {
                 <div
                     ref={searchFormRef}
                     id="search_form_container"
-                    className="top-0 right-0 p-4 z-50 bg-[#fff] dark:bg-[#222] absolute border-2 border-[#43A047]"
+                    className="xs:left-4 xs:top-1 sm:top-0 sm:right-0 p-4 z-50 bg-[#fff] dark:bg-[#222] absolute border-2 border-[#43A047]"
                 >
                     <form onSubmit={handleSearch}>
                         <div className="flex">
