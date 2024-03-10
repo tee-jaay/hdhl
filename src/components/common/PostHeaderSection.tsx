@@ -26,7 +26,7 @@ const PostHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     const { post } = await getData(slug);
     return (
         <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
-            <h2 className="sm:w-[640px] md:w-[768px] lg:w-[1024px] mx-auto text-[#222] dark:text-white text-center md:text-2xl lg:text-3xl font-medium tracking-wide sm:line-clamp-2 md:line-clamp-1">{post?.title}</h2>
+            <h2 className="sm:w-[640px] md:w-[768px] lg:w-[1024px] mx-auto text-[#222] dark:text-white text-center sm:text-2xl md:text-3xl lg:text-4xl font-medium tracking-wide sm:line-clamp-2 md:line-clamp-1">{post?.title}</h2>
             <h5 className="text-center font-thin text-base text-[#222]">{formatDate(post?.date, "numeric")}</h5>
             <h6 className="text-[#8F8E8E] dark:text-[#FEFEFE] text-lg flex justify-center items-center capitalize mt-1">
                 <Link href={"/"}>home</Link>
