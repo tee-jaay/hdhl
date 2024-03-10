@@ -22,7 +22,7 @@ const PageItem: React.FC<{ page: PageProps }> = ({ page }) => <span>
 const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) => {
     return (
         <div className="flex">
-            <div>
+            <div className="phone:px-2">
                 <div className="text-white flex space-x-12">
                     <div className="flex-1 logo_desc_follow_us">
                         <div className="flex flex-col">
@@ -38,7 +38,7 @@ const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) =
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 tags_cloud">
+                    <div className="flex-1 tags_cloud phone:hidden tab:block">
                         <h4 className="capitalize text-start font-semibold">tags cloud</h4>
                         <div className="mt-4 grid tab:grid-cols-2 desktop:grid-cols-3 gap-2">
                             {tags && tags.map((tag, _i) => <TagItem key={tag?.id} tag={tag} />)}
@@ -50,7 +50,7 @@ const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) =
                             {pages && pages?.map((page, _i) => <PageItem key={page.slug} page={page} />)}
                         </div>
                     </div>
-                    <div className="flex-1 newsletter_subscribe">
+                    <div className="flex-1 newsletter_subscribe phone:hidden tab:block">
                         <h4 className="capitalize text-start font-semibold">newsletter</h4>
                         <div className="flex flex-col mt-4">
                             <h5 className="font-thin">Subscribe to our mailing list to get the new posts</h5>

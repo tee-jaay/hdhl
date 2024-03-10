@@ -43,6 +43,7 @@ const FollowUs: React.FC = () => {
                                 alt={social.name}
                                 width={300}
                                 height={200}
+                                className="w-full"
                             />
                         </div>
                     </Link>
