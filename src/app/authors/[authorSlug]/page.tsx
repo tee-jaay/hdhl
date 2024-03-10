@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 import PostCardProps from "@/_lib/models/PostCardProps";
@@ -8,6 +7,8 @@ import getUserBySlug from "@/_lib/graphQl/queries/getUserBySlug";
 import formatDate from "@/_lib/helpers/formatPostDate";
 import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 import CommentsCount from "@/components/common/CommentsCount";
+import PostTitle from "@/components/common/blog/posts/PostTitle";
+import ReadMore from "@/components/common/blog/posts/ReadMore";
 
 const getData = async (authorSlug: string) => {
     // Construct the query and variables
@@ -34,13 +35,9 @@ const PostSingleCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div cla
             <PublishMonthDateYear color="text-[#777]" dateMDY={formatDate(post?.date, "numeric")} />
             <CommentsCount color="text-[#777]" count={post?.commentCount ? post.commentCount.toString() : "0"} />
         </div>
-        <h1 className="post_title font-medium tab:text-xl laptop:text-2xl desktop:text-4xl">
-            {post?.title}
-        </h1>
+        <PostTitle title={post?.title} />
         <div className="post_excerpt text-[#777] dark:text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
-        <div className="post_read_more mt-7">
-            <Link href={`/${post?.slug}`} className="capitalize text-[#000] dark:text-white border border-[#999] py-2 px-7 hover:text-[#43A047] dark:hover:text-[#43A047] hover:border-[#43A047] transition ease-in-out duration-300">read more</Link>
-        </div>
+        <ReadMore slug={post?.slug} />
     </div>
 </div>
 

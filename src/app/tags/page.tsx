@@ -1,9 +1,9 @@
+import React from "react";
 import Link from "next/link";
 
 import TagProps from "@/_lib/models/TagProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getTagsList from "@/_lib/graphQl/queries/getTagsList";
-import React from "react";
 
 const getData = async (limit: string) => {
     // Construct the query and variables
@@ -38,7 +38,7 @@ const TagsPage: React.FC<{}> = async () => {
     return (
         <div className="dark:bg-[#222]">
             <div className="blog_header tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto py-16 bg-[#FBFAFA] dark:bg-[#333]">
-                <h2 className="text-[#000000] text-center tab:text-2xl laptop:text-3xl desktop:text-4xl font-medium tracking-wide dark:text-white">Tag Cloud</h2>
+                <h2 className="text-[#222] text-center tab:text-2xl laptop:text-3xl desktop:text-4xl font-medium tracking-wide dark:text-white">Tag Cloud</h2>
                 <h6 className="text-[#8F8E8E] text-lg flex justify-center items-center dark:text-white">
                     Home <span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
@@ -48,7 +48,7 @@ const TagsPage: React.FC<{}> = async () => {
                     <span className="capitalize">blog</span>
                 </h6>
             </div>
-            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto tags_cloud flex flex-wrap space-y-4 items-baseline py-16 justify-center">
+            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-[1024px] mx-auto tags_cloud flex flex-wrap space-y-4 items-baseline py-16 justify-center">
                 {tags && tags.map((tag: TagProps, _i: number) => <TagItem key={tag?.id} tag={tag} />)}
             </div>
         </div>

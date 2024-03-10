@@ -56,7 +56,7 @@ const CategoriesPage: React.FC<{}> = async () => {
                     </span>
                 </h6>
             </div>
-            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto">
+            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-[1024px] mx-auto phone:px-2 tab:px-1">
                 <div className="categories_list grid laptop:grid-cols-3 desktop:grid-cols-4 gap-8 py-20">
                     {categories && categories.map((category: CategoryProps, _i: number) => <CategoryItem key={category?.id} category={category} />)}
                 </div>

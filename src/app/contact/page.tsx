@@ -70,8 +70,8 @@ const ContactPage: React.FC = () => {
     return (
         <div className="contact_us">
             <h2 className="capitalize">get in touch</h2>
-            <div className="address_contact_form flex">
-                <div className="address_info w-2/5 flex flex-col space-y-8">
+            <div className="address_contact_form flex phone:flex-col tab:flex-row phone:space-y-8 tab:space-y-0">
+                <div className="address_info phone:w-full tab:w-2/5 flex flex-col space-y-8">
                     <div className="email_address">
                         <h5 className="capitalize">email address</h5>
                         <div className="text-[#777] dark:text-[#FEFEFE]">
@@ -86,7 +86,7 @@ const ContactPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className="contact_form w-3/5">
+                <div className="contact_form phone:w-full tab:w-3/5">
                     <form onSubmit={formik.handleSubmit} className="flex flex-col space-y-4">
                         <div className="flex space-x-8">
                             <div className="flex-1">

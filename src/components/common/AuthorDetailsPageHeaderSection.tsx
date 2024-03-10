@@ -49,7 +49,7 @@ const AuthorDetailsPageHeaderSection: React.FC<{ slug: string }> = async ({ slug
             <div className="user_avatar mt-4 flex justify-center">
                 <Image alt="" src={user?.avatar?.url} width={100} height={100} />
             </div>
-            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto  mt-6 text-center dark:text-white text-[#555] px-24" dangerouslySetInnerHTML={{ __html: user?.description }} />
+            <div className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto  mt-6 text-center dark:text-white text-[#555] phone:px-4 tab:px-24" dangerouslySetInnerHTML={{ __html: user?.description }} />
         </div>
     );
 }

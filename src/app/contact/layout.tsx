@@ -19,7 +19,7 @@ export default function BlogLayout({ children, }: Readonly<{ children: React.Rea
           <span>Contact Us</span>
         </h6>
       </div>
-      <div className="tab:w-[640px] laptop:w-[768px] desktop:w-[1024px] flex space-x-8 mx-auto">
+      <div className="tab:w-[640px] laptop:w-[768px] desktop:w-[1024px] flex space-x-8 mx-auto phone:px-2 tab:px-1">
         <div className="flex-1 bg-[#FFFFFF] dark:bg-[#222] py-12">
           {children}
         </div>
