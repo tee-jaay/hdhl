@@ -24,7 +24,7 @@ const MainMenu: React.FC = () => {
     return (
         <div className="flex justify-between relative">
             <div className="main_menu phone:hidden tab:block">
-                <ul className="flex items-center justify-end space-x-6 text-slate-800 pt-7 pb-6">
+                <ul className="flex items-center justify-end space-x-6 text-slate-800 tab:pt-2 tab:pb-1">
                     {mainMenuLinks.map((item, i) => (
                         <MainMenuLink key={i} path={item.path} text={item.text} />
                     ))}
