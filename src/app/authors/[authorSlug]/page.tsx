@@ -44,7 +44,7 @@ const PostSingleCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div cla
 const Author: React.FC<{ params: { authorSlug: string } }> = async ({ params }) => {
     const user = await getData(params.authorSlug);
     return (
-        <div className="posts_list space-y-9">
+        <div className="phone:space-y-8 tab:space-y-12 laptop:space-y-16">
             {user?.posts?.nodes.map((post: PostCardProps, _id: number) => <PostSingleCard key={post.id} post={post} />)}
             {user?.posts.length < 1 && <p>No published post yet.</p>}
         </div>
