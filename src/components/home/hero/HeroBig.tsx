@@ -9,7 +9,7 @@ import PublishMonthDateYear from "@/components/common/PublishMonthDateYear";
 
 const HeroBig = ({ post }: { post: HeroPostProps }) => {
     return (
-        <div className="hero_left bg-no-repeat" style={{ backgroundImage: `url(${post?.featuredImage?.node?.sourceUrl})` }}>
+        <div className="hero_left bg-no-repeat tab:w-1/2 laptop:w-1/2" style={{ backgroundImage: `url(${post?.featuredImage?.node?.sourceUrl})` }}>
             <div className={`hero_one_item px-12 py-6 flex flex-col justify-end h-full bg-gradient-to-b from-transparent to-black`}>
                 <CategoryBoxBg color="" count={0} id="" imgSrc="" bgColor={"bg-[#AE0332]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
                 <Link href={post?.slug} title={post?.title}>
