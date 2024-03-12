@@ -1,13 +1,13 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import Link from "next/link";
-import { faFacebookSquare, faInstagramSquare, faSquareXTwitter, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
+import { IconDefinition, faFacebookSquare, faInstagramSquare, faSquareXTwitter, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getUserProfiles from "@/_lib/graphQl/queries/getUserProfiles";
 import ProfileProps from "@/_lib/models/ProfileProps";
 import removeHtmlTags from "@/_lib/helpers/removeHtmlTags";
-import strinToObject from "@/_lib/helpers/stringToObject";
+import stringToObject from "@/_lib/helpers/stringToObject";
 
 const addNameAndPostsCount = (array1: any[], array2: any[]) => {
     // Iterate over the first array
@@ -55,29 +55,52 @@ const getData = async () => {
     }
 }
 
-const generateProfileSocialLink = (data: string): ReactNode => {
-    const filteredHtml = removeHtmlTags(data);
-    const socials = strinToObject(filteredHtml);
-    const socialLinks = <div className="socials flex mb-4 space-x-2 justify-center">
-        <Link className="social" href={socials?.facebook ?? "/"}>
-            <FontAwesomeIcon className="text-[#0866ff]" icon={faFacebookSquare} width={20} />
-        </Link>
-        <Link className="social" href={socials?.instagram ?? "/"}>
-            <FontAwesomeIcon className="text-[#FF3385]" icon={faInstagramSquare} width={20} />
-        </Link>
-        <Link className="social" href={socials?.twitter ?? "/"}>
-            <FontAwesomeIcon className="text-[#46C7FF]" icon={faSquareXTwitter} width={20} />
-        </Link>
-        <Link className="social" href={socials?.youtube ?? "/"}>
-            <FontAwesomeIcon className="text-[#EF242B]" icon={faYoutubeSquare} width={20} />
-        </Link>
-    </div>
-    return socialLinks;
+interface GenerateProfileSocialLinkProps {
+    data: string;
 }
+
+const GenerateProfileSocialLink: React.FC<GenerateProfileSocialLinkProps> = ({ data }) => {
+    const socialColors: { [key: string]: string } = {
+        facebook: "text-[#0866ff]",
+        instagram: "text-[#FF3385]",
+        twitter: "text-[#46C7FF]",
+        youtube: "text-[#EF242B]",
+    };
+
+    const socialUrlStr: { [key: string]: string } = {
+        facebook: "https://www.facebook.com",
+        instagram: "https://www.instagram.com",
+        twitter: "https://twitter.com",
+        youtube: "https://www.youtube.com/channel",
+    };
+
+    const socialIcons: { [key: string]: IconDefinition } = {
+        facebook: faFacebookSquare,
+        instagram: faInstagramSquare,
+        twitter: faSquareXTwitter,
+        youtube: faYoutubeSquare,
+    };
+
+    const filteredHtml = removeHtmlTags(data);
+    const socials = stringToObject(filteredHtml);
+
+    return (
+        <div className="socials flex mb-4 space-x-2 justify-center">
+            {Object.keys(socials).map((social, i) => {
+                const icon = socialIcons[social];
+                return (
+                    <Link key={i} href={socials[social] ? `${socialUrlStr[social]}/${socials[social]}` : "/"}>
+                        {icon && <FontAwesomeIcon className={socialColors[social]} icon={icon} width={20} />}
+                    </Link>
+                )
+            })}
+        </div>
+    );
+};
 
 const AuthorCard: React.FC<{ author: ProfileProps }> = ({ author }) => <div className="author_card flex flex-col">
     <div className="flex flex-col h-52 bg-cover bg-no-repeat justify-end" style={{ backgroundImage: `url(${author?.featuredImage?.node?.sourceUrl})` }}>
-        {generateProfileSocialLink(author?.content)}
+        <GenerateProfileSocialLink data={author?.content} />
     </div>
     <div className="flex flex-col items-center mt-4">
         <Link href={`/authors/${author?.slug}`}>

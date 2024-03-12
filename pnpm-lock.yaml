@@ -32,6 +32,9 @@ dependencies:
   global:
     specifier: ^4.4.0
     version: 4.4.0
+  he:
+    specifier: ^1.2.0
+    version: 1.2.0
   net:
     specifier: ^1.0.2
     version: 1.0.2
@@ -67,6 +70,9 @@ dependencies:
     version: 1.4.0
 
 devDependencies:
+  '@types/he':
+    specifier: ^1.2.3
+    version: 1.2.3
   '@types/jsdom':
     specifier: ^21.1.6
     version: 21.1.6
@@ -522,6 +528,10 @@ packages:
       tslib: 2.6.2
     dev: false
 
+  /@types/he@1.2.3:
+    resolution: {integrity: sha512-q67/qwlxblDzEDvzHhVkwc1gzVWxaNxeyHUBF4xElrvjL11O+Ytze+1fGpBHlr/H9myiBUaUXNnNPmBHxxfAcA==}
+    dev: true
+
   /@types/hoist-non-react-statics@3.3.5:
     resolution: {integrity: sha512-SbcrWzkKBw2cdwRTwQAswfpB9g9LJWfjtUeW/jvNwbhC8cpmmNYVePa+ncbUe0rGTQ7G3Ff6mYUN2VMfLVr+Sg==}
     dependencies:
@@ -919,6 +929,11 @@ packages:
     dependencies:
       function-bind: 1.1.2
     dev: true
+
+  /he@1.2.0:
+    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
+    hasBin: true
+    dev: false
 
   /hoist-non-react-statics@3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
