@@ -9,7 +9,7 @@ import ProfileProps from "@/_lib/models/ProfileProps";
 import removeHtmlTags from "@/_lib/helpers/removeHtmlTags";
 import stringToObject from "@/_lib/helpers/stringToObject";
 
-const addNameAndPostsCount = (array1: any[], array2: any[]) => {
+const addNameAndPosts = (array1: any[], array2: any[]) => {
     // Iterate over the first array
     for (let i = 0; i < array1.length; i++) {
         // Check if the current element in the first array has a slug property
@@ -17,10 +17,9 @@ const addNameAndPostsCount = (array1: any[], array2: any[]) => {
             // Find the matching object in the second array based on slug
             const matchingObject = array2.find((obj) => obj.slug === array1[i].slug);
 
-            // If a matching object is found, add the name and posts count to the first array
+            // If a matching object is found, add the name
             if (matchingObject) {
                 array1[i].name = matchingObject.name;
-                array1[i].postsCount = matchingObject.posts.nodes.length;
             }
         }
     }
@@ -43,7 +42,7 @@ const getData = async () => {
         const users = data?.users?.nodes;
 
         if (guprofiles && users) {
-            arr = addNameAndPostsCount(guprofiles, users);
+            arr = addNameAndPosts(guprofiles, users);
             return arr;
         } else {
             return arr;
@@ -90,7 +89,7 @@ const GenerateProfileSocialLink: React.FC<GenerateProfileSocialLinkProps> = ({ d
                 const icon = socialIcons[social];
                 return (
                     <Link key={i} href={socials[social] ? `${socialUrlStr[social]}/${socials[social]}` : "/"}>
-                        {icon && <FontAwesomeIcon className={socialColors[social]} icon={icon} width={20} />}
+                        {icon && <FontAwesomeIcon className={`${socialColors[social]} w-8 h-8 mx-1`} icon={icon} width={20} />}
                     </Link>
                 )
             })}
