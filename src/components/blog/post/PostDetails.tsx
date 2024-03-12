@@ -12,6 +12,7 @@ const PostDetails: React.FC<{ data: PostDataProps, image: PostFeaturedImageProps
                     src={image?.node?.sourceUrl}
                     width={900}
                     height={500}
+                    loading="lazy"
                 />
             </div>
             <div className="content mt-8 text-[#444] dark:text-white">

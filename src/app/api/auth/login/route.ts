@@ -7,12 +7,12 @@ import { v4 as uuidv4 } from "uuid";
 const clientMutationId = uuidv4();
 
 export async function POST(request: Request) {
-    const requestWithSocket = request as Request & { socket: any };
-    const middlewareResponse = await rateLimitMiddleware(requestWithSocket);
+    // const requestWithSocket = request as Request & { socket: any };
+    // const middlewareResponse = await rateLimitMiddleware(requestWithSocket);
 
-    if (middlewareResponse instanceof Response) {
-        return middlewareResponse;
-    }
+    // if (middlewareResponse instanceof Response) {
+    //     return middlewareResponse;
+    // }
 
     try {
         // Parse the request body to get searchText
@@ -21,13 +21,13 @@ export async function POST(request: Request) {
         const query = loginUser();
         const variables = {
             clientMutationId: clientMutationId,
-            email: body?.email,
+            username: body?.email,
             password: body?.password,
         };
         const response = await gqlQuery(query, variables);
 
         // Return the response as JSON
-        return new Response(JSON.stringify(response), {
+        return new Response(JSON.stringify(response?.login), {
             headers: { "Content-Type": "application/json", },
         });
     } catch (error) {

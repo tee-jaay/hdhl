@@ -6,8 +6,6 @@ import * as Yup from "yup";
 
 import FormActionNotificationBox from "@/components/common/notifications/FormActionNotificationBox";
 
-
-
 const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
     const [isBusy, setIsBusy] = useState(false);
     const [notification, setNotification] = useState<{
