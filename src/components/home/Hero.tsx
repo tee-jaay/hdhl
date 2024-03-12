@@ -29,7 +29,7 @@ const Hero: React.FC = async () => {
     return (
         <section className="hero phone:h-[400px] laptop:h-[400px] desktop:h-[580px] flex space-x-6">
             <HeroBig post={data[0]} />
-            <div className="hero_right h-full flex-1 flex-col space-y-6 overflow-clip phone:hidden tab:block">
+            <div className="hero_right tab:w-1/2 laptop:w-1/2 h-full flex-1 flex-col space-y-6 overflow-clip phone:hidden tab:block">
                 <div className="h-1/2">
                     <HeroMedium post={data[1]} />
                 </div>
