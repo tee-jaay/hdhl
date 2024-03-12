@@ -18,12 +18,7 @@ const getUserProfiles = (): string => `
     users {
       nodes {
         name
-        slug
-        posts {
-          nodes {
-            id
-          }
-        }      
+        slug     
       }
     }
   }
