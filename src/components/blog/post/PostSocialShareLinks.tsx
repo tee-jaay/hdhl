@@ -1,30 +1,11 @@
 import React from "react";
-import Link from "next/link";
+import SocialShareButtons from "./SocialShareButtons";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faInstagram, faXTwitter } from "@fortawesome/free-brands-svg-icons";
-
-const PostSocialShareLinks: React.FC = () => {
+const PostSocialShareLinks: React.FC<{ slug: string, title: string, imgSrc: string }> = ({ slug, title, imgSrc }) => {
     return (
         <div className="share_links flex items-start">
             <h6 className="font-medium mr-4 text-lg text-[#444444] dark:text-white">Share:</h6>
-            <div className="social_links flex space-x-3 align-middle">
-                <Link href={"/"}>
-                    <div className="w-7 h-7 p-2 border">
-                        <FontAwesomeIcon color="#666" icon={faFacebookF} />
-                    </div>
-                </Link>
-                <Link href={"/"}>
-                    <div className="w-7 h-7 p-2 border">
-                        <FontAwesomeIcon color="#666" icon={faXTwitter} />
-                    </div>
-                </Link>
-                <Link href={"/"}>
-                    <div className="w-7 h-7 p-2 border">
-                        <FontAwesomeIcon color="#666" icon={faInstagram} />
-                    </div>
-                </Link>
-            </div>
+            <SocialShareButtons url={`${process.env.NEXT_PUBLIC_APP_URL}/${slug}`} title={title} media={imgSrc} />
         </div>
     );
 }
