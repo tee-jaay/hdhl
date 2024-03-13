@@ -45,7 +45,7 @@ const Search = () => {
 
     return (
         <div>
-            <h2 className="text-[#222] text-start dark:bg-[#333] dark:text-white text-4xl font-medium tracking-wide">Search result for: "{searchText}"</h2>
+            <h2 className="text-[#222] text-start dark:bg-[#222] dark:text-white text-4xl font-medium tracking-wide">Search result for: "{searchText}"</h2>
             <hr className="mb-6" />
             <div className="phone:space-y-8 tab:space-y-12 laptop:space-y-16">
                 {posts && posts.map((post: PostCardProps, _i: number) => <PostItem key={post.id} post={post} />)}
