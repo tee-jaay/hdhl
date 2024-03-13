@@ -27,7 +27,7 @@ const SmallMenu: React.FC<{ links: MenuLinkProps[] }> = ({ links }) => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </div>
-            <div className={`phone:block tab:hidden absolute z-10 top-10 right-0 w-[280px] bg-gradient-to-b from-gray-500 to-black transition-all ease-in-out duration-300 ${menuOpen ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-[-2]'}`}>
+            <div className={`phone:block tab:hidden absolute z-10 top-10 right-0 w-[280px] bg-gradient-to-b from-gray-500 to-black transition-all ease-in-out duration-200 ${menuOpen ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-[-2]'}`}>
                 <div className={menuOpen ? "block" : "hidden"}>
                     <ul className="flex flex-col space-y-4 py-8 px-12">
                         {links && links.map((menuItem, i) =>

@@ -28,7 +28,7 @@ const LatestArticle: React.FC = async () => {
                 <span className="text-sm text-white uppercase mx-2">|</span>
             </div>
             <span className="w-4/6 text-sm text-white font-normal flex items-center justify-start">
-                <Link href={`/${data[0]?.slug}`} className="line-clamp-1 text-gray-300 hover:text-white transition ease-in-out duration-300">
+                <Link href={`/${data[0]?.slug}`} className="line-clamp-1 text-gray-300 hover:text-white transition ease-in-out duration-200">
                     {data[0]?.title}
                 </Link>
             </span>

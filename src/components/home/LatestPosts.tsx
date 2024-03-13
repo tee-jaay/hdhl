@@ -39,7 +39,7 @@ const LatestPosts: React.FC<{}> = async () => {
                         <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full bg-gradient-to-b from-transparent to-black`}>
                             <CategoryBoxBg color="" count={0} id="" imgSrc="" bgColor={"bg-[#AE0332]"} name={data[0]?.categories?.nodes[0]?.name} slug={data[0]?.categories?.nodes[0]?.slug} />
                             <Link href={data && data[0]?.slug} title={data && data[0]?.title}>
-                                <h1 className="title phone:text-lg tab:text-lg laptop:text-2xl desktop:text-3xl text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-300">{data && data[0]?.title}</h1>
+                                <h1 className="title phone:text-lg tab:text-lg laptop:text-2xl desktop:text-3xl text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-200">{data && data[0]?.title}</h1>
                             </Link>
                             <div className="meta flex space-x-6">
                                 <AuthorAvatarNameLink imgAlt={data[0]?.author?.node?.name} imgSrc={data[0]?.author?.node?.avatar?.url} link={data[0]?.author?.node?.slug} name={data[0]?.author?.node?.name} textColor={"text-[#FFFFFF]"} imgSize={20} />
@@ -53,7 +53,7 @@ const LatestPosts: React.FC<{}> = async () => {
                 </div>
                 <div className="phone:w-full phone:mt-8 tab:w-2/6 laptop:w-2/6 desktop:w-2/6">
                     <span>
-                        <Link href={"blog"} className="flex tab:ml-auto laptop:ml-auto desktop:ml-auto w-16 text-sm capitalize py-2 px-2 cursor-pointer text-white bg-[#222] hover:bg-[#43A047] transition ease-in-out duration-300">
+                        <Link href={"blog"} className="flex tab:ml-auto laptop:ml-auto desktop:ml-auto w-16 text-sm capitalize py-2 px-2 cursor-pointer text-white bg-[#222] hover:bg-[#43A047] transition ease-in-out duration-200">
                             view all
                         </Link>
                     </span>

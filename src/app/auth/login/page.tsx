@@ -106,7 +106,7 @@ const Login: React.FC = () => {
                     </div>
                     <div>
                         <button
-                            className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "bg-[#222]"} "font-medium text-white py-2 px-8 hover:bg-[#43A047] transition ease-in-out duration-300 capitalize`}
+                            className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "bg-[#222]"} "font-medium text-white py-2 px-8 hover:bg-[#43A047] transition ease-in-out duration-200 capitalize`}
                             type="submit"
                         >
                             Login
@@ -114,12 +114,12 @@ const Login: React.FC = () => {
                     </div>
                     <div className="flex flex-row justify-between">
                         <span>
-                            <Link href={"/auth/register"} className="underline text-gray-700 hover:text-[#43A047] transition ease-in-out duration-300 capitalize">
+                            <Link href={"/auth/register"} className="hover:underline text-gray-700 hover:text-[#43A047] transition ease-in-out duration-200 capitalize">
                                 new account
                             </Link>
                         </span>
                         <span>
-                            <Link href={"/auth/password-request"} className="underline text-gray-700 hover:text-[#43A047] transition ease-in-out duration-300 capitalize">
+                            <Link href={"/auth/password-request"} className="hover:underline text-gray-700 hover:text-[#43A047] transition ease-in-out duration-200 capitalize">
                                 remember password
                             </Link>
                         </span>

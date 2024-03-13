@@ -157,7 +157,7 @@ const ContactPage: React.FC = () => {
                             <input
                                 type="submit"
                                 value="Send"
-                                className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#333] hover:bg-[#43A047]"}  text-[#FFF]  w-full py-2 transition ease-in-out duration-300`}
+                                className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#333] hover:bg-[#43A047]"}  text-[#FFF]  w-full py-2 transition ease-in-out duration-200`}
                             />
                         </div>
                     </form>

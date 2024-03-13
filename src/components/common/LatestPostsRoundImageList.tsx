@@ -32,7 +32,7 @@ const LatestPostsRoundImageList: React.FC<{ posts: PostCardProps[] }> = ({ posts
                         />
                         <h5 className="mt-2">
                             <Link title={post?.title} href={post?.slug}>
-                                <div className="text-[#222] phone:text-base tab:text-lg dark:text-white leading-snug phone:line-clamp-1 tab:line-clamp-1 laptop:line-clamp-2 desktop:line-clamp-2 hover:text-[#43A047] transition ease-in-out duration-300 dark:hover:text-[#43A047]">
+                                <div className="text-[#222] phone:text-base tab:text-lg dark:text-white leading-snug phone:line-clamp-1 tab:line-clamp-1 laptop:line-clamp-2 desktop:line-clamp-2 hover:text-[#43A047] transition ease-in-out duration-200 dark:hover:text-[#43A047]">
                                     {post?.title}
                                 </div>
                             </Link>

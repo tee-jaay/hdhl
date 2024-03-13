@@ -56,7 +56,7 @@ const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) =
                             <h5 className="font-thin">Subscribe to our mailing list to get the new posts</h5>
                             <div className="mt-3">
                                 <input className="bg-[#333] text-white py-1 px-2" type="email" placeholder="Enter Your Email" required />
-                                <button className="mt-4 bg-[#43A047] text-white py-1 px-4 font-light hover:bg-[#333] ease-in-out transition duration-300">Subscribe</button>
+                                <button className="mt-4 bg-[#43A047] text-white py-1 px-4 font-light hover:bg-[#333] ease-in-out transition duration-200">Subscribe</button>
                             </div>
                         </div>
                     </div>

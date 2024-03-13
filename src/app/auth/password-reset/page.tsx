@@ -14,7 +14,7 @@ const PasswordReset: React.FC = () => {
                         <input className="w-full py-2 px-4 bg-slate-100" type="password" name="password_confirm" placeholder="Retype Password" />
                     </div>
                     <div>
-                        <button disabled className="bg-[#222] text-white py-2 px-8 hover:bg-[#43A047] transition ease-in-out duration-300 capitalize" type="submit">save</button>
+                        <button disabled className="bg-[#222] text-white py-2 px-8 hover:bg-[#43A047] transition ease-in-out duration-200 capitalize" type="submit">save</button>
                     </div>
                 </form>
             </div>

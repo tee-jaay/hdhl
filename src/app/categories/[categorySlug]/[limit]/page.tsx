@@ -41,7 +41,7 @@ const PostItem: React.FC<{ post: PostCardProps }> = ({ post }) => <Link href={`/
                 </div>
             </div>
             <div className="post_title mt-1 mb-3">
-                <h4 className="text-2xl leading-6 text-white line-clamp-3 hover:text-[#43A047] transition ease-in-out duration-300">{post?.title}</h4>
+                <h4 className="text-2xl leading-6 text-white line-clamp-3 hover:text-[#43A047] transition ease-in-out duration-200">{post?.title}</h4>
             </div>
             <div className="post_exercpt line-clamp-2 text-white" dangerouslySetInnerHTML={{ __html: post?.excerpt ?? "" }} />
         </div>
