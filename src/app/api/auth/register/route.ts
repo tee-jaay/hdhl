@@ -1,3 +1,4 @@
+// Register
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import createUser from "@/_lib/graphQl/mutations/createUser.mutation";
 import rateLimitMiddleware from "@/_lib/middlewares/rateLimitMiddleware";

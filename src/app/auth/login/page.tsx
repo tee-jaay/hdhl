@@ -74,7 +74,7 @@ const Login: React.FC = () => {
 
     return (
         <div className="phone:w-full tab:w-full laptop:w-[1024px] desktop:w-[1024px] mx-auto">
-            <div className="form-container w-1/3 mx-auto my-48">
+            <div className="phone:w-full tab:w-1/2 laptop:w-1/3 mx-auto phone:px-1 tab:px-2 laptop:px-0 my-48">
                 <form className="space-y-4" onSubmit={formik.handleSubmit}>
                     <div>
                         <input
@@ -114,12 +114,12 @@ const Login: React.FC = () => {
                     </div>
                     <div className="flex flex-row justify-between">
                         <span>
-                            <Link href={"/auth/register"} className="hover:underline text-gray-700 hover:text-[#43A047] transition ease-in-out duration-200 capitalize">
+                            <Link href={"/auth/register"} className="text-sm hover:underline text-gray-700 hover:text-[#43A047] transition ease-in-out duration-200 capitalize">
                                 new account
                             </Link>
                         </span>
                         <span>
-                            <Link href={"/auth/password-request"} className="hover:underline text-gray-700 hover:text-[#43A047] transition ease-in-out duration-200 capitalize">
+                            <Link href={"/auth/password-request"} className="text-sm hover:underline text-gray-700 hover:text-[#43A047] transition ease-in-out duration-200 capitalize">
                                 remember password
                             </Link>
                         </span>
