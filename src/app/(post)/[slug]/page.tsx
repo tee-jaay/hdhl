@@ -38,7 +38,7 @@ const Post: React.FC<{ params: { slug: string } }> = async ({ params }) => {
                     <PostTags tags={post?.tags?.nodes} />
                 </div>
                 <div className="w-2/5">
-                    <PostSocialShareLinks imgSrc={post?.featuredImage?.sourceUrl} slug={post?.slug} title={post?.title} />
+                    <PostSocialShareLinks imgSrc={post?.featuredImage?.node?.sourceUrl} slug={post?.slug} title={post?.title} />
                 </div>
             </div>
             <PostAuthor author={post?.author?.node} />
