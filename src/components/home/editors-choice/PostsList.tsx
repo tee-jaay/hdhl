@@ -40,7 +40,7 @@ const PostsList: React.FC<{ posts: PostCardProps[] }> = ({ posts }) => {
               slug={post?.categories?.nodes[0]?.slug} />
             <div>
               <Link href={post?.slug} title={post?.title}>
-                <h4 className="phone:text-sm tab:text-base laptop:text-xl tab:line-clamp-1 desktop:line-clamp-2 text-black dark:text-white hover:text-[#43A047] dark:hover:text-[#43A047] transition ease-in-out duration-300">{truncateString(post?.title, 33)}</h4>
+                <h4 className="phone:text-sm tab:text-base laptop:text-xl tab:line-clamp-1 desktop:line-clamp-2 text-black dark:text-white hover:text-[#43A047] dark:hover:text-[#43A047] transition ease-in-out duration-200">{truncateString(post?.title, 33)}</h4>
               </Link>
             </div>
             <h6 className="text-gray-500 dark:text-white tab:line-clamp-1 desktop:line-clamp-3" dangerouslySetInnerHTML={{ __html: truncateString(post?.excerpt, 120) }} />

@@ -14,7 +14,7 @@ const HeroMedium = ({ post }: { post: HeroPostProps }) => {
       <div className="w-full flex flex-col py-6 px-6 justify-end bg-gradient-to-b from-transparent to-black">
         <CategoryBoxBg color="" count={0} id="" imgSrc="" bgColor={"bg-[#378e1c]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />
         <Link href={`/${post?.slug}`} title={post?.title}>
-          <h2 className="title laptop:text-xl desktop:text-2xl laptop:line-clamp-1 text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-300">{post?.title}</h2>
+          <h2 className="title laptop:text-xl desktop:text-2xl laptop:line-clamp-1 text-white font-semibold my-3 hover:text-[#43A047] transition ease-in-out duration-200">{post?.title}</h2>
         </Link>
         <div className="meta flex space-x-6">
           <div className="desktop:block">

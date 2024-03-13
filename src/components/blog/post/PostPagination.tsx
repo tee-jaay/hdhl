@@ -53,7 +53,7 @@ const PostPagination: React.FC<{ postId: number }> = async ({ postId }) => {
                             <div className="capitalize text-gray-400 dark:text-[#FEFEFE] text-xl font-light">previous post</div>
                         </div>
                         <div>
-                            <h5 className="font-medium capitalize pl-6 text-[#444] dark:text-white hover:text-[#43A047] transition ease-in-out duration-300 dark:hover:text-[#43A047]">{truncateString(posts?.prevPost?.nodes[0]?.title, 30)}...</h5>
+                            <h5 className="font-medium capitalize pl-6 text-[#444] dark:text-white hover:text-[#43A047] transition ease-in-out duration-200 dark:hover:text-[#43A047]">{truncateString(posts?.prevPost?.nodes[0]?.title, 30)}...</h5>
                         </div>
                     </div>
                 </Link> : <div></div>
@@ -70,7 +70,7 @@ const PostPagination: React.FC<{ postId: number }> = async ({ postId }) => {
                             </div>
                         </div>
                         <div>
-                            <h5 className="font-medium capitalize pr-6 text-[#444] dark:text-white hover:text-[#43A047] transition ease-in-out duration-300 dark:hover:text-[#43A047]">{truncateString(posts?.nextPost?.nodes[0]?.title, 30)}...</h5>
+                            <h5 className="font-medium capitalize pr-6 text-[#444] dark:text-white hover:text-[#43A047] transition ease-in-out duration-200 dark:hover:text-[#43A047]">{truncateString(posts?.nextPost?.nodes[0]?.title, 30)}...</h5>
                         </div>
                     </div>
                 </Link> : <div></div>

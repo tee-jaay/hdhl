@@ -23,7 +23,7 @@ const getData = async () => {
 }
 
 const TagSingle: React.FC<{ tag: TagProps }> = ({ tag }) =>
-    <Link key={tag.id} href={`/tags/${tag.slug}/12`} title={tag.name} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#FFF] dark:bg-[#444] text-[#555] dark:text-[#FEFEFE] shadow-sm hover:text-[#43A047] transition ease-in-out duration-300">
+    <Link key={tag.id} href={`/tags/${tag.slug}/12`} title={tag.name} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#FFF] dark:bg-[#444] text-[#555] dark:text-[#FEFEFE] shadow-sm hover:text-[#43A047] transition ease-in-out duration-200">
         <span>
             {tag.name}
         </span>

@@ -77,7 +77,7 @@ const Blog = () => {
             <div className="posts_container">
                 <PostsList posts={posts} />
                 <div className="paginations mt-8 flex space-x-2 justify-center">
-                    <div className="pagination_item text-[#444] dark:text-white cursor-pointer border font-medium text-sm flex items-center justify-center h-10 w-32 capitalize hover:bg-[#43A047] hover:text-[#FFF] hover:border-[#43A047] transition ease-in-out duration-300" onClick={loadMore}>view previous</div>
+                    <div className="pagination_item text-[#444] dark:text-white cursor-pointer border font-medium text-sm flex items-center justify-center h-10 w-32 capitalize hover:bg-[#43A047] hover:text-[#FFF] hover:border-[#43A047] transition ease-in-out duration-200" onClick={loadMore}>view previous</div>
                 </div>
             </div>
         );

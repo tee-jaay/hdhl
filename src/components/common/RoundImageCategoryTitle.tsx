@@ -53,7 +53,7 @@ const RoundImageCategoryTitle: React.FC<{}> = () => {
                     <div className="w-3/5 ">
                         <CategoryNameSlug color={"text-[#919191]"} name={post.category} slug={post.categorySlug} bgColor="" count={0} id="" imgSrc="" />
                         <h4 className="mt-2 laptop:text-base desktop:text-xl laptop:font-normal line-clamp-2">
-                            <Link className="text-[#222] dark:text-white hover:text-[#43A047] transition ease-in-out duration-300" title={post.title} href={post.slug}>{post.title}</Link>
+                            <Link className="text-[#222] dark:text-white hover:text-[#43A047] transition ease-in-out duration-200" title={post.title} href={post.slug}>{post.title}</Link>
                         </h4>
                     </div>
                 </div>

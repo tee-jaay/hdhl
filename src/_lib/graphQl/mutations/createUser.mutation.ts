@@ -7,6 +7,8 @@ const createUser = () => `mutation CreateUser($clientMutationId: String!, $email
         username
         slug
         email
+        jwtAuthToken
+        jwtRefreshToken
       }
     }
   }`;

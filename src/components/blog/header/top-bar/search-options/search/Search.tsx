@@ -82,7 +82,7 @@ const Search: React.FC<{}> = () => {
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchText(e.target.value)}
                             />
                             <button
-                                className="bg-[#222222] text-white px-4 py-1 hover:bg-[#43A047] text-sm transition ease-in-out duration-300"
+                                className="bg-[#222222] text-white px-4 py-1 hover:bg-[#43A047] text-sm transition ease-in-out duration-200"
                                 onClick={handleSearch}
                             >
                                 Search

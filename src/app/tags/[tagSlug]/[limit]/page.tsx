@@ -33,7 +33,7 @@ const PostItem: React.FC<{ post: PostCardProps }> = ({ post }) => <Link href={`/
         <div className="post_image z-10">
             <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={400} height={600} />
         </div>
-        <div className="post_data absolute z-20 px-8 py-4 bottom-0 bg-black opacity-50 hover:opacity-100 transition-opacity duration-300 ease-in-out">
+        <div className="post_data absolute z-20 px-8 py-4 bottom-0 bg-black opacity-50 hover:opacity-100 transition-opacity duration-200 ease-in-out">
             <div className="post_meta flex space-x-4">
                 <div className="date text-white">{formatDate(post?.date, "numeric")}</div>
                 <div className="author text-white flex line-clamp-1 items-center">

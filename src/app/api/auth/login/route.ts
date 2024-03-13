@@ -1,3 +1,4 @@
+// Login
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import loginUser from "@/_lib/graphQl/mutations/loginUser.mutation";
 import rateLimitMiddleware from "@/_lib/middlewares/rateLimitMiddleware";
@@ -7,12 +8,12 @@ import { v4 as uuidv4 } from "uuid";
 const clientMutationId = uuidv4();
 
 export async function POST(request: Request) {
-    // const requestWithSocket = request as Request & { socket: any };
-    // const middlewareResponse = await rateLimitMiddleware(requestWithSocket);
+    const requestWithSocket = request as Request & { socket: any };
+    const middlewareResponse = await rateLimitMiddleware(requestWithSocket);
 
-    // if (middlewareResponse instanceof Response) {
-    //     return middlewareResponse;
-    // }
+    if (middlewareResponse instanceof Response) {
+        return middlewareResponse;
+    }
 
     try {
         // Parse the request body to get searchText

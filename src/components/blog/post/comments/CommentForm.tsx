@@ -174,7 +174,7 @@ const CommentForm: React.FC<{ postId: number }> = ({ postId }) => {
                     <input
                         value="submit comment"
                         type="submit"
-                        className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#333] hover:bg-[#43A047]"}  text-[#FFF] capitalize w-full py-2 transition ease-in-out duration-300`}
+                        className={`${isBusy ? "cursor-not-allowed bg-[#999]" : "cursor-pointer bg-[#333] hover:bg-[#43A047]"}  text-[#FFF] capitalize w-full py-2 transition ease-in-out duration-200`}
                     />
                 </div>
                 {/* Show notification if present */}
