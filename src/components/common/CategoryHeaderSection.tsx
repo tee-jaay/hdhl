@@ -35,7 +35,7 @@ const CategoryHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
                 </span>
                 <span className="capitalize">Category</span>
             </h6>
-            <p className="tab:w-[640px] laptop:w-[768px] desktop:w-full mx-auto dark:text-white mt-8 text-center">{category?.description}</p>
+            <p className="tab:w-[600px] laptop:w-[768px] desktop:[1024px] mx-auto dark:text-white mt-8 text-center  phone:px-1 tab:px-2 laptop:px-4">{category?.description}</p>
         </div>
     );
 }
