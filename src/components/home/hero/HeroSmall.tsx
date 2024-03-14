@@ -6,7 +6,7 @@ import CategoryBoxBg from "@/components/common/CategoryBoxBg";
 
 const HeroSmall = ({ post }: { post: HeroPostProps }) => {
     return (
-        <div className={`flex flex-col justify-end text-white flex-1 pb-6 bg-no-repeat`}
+        <div className={`flex flex-col justify-end text-white flex-1 pb-6 bg-no-repeat bg-cover`}
             style={{ backgroundImage: `url(${post?.featuredImage?.node?.sourceUrl})` }}>
             <div className="py-5 px-6 bg-gradient-to-b from-transparent to-black">
                 <CategoryBoxBg color="" count={0} id="" imgSrc="" bgColor={"bg-[#ffa100]"} name={post?.categories?.nodes[0]?.name} slug={post?.categories?.nodes[0]?.slug} />

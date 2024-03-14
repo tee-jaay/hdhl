@@ -1,5 +1,5 @@
 const getUserProfile = (): string => `query GetUserProfile($id: ID!) {
-    guprofile(id: $id, idType: DATABASE_ID) {
+    guprofile(id: $id, idType: URI) {
       featuredImage {
         node {
           altText
