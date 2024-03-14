@@ -1,6 +1,6 @@
 // Register
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
-import createUser from "@/_lib/graphQl/mutations/createUser.mutation";
+import registerUser from "@/_lib/graphQl/mutations/registerUser";
 import rateLimitMiddleware from "@/_lib/middlewares/rateLimitMiddleware";
 
 import { v4 as uuidv4 } from "uuid";
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
         // Parse the request body to get searchText
         const body = await request.json();
 
-        const query = createUser();
+        const query = registerUser();
         const variables = {
             clientMutationId: clientMutationId,
             email: body?.email,
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
         const response = await gqlQuery(query, variables);
 
         // Return the response as JSON
-        return new Response(JSON.stringify(response), {
+        return new Response(JSON.stringify(response?.registerUser?.user), {
             headers: { "Content-Type": "application/json", },
         });
     } catch (error) {

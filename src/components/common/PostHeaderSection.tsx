@@ -27,7 +27,7 @@ const PostHeaderSection: React.FC<{ slug: string }> = async ({ slug }) => {
     return (
         <div className="blog_header py-16 bg-[#FBFAFA] dark:bg-[#333] w-full">
             <h2 className="w-full mx-auto text-[#222] dark:text-white text-center tab:text-2xl laptop:text-3xl desktop:text-4xl font-medium tracking-wide tab:line-clamp-2 laptop:line-clamp-1">{post?.title}</h2>
-            <h5 className="text-center font-thin text-base text-[#222]">{formatDate(post?.date, "numeric")}</h5>
+            <h5 className="text-center font-thin text-base text-[#222] dark:text-white">{formatDate(post?.date, "numeric")}</h5>
             <h6 className="text-[#8F8E8E] dark:text-[#FEFEFE] text-lg flex justify-center items-center capitalize mt-2">
                 <Link href={"/"}>home</Link>
                 <span>

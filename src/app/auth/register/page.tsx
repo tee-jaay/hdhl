@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -39,8 +38,8 @@ const Register: React.FC = () => {
 
                 if (res.ok) {
                     // Store user data to local storage
-                    localStorage.setItem("authToken", data?.authToken);
-                    localStorage.setItem("refreshToken", data?.refreshToken);
+                    localStorage.setItem("authToken", data?.jwtAuthToken);
+                    localStorage.setItem("refreshToken", data?.jwtRefreshToken);
                     localStorage.setItem("user", JSON.stringify(data?.user));
                     // Success
                     setNotification({ type: "success", message: "Registration successful!" });
