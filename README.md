@@ -5,6 +5,7 @@
 #### For the App
 ```bash
 APP_NAME=
+SITE_URL=
 APP_URL=
 BASE_URL=
 GRAPHQL_URL=

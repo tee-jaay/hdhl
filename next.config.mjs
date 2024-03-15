@@ -10,7 +10,16 @@ const nextConfig = {
                         value: 'text/plain',
                     }
                 ],
-            }
+            },
+            {
+                source: '/sitemap/0.xml',
+                headers: [
+                    {
+                        key: 'Content-Type',
+                        value: 'application/xml',
+                    }
+                ],
+            },
         ]
     },
     webpack: (config) => {
