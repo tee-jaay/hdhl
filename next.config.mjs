@@ -1,5 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    async headers() {
+        return [
+            {
+                source: '/robots.txt',
+                headers: [
+                    {
+                        key: 'Content-Type',
+                        value: 'text/plain',
+                    }
+                ],
+            }
+        ]
+    },
     webpack: (config) => {
         config.module.rules.push({
             test: /\.svg$/,
@@ -27,7 +40,7 @@ const nextConfig = {
                 hostname: 'secure.gravatar.com',
             },
         ],
-    }
+    },
 };
 
 export default nextConfig;
