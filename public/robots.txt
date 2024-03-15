@@ -1,5 +1,6 @@
 # START ROBOTS BLOCK
 # ---------------------------
+User-agent: *
 Disallow: /pages/*
 Disallow: /contact
 Disallow: /categories/*
