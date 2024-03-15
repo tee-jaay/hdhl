@@ -8,8 +8,10 @@ Disallow: /tags/*
 Disallow: /auth/*
 Disallow: /dashboard/*
 # ---------------------------
+# Host
+Host: https://healthydiethappylife.com
+# ---------------------------
 # Sitemap
 Sitemap: https://healthydiethappylife.com/sitemap/0.xml
-# Sitemap
 # ---------------------------
 # END ROBOTS BLOCK
