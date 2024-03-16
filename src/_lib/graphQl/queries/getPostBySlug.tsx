@@ -7,6 +7,7 @@ const getPostBySlug = (): string => `
             databaseId
             title(format: RENDERED)
             content(format: RENDERED)
+            excerpt(format: RENDERED)
             date
             featuredImage {
                 node {
