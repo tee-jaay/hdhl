@@ -10,6 +10,27 @@ import PostPagination from "@/components/blog/post/PostPagination";
 import PostRelatedPosts from "@/components/blog/post/PostRelatedPosts";
 import PostComments from "@/components/blog/post/PostComments";
 
+type Props = { params: { slug: string }, }
+
+export async function generateMetadata(params: Props) {
+    const { slug } = params?.params;
+    // Construct the query and variables
+    const query = getPostBySlug();
+    const variables = { slug: slug };
+    try {
+        // Make the request and return the data
+        const data = await gqlQuery(query, variables);
+        return {
+            title: `${process.env.APP_NAME} | ${data?.post?.title}`,
+            description: data?.post?.excerpt,
+        };
+    } catch (error) {
+        // Handle the error here
+        console.error(error);
+        throw error;
+    }
+}
+
 const getData = async (params: string) => {
     // Construct the query and variables
     const query = getPostBySlug();
