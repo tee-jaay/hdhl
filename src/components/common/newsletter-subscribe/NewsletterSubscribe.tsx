@@ -23,35 +23,38 @@ const NewsletterSubscribe: React.FC = () => {
         validationSchema,
         onSubmit: async (values, { resetForm }) => {
             setIsBusy(true);
+
             try {
-                const res = await fetch(`${publicAppUrl}/api/blog/subscribers`, {
+                const response = await fetch(`${publicAppUrl}/api/blog/subscribers`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(values),
                 });
-                const data = await res.json();
 
-                if (res.status == 200) {
+                if (response.status === 200) {
                     // Success
+                    const data = await response.json();
                     setNotification({ type: "success", message: `${data?.email_address} is ${data?.status}` });
                     // Clear form inputs
                     resetForm();
-                } else if (res.status == 429) {
-                    // Too many requests
-                    setNotification({ type: "warning", message: "Too Many Requests. Please try again later." });
+                } else if (response.status === 429) {
+                    setNotification({ type: "warning", message: "Too many requests. Please try later." });
                 } else {
                     // Error
-                    const errorData = JSON.parse(data?.error?.response?.text);
-                    if (res?.status == 500 && errorData?.status == 400) {
-                        setNotification({ type: "error", message: errorData?.title });
+                    const errorData = await response.json();
+                    if (errorData?.error?.response?.text) {
+                        const errorText = JSON.parse(errorData?.error?.response?.text);
+                        setNotification({ type: "error", message: errorText?.detail });
                     } else {
-                        setNotification({ type: "error", message: "Error occured." });
+                        setNotification({ type: "error", message: "Error occurred." });
                     }
                 }
             } catch (error) {
+                // Handle any unexpected errors
                 setNotification({ type: "error", message: "Something went wrong. Please try again." });
+            } finally {
+                setIsBusy(false);
             }
-            setIsBusy(false);
         },
     });
 
