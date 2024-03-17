@@ -4,7 +4,7 @@ import FormActionNotification from "./FormActionNotification";
 
 const FormActionNotificationBox: React.FC<{ type: String, message: String }> = ({ type, message }) => {
     return (
-        <div className="notification_box flex">
+        <div className="notification_box flex relative">
             {type === "success" &&
                 <FormActionNotification
                     bgColor={"bg-green-500"}
