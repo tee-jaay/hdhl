@@ -27,6 +27,11 @@ TIME_WINDOW=180000
 MS_VALIDATE=
 ````
 
+#### For AHREFS Engines
+````bash
+AHREFS_VALIDATE=
+````
+
 #### For MailChimp
 ````bash
 MAILCHIMP_API_KEY=
