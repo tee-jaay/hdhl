@@ -7,6 +7,7 @@ import FooterTopProps from "@/_lib/models/FooterTopProps";
 import PageProps from "@/_lib/models/PageProps";
 import LogoWithLink from "@/components/common/LogoWithLink";
 import SocialsLinksIcons from "@/components/common/SocialsLinksIcons";
+import NewsletterSubscribe from "@/components/common/newsletter-subscribe/NewsletterSubscribe";
 
 const TagItem: React.FC<{ tag: TagProps }> = ({ tag }) => <span key={tag.id} className="tag uppercase truncate font-light text-xs py-1 px-2 bg-[#333333]">
     <Link href={`${appUrl}/tags/${tag.slug}/12`} title={tag.name}>{tag.name}</Link>
@@ -23,7 +24,7 @@ const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) =
     return (
         <div className="flex">
             <div className="phone:px-2">
-                <div className="text-white flex space-x-12">
+                <div className="text-white flex phone:flex-col laptop:flex-row tab:space-x-6 laptop:space-x-12 phone:space-y-6 tab:space-y-8 laptop:space-y-0">
                     <div className="flex-1 logo_desc_follow_us">
                         <div className="flex flex-col">
                             <div className="logo" title={generalSettings?.title}>
@@ -50,14 +51,11 @@ const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) =
                             {pages && pages?.map((page, _i) => <PageItem key={page.slug} page={page} />)}
                         </div>
                     </div>
-                    <div className="flex-1 newsletter_subscribe phone:hidden tab:block">
+                    <div className="flex-1 newsletter_subscribe">
                         <h4 className="capitalize text-start font-semibold">newsletter</h4>
                         <div className="flex flex-col mt-4">
                             <h5 className="font-thin">Subscribe to our mailing list to get the new posts</h5>
-                            <div className="mt-3">
-                                <input className="bg-[#333] text-white py-1 px-2" type="email" placeholder="Enter Your Email" required />
-                                <button className="mt-4 bg-[#43A047] text-white py-1 px-4 font-light hover:bg-[#333] ease-in-out transition duration-200">Subscribe</button>
-                            </div>
+                            <NewsletterSubscribe />
                         </div>
                     </div>
                 </div>

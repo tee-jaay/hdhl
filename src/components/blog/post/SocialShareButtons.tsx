@@ -2,11 +2,10 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faPinterestP, faWhatsapp, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { appName } from "@/_lib/variables/constants";
 
 const SocialShareButtons: React.FC<{ url: string, title: string, media: string }> = ({ url, title, media }) => {
-    const viaUsername = process.env.NEXT_PUBLIC_APP_NAME!;
-
-    const twitterHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${url}&via=${encodeURIComponent(viaUsername)}`;
+    const twitterHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${url}&via=${encodeURIComponent(appName)}`;
 
     const pinterestHref = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(media)}&description=${encodeURIComponent(title)}`;
 

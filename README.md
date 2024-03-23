@@ -27,6 +27,12 @@ TIME_WINDOW=180000
 MS_VALIDATE=
 ````
 
+#### For MailChimp
+````bash
+MAILCHIMP_API_KEY=
+MAILCHIMP_SERVER_PREFIX=
+MAILCHIMP_AUDIENCE_ID=
+````
 
 Then run the development server:
 

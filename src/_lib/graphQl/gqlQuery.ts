@@ -11,6 +11,7 @@ const gqlQuery = async (query: string, variables?: Record<string, unknown>) => {
             query,
             variables,
         }),
+        next: { revalidate: 3600 }
     });
 
     // Parse the response body as JSON
