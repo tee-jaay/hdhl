@@ -1,28 +1,13 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
+import Script from "next/script";
 
 const AdsterraAd = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.async = true;
-    script.innerHTML = `
-      atOptions = {
-        'key' : '1bc1b1376a6093cee5772c8748bfee12',
-        'format' : 'iframe',
-        'height' : 300,
-        'width' : 160,
-        'params' : {}
-      };
-      document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/1bc1b1376a6093cee5772c8748bfee12/invoke.js"></scr' + 'ipt>');
-    `;
-    document.getElementById("adsterra-ads")?.appendChild(script);
-
-    return () => {
-      document.getElementById("adsterra-ads")?.removeChild(script);
-    };
-  }, []);
-
-  return <div id="adsterra-ads" />;
+  return <Script
+    strategy="lazyOnload"
+    type="text/javascript"
+    src="//www.topcreativeformat.com/1bc1b1376a6093cee5772c8748bfee12/invoke.js"
+  />;
 };
 
 export default AdsterraAd;
