@@ -4,7 +4,7 @@ import Script from "next/script";
 const AdsterraAd: React.FC = () => {
   return <Script
     async
-    strategy="lazyOnload"
+    strategy="afterInteractive"
     type="text/javascript"
     src="//www.topcreativeformat.com/1bc1b1376a6093cee5772c8748bfee12/invoke.js"
   />;
