@@ -15,10 +15,10 @@ const AdsterraAd = () => {
       };
       document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/1bc1b1376a6093cee5772c8748bfee12/invoke.js"></scr' + 'ipt>');
     `;
-    document.body.appendChild(script);
+    document.getElementById("adsterra-ads")?.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      document.getElementById("adsterra-ads")?.removeChild(script);
     };
   }, []);
 
