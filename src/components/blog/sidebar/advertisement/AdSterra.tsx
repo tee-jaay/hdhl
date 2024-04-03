@@ -1,8 +1,7 @@
-"use client";
 import React from "react";
 import Script from "next/script";
 
-const AdsterraAd = () => {
+const AdsterraAd: React.FC = () => {
   return <Script
     strategy="lazyOnload"
     type="text/javascript"
