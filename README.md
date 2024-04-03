@@ -39,6 +39,12 @@ MAILCHIMP_SERVER_PREFIX=
 MAILCHIMP_AUDIENCE_ID=
 ````
 
+#### For AdSterra
+````bash
+NEXT_PUBLIC_ADSTERRA_160_300_KEY=
+NEXT_PUBLIC_ADSTERRA_728_90_KEY=
+````
+
 Then run the development server:
 
 ```bash
