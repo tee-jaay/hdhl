@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const AdSterra: React.FC<{ height: number, width: number, adKey: string }> = ({ height, width, adKey }) => {
     const bannerRef = useRef<HTMLDivElement>(null);
@@ -30,14 +30,12 @@ const AdSterra: React.FC<{ height: number, width: number, adKey: string }> = ({ 
     }, []);
 
     return (
-        <Suspense fallback={<p>...</p>}>
-            <div
-                className="mx-2 my-5 border border-gray-200 justify-center items-center text-white text-center"
-                ref={bannerRef}
-            >
-                {/* Ads content will be loaded here */}
-            </div>
-        </Suspense>
+        <div
+            className="mx-2 my-5 border border-gray-200 justify-center items-center text-white text-center"
+            ref={bannerRef}
+        >
+            {/* Ads content will be loaded here */}
+        </div>
     );
 };
 
