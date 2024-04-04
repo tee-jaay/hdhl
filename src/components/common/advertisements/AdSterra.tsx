@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 
-const AdSterra: React.FC<{ height: number, width: number, key: string }> = ({ height, width, key }) => {
+const AdSterra: React.FC<{ height: number, width: number, adKey: string }> = ({ height, width, adKey }) => {
     const bannerRef = useRef<HTMLDivElement>(null);
+    console.log(adKey);
 
     const adOptions = {
-        key: key,
+        key: adKey,
         format: 'iframe',
         height: height,
         width: width,
@@ -30,12 +31,14 @@ const AdSterra: React.FC<{ height: number, width: number, key: string }> = ({ he
     }, []);
 
     return (
-        <div
-            className="mx-2 my-5 border border-gray-200 justify-center items-center text-white text-center"
-            ref={bannerRef}
-        >
-            {/* Ads content will be loaded here */}
-        </div>
+        <Suspense fallback={<p>...</p>}>
+            <div
+                className="mx-2 my-5 border border-gray-200 justify-center items-center text-white text-center"
+                ref={bannerRef}
+            >
+                {/* Ads content will be loaded here */}
+            </div>
+        </Suspense>
     );
 };
 
