@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import AdSterra from "../common/advertisements/AdSterra";
 
-const adKey = process.env.NEXT_PUBLIC_ADSTERRA_728_90_KEY;
+const adKey = process.env.ADSTERRA_728_90_KEY;
+console.log({ adKey });
 
 const Advertisement: React.FC<{}> = () => {
 
