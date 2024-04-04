@@ -4,7 +4,6 @@ import React, { Suspense, useEffect, useRef } from 'react';
 
 const AdSterra: React.FC<{ height: number, width: number, adKey: string }> = ({ height, width, adKey }) => {
     const bannerRef = useRef<HTMLDivElement>(null);
-    console.log(adKey);
 
     const adOptions = {
         key: adKey,

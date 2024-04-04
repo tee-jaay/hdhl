@@ -10,13 +10,13 @@ const Advertisement: React.FC<{}> = () => {
 
     if (process.env.NODE_ENV === "production") {
         return (
-            <section className="laptop:w-[768px] desktop:w-[1024px] dark:text-white flex flex-col items-center justify-center mx-auto h-28 border border-black dark:border-white my-12 phone:px-2 tab:px-0">
+            <section className="laptop:w-[768px] desktop:w-[1024px] dark:text-white flex flex-col items-center justify-center mx-auto h-28 my-12 phone:px-2 tab:px-0">
                 <AdSterra height={90} width={728} adKey={adKey || ""} />
             </section>
         )
     } else {
         return (
-            <section className="laptop:w-[768px] desktop:w-[1024px] dark:text-white flex flex-col items-center justify-center mx-auto h-28 border border-black dark:border-white my-12 phone:px-2 tab:px-0">
+            <section className="laptop:w-[768px] desktop:w-[1024px] dark:text-white flex flex-col items-center justify-center mx-auto h-28 my-12 phone:px-2 tab:px-0">
                 <div>
                     <p className="text-xl uppercase">Advertisement</p>
                 </div>
