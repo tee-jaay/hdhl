@@ -15,6 +15,24 @@ query AllUsers {
         }
             description
         }
+        seo {
+            metaDesc
+            metaRobotsNofollow
+            metaRobotsNoindex
+            title
+            fullHead
+            social {
+                youTube
+                wikipedia
+                twitter
+                soundCloud
+                pinterest
+                mySpace
+                linkedIn
+                instagram
+                facebook
+            }
+        }
     }
 }
 `;

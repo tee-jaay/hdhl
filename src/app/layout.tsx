@@ -8,8 +8,12 @@ import { ahrefsValidate, msValidate } from "@/_lib/variables/constants";
 const leagueSpartan = League_Spartan({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.BASE_URL || "https://healthydiethappylife.com"),
   title: "Healthy Diet Happy Life",
   description: "Nourish Your Body, Flourish Your Life",
+  alternates: {
+    canonical: "/"
+  },
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {

@@ -52,7 +52,7 @@ const getPostBySlug = (): string => `
                         }
                     }
                 }
-            }
+            }            
         }
     }
 `;

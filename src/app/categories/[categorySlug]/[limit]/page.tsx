@@ -1,10 +1,39 @@
+import React from "react";
 import Link from "next/link";
 
 import PostCardProps from "@/_lib/models/PostCardProps";
 import formatDate from "@/_lib/helpers/formatPostDate";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getPostsByCategory from "@/_lib/graphQl/queries/getPostsByCategory";
-import React from "react";
+import getCategoryBySlug from "@/_lib/graphQl/queries/getCategoryBySlug";
+
+type Props = { params: { categorySlug: string, limit: string }, }
+
+export async function generateMetadata(params: Props) {
+    console.log({ params });
+    const { categorySlug, limit } = params?.params;
+    // Construct the query and variables
+    const query = getCategoryBySlug();
+    // Convert the limit to an integer
+    const parsedLimit = parseInt(limit, 10);
+    const variables = { slug: categorySlug };
+    try {
+        // Make the request and return the data
+        const data = await gqlQuery(query, variables);
+        console.log(data);
+        return {
+            title: data?.category?.seo?.title,
+            description: data?.category?.seo?.metaDesc,
+            alternates: {
+                canonical: `categories/${categorySlug}/${parsedLimit}`
+            },
+        };
+    } catch (error) {
+        // Handle the error here
+        console.error(error);
+        throw error;
+    }
+}
 
 const getData = async (categorySlug: string, limit: string) => {
     // Construct the query and variables
