@@ -7,8 +7,8 @@ export const runtime = 'edge'
 
 export const alt = 'Post Details'
 export const size = {
-    width: 1200,
-    height: 630,
+    width: 643,
+    height: 680,
 }
 export const contentType = 'image/png'
 
@@ -29,7 +29,6 @@ const getData = async (params: string) => {
 
 export default async function Image({ params }: { params: { slug: string } }) {
     const { post } = await getData(params?.slug);
-    console.log(post?.seo);
 
     return new ImageResponse(
         (
