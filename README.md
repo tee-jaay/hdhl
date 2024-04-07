@@ -5,9 +5,11 @@
 #### For the App
 ```bash
 APP_NAME=
+APP_TAGLINE=
 SITE_URL=
 APP_URL=
 BASE_URL=
+API_URL=
 GRAPHQL_URL=
 ```
 (BASE_URL should be real domain URL)
