@@ -6,6 +6,16 @@ import getAllPublishedPosts from '@/_lib/graphQl/queries/getAllPublishedPosts';
 import truncateString from '@/_lib/helpers/truncrateString';
 
 export async function POST(_request: Request) {
+    // Create the public directory if it doesn't exist
+    if (!fs.existsSync('public')) {
+        fs.mkdirSync('public');
+    }
+
+    // Create the rss.xml file if it doesn't exist
+    if (!fs.existsSync('public/rss.xml')) {
+        fs.writeFileSync('public/rss.xml', '');
+    }
+
     const feed = new Feed({
         title: `${process.env.APP_NAME} RSS Feed`,
         description: `${process.env.APP_TAGLINEThis}`,

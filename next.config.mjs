@@ -20,6 +20,15 @@ const nextConfig = {
                     }
                 ],
             },
+            {
+                source: '/rss.xml',
+                headers: [
+                    {
+                        key: 'Content-Type',
+                        value: 'application/xml',
+                    }
+                ],
+            },
         ]
     },
     webpack: (config) => {
