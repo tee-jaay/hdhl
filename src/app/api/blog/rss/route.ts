@@ -5,10 +5,21 @@ import gqlQuery from '@/_lib/graphQl/gqlQuery';
 import getAllPublishedPosts from '@/_lib/graphQl/queries/getAllPublishedPosts';
 import truncateString from '@/_lib/helpers/truncrateString';
 
-export async function POST(_request: Request) {
-    // Create the public directory if it doesn't exist
-    if (!fs.existsSync('public')) {
-        fs.mkdirSync('public');
+export async function POST(request: Request) {
+    const webhookKey = process.env.CUSTOM_WEBHOOK_KEY ?? "";
+    const reader = request.body ? request.body.getReader() : null;
+    const result = await reader?.read();
+    const dataString = result ? new TextDecoder().decode(result.value) : null;
+    const { key } = JSON.parse(dataString || "{}");
+
+    if (key !== webhookKey) {
+        console.log('Unauthorized');
+        const errorResponse = new Response(JSON.stringify({
+            status: 401,
+            statusText: 'Unauthorized',
+            headers: { 'Content-Type': 'application/json' }
+        }));
+        return errorResponse;
     }
 
     // Create the rss.xml file if it doesn't exist

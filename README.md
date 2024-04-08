@@ -11,6 +11,7 @@ APP_URL=
 BASE_URL=
 API_URL=
 GRAPHQL_URL=
+CUSTOM_WEBHOOK_KEY=
 ```
 (BASE_URL should be real domain URL)
 
