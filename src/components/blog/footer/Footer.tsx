@@ -3,6 +3,7 @@ import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getFooterData from "@/_lib/graphQl/queries/getFooterData";
 import FooterTop from "./FooterTop";
 import FooterBottom from "./FooterBottom";
+import CookieConsent from "@/components/common/cookie-consent/CookieConsent";
 
 const getData = async () => {
     // Construct the query and variables
@@ -36,6 +37,7 @@ const Footer: React.FC = async () => {
                     <FooterBottom generalSettings={generalSettings} />
                 </div>
             </footer>
+            <CookieConsent />
         </section>
     );
 }
