@@ -59,8 +59,8 @@ const CalorieCalculator = () => {
 
     return (
         <div>
-            <div className="flex flex-col items-center justify-center align-middle py-10">
-                <h1>Calorie Calculator <FontAwesomeIcon icon={faCalculator} /></h1>
+            <div className="flex flex-col items-center justify-center align-middle w-full">
+                <h1 className="flex justify-start items-start align-middle w-full"><span className="mr-1"><FontAwesomeIcon icon={faCalculator} /></span> Calorie Calculator</h1>
                 <Formik
                     initialValues={{
                         age: 25,
@@ -72,7 +72,7 @@ const CalorieCalculator = () => {
                     }}
                     onSubmit={calculateCalories}
                 >
-                    <Form className="w-full max-w-lg">
+                    <Form className="w-full">
                         <div className="flex flex-col mb-4">
                             <label className="mb-2" htmlFor="age">
                                 Age:
@@ -153,7 +153,7 @@ const CalorieCalculator = () => {
                         </div>
 
                         <button
-                            className="text-white bg-[#161B2B] hover:bg-[#43A047] transition ease-in-out duration-200 py-2 px-4"
+                            className="text-white bg-[#161B2B] hover:bg-[#43A047] transition ease-in-out duration-200 py-2 px-4 mt-1"
                             type="submit"
                         >
                             Calculate
@@ -164,7 +164,7 @@ const CalorieCalculator = () => {
 
                 {calories > 0 && <div className="mt-10 mb-4">Your recommended daily calorie intake is <span className="text-[#43A047]">{calories}</span> calories.</div>}
 
-                <div className="mt-20 text-gray-700">
+                <div className="mt-32 text-gray-400 w-full">
                     <h6>References:</h6>
                     <div className="flex flex-col justify-start">
                         <a target="_blank" href="https://en.wikipedia.org/wiki/Basal_metabolic_rate">Basal metabolic rate (BMR) | https://en.wikipedia.org/wiki/Basal_metabolic_rate</a>
@@ -175,7 +175,6 @@ const CalorieCalculator = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 };
