@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
+import { Formik, Field, Form } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalculator } from "@fortawesome/free-solid-svg-icons";
-import { Formik, Field, Form } from "formik";
 
 const CalorieCalculator = () => {
     const [calories, setCalories] = useState(0);
@@ -59,8 +59,8 @@ const CalorieCalculator = () => {
 
     return (
         <div>
-            <div className="flex flex-col items-center justify-center align-middle w-full">
-                <h1 className="flex justify-start items-start align-middle w-full"><span className="mr-1"><FontAwesomeIcon icon={faCalculator} /></span> Calorie Calculator</h1>
+            <div className="flex flex-col items-center justify-center align-middle w-full py-4">
+                <h1 className="flex justify-start items-start align-middle w-full text-[#222]"><span className="mr-1"><FontAwesomeIcon icon={faCalculator} /></span> Calorie Calculator</h1>
                 <Formik
                     initialValues={{
                         age: 25,
@@ -164,7 +164,7 @@ const CalorieCalculator = () => {
 
                 {calories > 0 && <div className="mt-10 mb-4">Your recommended daily calorie intake is <span className="text-[#43A047]">{calories}</span> calories.</div>}
 
-                <div className="mt-32 text-gray-400 w-full">
+                <div className="mt-32 text-gray-500 w-full">
                     <h6>References:</h6>
                     <div className="flex flex-col justify-start">
                         <a target="_blank" href="https://en.wikipedia.org/wiki/Basal_metabolic_rate">Basal metabolic rate (BMR) | https://en.wikipedia.org/wiki/Basal_metabolic_rate</a>

@@ -10,7 +10,6 @@ import getCategoryBySlug from "@/_lib/graphQl/queries/getCategoryBySlug";
 type Props = { params: { categorySlug: string, limit: string }, }
 
 export async function generateMetadata(params: Props) {
-    console.log({ params });
     const { categorySlug, limit } = params?.params;
     // Construct the query and variables
     const query = getCategoryBySlug();
