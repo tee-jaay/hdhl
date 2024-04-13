@@ -15,7 +15,8 @@ export default async function sitemap({ id, }: { id: number }): Promise<Metadata
 
     return posts?.nodes.map((post: { slug: string; date: string; }) => ({
         url: `${baseUrl}/${post?.slug}`,
-        lastModified: post.date,
-        changeFrequency: "daily"
+        lastModified: new Date(post.date).toISOString(),
+        changeFrequency: "daily",
+        priority: 0.8,
     }));
 }
