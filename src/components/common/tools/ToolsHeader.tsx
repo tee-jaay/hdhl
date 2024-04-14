@@ -23,7 +23,7 @@ const ToolsHeader: React.FC = () => {
                     </span> <span>BMI</span>
                 </Link>
             </div>
-            <div>
+            {/*<div>
                 <Link href={`${publicAppUrl}/tools/meal-planner`} className="text-black flex flex-row text-2xl justify-center items-center space-x-2">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
@@ -31,7 +31,7 @@ const ToolsHeader: React.FC = () => {
                         </svg>
                     </span> <span>Meal Planner</span>
                 </Link>
-            </div>
+            </div>*/}
             {/* <div>
                 <Link href={`${publicAppUrl}/tools/food-diary`} className="text-black flex flex-row text-2xl justify-center items-center space-x-2">
                     <span>
