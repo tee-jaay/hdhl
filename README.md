@@ -5,10 +5,14 @@
 #### For the App
 ```bash
 APP_NAME=
+SHORT_NAME=
+APP_TAGLINE=
 SITE_URL=
 APP_URL=
 BASE_URL=
+API_URL=
 GRAPHQL_URL=
+CUSTOM_WEBHOOK_KEY=
 ```
 (BASE_URL should be real domain URL)
 
@@ -27,11 +31,23 @@ TIME_WINDOW=180000
 MS_VALIDATE=
 ````
 
+#### For AHREFS Engines
+````bash
+AHREFS_VALIDATE=
+````
+
 #### For MailChimp
 ````bash
 MAILCHIMP_API_KEY=
 MAILCHIMP_SERVER_PREFIX=
 MAILCHIMP_AUDIENCE_ID=
+````
+
+#### For AdSterra
+````bash
+NEXT_PUBLIC_ADSTERRA_160_300_KEY=
+NEXT_PUBLIC_ADSTERRA_728_90_KEY=
+NEXT_PUBLIC_ADSTERRA_300_250_KEY=
 ````
 
 Then run the development server:

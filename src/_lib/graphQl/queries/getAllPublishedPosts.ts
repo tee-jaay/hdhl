@@ -4,6 +4,13 @@ const getAllPublishedPosts = (): string => `query GetLatestPosts {
         databaseId
         slug
         date
+        title(format: RENDERED)
+        content(format: RENDERED)
+        featuredImage {
+          node {
+            sourceUrl(size: MEDIUM)
+          }
+        }
       }
     }
   }`

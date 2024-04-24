@@ -13,8 +13,8 @@ const Sidebar: React.FC = () => {
         <aside className="sticky top-1 space-y-12 pb-12">
             <Search />
             <GetInTouch />
-            <LatestPosts />
             <Advertisement />
+            <LatestPosts />
             <FollowUs />
             <SidebarComments />
             <SidebarTags />

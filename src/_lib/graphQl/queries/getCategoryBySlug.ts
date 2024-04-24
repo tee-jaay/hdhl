@@ -5,6 +5,10 @@ const getCategoryBySlug = (): string => `
       name
       slug
       description
+      seo {
+        title
+        metaDesc
+      }
     }
   }
 `;

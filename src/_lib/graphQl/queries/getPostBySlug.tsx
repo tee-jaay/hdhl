@@ -52,7 +52,12 @@ const getPostBySlug = (): string => `
                         }
                     }
                 }
-            }
+            } 
+            seo{                 
+                title
+                metaDesc
+                readingTime
+            }           
         }
     }
 `;

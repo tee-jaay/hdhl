@@ -21,8 +21,11 @@ export async function generateMetadata(params: Props) {
         // Make the request and return the data
         const data = await gqlQuery(query, variables);
         return {
-            title: `${process.env.APP_NAME} | ${data?.post?.title}`,
-            description: data?.post?.excerpt,
+            title: `${process.env.APP_NAME} | ${data?.post?.seo?.title}`,
+            description: data?.post?.seo?.metaDesc,
+            alternates: {
+                canonical: data?.post?.slug
+            },
         };
     } catch (error) {
         // Handle the error here

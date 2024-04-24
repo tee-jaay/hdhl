@@ -33,10 +33,10 @@ const FooterTop: React.FC<FooterTopProps> = ({ pages, tags, generalSettings }) =
                             <div className="desc text-gray-200 my-8">
                                 {generalSettings?.description}
                             </div>
-                            <h5 className="font-semibold text-gray-200 mb-2">Follow Us</h5>
-                            <div className="flex pt-3">
+                            {/* <h5 className="font-semibold text-gray-200 mb-2">Follow Us</h5> */}
+                            {/* <div className="flex pt-3">
                                 <SocialsLinksIcons />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div className="flex-1 tags_cloud phone:hidden tab:block">

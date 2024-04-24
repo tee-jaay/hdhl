@@ -5,6 +5,16 @@ import CategoryProps from "@/_lib/models/CategoryProps";
 import gqlQuery from "@/_lib/graphQl/gqlQuery";
 import getCategoriesByLimit from "@/_lib/graphQl/queries/getCategoriesByLimit";
 
+export async function generateMetadata() {
+    return {
+        title: "Categories",
+        description: "All Categories",
+        alternates: {
+            canonical: "categories"
+        },
+    };
+}
+
 const getData = async (limit: string) => {
     // Construct the query and variables
     const query = getCategoriesByLimit();

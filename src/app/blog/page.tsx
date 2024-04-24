@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import getLatestPosts from "@/_lib/graphQl/queries/getLatestPosts";
 import PostsList from "@/components/blog/posts/PostsList";
 import BlogListLoader from "@/components/loaders/BlogListLoader";
@@ -26,8 +26,7 @@ const getData = async (cursors: { startCursor: string, endCursor: string }) => {
     }
 }
 
-const Blog = () => {
-    // const posts = await getData();
+const Blog: React.FC = () => {
     const [posts, setPosts] = useState<any[]>([]);
     const [pageInfo, setPageInfo] = useState({
         startCursor: "",

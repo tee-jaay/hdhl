@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
     siteUrl: process.env.APP_URL || '',
-    generateRobotsTxt: true,
+    generateRobotsTxt: false,
     exclude: ['/sitemap-0.xml'],
     robotsTxtOptions: {
         additionalSitemaps: [
