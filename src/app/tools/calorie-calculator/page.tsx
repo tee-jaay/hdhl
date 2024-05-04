@@ -60,7 +60,7 @@ const CalorieCalculator = () => {
     return (
         <div>
             <div className="flex flex-col items-center justify-center align-middle w-full py-4">
-                <h1 className="flex justify-start items-start align-middle w-full text-[#222]"><span className="mr-1"><FontAwesomeIcon icon={faCalculator} /></span> Calorie Calculator</h1>
+                <h1 className="flex justify-start items-start align-middle w-full text-[#222]"><span className="mr-1"><FontAwesomeIcon icon={faCalculator} /></span> Calorie Intake Calculator</h1>
                 <Formik
                     initialValues={{
                         age: 25,
