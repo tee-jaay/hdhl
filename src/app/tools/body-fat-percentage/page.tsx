@@ -22,7 +22,7 @@ const BodyFatPercentageCalculator: React.FC = () => {
                 onSubmit={(values, { setSubmitting }) => {
                     // Calculate the body fat percentage based on the user's weight, height, and gender.
                     const bfp =
-                        1.2 * Number(values.weight) +
+                        1.20 * Number(values.weight) +
                         0.23 * Number(values.height) -
                         10.8 * (values.gender === "male" ? 1 : 0) -
                         5.4;
