@@ -1,10 +1,10 @@
-# Calorie Calculator (DONE)
+# Calorie Calculator: DONE
 ### Recommended daily calorie intake calculator.
 
-# BMI Calculator: (DONE)
+# BMI Calculator: DONE
 ### A Body Mass Index (BMI) calculator allows users to input their height and weight to determine their BMI. This can be a helpful tool for assessing overall health and weight status.
 
-# Body fat percentage calculator: 
+# Body fat percentage calculator: DONE
 ### This calculator can help users estimate their body fat percentage based on their weight, height, and gender.
 
 # Ideal weight calculator: 
