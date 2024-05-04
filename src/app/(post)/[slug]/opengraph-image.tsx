@@ -48,9 +48,9 @@ export default async function Image({ params }: { params: { slug: string } }) {
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                <div style={{ backgroundColor: 'rgba(255,255,255,0.5)', padding: '12px', }} >
+                {/* <div style={{ backgroundColor: 'rgba(255,255,255,0.5)', padding: '12px', }} >
                     {post?.seo?.title}
-                </div>
+                </div> */}
             </div>
         ),
         {
