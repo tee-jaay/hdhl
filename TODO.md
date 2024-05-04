@@ -1,5 +1,23 @@
+# Calorie Calculator (DONE)
+### Recommended daily calorie intake calculator.
+
 # BMI Calculator: (DONE)
 ### A Body Mass Index (BMI) calculator allows users to input their height and weight to determine their BMI. This can be a helpful tool for assessing overall health and weight status.
+
+# Body fat percentage calculator: 
+### This calculator can help users estimate their body fat percentage based on their weight, height, and gender.
+
+# Ideal weight calculator: 
+### This calculator can help users determine their ideal weight based on their height, age, and gender.
+
+# Water intake calculator: 
+### This calculator can help users determine how much water they should drink each day based on their weight, activity level, and climate.
+
+# Sleep needs calculator: 
+### This calculator can help users determine how much sleep they need each night based on their age, activity level, and lifestyle.
+
+# Stress level calculator: 
+### This calculator can help users assess their stress levels based on their symptoms and lifestyle.
 
 # Meal Planner: 
 ### A meal planner tool can help users create balanced and nutritious meals. It can include features such as recipe suggestions, calorie tracking, and grocery list generation.

@@ -22,7 +22,7 @@ const BMICalculator = () => {
             <h1 className="flex justify-start items-start text-3xl font-bold text-[#222] w-full"><span className="mr-1"><FontAwesomeIcon icon={faWeight} /></span> BMI Calculator</h1>
 
             <Formik
-                initialValues={{ height: 0, weight: 0 }}
+                initialValues={{ height: 165, weight: 65 }}
                 onSubmit={calculateBmi}
             >
                 <Form className="w-full">
@@ -59,7 +59,7 @@ const BMICalculator = () => {
 
             {bmi > 0 && (
                 <div className="mt-4 text-center">
-                    Your BMI is {bmi}.
+                    Your BMI is {bmi.toFixed(2)}.
                 </div>
             )}
 
