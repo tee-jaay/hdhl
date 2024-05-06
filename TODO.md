@@ -14,7 +14,7 @@
 ## Water intake calculator: DONE
 ### This calculator can help users determine how much water they should drink each day based on their weight, activity level, and climate.
 
-## Sleep needs calculator: 
+## Sleep needs calculator: DONE
 ### This calculator can help users determine how much sleep they need each night based on their age, activity level, and lifestyle.
 
 ## Stress level calculator: 

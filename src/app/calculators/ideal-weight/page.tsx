@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { Field, Form, Formik, FormikErrors, FormikTouched } from "formik";
 import { faWeight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CalculatorShowResult from "@/components/common/calculators/CalculatorShowResult";
 
 
 interface FormValues {
@@ -87,13 +88,11 @@ const IdealWeightCalculator: React.FC = () => {
                 )}
             </Formik>
 
-            {result && (
-                <div className="result-container mt-4">
-                    <p className="text-lg font-semibold">
-                        Your ideal weight is: {result.toFixed(2)} kg
-                    </p>
-                </div>
-            )}
+            {result && <CalculatorShowResult
+                preStr="Your ideal weight is"
+                value={result}
+                postStr="kg"
+            />}
 
             <div className="mt-32 text-gray-500 w-full">
                 <h6>References:</h6>

@@ -5,7 +5,7 @@ import CalculatorsBtnLinks from "@/components/common/calculators/CalculatorsBtnL
 import CalculatorsHeaderSection from "@/components/common/calculators/CalculatorsHeaderSection";
 
 export const metadata: Metadata = {
-    title: "Healthy Diet Happy Life | BMI Calculator",
+    title: "Healthy Diet Happy Life | Water Intake Calculator",
     description: "Calculate your recommended daily water intake with our Water Intake Calculator. Stay hydrated and maintain a healthy lifestyle",
     keywords: "water intake calculator, daily water intake, hydration calculator, recommended water intake, stay hydrated, healthy lifestyle, water consumption, water tracker",
     alternates: {

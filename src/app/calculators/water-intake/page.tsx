@@ -5,6 +5,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWater } from "@fortawesome/free-solid-svg-icons";
+import CalculatorShowResult from "@/components/common/calculators/CalculatorShowResult";
 
 const validationSchema = Yup.object().shape({
     weight: Yup.number()
@@ -93,11 +94,7 @@ const WaterIntakeCalculator = () => {
                 )}
             </Formik>
 
-            {waterAmount > 0 && (
-                <div className="mt-4 text-sm text-gray-700 dark:text-gray-300">
-                    Recommended daily water intake is {waterAmount} ml.
-                </div>
-            )}
+            {waterAmount > 0 && <CalculatorShowResult preStr="Recommended daily water intake is" value={waterAmount} postStr="ml" />}
 
             <div className="mt-32 text-gray-500 w-full">
                 <h6>References:</h6>

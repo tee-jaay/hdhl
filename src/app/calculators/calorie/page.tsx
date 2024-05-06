@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalculator } from "@fortawesome/free-solid-svg-icons";
+import CalculatorShowResult from "@/components/common/calculators/CalculatorShowResult";
 
 const CalorieCalculator = () => {
     const [calories, setCalories] = useState(0);
@@ -162,7 +163,11 @@ const CalorieCalculator = () => {
 
                 </Formik>
 
-                {calories > 0 && <div className="mt-10 mb-4">Your recommended daily calorie intake is <span className="text-[#43A047]">{calories}</span> calories.</div>}
+                {calories > 0 && <CalculatorShowResult
+                    preStr="Your recommended daily calorie intake is"
+                    postStr="calories"
+                    value={calories}
+                />}
 
                 <div className="mt-32 text-gray-500 w-full">
                     <h6>References:</h6>

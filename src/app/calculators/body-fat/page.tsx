@@ -5,6 +5,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalculator } from "@fortawesome/free-solid-svg-icons";
+import CalculatorShowResult from "@/components/common/calculators/CalculatorShowResult";
 
 const BodyFatPercentageCalculator: React.FC = () => {
     const [bodyFatPercentage, setBodyFatPercentage] = useState<number | null>(null);
@@ -81,11 +82,11 @@ const BodyFatPercentageCalculator: React.FC = () => {
                     </button>
                 </Form>
             </Formik>
-            {bodyFatPercentage && (
-                <div className="mt-4 text-sm text-gray-700 dark:text-gray-300">
-                    Your body fat percentage is {bodyFatPercentage.toFixed(2)}%.
-                </div>
-            )}
+            {bodyFatPercentage && <CalculatorShowResult
+                preStr="Your body fat percentage is"
+                value={bodyFatPercentage}
+                postStr="%"
+            />}
 
             <div className="mt-32 text-gray-500 w-full">
                 <h6>References:</h6>
