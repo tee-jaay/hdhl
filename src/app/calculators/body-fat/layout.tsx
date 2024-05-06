@@ -5,7 +5,7 @@ import CalculatorsBtnLinks from "@/components/common/calculators/CalculatorsBtnL
 import CalculatorsHeaderSection from "@/components/common/calculators/CalculatorsHeaderSection";
 
 export const metadata: Metadata = {
-    title: "Healthy Diet Happy Life",
+    title: "Healthy Diet Happy Life | Body Fat % Calculator",
     description: "Calculate your body fat percentage with this online calculator. Simply input your weight, height, and gender to get an estimate of your body fat percentage. Track your progress and monitor your fitness goals.",
     keywords: "body fat percentage calculator, calculate body fat percentage, body composition calculator, body fat calculator, body fat percentage estimation, body fat measurement, body fat percentage formula, body fat percentage chart, body fat percentage ranges, fitness calculator",
     alternates: {

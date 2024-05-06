@@ -3,6 +3,7 @@ import { useState } from "react";
 import { faWeight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Field, Form, Formik } from "formik";
+import CalculatorShowResult from "@/components/common/calculators/CalculatorShowResult";
 
 const BMICalculator = () => {
     const [bmi, setBmi] = useState(0);
@@ -58,11 +59,7 @@ const BMICalculator = () => {
                     </Form>
                 </Formik>
 
-                {bmi > 0 && (
-                    <div className="mt-4 text-center">
-                        Your BMI is {bmi.toFixed(2)}.
-                    </div>
-                )}
+                {bmi > 0 && (<CalculatorShowResult preStr="Your BMI is" value={bmi} postStr="" />)}
 
                 <div className="mt-32 text-gray-500 w-full">
                     <h6>References:</h6>
