@@ -6,8 +6,8 @@ import CalculatorsHeaderSection from "@/components/common/calculators/Calculator
 
 export const metadata: Metadata = {
     title: "Healthy Diet Happy Life | Stress Level Calculator",
-    description: "",
-    keywords: "",
+    description: "Calculate your stress level with this online stress level calculator. Assess your stress based on various factors and get actionable insights. Take control of your well-being.",
+    keywords: "stress level calculator, stress assessment tool, stress measurement, stress analysis, stress management, stress factors, stress evaluation, stress test, well-being assessment, stress level calculation, stress level measurement, stress level analysis",
     alternates: {
         canonical: "/calculators/stress-level"
     },
