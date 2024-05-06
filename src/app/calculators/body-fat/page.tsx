@@ -11,7 +11,7 @@ const BodyFatPercentageCalculator: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center align-middle w-full py-4">
-            <h1 className="flex justify-start items-start align-middle w-full text-[#222]"><span className="mr-1"><FontAwesomeIcon icon={faCalculator} /></span> Body Fat Percentage Calculator</h1>
+            <h1 className="flex justify-start items-start align-middle w-full text-[#222]"><span className="mr-1"><FontAwesomeIcon icon={faCalculator} /></span> Body Fat Percentage</h1>
             <Formik
                 initialValues={{ weight: 60, height: 160, gender: "male" }}
                 validationSchema={Yup.object({
