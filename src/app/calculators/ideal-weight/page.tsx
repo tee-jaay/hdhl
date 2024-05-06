@@ -34,7 +34,7 @@ const IdealWeightCalculator: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center align-middle w-full py-4">
-            <h1 className="flex justify-start items-start align-middle w-full text-[#222]"><span className="mr-1"><FontAwesomeIcon icon={faWeight} /></span> Ideal Weight Calculator</h1>
+            <h1 className="flex justify-start items-start align-middle w-full text-[#222]"><span className="mr-1"><FontAwesomeIcon icon={faWeight} /></span> Ideal Weight</h1>
             <Formik
                 initialValues={{ height: 160, gender: "male" }}
                 validationSchema={Yup.object({

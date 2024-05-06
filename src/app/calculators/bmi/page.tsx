@@ -20,7 +20,7 @@ const BMICalculator = () => {
     return (
         <div>
             <div className="flex flex-col items-center justify-center align-middle py-4 w-full">
-                <h1 className="flex justify-start items-start text-3xl font-bold text-[#222] w-full"><span className="mr-1"><FontAwesomeIcon icon={faWeight} /></span> BMI Calculator</h1>
+                <h1 className="flex justify-start items-start text-3xl font-bold text-[#222] w-full"><span className="mr-1"><FontAwesomeIcon icon={faWeight} /></span> Body Mass Index</h1>
 
                 <Formik
                     initialValues={{ height: 165, weight: 65 }}
