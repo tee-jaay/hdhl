@@ -17,7 +17,7 @@
 ## Sleep needs calculator: DONE
 ### This calculator can help users determine how much sleep they need each night based on their age, activity level, and lifestyle.
 
-## Stress level calculator: 
+## Stress level calculator: DONE
 ### This calculator can help users assess their stress levels based on their symptoms and lifestyle.
 
 # Apps
