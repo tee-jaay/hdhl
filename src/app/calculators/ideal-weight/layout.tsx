@@ -6,10 +6,10 @@ import ToolsHeader from "@/components/common/tools/ToolsHeader";
 
 export const metadata: Metadata = {
     title: "Healthy Diet Happy Life | BMI Calculator",
-    description: "Our BMI Calculator helps you determine your Body Mass Index (BMI) based on your height and weight. Get started today and take control of your health!",
-    keywords: "BMI calculator, BMI, body mass index, weight loss, weight gain, healthy diet, healthy lifestyle",
+    description: "Calculate your ideal weight based on your height and gender using our Ideal Weight Calculator. Stay healthy and achieve your weight goals!",
+    keywords: "ideal weight calculator, calculate ideal weight, weight calculator, healthy weight calculator, weight management, BMI calculator, weight goals, height and weight calculator",
     alternates: {
-        canonical: "/tools/bmi-calculator"
+        canonical: "/calculators/ideal-weight"
     },
 };
 
@@ -17,7 +17,7 @@ export default async function BlogLayout({ children }: Readonly<{ children: Reac
     if (!React.isValidElement(children)) { return null; }
     return (
         <section className="flex flex-col dark:bg-[#222]">
-            <PageHeaderSection slug="/tools/bmi-calculator" title="BMI" />
+            <PageHeaderSection slug="/calculators/ideal-weight" title="Ideal Weight" />
             <ToolsHeader />
             <div className="laptop:w-[768px] desktop:w-[1024px] flex phone:flex-col tab:flex-row phone:space-x-0 tab:space-x-6 laptop:space-x-8 mx-auto">
                 <div className="phone:w-full flex-1 bg-[#FFFFFF] dark:bg-[#222] phone:px-2 tab:px-1">

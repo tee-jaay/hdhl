@@ -7,7 +7,7 @@
 # Body fat percentage calculator: DONE
 ### This calculator can help users estimate their body fat percentage based on their weight, height, and gender.
 
-# Ideal weight calculator: 
+# Ideal weight calculator: DONE
 ### This calculator can help users determine their ideal weight based on their height, age, and gender.
 
 # Water intake calculator: 
