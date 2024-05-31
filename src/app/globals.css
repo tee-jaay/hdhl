@@ -50,6 +50,13 @@ p {
 }
 
 /* Post Details */
+.content a {
+    font-style: italic;
+}
+.content a:hover {
+    color: #43A047;
+}
+
 .card_title a {
     text-transform: capitalize;
 }
