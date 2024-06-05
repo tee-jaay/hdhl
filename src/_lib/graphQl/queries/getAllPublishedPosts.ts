@@ -1,5 +1,5 @@
 const getAllPublishedPosts = (): string => `query GetLatestPosts {
-    posts(where: {status: PUBLISH}, first: 300) {
+    posts(where: {status: PUBLISH}, first: 3000) {
       nodes {  
         databaseId
         slug
