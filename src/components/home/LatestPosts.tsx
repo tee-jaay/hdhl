@@ -35,7 +35,7 @@ const LatestPosts: React.FC<{}> = async () => {
             <div className="flex phone:flex-col laptop:flex-row tab:space-x-8">
                 <div className="flex-1 phone:w-full tab:w-4/6 ">
                     <SectionHeading color={"text-[#222]"} text={"Latest Posts"} />
-                    <div className="hero_left laptop:h-[400px] desktop:h-[500px] flex-1 bg-no-repeat top-0 left-0" style={{ backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})` }}>
+                    <div className="laptop:h-[400px] desktop:h-[500px] flex-1 bg-no-repeat top-0 left-0" style={{ backgroundImage: `url(${data[0]?.featuredImage?.node?.sourceUrl})` }}>
                         <div className={`hero_one_item px-12 py-8 flex flex-col justify-end h-full bg-gradient-to-b from-transparent to-black`}>
                             <CategoryBoxBg color="" count={0} id="" imgSrc="" bgColor={"bg-[#AE0332]"} name={data[0]?.categories?.nodes[0]?.name} slug={data[0]?.categories?.nodes[0]?.slug} />
                             <Link href={data && data[0]?.slug} title={data && data[0]?.title}>
