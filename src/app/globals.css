@@ -70,7 +70,8 @@ p {
 #table-of-contents a {
     color: #444 !important;
     font-size: 1.1em;
-    text-decoration: none !important;
+    font-style: normal;
+    text-decoration: none !important;    
 }
 
 #table-of-contents a:hover {
