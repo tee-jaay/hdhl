@@ -12,7 +12,7 @@ const getData = async () => {
     const query = getPostsByTag();
     const variables = {
         tag: "recommended",
-        first: 10,
+        first: 6,
     };
     try {
         // Make the request and return the data
