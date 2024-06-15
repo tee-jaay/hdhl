@@ -2,6 +2,7 @@
 export const appName: string = process.env.APP_NAME!;
 export const appUrl: string = process.env.APP_URL!;
 export const baseUrl: string = process.env.BASE_URL!;
+export const apiUrl: string = process.env.API_URL!;
 export const graphQlUrl: string = process.env.GRAPHQL_URL!;
 export const timeWindow: string = process.env.TIME_WINDOW!;
 export const msValidate: string = process.env.MS_VALIDATE!;
