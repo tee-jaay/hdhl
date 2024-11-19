@@ -41,7 +41,7 @@ const Blog: React.FC = () => {
             getData({ startCursor: pageInfo?.startCursor, endCursor: pageInfo?.endCursor })
                 .then((res) => {
                     setPosts([]);
-                    setPosts([...res?.posts?.nodes] || []);
+                    setPosts(res?.posts?.nodes ? [...res.posts.nodes] : []);
                     setPageInfo(res?.posts?.pageInfo || {});
                     // Scroll to top of the page
                     window.scrollTo({
