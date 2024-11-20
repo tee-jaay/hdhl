@@ -17,3 +17,4 @@ export const smtpPassword: string = process.env.SMTP_PASSWORD!;
 // Public
 export const publicAppUrl: string = process.env.NEXT_PUBLIC_APP_URL!;
 export const publicContactEmail: string = process.env.NEXT_PUBLIC_CONTACT_EMAIL!;
+export const publicLogoSrc: string = process.env.NEXT_PUBLIC_LOGO_SRC!;

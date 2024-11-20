@@ -26,7 +26,7 @@ const getData = async () => {
 const PostCard: React.FC<{ post: PostCardProps }> = ({ post }) => <div className="flex space-x-4">
     <div className="post_image w-1/4">
         <Link href={`/${post?.slug}`}>
-            <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={100} height={100} />
+            <Image src={post?.featuredImage?.node?.sourceUrl} alt={post?.featuredImage?.node?.altText} width={100} height={100} className="max-h-[100px]" />
         </Link>
     </div>
     <div className="flex flex-col post_meta w-3/4">

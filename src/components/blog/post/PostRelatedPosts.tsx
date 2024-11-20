@@ -31,6 +31,7 @@ const PostItem: React.FC<{ post: PostCardProps }> = ({ post }) => (
                 src={post?.featuredImage?.node?.sourceUrl}
                 width={288}
                 height={250}
+                className="max-h-[200px] object-cover"
             />
         </div>
         <div className="post_data px-4 pb-4">

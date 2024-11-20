@@ -72,7 +72,7 @@ const CarouselSlider = ({ carouselItems }: CarouselItems) => {
                     </svg>
                 </div>
             </div>
-            <div className="items grid laptop:grid-cols-3 h-fit">
+            <div className="items grid laptop:grid-cols-3 gap-4">
                 {carouselItems.slice(startItem, endItem).map((item, index) => (
                     <CarouselItem
                         key={index}

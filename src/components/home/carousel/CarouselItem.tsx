@@ -9,7 +9,7 @@ import CategoryNameSlug from "@/components/common/CategoryNameSlug";
 const CarouselItem: React.FC<CarouselItemProps> = ({ imgSrc, imgAlt, category, categorySlug, title, slug, date }) => {
     return (
         <div className="item flex space-x-4">
-            <div className="item-image w-1/3">
+            <div className="item-image w-1/3 aspect-[3/4]">
                 <Image
                     alt={imgAlt}
                     src={imgSrc}

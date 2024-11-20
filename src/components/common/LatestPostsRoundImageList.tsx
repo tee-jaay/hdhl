@@ -10,16 +10,19 @@ const LatestPostsRoundImageList: React.FC<{ posts: PostCardProps[] }> = ({ posts
         <div className="phone:space-y-8 space-y-6">
             {posts && posts.map((post, _i) => (
                 <div key={post.id} className="flex phone:space-x-4 laptop:space-x-6">
-                    <div className="w-1/4">
-                        <div className="laptop:w-16 laptop:h-16 desktop:w-24 desktop:h-24">
+                    {/* Image Container */}
+                    <div className="w-1/4 flex justify-center items-center">
+                        <div className="relative w-16 h-16 laptop:w-20 laptop:h-20 desktop:w-24 desktop:h-24 overflow-hidden rounded-full">
                             <Image
-                                className="rounded-full"
+                                className="object-cover"
                                 src={post.featuredImage?.node?.sourceUrl}
                                 alt={post.featuredImage?.node?.altText}
-                                height={100}
-                                width={100} />
+                                fill
+                            />
                         </div>
                     </div>
+
+                    {/* Metadata Section */}
                     <div className="w-3/4 phone:space-y-4">
                         <CategoryNameSlug
                             bgColor=""
